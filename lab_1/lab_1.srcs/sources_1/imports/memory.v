@@ -2,6 +2,7 @@
 
 module memory(
 	input wen,
+	input rst,
     input [31:0] din,
     input [11:0] raddr_i, // read addr instruction
     input [11:0] raddr_d, // read addr data
@@ -14,14 +15,16 @@ module memory(
     
     // init to 0;
     integer i;
-    initial begin
-        for (i = 0; i < 12'hFFF; i=i+1) begin
-            mem[i] = '0;
+    always @(*) begin
+        if (rst) begin
+            for (i = 0; i < 12'hFFF; i=i+1) begin
+                mem[i] = 0;
+            end
+        end else begin
+            // Assign mem on valid input
+            mem[waddr] = (wen) ? din : mem[waddr];
         end
-    end
-
-    // Assign mem on valid input
-    assign mem[waddr] = (wen) ? din : mem[waddr];
+    end    
 
     // Assign output
     assign iout = mem[raddr_i];
