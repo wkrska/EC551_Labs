@@ -1,32 +1,13 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/06/2022 03:31:39 PM
-// Design Name: 
-// Module Name: Register_file
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
-module Register_file(ReadSelect1, ReadSelect2, WriteSelect, WriteData, WriteEnable, ReadData1, ReadData2, clk, rst);
+module Register_file(RS1, RS2, WS, WD, WE, RD1, RD2, clk, rst);
 
     parameter BITSIZE = 16;
-    parameter REGSIZE = 6;
-    input [$clog2(REGSIZE)-1:0] ReadSelect1, ReadSelect2, WriteSelect;
-    input [BITSIZE-1:0] WriteData;
-    input WriteEnable;
-    output reg [BITSIZE-1:0] ReadData1, ReadData2;
+    parameter REGSIZE = 7; // 6 registers and 1 PC
+    input [$clog2(REGSIZE)-1:0] RS1, RS2, WS;
+    input [BITSIZE-1:0] WD;
+    input WE;
+    output reg [BITSIZE-1:0] RD1, RD2;
     input clk, rst;
 
     reg [BITSIZE-1:0] reg_file [REGSIZE-1:0];   // Entire list of registers
@@ -34,15 +15,15 @@ module Register_file(ReadSelect1, ReadSelect2, WriteSelect, WriteData, WriteEnab
     integer i;                                  // Used below to rst all registers
 
     // Asyncronous read of register file.
-    always @(ReadSelect1, reg_file[ReadSelect1])
+    always @(RS1, reg_file[RS1])
         begin
-            ReadData1 = reg_file[ReadSelect1];
+            RD1 = reg_file[RS1];
         end
 
     // Asyncronous read of register file.
-    always @(ReadSelect2, reg_file[ReadSelect2])
+    always @(RS2, reg_file[RS2])
         begin
-            ReadData2 = reg_file[ReadSelect2];
+            RD2 = reg_file[RS2];
         end
 
     // Write back to register file on clk edge.
@@ -52,8 +33,8 @@ module Register_file(ReadSelect1, ReadSelect2, WriteSelect, WriteData, WriteEnab
                 for (i=0; i<REGSIZE; i=i+1) reg_file[i] <= 'b0; // rst all registers
             else
             begin
-                if (WriteEnable && WriteSelect != 31)
-                    reg_file[WriteSelect] <= WriteData; //If writeback is enabled and not 0 register.
+                if (WE && WS != 31)
+                    reg_file[WS] <= WD; //If writeback is enabled and not 0 register.
             end
         end
         
