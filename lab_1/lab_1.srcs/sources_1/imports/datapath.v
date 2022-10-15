@@ -14,7 +14,7 @@ module datapath (
     wire [3:0]  RN_WB, RM_WB, OP_WB;
     wire [15:0] RF_D1_ID, RF_D2_ID, MEM_D_ID;
     wire [15:0] RF_D1_EX, RF_D2_EX, MEM_D_EX;
-    wire [15:0]           RF_D2_WB // Would have target address for Move [Rn], [Rm]
+    wire [15:0] RF_D1_WB // Would have target address for Move [Rn], [Rm]
     wire [11:0] imm_ID;
 
     wire [15:0] RES_EX, RES_WB;
@@ -23,9 +23,9 @@ module datapath (
     Fetch_unit fetch_0(
         .PC_in(PC_curr),
         .inst_in(INST_read),
-        .imm_in(),
-        .ctrl_jump(),
-        .ctrl_nop(),
+        .imm_in(imm_ID),
+        .ctrl_jump(FLAG_WB),
+        .ctrl_nop(0),
         .inst_out(INST_next),
         .PC_out(PC_next),
         .PC_en(PC_en),
@@ -54,8 +54,9 @@ module datapath (
         .rst(rst),
         .RS1(RM_ID),
         .RS2(RN_ID),
-        .WS(),
-        .WE(),
+        .WS(RN_WB),
+        .WD(RES_WB),
+        .WE((OP_WB == 4'b000) ? 1 : 0),
         .PC_IN(PC_next),
         .PC_EN(PC_en)
         .RD1(RF_D1_ID),
@@ -67,9 +68,9 @@ module datapath (
         .rst(rst),
         .raddr_i(PC_curr),
         .raddr_d(RF_D2_ID),
-        .waddr(),
-        .din(),
-        .wen(),
+        .waddr(RF_D1_WB),
+        .din(RES_WB),
+        .wen((OP_WB == 4'b0000) ? 1 : 0),
         .iout(INST_read),
         .dout(MEM_D_ID)
     );
@@ -89,11 +90,11 @@ module datapath (
         .dout(RES_EX)
     );
 
-    reg_param reg2 #(.SIZE(16+1)) (
+    reg_param reg2 #(.SIZE(4+4+4+16+16+1)) (
         .clk(clk),
         .rst(rst),
-        .din({RES_EX, J_FLAG}),
-        .dout({RES_WB, J_FLAG_WB})
+        .din({RN_EX, RM_EX, OP_EX, RF_D1_EX, RES_EX, FLAG_EX}),
+        .dout({RN_WB, RM_WB, OP_WB, RF_D1_WB, RES_WB, FLAG_WB})
     );
 
 endmodule
