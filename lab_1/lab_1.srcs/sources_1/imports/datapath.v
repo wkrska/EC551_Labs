@@ -14,7 +14,7 @@ module datapath (
     wire [3:0]  RN_WB, RM_WB, OP_WB;
     wire [15:0] RF_D1_ID, RF_D2_ID, MEM_D_ID;
     wire [15:0] RF_D1_EX, RF_D2_EX, MEM_D_EX;
-    wire [15:0] RF_D1_WB // Would have target address for Move [Rn], [Rm]
+    wire [15:0] RF_D1_WB; // Would have target address for Move [Rn], [Rm]
     wire [11:0] imm_ID;
 
     wire [15:0] RES_EX, RES_WB;
@@ -28,10 +28,10 @@ module datapath (
         .ctrl_nop(0),
         .inst_out(INST_next),
         .PC_out(PC_next),
-        .PC_en(PC_en),
+        .PC_en(PC_en)
     );
 
-    reg_param reg0 #(.SIZE(16)) (
+    reg_param  #(.SIZE(16)) reg0 (
         .clk(clk),
         .rst(rst),
         .din(INST_next),
@@ -45,7 +45,7 @@ module datapath (
         .Instr_in(INST_curr),
         .Rm(RM_ID),
         .Rn(RN_ID),
-        .op(OP_ID)
+        .op(OP_ID),
         .imm(imm_ID)
     );
 
@@ -56,12 +56,12 @@ module datapath (
         .RS2(RN_ID),
         .WS(RN_WB),
         .WD(RES_WB),
-        .WE((OP_WB == 4'b000) ? 1 : 0),
+        .WE((OP_WB == 4'b0000) ? 1 : 0),
         .PC_IN(PC_next),
-        .PC_EN(PC_en)
+        .PC_EN(PC_en),
         .RD1(RF_D1_ID),
         .RD2(RF_D2_ID), // corresponds to RM
-        .PC_OUT(PC_curr),
+        .PC_OUT(PC_curr)
     );
 
     memory mem_0(
@@ -75,7 +75,7 @@ module datapath (
         .dout(MEM_D_ID)
     );
 
-    reg_param reg1 #(.SIZE(4+4+4+16+16+16)) (
+    reg_param #(.SIZE(4+4+4+16+16+16)) reg1 (
         .clk(clk),
         .rst(rst),
         .din({RN_ID, RM_ID, OP_ID, RF_D1_ID, RF_D2_ID, MEM_D_ID}),
@@ -86,11 +86,14 @@ module datapath (
     ALU alu_0(
         .op(OP_EX),
         .din0(RF_D1_EX),
-        .din1((OP_EXWB == 4'b0000) ? RF_D2_EX : MEM_D_EX),
-        .dout(RES_EX)
+        .din1((OP_EX == 4'b0000) ? RF_D2_EX : MEM_D_EX),
+        .Rm_in(),
+        .mem_in(),
+        .dout(RES_EX),
+        .jump(FLAG_EX)
     );
 
-    reg_param reg2 #(.SIZE(4+4+4+16+16+1)) (
+    reg_param #(.SIZE(4+4+4+16+16+1)) reg2 (
         .clk(clk),
         .rst(rst),
         .din({RN_EX, RM_EX, OP_EX, RF_D1_EX, RES_EX, FLAG_EX}),
