@@ -51,7 +51,40 @@ module t_Register_file(
         .PC_OUT(PC_OUT)
     );
     
+    always
+        #5; clk <= ~clk;
+
+    integer i;
+
     initial begin
-        
+        clk    = 'b0;
+        rst    = 'b0;
+        RS1    = 'b0;
+        RS2    = 'b0;
+        WS     = 'b0;
+        WD     = 'b0;
+        WE     = 'b0;
+        PC_IN  = 'b0;
+        PC_EN  = 'b0;
+
+        // reset
+        #10; rst <= 1'b1; #10; rst <= 1'b0;
+
+        // write to regs
+        WE <= 1'b1;
+        for (i=0; i<6; i=i+1) begin
+            WS = i;
+            WD = i*10;
+            #10;
+        end
+
+        // read from reg
+        for (i=0; i<6; i=i+1) begin
+            RS1 = i;
+            RS2 = i;
+            #10;
+        end
+
+        $finish;
     end
 endmodule
