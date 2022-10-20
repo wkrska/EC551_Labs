@@ -41,7 +41,7 @@ module t_memory(
         .waddr  (waddr  ),
         .iout   (iout   ),
         .dout   (dout   )
-    )
+    );
 
     initial begin
         wen     = 'b0;

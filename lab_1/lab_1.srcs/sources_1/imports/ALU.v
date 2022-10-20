@@ -14,22 +14,22 @@ module ALU(
     reg cmp_flag, jump_t, halt_t;
     reg [15:0] dout_t;
     
-    localparam op_add  = 4'b0101; 
-    localparam op_sub  = 4'b0110; 
-    localparam op_inc  = 4'b0001; 
-    localparam op_xor  = 4'b0111; 
-    localparam op_cmp  = 4'b1000; 
-    localparam op_mov0 = 4'b1001; // Rn, num
-    localparam op_mov1 = 4'b1010; // Rn, Rm
-    localparam op_mov2 = 4'b1011; // [Rn], Rm
-    localparam op_mov3 = 4'b1100; // Rn, [Rm]
-    localparam op_mov4 = 4'b1101; // [Rn], [Rm]
-    localparam op_sadd = 4'b1110; 
-    localparam op_jmp  = 4'b0010; 
-    localparam op_jne  = 4'b0011; 
-    localparam op_je   = 4'b0100;    
-    localparam op_nop  = 4'b1111; 
-    localparam op_halt = 4'b0000; 
+    localparam [3:0] op_add  = 4'b0101; 
+    localparam [3:0] op_sub  = 4'b0110; 
+    localparam [3:0] op_inc  = 4'b0001; 
+    localparam [3:0] op_xor  = 4'b0111; 
+    localparam [3:0] op_cmp  = 4'b1000; 
+    localparam [3:0] op_mov0 = 4'b1001; // Rn, num
+    localparam [3:0] op_mov1 = 4'b1010; // Rn, Rm
+    localparam [3:0] op_mov2 = 4'b1011; // [Rn], Rm
+    localparam [3:0] op_mov3 = 4'b1100; // Rn, [Rm]
+    localparam [3:0] op_mov4 = 4'b1101; // [Rn], [Rm]
+    localparam [3:0] op_sadd = 4'b1110; 
+    localparam [3:0] op_jmp  = 4'b0010; 
+    localparam [3:0] op_jne  = 4'b0011; 
+    localparam [3:0] op_je   = 4'b0100;    
+    localparam [3:0] op_nop  = 4'b1111; 
+    localparam [3:0] op_halt = 4'b0000; 
 
     always @(*) begin
         // Assign dout value
@@ -44,7 +44,7 @@ module ALU(
             op_mov2: dout_t = din1;               // mov [Rn], Rm
             op_mov3: dout_t = mem_in;             // mov Rn, [Rm]
             op_mov4: dout_t = mem_in;             // mov [Rn], [Rm]
-            op_sad : dout_t = din0^din1;          // sadd
+            op_sadd: dout_t = din0^din1;          // sadd
             op_jmp : dout_t = {{4{1'b0}},imm_in}; // jmp
             op_jne : dout_t = {{4{1'b0}},imm_in}; // jne
             op_je  : dout_t = {{4{1'b0}},imm_in}; // je

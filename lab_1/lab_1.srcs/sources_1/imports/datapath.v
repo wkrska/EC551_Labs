@@ -6,7 +6,7 @@ module datapath (
     input [15:0] user_inst_write,
     input [11:0] user_inst_addr,
     input [3:0] disp_RS,
-    input ap_start;
+    input ap_start,
     output [15:0] disp_RD
 );
     // Define ops
@@ -62,6 +62,7 @@ module datapath (
         .imm_in(imm_ID),
         .ctrl_jump(FLAG_WB),
         .ctrl_nop((ap_start_cs == 1'b0) ? 1'b1 : 1'b0),
+        .ctrl_ap_start(ap_start_cs),
         .inst_out(INST_next),
         .PC_out(PC_next),
         .PC_en(PC_en)

@@ -52,7 +52,7 @@ module t_Register_file(
     );
     
     always
-        #5; clk <= ~clk;
+        #5 clk <= ~clk;
 
     integer i;
 
