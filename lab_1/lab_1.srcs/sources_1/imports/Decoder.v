@@ -1,17 +1,21 @@
 `timescale 1ns / 1ps
 
+// `ifndef MY_HEADER
+//     `define MY_HEADER
+    `include "my_header.vh"
+// `endif
 
 module Decoder(
-    input [15:0] Instr_in,
-    output [5:0] Rm, Rn,
-    output [5:0] op,
+    input [`dwidth_dat-1:0] Instr_in,
+    output [`awidth_reg-1:0] Rm, Rn,
+    output [`awidth_reg-1:0] op,
 //    output [1:0] jmp_op,
-    output [11:0] imm
+    output [`awidth_mem-1:0] imm
     );
 
     assign op = Instr_in[15:12];
-    assign Rn = Instr_in[09:06];
-    assign Rm = Instr_in[03:00];
+    assign Rn = Instr_in[11:06];
+    assign Rm = Instr_in[05:00];
     assign imm = Instr_in[11:0];
     
 endmodule

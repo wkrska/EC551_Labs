@@ -1,24 +1,30 @@
 `timescale 1ns / 1ps
 
+// `ifndef MY_HEADER
+//     `define MY_HEADER
+    `include "my_header.vh"
+// `endif
+
 module memory(
 	input wen,
 	input rst,
-    input [31:0] din,
-    input [11:0] raddr_i, // read addr instruction
-    input [11:0] raddr_d, // read addr data
-    input [11:0] waddr,
-    output [31:0] iout,
-    output [31:0] dout
+    input [`dwidth_dat-1:0] din,
+    input [`awidth_mem-1:0] raddr_i, // read addr instruction
+    input [`awidth_mem-1:0] raddr_d, // read addr data
+    input [`awidth_mem-1:0] waddr,
+    output [`dwidth_dat-1:0] iout,
+    output [`dwidth_dat-1:0] dout
     );
 
-    reg [31:0] mem [11:0];
+    // reg [`dwidth_dat-1:0] mem [(2**`awidth_mem):0];
+    reg [`dwidth_dat-1:0] mem [(2**6):0];
     
     // init to 0;
     integer i;
     always @(*) begin
         if (rst) begin
             for (i = 0; i < 12'hFFF; i=i+1) begin
-                mem[i] = 0;
+                mem[i] <= 0;
             end
         end else begin
             // Assign mem on valid input

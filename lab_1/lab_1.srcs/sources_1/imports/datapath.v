@@ -1,14 +1,20 @@
 `timescale 1ns / 1ps
 
+//`ifndef MY_HEADER
+//    `define MY_HEADER
+    `include "my_header.vh"
+//`endif
+
 module datapath (
     input clk,
     input rst,
-    input [15:0] user_inst_write,
-    input [11:0] user_inst_addr,
-    input [3:0] disp_RS,
+    input [`dwidth_dat-1:0] user_inst_write,
+    input [`awidth_mem-1:0] user_inst_addr,
+    input [`awidth_reg-1:0] disp_RS,
     input ap_start,
-    output [15:0] disp_RD
+    output [`dwidth_dat-1:0] disp_RD
 );
+
     // Define ops
     localparam op_add  = 4'b0101; 
     localparam op_sub  = 4'b0110; 
@@ -40,26 +46,32 @@ module datapath (
         ap_start_cs <= (rst) ? 1'b0 : ap_start_ns;
     
     //----------- IF stage -----------//
-    wire [15:0] INST_next, INST_curr, INST_read;
-    wire [11:0] PC_next, PC_curr;
+    wire [`dwidth_dat-1:0] INST_next, INST_curr, INST_read;
+    wire [`dwidth_dat-1:0] PC_next, PC_curr;
     wire PC_en;
 
-    wire [3:0]  RN_ID, RM_ID, OP_ID;
-    wire [3:0]  RN_EX, RM_EX, OP_EX;
-    wire [3:0]  RN_WB, RM_WB, OP_WB;
+    wire [`awidth_reg-1:0]  RN_ID, RM_ID;
+    wire [`awidth_reg-1:0]  RN_EX, RM_EX;
+    wire [`awidth_reg-1:0]  RN_WB, RM_WB;
 
-    wire [15:0] RF_D1_ID, RF_D2_ID, MEM_D_ID;
-    wire [15:0] RF_D1_EX, RF_D2_EX, MEM_D_EX;
-    wire [15:0] RF_D1_WB; // Would have target address for Move [Rn], [Rm]
-    wire [11:0] imm_ID;
+    wire [3:0] OP_ID;
+    wire [3:0] OP_EX;
+    wire [3:0] OP_WB;
 
-    wire [15:0] RES_EX, RES_WB;
+    wire [`dwidth_dat-1:0] RF_D1_ID, RF_D2_ID, MEM_D_ID;
+    wire [`dwidth_dat-1:0] RF_D1_EX, RF_D2_EX, MEM_D_EX;
+    wire [`dwidth_dat-1:0] RF_D1_WB; // Would have target address for Move [Rn], [Rm]
+    wire [`awidth_mem-1:0] imm_ID, imm_EX;
+
+    wire [`dwidth_dat-1:0] RES_EX, RES_WB;
     wire FLAG_EX, FLAG_WB;
 
     Fetch_unit fetch_0(
+        .clk(clk),
+        .rst(rst),
         .PC_in(PC_curr),
         .inst_in(INST_read),
-        .imm_in(imm_ID),
+        .imm_in(RES_WB),
         .ctrl_jump(FLAG_WB),
         .ctrl_nop((ap_start_cs == 1'b0) ? 1'b1 : 1'b0),
         .ctrl_ap_start(ap_start_cs),
@@ -68,7 +80,7 @@ module datapath (
         .PC_en(PC_en)
     );
 
-    reg_param  #(.SIZE(16)) reg0 (
+    reg_param  #(.SIZE(`dwidth_dat)) reg0 (
         .clk(clk),
         .rst(rst),
         .din(INST_next),
@@ -90,8 +102,8 @@ module datapath (
     Register_file rf_0(
         .clk(clk),
         .rst(rst),
-        .RS1(RM_ID),
-        .RS2(RN_ID),
+        .RS1(RN_ID),
+        .RS2((OP_ID == op_mov0) ? 6'b0 : RM_ID), // avoid X
         .disp_RS(disp_RS),
         .WS(RN_WB),
         .WD(RES_WB),
@@ -117,26 +129,28 @@ module datapath (
         .dout(MEM_D_ID)
     );
 
-    reg_param #(.SIZE(4+4+4+16+16+16)) reg1 (
+    reg_param #(.SIZE(2*`awidth_reg+4+3*`dwidth_dat+2*`awidth_mem)) reg1 (
         .clk(clk),
         .rst(rst),
-        .din({RN_ID, RM_ID, OP_ID, RF_D1_ID, RF_D2_ID, MEM_D_ID}),
-        .dout({RN_EX, RM_EX, OP_EX, RF_D1_EX, RF_D2_EX, MEM_D_EX})
+        .din({RN_ID, RM_ID, OP_ID, RF_D1_ID, RF_D2_ID, MEM_D_ID, imm_ID}),
+        .dout({RN_EX, RM_EX, OP_EX, RF_D1_EX, RF_D2_EX, MEM_D_EX, imm_EX})
     );
 
     //----------- EX stage -----------//
     ALU alu_0(
+        .rst(rst),
         .op(OP_EX),
-        .din0(RF_D1_EX),
-        .din1((OP_EX == 4'b0000) ? RF_D2_EX : MEM_D_EX),
-        .Rm_in(),
-        .mem_in(),
+        .din0((RN_EX==RN_WB) ? RES_WB : RF_D1_EX), // forward data destined to RN_EX
+        .din1((RM_EX==RN_WB) ? RES_WB : RF_D2_EX), // fprward data destined to RM_EX
+        .Rm_in(RM_EX),
+        .mem_in(MEM_D_EX),
+        .imm_in(imm_EX),
         .dout(RES_EX),
         .jump(FLAG_EX),
         .halt(halt_flag)
     );
 
-    reg_param #(.SIZE(4+4+4+16+16+1)) reg2 (
+    reg_param #(.SIZE(2*`awidth_reg+4+2*`dwidth_dat+1)) reg2 (
         .clk(clk),
         .rst(rst),
         .din({RN_EX, RM_EX, OP_EX, RF_D1_EX, RES_EX, FLAG_EX}),
