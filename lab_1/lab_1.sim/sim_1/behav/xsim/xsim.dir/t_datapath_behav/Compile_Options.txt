@@ -1,1 +1,1 @@
--wto "939031e321024f558539e0104ed568b1" --incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "t_datapath_behav" "xil_defaultlib.t_datapath" "xil_defaultlib.glbl" -log "elaborate.log" 
+-wto "939031e321024f558539e0104ed568b1" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" --snapshot "t_datapath_behav" "xil_defaultlib.t_datapath" "xil_defaultlib.glbl" -log "elaborate.log" 

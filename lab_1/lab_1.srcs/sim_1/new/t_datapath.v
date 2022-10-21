@@ -87,7 +87,7 @@ module t_datapath(
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_mov0, r3, 6'b001000};
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_mov0, r4, 6'b010000};
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_mov0, r5, dc};
-        #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_jmp,  (user_inst_addr+3)};   // jmp
+        #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_jmp,  (user_inst_addr+12'd3)};   // jmp
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_inc,  r5, dc};               // R5 = R5+1 (should be skipped)
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_inc,  r5, dc};               // R5 = R5+1 (should be skipped)
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_mov2, r1, r0};               // mov [R1] R0
@@ -95,16 +95,16 @@ module t_datapath(
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_mov3, r1, r2};               // mov r1 [R2]
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_mov1, r4, r0};               // mov r4 r0
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_cmp,  r1, r4};               // cmp r1 r4
-        #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_je,   (user_inst_addr+3)};   // je
+        #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_je,   (user_inst_addr+12'd3)};   // je
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_inc,  r5, dc};               // R5 = R5+1 (should be skipped)
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_inc,  r5, dc};               // R5 = R5+1 (should be skipped)
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_cmp,  r1, r2};               // cmp r1 r2
-        #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_jne,  (user_inst_addr+3)};               // jne r1 r4
+        #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_jne,  (user_inst_addr+12'd3)};               // jne r1 r4
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_inc,  r5, dc};               // R5 = R5+1 (should be skipped)
         #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_inc,  r5, dc};               // R5 = R5+1 (should be skipped)
         
         // Halt
-        #10; user_inst_write <= {op_halt, 6'b000000, 6'b000000}; user_inst_addr <= user_inst_addr + 1;
+        #10; user_inst_addr = user_inst_addr + 1; user_inst_write = {op_halt, 6'b000000, 6'b000000}; 
         
         // AP_start
         #10; ap_start = 1; #10 ap_start = 0;
