@@ -118,7 +118,7 @@ module inst_ROM(
                     6'd15 : begin ns = cs; user_inst_addr_next = 12'd46;  user_inst_write_next = {op_mov0, r3, 6'b001000};     end
                     6'd16 : begin ns = cs; user_inst_addr_next = 12'd47;  user_inst_write_next = {op_mov0, r4, 6'b010000};     end
                     6'd17 : begin ns = cs; user_inst_addr_next = 12'd48;  user_inst_write_next = {op_mov0, r5, dc};            end
-                    6'd18 : begin ns = cs; user_inst_addr_next = 12'd49;  user_inst_write_next = {op_jmp,  12'd51};            end   // jmp
+                    6'd18 : begin ns = cs; user_inst_addr_next = 12'd49;  user_inst_write_next = {op_jmp,  12'd52};            end   // jmp
                     6'd19 : begin ns = cs; user_inst_addr_next = 12'd50;  user_inst_write_next = {op_inc,  r5, dc};            end   // R5 = R5+1 (should be skipped)
                     6'd20 : begin ns = cs; user_inst_addr_next = 12'd51;  user_inst_write_next = {op_inc,  r5, dc};            end   // R5 = R5+1 (should be skipped)
                     6'd21 : begin ns = cs; user_inst_addr_next = 12'd52;  user_inst_write_next = {op_mov2, r1, r0};            end   // mov [R1] R0
@@ -126,11 +126,11 @@ module inst_ROM(
                     6'd23 : begin ns = cs; user_inst_addr_next = 12'd54;  user_inst_write_next = {op_mov3, r1, r2};            end   // mov r1 [R2]
                     6'd24 : begin ns = cs; user_inst_addr_next = 12'd55;  user_inst_write_next = {op_mov1, r4, r0};            end   // mov r4 r0
                     6'd25 : begin ns = cs; user_inst_addr_next = 12'd56;  user_inst_write_next = {op_cmp,  r1, r4};            end   // cmp r1 r4
-                    6'd26 : begin ns = cs; user_inst_addr_next = 12'd57;  user_inst_write_next = {op_je,   12'd59};            end   // je
+                    6'd26 : begin ns = cs; user_inst_addr_next = 12'd57;  user_inst_write_next = {op_je,   12'd60};            end   // je
                     6'd27 : begin ns = cs; user_inst_addr_next = 12'd58;  user_inst_write_next = {op_inc,  r5, dc};            end   // R5 = R5+1 (should be skipped)
                     6'd28 : begin ns = cs; user_inst_addr_next = 12'd59;  user_inst_write_next = {op_inc,  r5, dc};            end   // R5 = R5+1 (should be skipped)
                     6'd29 : begin ns = cs; user_inst_addr_next = 12'd60;  user_inst_write_next = {op_cmp,  r1, r2};            end   // cmp r1 r2
-                    6'd30 : begin ns = cs; user_inst_addr_next = 12'd61;  user_inst_write_next = {op_jne,  12'd63};            end   // jne r1 r4
+                    6'd30 : begin ns = cs; user_inst_addr_next = 12'd61;  user_inst_write_next = {op_jne,  12'd64};            end   // jne r1 r4
                     6'd31 : begin ns = cs; user_inst_addr_next = 12'd62;  user_inst_write_next = {op_inc,  r5, dc};            end   // R5 = R5+1 (should be skipped)
                     6'd32 : begin ns = cs; user_inst_addr_next = 12'd63;  user_inst_write_next = {op_inc,  r5, dc};            end   // R5 = R5+1 (should be skipped)
                     6'd33 : begin ns = 3;  user_inst_addr_next = 12'd64;  user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
@@ -138,8 +138,8 @@ module inst_ROM(
                 end
             3'b011: begin
                 ap_start = 1;
-                user_inst_addr = 0;
-                user_inst_write = 0;
+                user_inst_addr_next = 0;
+                user_inst_write_next = 0;
                 ns = 4;
                 cnt_next = 0;
                 end

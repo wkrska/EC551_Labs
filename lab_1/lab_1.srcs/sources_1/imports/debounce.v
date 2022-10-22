@@ -49,7 +49,7 @@ endmodule
 
 // D-flip-flop for debouncing module 
 module my_dff(input DFF_CLOCK, rst, D, output reg Q);
-    always @ (posedge DFF_CLOCK, rst) begin
+    always @ (posedge DFF_CLOCK) begin
         Q <= (rst) ? 1'b0 : D;
     end
 endmodule
