@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "X:/EC551/Lab1_CMN/Lab1_CMN.srcs/sources_1/new/Register_file.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Register_file
-INFO: [VRFC 10-2263] Analyzing Verilog file "X:/EC551/Lab1_CMN/Lab1_CMN.srcs/sim_1/new/t_Register_file.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module t_Register_file

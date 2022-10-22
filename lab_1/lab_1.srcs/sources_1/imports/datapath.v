@@ -11,7 +11,7 @@ module datapath (
     input [`dwidth_dat-1:0] user_inst_write,
     input [`awidth_mem-1:0] user_inst_addr,
     input [`awidth_reg-1:0] disp_RS,
-    input ap_start,
+    input ap_start, resume,
     output [`dwidth_dat-1:0] disp_RD
 );
 
@@ -34,16 +34,46 @@ module datapath (
     localparam op_halt = 4'b0000; 
 
     //--------- AP Start FSM ---------//
-    wire halt_flag;
+    // starts datapath 
     reg ap_start_cs, ap_start_ns;
-    always @(ap_start, rst, halt_flag) begin
+    always @(ap_start, rst) begin
         case (ap_start_cs)
             1'b0: ap_start_ns = (ap_start) ? 1'b1 : 1'b0;
-            1'b1: ap_start_ns = (halt_flag || rst) ? 1'b0 : 1'b1;
+            1'b1: ap_start_ns = (rst) ? 1'b0 : 1'b1;
         endcase
     end
     always @(posedge clk)
         ap_start_cs <= (rst) ? 1'b0 : ap_start_ns;
+
+    // ---------- Halt FSM -----------//
+    // Stalls entire datapath when a halt is encounterd by disconnecting the clock
+    wire clk_local, halt_flag;
+    reg clk_sel;
+    assign clk_local = (clk_sel) ? clk : 'b0;
+    reg [2:0] halt_cs, halt_ns;
+    always @(*) begin
+        case(halt_cs)
+            2'b00 : begin // normal operation
+                halt_ns = (halt_flag && ap_start_cs) ? 2'b01 : 2'b00;
+                clk_sel = 1; // normal clk
+            end
+            2'b01 : begin // halted
+                halt_ns = (resume) ? 2'b10 : halt_ns;
+                clk_sel = 0; // halted clk
+            end
+            2'b10 : begin // 1 clk delay to clear halt flag
+                clk_sel = 1;
+                halt_ns = 0;
+            end
+            2'b11 : begin // 1 clk delay to clear halt flag
+                clk_sel = 1;
+                halt_ns = 0;
+            end
+        endcase
+    end
+    always @(posedge clk)
+        halt_cs <= (rst) ? 2'b00 : halt_ns;
+
     
     //----------- IF stage -----------//
     wire [`dwidth_dat-1:0] INST_next, INST_curr, INST_read;
@@ -64,16 +94,16 @@ module datapath (
     wire [`awidth_mem-1:0] imm_ID, imm_EX;
 
     wire [`dwidth_dat-1:0] RES_EX, RES_WB;
-    wire FLAG_EX, FLAG_WB;
+    wire JUMP_EX, JUMP_WB, jump_flag;
 
     Fetch_unit fetch_0(
-        .clk(clk),
+        .clk(clk_local),
         .rst(rst),
         .PC_in(PC_curr),
         .inst_in(INST_read),
         .imm_in(RES_WB),
-        .ctrl_jump(FLAG_WB),
-        .ctrl_nop((ap_start_cs == 1'b0) ? 1'b1 : 1'b0),
+        .jump_flag(jump_flag), // Stalls while jump is evaluated
+        .ctrl_jump(JUMP_WB),
         .ctrl_ap_start(ap_start_cs),
         .inst_out(INST_next),
         .PC_out(PC_next),
@@ -81,7 +111,7 @@ module datapath (
     );
 
     reg_param  #(.SIZE(`dwidth_dat)) reg0 (
-        .clk(clk),
+        .clk(clk_local),
         .rst(rst),
         .din(INST_next),
         .dout(INST_curr)
@@ -94,16 +124,17 @@ module datapath (
         .Rm(RM_ID),
         .Rn(RN_ID),
         .op(OP_ID),
-        .imm(imm_ID)
+        .imm(imm_ID),
+        .jump_flag(jump_flag)
     );
 
     wire RF_WE;
-    assign RF_WE = (OP_WB != op_cmp) && (OP_WB != op_mov2) && (OP_WB != op_mov4) && (OP_WB != op_jmp) && (OP_WB != op_je) && (OP_WB != op_jne) && (OP_WB != op_nop) &&  (OP_WB != op_halt);
+    assign RF_WE = (OP_WB != op_cmp) && (OP_WB != op_mov2) && (OP_WB != op_mov4) && (OP_WB != op_jmp) && (OP_WB != op_je) && (OP_WB != op_jne) && (OP_WB != op_nop);
     Register_file rf_0(
-        .clk(clk),
+        .clk(clk_local),
         .rst(rst),
         .RS1(RN_ID),
-        .RS2((OP_ID == op_mov0) ? 6'b0 : RM_ID), // avoid X
+        .RS2((OP_ID == op_mov0 || OP_ID == op_nop) ? 6'b0 : RM_ID), // avoid X
         .disp_RS(disp_RS),
         .WS(RN_WB),
         .WD(RES_WB),
@@ -130,7 +161,7 @@ module datapath (
     );
 
     reg_param #(.SIZE(2*`awidth_reg+4+3*`dwidth_dat+2*`awidth_mem)) reg1 (
-        .clk(clk),
+        .clk(clk_local),
         .rst(rst),
         .din({RN_ID, RM_ID, OP_ID, RF_D1_ID, RF_D2_ID, MEM_D_ID, imm_ID}),
         .dout({RN_EX, RM_EX, OP_EX, RF_D1_EX, RF_D2_EX, MEM_D_EX, imm_EX})
@@ -140,21 +171,21 @@ module datapath (
     ALU alu_0(
         .rst(rst),
         .op(OP_EX),
-        .din0((RN_EX==RN_WB) ? RES_WB : RF_D1_EX), // forward data destined to RN_EX
-        .din1((RM_EX==RN_WB) ? RES_WB : RF_D2_EX), // fprward data destined to RM_EX
+        .din0((RN_EX==RN_WB && RF_WE) ? RES_WB : RF_D1_EX), // forward data destined to RN_EX and make sure data was destined to RF
+        .din1((RM_EX==RN_WB && RF_WE) ? RES_WB : RF_D2_EX), // fprward data destined to RM_EX and make sure data was destined to RF
         .Rm_in(RM_EX),
-        .mem_in(MEM_D_EX),
+        .mem_in((RF_D2_EX == RF_D1_WB && MEM_WE) ? RES_WB : MEM_D_EX), // forward data destined for mem
         .imm_in(imm_EX),
         .dout(RES_EX),
-        .jump(FLAG_EX),
+        .jump(JUMP_EX),
         .halt(halt_flag)
     );
 
     reg_param #(.SIZE(2*`awidth_reg+4+2*`dwidth_dat+1)) reg2 (
-        .clk(clk),
+        .clk(clk_local),
         .rst(rst),
-        .din({RN_EX, RM_EX, OP_EX, RF_D1_EX, RES_EX, FLAG_EX}),
-        .dout({RN_WB, RM_WB, OP_WB, RF_D1_WB, RES_WB, FLAG_WB})
+        .din({RN_EX, RM_EX, OP_EX, RF_D1_EX, RES_EX, JUMP_EX}),
+        .dout({RN_WB, RM_WB, OP_WB, RF_D1_WB, RES_WB, JUMP_WB})
     );
 
 endmodule

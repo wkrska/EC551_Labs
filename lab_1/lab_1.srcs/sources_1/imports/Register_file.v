@@ -37,7 +37,7 @@ module Register_file(RS1, RS2, disp_RS, WS, WD, WE, RD1, RD2, disp_RD, PC_IN, PC
         end
 
     // Asynchronous read of Register File
-    always @(disp_RS, reg_file[6])
+    always @(disp_RS, reg_file[disp_RS])
         begin
             disp_RD = reg_file[disp_RS];
         end

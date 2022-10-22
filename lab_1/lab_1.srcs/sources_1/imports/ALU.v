@@ -42,7 +42,7 @@ module ALU(
         case (op)
             op_add : dout_t = din0+din1;                            // add
             op_sub : dout_t = din0-din1;                            // sub
-            op_inc : dout_t = din0+32'b1;                           // inc
+            op_inc : dout_t = din0+16'b1;                           // inc
             op_xor : dout_t = din0^din1;                            // xor
             op_cmp : dout_t = 0;                                    // cmp
             op_mov0: dout_t = {{(16-`awidth_reg){1'b0}},Rm_in};     // mov Rn, num
@@ -50,7 +50,7 @@ module ALU(
             op_mov2: dout_t = din1;                                 // mov [Rn], Rm
             op_mov3: dout_t = mem_in;                               // mov Rn, [Rm]
             op_mov4: dout_t = mem_in;                               // mov [Rn], [Rm]
-            op_sadd: dout_t = ((|din0[15:6]==0)?{{8{din0[5]}},din0[5:0]}:din0) + ((|din1[15:6]==0)?{{8{din1[5]}},din1[5:0]}:din1);                            // sadd
+            op_sadd: dout_t = ((|din0[15:6]==0)?{{10{din0[5]}},din0[5:0]}:din0) + ((|din1[15:6]==0)?{{10{din1[5]}},din1[5:0]}:din1);                            // sadd
             op_jmp : dout_t = {{(16-`awidth_mem){1'b0}},imm_in};    // jmp
             op_jne : dout_t = {{(16-`awidth_mem){1'b0}},imm_in};    // jne
             op_je  : dout_t = {{(16-`awidth_mem){1'b0}},imm_in};    // je

@@ -16,8 +16,8 @@ module memory(
     output [`dwidth_dat-1:0] dout
     );
 
-    // reg [`dwidth_dat-1:0] mem [(2**`awidth_mem):0];
-    reg [`dwidth_dat-1:0] mem [(2**6):0];
+//    reg [`dwidth_dat-1:0] mem [(2**`awidth_mem):0];
+    reg [`dwidth_dat-1:0] mem [(2**7):0]; //for debugging
     
     // init to 0;
     integer i;
@@ -34,6 +34,6 @@ module memory(
 
     // Assign output
     assign iout = mem[raddr_i];
-    assign dout = mem[raddr_d];
+    assign dout = (raddr_d == waddr) ? din : mem[raddr_d];
 
 endmodule

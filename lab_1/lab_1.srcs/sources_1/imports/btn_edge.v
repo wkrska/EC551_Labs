@@ -28,7 +28,7 @@ module btn_edge(
     );
     
     wire db_BTN;
-    debounce db(btnIn, CLK, db_BTN);
+    debounce db(btnIn, CLK, reset, db_BTN);
     
     reg BTN_f;
     reg BTN_sync;

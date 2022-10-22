@@ -1,19 +1,23 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 939031e321024f558539e0104ed568b1 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot t_datapath_behav xil_defaultlib.t_datapath xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
+Running: /ad/eng/opt/xilinx/Vivado/2019.1/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto 939031e321024f558539e0104ed568b1 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot t_top_behav xil_defaultlib.t_top xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
 Starting static elaboration
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 12 for port 'imm_in' [X:/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:74]
-WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 6 for port 'op' [X:/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:96]
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 12 for port 'raddr_i' [X:/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:123]
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 12 for port 'raddr_d' [X:/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:124]
-WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 12 for port 'waddr' [X:/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:125]
-WARNING: [VRFC 10-3091] actual bit length 76 differs from formal bit length 88 for port 'din' [X:/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:135]
-WARNING: [VRFC 10-3091] actual bit length 76 differs from formal bit length 88 for port 'dout' [X:/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:136]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 12 for port 'imm_in' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:104]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 6 for port 'op' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:126]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 12 for port 'raddr_i' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:154]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 12 for port 'raddr_d' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:155]
+WARNING: [VRFC 10-3091] actual bit length 16 differs from formal bit length 12 for port 'waddr' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:156]
+WARNING: [VRFC 10-3091] actual bit length 76 differs from formal bit length 88 for port 'din' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:166]
+WARNING: [VRFC 10-3091] actual bit length 76 differs from formal bit length 88 for port 'dout' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:167]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clock_div
+Compiling module xil_defaultlib.my_dff
+Compiling module xil_defaultlib.debounce
+Compiling module xil_defaultlib.btn_edge
 Compiling module xil_defaultlib.Fetch_unit
 Compiling module xil_defaultlib.reg_param(SIZE=16)
 Compiling module xil_defaultlib.Decoder
@@ -23,6 +27,11 @@ Compiling module xil_defaultlib.reg_param(SIZE=88)
 Compiling module xil_defaultlib.ALU
 Compiling module xil_defaultlib.reg_param(SIZE=49)
 Compiling module xil_defaultlib.datapath
-Compiling module xil_defaultlib.t_datapath
+Compiling module xil_defaultlib.inst_ROM
+Compiling module xil_defaultlib.vga_controller_640_60
+Compiling module xil_defaultlib.reduced_font_rom
+Compiling module xil_defaultlib.top_VGA
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.t_top
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot t_datapath_behav
+Built simulation snapshot t_top_behav
