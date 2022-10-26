@@ -158,7 +158,7 @@ module inst_ROM(
                     6'd18 : begin ns = cs; user_inst_addr_next = 12'd49;  user_inst_write_next = {op_mov2, r3, r5};            end   // mov [R3] R5
                     6'd19 : begin ns = cs; user_inst_addr_next = 12'd50;  user_inst_write_next = {op_mov3, r0, r2};            end   // mov r0 [R2]
                     6'd20 : begin ns = cs; user_inst_addr_next = 12'd51;  user_inst_write_next = {op_mov3, r1, r3};            end   // mov r1 [R3]
-                    6'd21 : begin ns = cs; user_inst_addr_next = 12'd52; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+                    6'd21 : begin ns =  3; user_inst_addr_next = 12'd52; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
                                                                                                     
                     
                 endcase

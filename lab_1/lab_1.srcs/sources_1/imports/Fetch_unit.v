@@ -20,8 +20,11 @@ module Fetch_unit(
         case (stall_cs)
             2'b00: stall_ns = (jump_flag) ? 2'b01 : 2'b00;
             2'b01: stall_ns = 2'b10; // stall one clock
-            2'b10: stall_ns = 2'b11; // stall one clock
-            2'b11: stall_ns = 2'b00; // stall one last clock
+            2'b10: stall_ns = 2'b00; // stall one clock
+//            2'b11: stall_ns = 2'b00; // stall one last clock
+            
+//            2'b00: stall_ns = (jump_flag) ? 2'b01 : 2'b00;
+//            2'b01: stall_ns = 2'b00; // stall one clock
         endcase
     end
     always @(posedge clk)
@@ -29,11 +32,14 @@ module Fetch_unit(
 
     // Determine if NOP
     wire ctrl_nop;
-    assign ctrl_nop = (!ctrl_ap_start || (|stall_ns));
+    assign ctrl_nop = (!ctrl_ap_start || (|stall_ns) || (|stall_cs));
 
     // Assign outputs
     assign inst_out = (ctrl_nop) ? 16'b1111_110000_110000 : inst_in;
-    assign PC_out = (rst) ? `inst_start : ((stall_cs==2'b01) ? PC_in : ((ctrl_jump) ? {{4{1'b0}}, imm_in} : PC_in + 1));
+    assign PC_out = (rst) ? `inst_start : ((|stall_ns) ? PC_in : ((ctrl_jump) ? {{4{1'b0}}, imm_in} : ((|stall_cs) ? PC_in : PC_in + 1)));
     assign PC_en = (ctrl_ap_start || rst) ? 1'b1 : 1'b0;
+    
+    wire [1:0] temp_sel;
+    assign temp_sel = (rst) ? 0 : ((|stall_ns) ? 1 : ((ctrl_jump) ? {{4{1'b0}}, 2} : 3));
 
 endmodule

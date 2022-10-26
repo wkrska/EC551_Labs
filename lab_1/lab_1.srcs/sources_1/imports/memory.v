@@ -34,6 +34,6 @@ module memory(
 
     // Assign output
     assign iout = mem[raddr_i];
-    assign dout = (raddr_d == waddr) ? din : mem[raddr_d];
+    assign dout = (raddr_d == waddr && wen) ? din : mem[raddr_d];
 
 endmodule
