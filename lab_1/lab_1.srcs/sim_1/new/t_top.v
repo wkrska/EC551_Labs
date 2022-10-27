@@ -48,7 +48,11 @@ initial begin
     
     #1 rst = 1;
     #10 rst = 0;
-    #110 resume_btn = 1; #10; resume_btn = 0;
+    #110 resume_btn = 1; 
+    #10; resume_btn = 0;
+ //   #1000000 switch_RS=6'b1;
+ //   #1000000 switch_RS=6'b10;
+ //   #1000000 switch_RS=6'b11;
     #50 resume_btn = 1; #10; resume_btn = 0;
     #50 resume_btn = 1; #10; resume_btn = 0;
     #250 resume_btn = 1; #10; resume_btn = 0;

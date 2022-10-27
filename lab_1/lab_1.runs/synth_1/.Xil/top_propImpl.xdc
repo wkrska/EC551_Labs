@@ -1,8 +1,8 @@
-set_property SRC_FILE_INFO {cfile:/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc rfile:../../../lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc} rfile:../../../lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN E3 IOSTANDARD LVCMOS33} [get_ports CLK100MHZ]
 set_property src_info {type:XDC file:1 line:77 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN N17   IOSTANDARD LVCMOS33 } [get_ports { resume_btn }]; #IO_L9P_T1_DQS_14 Sch=btnc
+set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { resume_btn }]; #IO_L9P_T1_DQS_14 Sch=btnc
 set_property src_info {type:XDC file:1 line:136 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN A3 IOSTANDARD LVCMOS33} [get_ports {VGA_R[0]}]
 set_property src_info {type:XDC file:1 line:137 export:INPUT save:INPUT read:READ} [current_design]
@@ -31,8 +31,6 @@ set_property src_info {type:XDC file:1 line:148 export:INPUT save:INPUT read:REA
 set_property -dict {PACKAGE_PIN B11 IOSTANDARD LVCMOS33} [get_ports VGA_HS]
 set_property src_info {type:XDC file:1 line:149 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN B12 IOSTANDARD LVCMOS33} [get_ports VGA_VS]
-set_property src_info {type:XDC file:1 line:152 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN E2    IOSTANDARD LVCMOS33 } [get_ports { rst }]; #IO_L14P_T2_SRCC_35 Sch=sd_reset
 set_property src_info {type:XDC file:1 line:222 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN J15 [get_ports {switch_RS[0]}]
 set_property src_info {type:XDC file:1 line:223 export:INPUT save:INPUT read:READ} [current_design]

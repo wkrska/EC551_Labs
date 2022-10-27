@@ -4,34 +4,33 @@
 
 
 ****** Vivado v2019.1 (64-bit)
-  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
   **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source top.tcl -notrace
-create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 1469.609 ; gain = 2.023 ; free physical = 54475 ; free virtual = 69633
 Command: synth_design -top top -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 26300 
-WARNING: [Synth 8-6901] identifier 'jmp_addr' is used before its declaration [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:68]
-WARNING: [Synth 8-6901] identifier 'jmp_addr_next' is used before its declaration [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:68]
+INFO: Helper process launched with PID 11580 
+WARNING: [Synth 8-6901] identifier 'jmp_addr' is used before its declaration [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:68]
+WARNING: [Synth 8-6901] identifier 'jmp_addr_next' is used before its declaration [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:68]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1866.305 ; gain = 154.555 ; free physical = 54084 ; free virtual = 69241
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 815.535 ; gain = 183.258
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/top.v:23]
-INFO: [Synth 8-6157] synthesizing module 'btn_edge' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/btn_edge.v:23]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clock_div' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:41]
-INFO: [Synth 8-6155] done synthesizing module 'clock_div' (1#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:41]
-INFO: [Synth 8-6157] synthesizing module 'my_dff' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:51]
-INFO: [Synth 8-6155] done synthesizing module 'my_dff' (2#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:51]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (3#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'btn_edge' (4#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/btn_edge.v:23]
-INFO: [Synth 8-6157] synthesizing module 'datapath' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:8]
+INFO: [Synth 8-6157] synthesizing module 'top' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'btn_edge' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/btn_edge.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_div' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'clock_div' (1#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:41]
+INFO: [Synth 8-6157] synthesizing module 'my_dff' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'my_dff' (2#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (3#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'btn_edge' (4#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/btn_edge.v:23]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:8]
 	Parameter op_add bound to: 4'b0101 
 	Parameter op_sub bound to: 4'b0110 
 	Parameter op_inc bound to: 4'b0001 
@@ -48,137 +47,138 @@ INFO: [Synth 8-6157] synthesizing module 'datapath' [/ad/eng/users/w/k/wkrska/Do
 	Parameter op_je bound to: 4'b0100 
 	Parameter op_nop bound to: 4'b1111 
 	Parameter op_halt bound to: 4'b0000 
-WARNING: [Synth 8-567] referenced signal 'ap_start_cs' should be on the sensitivity list [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:39]
-INFO: [Synth 8-155] case statement is not full and has no default [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:55]
-INFO: [Synth 8-6157] synthesizing module 'Fetch_unit' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v:8]
-INFO: [Synth 8-155] case statement is not full and has no default [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'Fetch_unit' (5#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v:8]
-WARNING: [Synth 8-689] width (16) of port connection 'imm_in' does not match port width (12) of module 'Fetch_unit' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:104]
-INFO: [Synth 8-6157] synthesizing module 'reg_param' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
+WARNING: [Synth 8-567] referenced signal 'ap_start_cs' should be on the sensitivity list [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:39]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:55]
+INFO: [Synth 8-6157] synthesizing module 'Fetch_unit' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v:8]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'Fetch_unit' (5#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v:8]
+WARNING: [Synth 8-689] width (16) of port connection 'imm_in' does not match port width (12) of module 'Fetch_unit' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:104]
+INFO: [Synth 8-6157] synthesizing module 'reg_param' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
 	Parameter SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_param' (6#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Decoder' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Decoder.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'reg_param' (6#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Decoder' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Decoder.v:8]
 	Parameter op_jmp bound to: 4'b0010 
 	Parameter op_jne bound to: 4'b0011 
 	Parameter op_je bound to: 4'b0100 
-INFO: [Synth 8-6155] done synthesizing module 'Decoder' (7#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Decoder.v:8]
-WARNING: [Synth 8-689] width (4) of port connection 'op' does not match port width (6) of module 'Decoder' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:126]
-INFO: [Synth 8-6157] synthesizing module 'Register_file' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'Decoder' (7#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Decoder.v:8]
+WARNING: [Synth 8-689] width (4) of port connection 'op' does not match port width (6) of module 'Decoder' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:126]
+INFO: [Synth 8-6157] synthesizing module 'Register_file' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:8]
 	Parameter REGSIZE bound to: 7 - type: integer 
-WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:22]
-WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:28]
-INFO: [Synth 8-6155] done synthesizing module 'Register_file' (8#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:8]
-INFO: [Synth 8-6157] synthesizing module 'memory' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:8]
-WARNING: [Synth 8-324] index 129 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 130 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 131 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 132 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 133 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 134 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 135 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 136 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 137 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 138 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 139 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 140 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 141 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 142 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 143 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 144 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 145 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 146 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 147 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 148 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 149 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 150 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 151 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 152 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 153 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 154 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 155 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 156 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 157 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 158 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 159 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 160 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 161 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 162 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 163 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 164 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 165 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 166 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 167 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 168 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 169 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 170 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 171 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 172 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 173 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 174 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 175 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 176 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 177 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 178 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 179 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 180 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 181 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 182 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 183 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 184 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 185 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 186 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 187 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 188 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 189 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 190 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 191 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 192 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 193 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 194 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 195 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 196 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 197 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 198 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 199 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 200 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 201 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 202 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 203 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 204 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 205 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 206 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 207 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 208 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 209 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 210 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 211 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 212 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 213 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 214 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 215 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 216 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 217 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 218 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 219 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 220 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 221 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 222 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 223 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 224 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 225 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 226 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 227 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-324] index 228 out of range [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:22]
+WARNING: [Synth 8-567] referenced signal 'WE' should be on the sensitivity list [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:28]
+WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'Register_file' (8#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v:8]
+INFO: [Synth 8-6157] synthesizing module 'memory' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:8]
+WARNING: [Synth 8-324] index 129 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 130 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 131 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 132 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 133 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 134 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 135 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 136 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 137 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 138 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 139 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 140 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 141 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 142 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 143 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 144 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 145 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 146 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 147 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 148 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 149 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 150 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 151 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 152 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 153 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 154 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 155 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 156 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 157 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 158 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 159 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 160 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 161 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 162 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 163 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 164 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 165 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 166 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 167 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 168 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 169 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 170 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 171 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 172 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 173 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 174 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 175 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 176 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 177 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 178 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 179 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 180 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 181 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 182 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 183 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 184 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 185 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 186 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 187 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 188 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 189 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 190 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 191 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 192 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 193 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 194 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 195 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 196 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 197 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 198 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 199 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 200 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 201 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 202 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 203 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 204 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 205 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 206 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 207 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 208 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 209 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 210 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 211 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 212 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 213 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 214 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 215 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 216 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 217 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 218 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 219 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 220 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 221 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 222 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 223 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 224 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 225 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 226 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 227 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-324] index 228 out of range [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
 INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6155] done synthesizing module 'memory' (9#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:8]
-WARNING: [Synth 8-689] width (16) of port connection 'raddr_i' does not match port width (12) of module 'memory' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:154]
-WARNING: [Synth 8-689] width (16) of port connection 'raddr_d' does not match port width (12) of module 'memory' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:155]
-WARNING: [Synth 8-689] width (16) of port connection 'waddr' does not match port width (12) of module 'memory' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:156]
-INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized0' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (9#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:8]
+WARNING: [Synth 8-689] width (16) of port connection 'raddr_i' does not match port width (12) of module 'memory' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:154]
+WARNING: [Synth 8-689] width (16) of port connection 'raddr_d' does not match port width (12) of module 'memory' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:155]
+WARNING: [Synth 8-689] width (16) of port connection 'waddr' does not match port width (12) of module 'memory' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:156]
+INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized0' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
 	Parameter SIZE bound to: 88 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized0' (9#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
-WARNING: [Synth 8-689] width (76) of port connection 'dout' does not match port width (88) of module 'reg_param__parameterized0' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:167]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized0' (9#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
+WARNING: [Synth 8-689] width (76) of port connection 'dout' does not match port width (88) of module 'reg_param__parameterized0' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:167]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:8]
 	Parameter op_add bound to: 4'b0101 
 	Parameter op_sub bound to: 4'b0110 
 	Parameter op_inc bound to: 4'b0001 
@@ -195,14 +195,14 @@ INFO: [Synth 8-6157] synthesizing module 'ALU' [/ad/eng/users/w/k/wkrska/Documen
 	Parameter op_je bound to: 4'b0100 
 	Parameter op_nop bound to: 4'b1111 
 	Parameter op_halt bound to: 4'b0000 
-INFO: [Synth 8-226] default block is never used [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:42]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:63]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (10#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:8]
-INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized1' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
+INFO: [Synth 8-226] default block is never used [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:42]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (10#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:8]
+INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized1' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
 	Parameter SIZE bound to: 49 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized1' (10#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'datapath' (11#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:8]
-INFO: [Synth 8-6157] synthesizing module 'inst_ROM' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized1' (10#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (11#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v:8]
+INFO: [Synth 8-6157] synthesizing module 'inst_ROM' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:23]
 	Parameter op_add bound to: 4'b0101 
 	Parameter op_sub bound to: 4'b0110 
 	Parameter op_inc bound to: 4'b0001 
@@ -226,12 +226,12 @@ INFO: [Synth 8-6157] synthesizing module 'inst_ROM' [/ad/eng/users/w/k/wkrska/Do
 	Parameter r4 bound to: 6'b000100 
 	Parameter r5 bound to: 6'b000101 
 	Parameter dc bound to: 6'b000000 
-INFO: [Synth 8-155] case statement is not full and has no default [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:97]
-INFO: [Synth 8-155] case statement is not full and has no default [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:75]
-WARNING: [Synth 8-6014] Unused sequential element jmp_addr_reg was removed.  [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:68]
-INFO: [Synth 8-6155] done synthesizing module 'inst_ROM' (12#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:23]
-INFO: [Synth 8-6157] synthesizing module 'top_VGA' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:357]
-INFO: [Synth 8-6157] synthesizing module 'vga_controller_640_60' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:8]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:97]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:75]
+WARNING: [Synth 8-6014] Unused sequential element jmp_addr_reg was removed.  [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:68]
+INFO: [Synth 8-6155] done synthesizing module 'inst_ROM' (12#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'top_VGA' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:357]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller_640_60' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:8]
 	Parameter HMAX bound to: 800 - type: integer 
 	Parameter VMAX bound to: 525 - type: integer 
 	Parameter HLINES bound to: 640 - type: integer 
@@ -241,11 +241,11 @@ INFO: [Synth 8-6157] synthesizing module 'vga_controller_640_60' [/ad/eng/users/
 	Parameter VFP bound to: 482 - type: integer 
 	Parameter VSP bound to: 484 - type: integer 
 	Parameter SPP bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'vga_controller_640_60' (13#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:8]
-INFO: [Synth 8-6157] synthesizing module 'reduced_font_rom' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:66]
-INFO: [Synth 8-6155] done synthesizing module 'reduced_font_rom' (14#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:66]
-INFO: [Synth 8-6155] done synthesizing module 'top_VGA' (15#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:357]
-INFO: [Synth 8-6155] done synthesizing module 'top' (16#1) [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/top.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller_640_60' (13#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:8]
+INFO: [Synth 8-6157] synthesizing module 'reduced_font_rom' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'reduced_font_rom' (14#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'top_VGA' (15#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v:357]
+INFO: [Synth 8-6155] done synthesizing module 'top' (16#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/top.v:23]
 WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[11]
 WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[10]
 WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[9]
@@ -254,7 +254,7 @@ WARNING: [Synth 8-3331] design Register_file has unconnected port disp_RS[5]
 WARNING: [Synth 8-3331] design Register_file has unconnected port disp_RS[4]
 WARNING: [Synth 8-3331] design Register_file has unconnected port disp_RS[3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2027.793 ; gain = 316.043 ; free physical = 54003 ; free virtual = 69163
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:15 . Memory (MB): peak = 1010.074 ; gain = 377.797
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -267,43 +267,43 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2046.598 ; gain = 334.848 ; free physical = 54022 ; free virtual = 69183
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:22 . Memory (MB): peak = 1010.074 ; gain = 377.797
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2046.598 ; gain = 334.848 ; free physical = 54022 ; free virtual = 69183
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:22 . Memory (MB): peak = 1010.074 ; gain = 377.797
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc]
-Finished Parsing XDC File [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
+Parsing XDC File [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc]
+Finished Parsing XDC File [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2196.250 ; gain = 0.000 ; free physical = 53824 ; free virtual = 68986
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1148.582 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2196.250 ; gain = 0.000 ; free physical = 53824 ; free virtual = 68986
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1148.582 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 2196.254 ; gain = 484.504 ; free physical = 53993 ; free virtual = 69155
+Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1148.582 ; gain = 516.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 2196.254 ; gain = 484.504 ; free physical = 53993 ; free virtual = 69155
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:37 . Memory (MB): peak = 1148.582 ; gain = 516.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:32 . Memory (MB): peak = 2196.254 ; gain = 484.504 ; free physical = 53993 ; free virtual = 69155
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:38 . Memory (MB): peak = 1148.582 ; gain = 516.305
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v:42]
 INFO: [Synth 8-802] inferred FSM for state register 'halt_cs_reg' in module 'datapath'
 INFO: [Synth 8-802] inferred FSM for state register 'cs_reg' in module 'inst_ROM'
 INFO: [Synth 8-5546] ROM "ns" won't be mapped to RAM because it is too sparse
@@ -312,106 +312,106 @@ INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because add
 INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-WARNING: [Synth 8-327] inferring latch for variable 'stall_ns_reg' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v:21]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[128]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[127]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[126]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[125]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[124]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[123]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[122]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[121]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[120]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[119]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[118]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[117]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[116]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[115]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[114]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[113]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[112]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[111]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[110]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[109]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[108]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[107]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[106]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[105]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[104]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[103]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[102]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[101]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[100]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[99]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[98]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[97]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[96]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[95]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[94]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[93]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[92]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[91]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[90]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[89]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[88]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[87]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[86]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[85]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[84]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[83]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[82]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[81]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[80]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[79]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[78]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[77]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[76]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[75]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[74]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[73]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[72]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[71]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[70]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[69]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[68]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[67]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[66]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[65]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[64]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[63]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[62]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[61]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[60]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[59]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[58]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[57]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[56]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[55]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[54]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[53]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[52]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[51]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[50]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[49]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[48]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[47]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[46]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[45]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[44]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[43]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[42]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[41]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[40]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[39]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[38]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[37]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[36]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[35]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[34]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[33]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[32]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[31]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[30]' [/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'stall_ns_reg' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v:21]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[128]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[127]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[126]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[125]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[124]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[123]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[122]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[121]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[120]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[119]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[118]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[117]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[116]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[115]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[114]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[113]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[112]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[111]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[110]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[109]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[108]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[107]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[106]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[105]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[104]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[103]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[102]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[101]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[100]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[99]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[98]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[97]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[96]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[95]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[94]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[93]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[92]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[91]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[90]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[89]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[88]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[87]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[86]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[85]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[84]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[83]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[82]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[81]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[80]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[79]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[78]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[77]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[76]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[75]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[74]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[73]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[72]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[71]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[70]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[69]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[68]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[67]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[66]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[65]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[64]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[63]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[62]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[61]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[60]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[59]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[58]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[57]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[56]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[55]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[54]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[53]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[52]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[51]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[50]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[49]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[48]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[47]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[46]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[45]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[44]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[43]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[42]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[41]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[40]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[39]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[38]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[37]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[36]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[35]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[34]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[33]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[32]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[31]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[30]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v:27]
 INFO: [Common 17-14] Message 'Synth 8-327' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -432,29 +432,28 @@ INFO: [Synth 8-3354] encoded FSM with state register 'halt_cs_reg' using encodin
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'cs_reg' using encoding 'one-hot' in module 'inst_ROM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:33 ; elapsed = 00:00:45 . Memory (MB): peak = 2196.262 ; gain = 484.512 ; free physical = 53891 ; free virtual = 69055
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:36 ; elapsed = 00:00:59 . Memory (MB): peak = 1148.582 ; gain = 516.305
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |memory__GB0   |           1|     31260|
-|2     |memory__GB1   |           1|     10222|
-|3     |memory__GB2   |           1|     20914|
-|4     |memory__GB3   |           1|     18682|
-|5     |memory__GB4   |           1|     20751|
-|6     |memory__GB5   |           1|     31262|
-|7     |memory__GB6   |           1|      8177|
-|8     |memory__GB7   |           1|     19462|
-|9     |memory__GB8   |           1|     16608|
-|10    |memory__GB9   |           1|     34175|
-|11    |memory__GB10  |           1|     10378|
-|12    |memory__GB11  |           1|     33559|
-|13    |memory__GB12  |           1|     10228|
-|14    |memory__GB13  |           1|     12268|
-|15    |datapath__GC0 |           1|      1582|
-|16    |top__GC0      |           1|      3179|
+|1     |memory__GB0   |           1|     26981|
+|2     |memory__GB1   |           1|     26226|
+|3     |memory__GB2   |           1|     31448|
+|4     |memory__GB3   |           1|      8180|
+|5     |memory__GB4   |           1|     12270|
+|6     |memory__GB5   |           1|     26993|
+|7     |memory__GB6   |           1|     18669|
+|8     |memory__GB7   |           1|     17375|
+|9     |memory__GB8   |           1|     31492|
+|10    |memory__GB9   |           1|     10224|
+|11    |memory__GB10  |           1|     12266|
+|12    |memory__GB11  |           1|     29806|
+|13    |memory__GB12  |           1|     26017|
+|14    |datapath__GC0 |           1|      1553|
+|15    |top__GC0      |           1|      3235|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -480,7 +479,6 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit        Muxes := 143   
 	  16 Input     16 Bit        Muxes := 3     
 	   7 Input     16 Bit        Muxes := 1     
-	  35 Input     16 Bit        Muxes := 1     
 	   5 Input     16 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 2     
 	   5 Input     12 Bit        Muxes := 2     
@@ -489,7 +487,7 @@ Detailed RTL Component Info :
 	   2 Input      6 Bit        Muxes := 1     
 	   5 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
-	  35 Input      5 Bit        Muxes := 1     
+	  23 Input      5 Bit        Muxes := 1     
 	  16 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 2     
 	   4 Input      3 Bit        Muxes := 1     
@@ -500,7 +498,7 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 31    
 	   4 Input      1 Bit        Muxes := 2     
 	   3 Input      1 Bit        Muxes := 4     
-	  35 Input      1 Bit        Muxes := 1     
+	  23 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 4     
 	   8 Input      1 Bit        Muxes := 1     
 	  16 Input      1 Bit        Muxes := 1     
@@ -601,16 +599,15 @@ Detailed RTL Component Info :
 	               16 Bit    Registers := 1     
 	               12 Bit    Registers := 2     
 +---Muxes : 
-	  35 Input     16 Bit        Muxes := 1     
 	   5 Input     16 Bit        Muxes := 1     
 	   2 Input     12 Bit        Muxes := 1     
 	   5 Input     12 Bit        Muxes := 2     
 	   5 Input      5 Bit        Muxes := 1     
 	   2 Input      5 Bit        Muxes := 2     
-	  35 Input      5 Bit        Muxes := 1     
+	  23 Input      5 Bit        Muxes := 1     
 	   5 Input      3 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 3     
-	  35 Input      1 Bit        Muxes := 1     
+	  23 Input      1 Bit        Muxes := 1     
 	   5 Input      1 Bit        Muxes := 4     
 Module vga_controller_640_60 
 Detailed RTL Component Info : 
@@ -645,42 +642,43 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Why this net has no driver: _order_recur <const0>
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[0]' (FDR) to 'dp1i_15/reg1/dout_reg[64]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[1]' (FDR) to 'dp1i_15/reg1/dout_reg[65]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[2]' (FDR) to 'dp1i_15/reg1/dout_reg[66]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[3]' (FDR) to 'dp1i_15/reg1/dout_reg[67]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[4]' (FDR) to 'dp1i_15/reg1/dout_reg[68]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[5]' (FDR) to 'dp1i_15/reg1/dout_reg[69]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[6]' (FDR) to 'dp1i_15/reg1/dout_reg[70]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[7]' (FDR) to 'dp1i_15/reg1/dout_reg[71]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[8]' (FDR) to 'dp1i_15/reg1/dout_reg[72]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[9]' (FDR) to 'dp1i_15/reg1/dout_reg[73]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[10]' (FDR) to 'dp1i_15/reg1/dout_reg[74]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[11]' (FDR) to 'dp1i_15/reg1/dout_reg[75]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (dp1i_15/\fetch_0/stall_ns_reg[2] )
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[87]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[86]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[85]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[84]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[83]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[82]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[81]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[80]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[79]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[78]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[77]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
-INFO: [Synth 8-3886] merging instance 'dp1i_15/reg1/dout_reg[76]' (FDR) to 'dp1i_15/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[0]' (FDR) to 'dp1i_14/reg1/dout_reg[64]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[1]' (FDR) to 'dp1i_14/reg1/dout_reg[65]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[2]' (FDR) to 'dp1i_14/reg1/dout_reg[66]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[3]' (FDR) to 'dp1i_14/reg1/dout_reg[67]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[4]' (FDR) to 'dp1i_14/reg1/dout_reg[68]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[5]' (FDR) to 'dp1i_14/reg1/dout_reg[69]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[6]' (FDR) to 'dp1i_14/reg1/dout_reg[70]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[7]' (FDR) to 'dp1i_14/reg1/dout_reg[71]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[8]' (FDR) to 'dp1i_14/reg1/dout_reg[72]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[9]' (FDR) to 'dp1i_14/reg1/dout_reg[73]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[10]' (FDR) to 'dp1i_14/reg1/dout_reg[74]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[11]' (FDR) to 'dp1i_14/reg1/dout_reg[75]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (dp1i_14/\fetch_0/stall_ns_reg[2] )
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[76]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[77]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[78]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[79]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[80]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[81]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[82]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[83]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[84]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[85]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[86]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[87]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
 INFO: [Synth 8-3886] merging instance 'i_0/VGA1/address_init_part_reg[0]' (LD) to 'i_0/VGA1/address_init_part_reg[3]'
 INFO: [Synth 8-3886] merging instance 'i_0/VGA1/address_init_part_reg[1]' (LD) to 'i_0/VGA1/address_init_part_reg[3]'
 INFO: [Synth 8-3886] merging instance 'i_0/VGA1/address_init_part_reg[2]' (LD) to 'i_0/VGA1/address_init_part_reg[3]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\VGA1/address_init_part_reg[3] )
-INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_write_next_reg[9]' (LD) to 'i_0/ROM1/user_inst_addr_next_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_write_next_reg[10]' (LD) to 'i_0/ROM1/user_inst_write_next_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_write_next_reg[4]' (LD) to 'i_0/ROM1/user_inst_write_next_reg[10]'
+INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_write_next_reg[9]' (LD) to 'i_0/ROM1/user_inst_addr_next_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_next_reg[6]' (LD) to 'i_0/ROM1/user_inst_addr_next_reg[7]'
 INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_next_reg[7]' (LD) to 'i_0/ROM1/user_inst_addr_next_reg[8]'
 INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_next_reg[8]' (LD) to 'i_0/ROM1/user_inst_addr_next_reg[9]'
 INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_next_reg[9]' (LD) to 'i_0/ROM1/user_inst_addr_next_reg[10]'
@@ -689,27 +687,29 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ROM1
 INFO: [Synth 8-3886] merging instance 'i_0/VGA1/VGA_R_reg[0]' (LDC) to 'i_0/VGA1/VGA_R_reg[1]'
 INFO: [Synth 8-3886] merging instance 'i_0/VGA1/VGA_R_reg[1]' (LDC) to 'i_0/VGA1/VGA_R_reg[2]'
 INFO: [Synth 8-3886] merging instance 'i_0/VGA1/VGA_R_reg[2]' (LDC) to 'i_0/VGA1/VGA_R_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_write_reg[9]' (FD) to 'i_0/ROM1/user_inst_addr_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_write_reg[10]' (FD) to 'i_0/ROM1/user_inst_write_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_write_reg[4]' (FD) to 'i_0/ROM1/user_inst_write_reg[10]'
+INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_write_reg[9]' (FD) to 'i_0/ROM1/user_inst_addr_reg[6]'
+INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_reg[6]' (FD) to 'i_0/ROM1/user_inst_addr_reg[7]'
 INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_reg[7]' (FD) to 'i_0/ROM1/user_inst_addr_reg[8]'
 INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_reg[8]' (FD) to 'i_0/ROM1/user_inst_addr_reg[9]'
 INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_reg[9]' (FD) to 'i_0/ROM1/user_inst_addr_reg[10]'
 INFO: [Synth 8-3886] merging instance 'i_0/ROM1/user_inst_addr_reg[10]' (FD) to 'i_0/ROM1/user_inst_addr_reg[11]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/\ROM1/user_inst_addr_reg[11] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:56 . Memory (MB): peak = 2200.168 ; gain = 488.418 ; free physical = 51188 ; free virtual = 66407
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:20 ; elapsed = 00:02:29 . Memory (MB): peak = 1148.582 ; gain = 516.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 ROM:
-+-----------------+--------------------+---------------+----------------+
-|Module Name      | RTL Object         | Depth x Width | Implemented As | 
-+-----------------+--------------------+---------------+----------------+
-|reduced_font_rom | data               | 256x8         | LUT            | 
-|top              | VGA1/rom_data/data | 256x8         | LUT            | 
-+-----------------+--------------------+---------------+----------------+
++-----------------+---------------------------+---------------+----------------+
+|Module Name      | RTL Object                | Depth x Width | Implemented As | 
++-----------------+---------------------------+---------------+----------------+
+|reduced_font_rom | data                      | 256x8         | LUT            | 
+|top              | ROM1/user_inst_write_next | 32x16         | LUT            | 
+|top              | VGA1/rom_data/data        | 256x8         | LUT            | 
++-----------------+---------------------------+---------------+----------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -719,62 +719,62 @@ Report RTL Partitions:
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |memory__GB0   |           1|      6934|
-|2     |memory__GB1   |           1|      2765|
-|3     |memory__GB2   |           1|      4602|
-|4     |memory__GB3   |           1|      3744|
-|5     |memory__GB4   |           1|      3705|
-|6     |memory__GB5   |           1|      4828|
-|7     |memory__GB6   |           1|      2566|
-|8     |memory__GB7   |           1|      3927|
-|9     |memory__GB8   |           1|      3437|
-|10    |memory__GB9   |           1|      7204|
-|11    |memory__GB10  |           1|      2834|
-|12    |memory__GB11  |           1|      5479|
-|13    |memory__GB12  |           1|      2616|
-|14    |memory__GB13  |           1|      2861|
-|15    |datapath__GC0 |           1|      1366|
-|16    |top__GC0      |           1|      1077|
+|1     |memory__GB0   |           1|      4422|
+|2     |memory__GB1   |           1|      4477|
+|3     |memory__GB2   |           1|      5235|
+|4     |memory__GB3   |           1|      2602|
+|5     |memory__GB4   |           1|      2810|
+|6     |memory__GB5   |           1|      4340|
+|7     |memory__GB6   |           1|      5419|
+|8     |memory__GB7   |           1|      3874|
+|9     |memory__GB8   |           1|      5248|
+|10    |memory__GB9   |           1|      2730|
+|11    |memory__GB10  |           1|      2710|
+|12    |memory__GB11  |           1|      6932|
+|13    |memory__GB12  |           1|      4715|
+|14    |datapath__GC0 |           1|      1385|
+|15    |top__GC0      |           1|      1035|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:11 ; elapsed = 00:02:05 . Memory (MB): peak = 2200.168 ; gain = 488.418 ; free physical = 51041 ; free virtual = 66285
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:29 ; elapsed = 00:02:44 . Memory (MB): peak = 1148.582 ; gain = 516.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:59 ; elapsed = 00:02:55 . Memory (MB): peak = 2523.191 ; gain = 811.441 ; free physical = 50832 ; free virtual = 66100
+Finished Timing Optimization : Time (s): cpu = 00:02:32 ; elapsed = 00:03:57 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |memory__GB0   |           1|      6934|
-|2     |memory__GB1   |           1|      2765|
-|3     |memory__GB2   |           1|      4602|
-|4     |memory__GB3   |           1|      3744|
-|5     |memory__GB4   |           1|      3705|
-|6     |memory__GB5   |           1|      4828|
-|7     |memory__GB6   |           1|      2566|
-|8     |memory__GB7   |           1|      3927|
-|9     |memory__GB8   |           1|      3437|
-|10    |memory__GB10  |           1|      2834|
-|11    |memory__GB11  |           1|      5479|
-|12    |memory__GB12  |           1|      2616|
-|13    |memory__GB13  |           1|      2861|
-|14    |top__GC0      |           1|      1077|
-|15    |top_GT0       |           1|      8580|
+|1     |memory__GB0   |           1|      4422|
+|2     |memory__GB1   |           1|      4477|
+|3     |memory__GB2   |           1|      5235|
+|4     |memory__GB3   |           1|      2602|
+|5     |memory__GB4   |           1|      2810|
+|6     |memory__GB5   |           1|      4340|
+|7     |memory__GB6   |           1|      5419|
+|8     |memory__GB7   |           1|      3874|
+|9     |memory__GB8   |           1|      5248|
+|10    |memory__GB9   |           1|      2730|
+|11    |memory__GB10  |           1|      2710|
+|12    |memory__GB12  |           1|      4715|
+|13    |top__GC0      |           1|      1035|
+|14    |top_GT0       |           1|      8910|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3886] merging instance 'ROM1/user_inst_write_next_reg[11]' (LD) to 'ROM1/user_inst_write_next_reg[10]'
+INFO: [Synth 8-3886] merging instance 'ROM1/user_inst_write_reg[11]' (FD) to 'ROM1/user_inst_write_reg[10]'
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:09 ; elapsed = 00:03:05 . Memory (MB): peak = 2523.199 ; gain = 811.449 ; free physical = 50994 ; free virtual = 66241
+Finished Technology Mapping : Time (s): cpu = 00:02:44 ; elapsed = 00:04:11 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -798,7 +798,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:14 ; elapsed = 00:03:10 . Memory (MB): peak = 2523.199 ; gain = 811.449 ; free physical = 50994 ; free virtual = 66241
+Finished IO Insertion : Time (s): cpu = 00:02:52 ; elapsed = 00:04:18 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -811,7 +811,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:14 ; elapsed = 00:03:11 . Memory (MB): peak = 2523.199 ; gain = 811.449 ; free physical = 50994 ; free virtual = 66241
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:52 ; elapsed = 00:04:19 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -823,25 +823,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:17 ; elapsed = 00:03:13 . Memory (MB): peak = 2523.199 ; gain = 811.449 ; free physical = 50996 ; free virtual = 66243
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:55 ; elapsed = 00:04:21 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:17 ; elapsed = 00:03:13 . Memory (MB): peak = 2523.199 ; gain = 811.449 ; free physical = 50996 ; free virtual = 66243
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:55 ; elapsed = 00:04:22 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:20 ; elapsed = 00:03:16 . Memory (MB): peak = 2523.199 ; gain = 811.449 ; free physical = 50996 ; free virtual = 66243
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:58 ; elapsed = 00:04:25 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:20 ; elapsed = 00:03:16 . Memory (MB): peak = 2523.199 ; gain = 811.449 ; free physical = 50996 ; free virtual = 66243
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:59 ; elapsed = 00:04:25 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -860,15 +860,15 @@ Report Cell Usage:
 |1     |BUFG   |     2|
 |2     |CARRY4 |    29|
 |3     |LUT1   |     7|
-|4     |LUT2   |   152|
-|5     |LUT3   |   422|
-|6     |LUT4   |   130|
-|7     |LUT5   |  4806|
-|8     |LUT6   | 11159|
-|9     |MUXF7  |  2968|
-|10    |MUXF8  |  1244|
-|11    |FDRE   |   333|
-|12    |FDSE   |    19|
+|4     |LUT2   |   177|
+|5     |LUT3   |   411|
+|6     |LUT4   |   108|
+|7     |LUT5   |  4959|
+|8     |LUT6   | 10387|
+|9     |MUXF7  |  2620|
+|10    |MUXF8  |  1238|
+|11    |FDRE   |   331|
+|12    |FDSE   |    15|
 |13    |LD     |    55|
 |14    |LDC    |  2066|
 |15    |IBUF   |     6|
@@ -879,51 +879,51 @@ Report Instance Areas:
 +------+-------------------+--------------------------+------+
 |      |Instance           |Module                    |Cells |
 +------+-------------------+--------------------------+------+
-|1     |top                |                          | 23412|
-|2     |  ROM1             |inst_ROM                  |   135|
+|1     |top                |                          | 22425|
+|2     |  ROM1             |inst_ROM                  |   124|
 |3     |  VGA1             |top_VGA                   |   237|
 |4     |    rom_data       |reduced_font_rom          |    45|
 |5     |    vga_controller |vga_controller_640_60     |   163|
-|6     |  btn              |btn_edge                  |    58|
-|7     |    db             |debounce                  |    55|
+|6     |  btn              |btn_edge                  |    55|
+|7     |    db             |debounce                  |    52|
 |8     |      d0           |my_dff                    |     3|
 |9     |      d1           |my_dff_0                  |     3|
 |10    |      d2           |my_dff_1                  |     1|
-|11    |      u1           |clock_div                 |    48|
-|12    |  dp1              |datapath                  | 22960|
+|11    |      u1           |clock_div                 |    45|
+|12    |  dp1              |datapath                  | 21987|
 |13    |    alu_0          |ALU                       |     7|
-|14    |    fetch_0        |Fetch_unit                |    35|
-|15    |    mem_0          |memory                    | 16614|
-|16    |    reg0           |reg_param                 |    47|
+|14    |    fetch_0        |Fetch_unit                |    43|
+|15    |    mem_0          |memory                    | 15457|
+|16    |    reg0           |reg_param                 |    51|
 |17    |    reg1           |reg_param__parameterized0 |   154|
-|18    |    reg2           |reg_param__parameterized1 |  5871|
-|19    |    rf_0           |Register_file             |   220|
+|18    |    reg2           |reg_param__parameterized1 |  6041|
+|19    |    rf_0           |Register_file             |   222|
 +------+-------------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:20 ; elapsed = 00:03:16 . Memory (MB): peak = 2523.199 ; gain = 811.449 ; free physical = 50996 ; free virtual = 66243
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:59 ; elapsed = 00:04:26 . Memory (MB): peak = 1585.168 ; gain = 952.891
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 145 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:13 ; elapsed = 00:03:11 . Memory (MB): peak = 2527.094 ; gain = 665.691 ; free physical = 53772 ; free virtual = 69020
-Synthesis Optimization Complete : Time (s): cpu = 00:02:21 ; elapsed = 00:03:20 . Memory (MB): peak = 2527.094 ; gain = 815.344 ; free physical = 53777 ; free virtual = 69019
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:43 ; elapsed = 00:04:20 . Memory (MB): peak = 1585.168 ; gain = 814.383
+Synthesis Optimization Complete : Time (s): cpu = 00:02:59 ; elapsed = 00:04:26 . Memory (MB): peak = 1585.168 ; gain = 952.891
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 6362 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 6008 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2527.195 ; gain = 0.000 ; free physical = 53727 ; free virtual = 68969
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1585.168 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2121 instances were transformed.
   LD => LDCE: 55 instances
   LDC => LDCE: 2066 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-113 Infos, 220 Warnings, 0 Critical Warnings and 0 Errors encountered.
+117 Infos, 221 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:29 ; elapsed = 00:03:32 . Memory (MB): peak = 2527.195 ; gain = 1057.586 ; free physical = 53847 ; free virtual = 69089
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2527.195 ; gain = 0.000 ; free physical = 53847 ; free virtual = 69089
+synth_design: Time (s): cpu = 00:03:09 ; elapsed = 00:04:39 . Memory (MB): peak = 1585.168 ; gain = 1231.727
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1585.168 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint '/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.runs/synth_1/top.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2533.215 ; gain = 6.020 ; free physical = 53844 ; free virtual = 69089
+INFO: [Common 17-1381] The checkpoint 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.runs/synth_1/top.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1585.168 ; gain = 0.000
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Oct 21 21:38:15 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 27 13:47:35 2022...

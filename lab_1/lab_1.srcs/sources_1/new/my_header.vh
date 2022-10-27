@@ -13,5 +13,5 @@
     `define awidth_reg 6
     `define inst_start 31
     //`define clk_div 125000
-    `define clk_div 2
+    `define clk_div 10
 `endif
