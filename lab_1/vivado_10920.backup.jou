@@ -1,0 +1,81 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Oct 26 14:12:59 2022
+# Process ID: 10920
+# Current directory: X:/EC551/Labs/Lab1/lab_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14116 X:\EC551\Labs\Lab1\lab_1\lab_1.xpr
+# Log file: X:/EC551/Labs/Lab1/lab_1/vivado.log
+# Journal file: X:/EC551/Labs/Lab1/lab_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project X:/EC551/Labs/Lab1/lab_1/lab_1.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source t_top.tcl
+restart
+run 100 ms
+save_wave_config {X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg}
+add_files -fileset sim_1 -norecurse X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg
+set_property xsim.view X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg [get_filesets sim_1]
+close_sim
+launch_simulation
+open_wave_config X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg
+source t_top.tcl
+close_sim
+launch_simulation
+open_wave_config X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg
+source t_top.tcl
+close_sim
+launch_simulation
+open_wave_config X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg
+source t_top.tcl
+close_sim
+launch_simulation
+open_wave_config X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg
+source t_top.tcl
+close_sim
+launch_simulation
+open_wave_config X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg
+source t_top.tcl
+restart
+run 300 ns
+save_wave_config {X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg
+source t_top.tcl
+restart
+run 300 ns
+restart
+run 300 ns
+restart
+run 300 ns
+save_wave_config {X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg
+source t_top.tcl
+restart
+run all
+relaunch_sim
+relaunch_sim
+restart
+run all
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+restart
+run all
+relaunch_sim
+save_wave_config {X:/EC551/Labs/Lab1/lab_1/t_top_behav.wcfg}

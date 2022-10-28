@@ -140,7 +140,8 @@ module inst_ROM(
                     6'd0  : begin ns = cs; user_inst_addr_next = 12'd31; user_inst_write_next = {op_mov0, r0, 6'b000000};      end
                     6'd1  : begin ns = cs; user_inst_addr_next = 12'd32; user_inst_write_next = {op_mov0, r1, 6'b000001};      end
                     6'd2  : begin ns = cs; user_inst_addr_next = 12'd33; user_inst_write_next = {op_mov1, r2, r1};             end
-                    6'd3  : begin ns = cs; user_inst_addr_next = 12'd34; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+//                    6'd3  : begin ns = cs; user_inst_addr_next = 12'd34; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+                    6'd3  : begin ns = cs; user_inst_addr_next = 12'd34; user_inst_write_next = {op_halt, dc,dc};end   // halt
                     6'd4  : begin ns = cs; user_inst_addr_next = 12'd35; user_inst_write_next = {op_mov0, r3, 6'b000011};      end
                     6'd5  : begin ns = cs; user_inst_addr_next = 12'd36; user_inst_write_next = {op_mov0, r5, 6'b000101};      end
                     6'd6  : begin ns = cs; user_inst_addr_next = 12'd37; user_inst_write_next = {op_mov0, r4, 6'b000100};      end
@@ -148,17 +149,20 @@ module inst_ROM(
                     6'd8  : begin ns = cs; user_inst_addr_next = 12'd39; user_inst_write_next = {op_inc,  r4, dc};             end   // R4 = R4+1=                
                     6'd9  : begin ns = cs; user_inst_addr_next = 12'd40; user_inst_write_next = {op_sub,  r3, r4};             end   // R3 = R3-R4=               
                     6'd10 : begin ns = cs; user_inst_addr_next = 12'd41; user_inst_write_next = {op_xor,  r5, r3};             end   // R5 = R5^R3 = 001000^011110=010110=16+4+2=22               
-                    6'd11 : begin ns = cs; user_inst_addr_next = 12'd42; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+//                    6'd11 : begin ns = cs; user_inst_addr_next = 12'd42; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+                    6'd11 : begin ns = cs; user_inst_addr_next = 12'd42; user_inst_write_next = {op_halt, dc,dc};end   // halt
                     6'd12 : begin ns = cs; user_inst_addr_next = 12'd43;  user_inst_write_next = {op_cmp,  r0, r5};            end   // cmp r0 r5
                     6'd13 : begin ns = cs; user_inst_addr_next = 12'd44;  user_inst_write_next = {op_je,   12'd47};            end   // je
                     6'd14 : begin ns = cs; user_inst_addr_next = 12'd45; user_inst_write_next = {op_inc,  r0, dc};             end   // R0 = R0+1= 
                     6'd15 : begin ns = cs; user_inst_addr_next = 12'd46;  user_inst_write_next = {op_jmp,  12'd43};            end   // jmp
-                    6'd16 : begin ns = cs; user_inst_addr_next = 12'd47; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+//                    6'd16 : begin ns = cs; user_inst_addr_next = 12'd47; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+                    6'd16 : begin ns = cs; user_inst_addr_next = 12'd47; user_inst_write_next = {op_halt, dc,dc};end   // halt
                     6'd17 : begin ns = cs; user_inst_addr_next = 12'd48;  user_inst_write_next = {op_mov2, r2, r3};            end   // mov [R2] R3
                     6'd18 : begin ns = cs; user_inst_addr_next = 12'd49;  user_inst_write_next = {op_mov2, r3, r5};            end   // mov [R3] R5
                     6'd19 : begin ns = cs; user_inst_addr_next = 12'd50;  user_inst_write_next = {op_mov3, r0, r2};            end   // mov r0 [R2]
                     6'd20 : begin ns = cs; user_inst_addr_next = 12'd51;  user_inst_write_next = {op_mov3, r1, r3};            end   // mov r1 [R3]
-                    6'd21 : begin ns =  3; user_inst_addr_next = 12'd52; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+//                    6'd21 : begin ns =  3; user_inst_addr_next = 12'd52; user_inst_write_next = {op_halt, 6'b110000, 6'b110000};end   // halt
+                    6'd21 : begin ns =  3; user_inst_addr_next = 12'd52; user_inst_write_next = {op_halt, dc,dc};end   // halt
                                                                                                     
                     
                 endcase

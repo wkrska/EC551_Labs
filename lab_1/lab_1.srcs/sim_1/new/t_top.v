@@ -47,11 +47,14 @@ initial begin
     resume_btn = 0;
     
     #1 rst = 1;
-    #10 rst = 0;
-    #110 resume_btn = 1; #10; resume_btn = 0;
-    #50 resume_btn = 1; #10; resume_btn = 0;
-    #50 resume_btn = 1; #10; resume_btn = 0;
-    #250 resume_btn = 1; #10; resume_btn = 0;
+    #750000 rst = 0;
+    #25000000 resume_btn = 1; #500000; resume_btn = 0;
+    #25000000 resume_btn = 1; #500000; resume_btn = 0;
+    #25000000 resume_btn = 1; #500000; resume_btn = 0;
+    #25000000 resume_btn = 1; #500000; resume_btn = 0;
+//    #50 resume_btn = 1; #10; resume_btn = 0;
+//    #50 resume_btn = 1; #10; resume_btn = 0;
+//    #250 resume_btn = 1; #10; resume_btn = 0;
 //    resume = 1; #2; resume = 0; #2;
 //    resume = 1; #2; resume = 0; #2;
 //    resume = 1; #2; resume = 0; #2;
@@ -65,13 +68,13 @@ initial begin
 always 
     #1 CLK100MHZ = ~CLK100MHZ;
     
-//initial
-//    begin
-//    #10 switch_RS = 6'b1;
-//    #10000000 switch_RS = 6'b10;
-//    #10000000 switch_RS = 6'b11;
-//    #10000000 switch_RS = 6'b100;
-//    #10000000 switch_RS = 6'b101;
-//end
+initial
+    begin
+    #10 switch_RS = 6'b1;
+    #100000000 switch_RS = 6'b10;
+    #100000000 switch_RS = 6'b11;
+    #100000000 switch_RS = 6'b100;
+    #100000000 switch_RS = 6'b101;
+end
 
 endmodule

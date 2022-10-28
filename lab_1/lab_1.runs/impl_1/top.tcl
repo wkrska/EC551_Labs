@@ -65,16 +65,16 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 5
+  set_param chipscope.maxJobs 3
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.cache/wt [current_project]
-  set_property parent.project_path /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.xpr [current_project]
-  set_property ip_output_repo /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.cache/ip [current_project]
+  set_property webtalk.parent_dir {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.cache/wt} [current_project]
+  set_property parent.project_path {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.xpr} [current_project]
+  set_property ip_output_repo {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.cache/ip}} [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.runs/synth_1/top.dcp
-  read_xdc /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc
+  add_files -quiet {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.runs/synth_1/top.dcp}}
+  read_xdc {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc}}
   link_design -top top -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]

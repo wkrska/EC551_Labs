@@ -7,7 +7,7 @@
 
 module Register_file(RS1, RS2, disp_RS, WS, WD, WE, RD1, RD2, disp_RD, PC_IN, PC_EN, PC_OUT, clk, rst);
 
-    parameter REGSIZE = 7; // 6 registers and 1 PC
+    parameter REGSIZE = (2**6); // 6 registers and 1 PC
     input [`awidth_reg-1:0] RS1, RS2, WS, disp_RS;
     input [`dwidth_dat-1:0] WD, PC_IN;
     input WE, PC_EN;
@@ -46,9 +46,12 @@ module Register_file(RS1, RS2, disp_RS, WS, WD, WE, RD1, RD2, disp_RD, PC_IN, PC
     always @(posedge clk)
     begin
         if (rst) begin
-            for (i=0; i<REGSIZE-1; i=i+1) 
-                reg_file[i] <= 'b0; // rst all registers
-            reg_file[6] <= `inst_start;
+            for (i=0; i<REGSIZE; i=i+1) begin 
+                if (i!=6)
+                    reg_file[i] <= 'b0; // rst all registers
+                else
+                    reg_file[6] <= `inst_start;
+            end
         end
         else
         begin

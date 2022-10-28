@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Oct 28 13:55:44 2022
+# Process ID: 2440
+# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9528 X:\EC551\Labs\Lab1\Final Copy\EC551_Labs\lab_1\lab_1.xpr
+# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/vivado.log
+# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.xpr}
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/t_top_behav.wcfg}
+source t_top.tcl
+relaunch_sim
+run 3000 us
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+reset_run impl_1 -prev_step 
+reset_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.runs/impl_1/top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_hw
+relaunch_sim
+relaunch_sim

@@ -22,26 +22,27 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.cache/wt [current_project]
-set_property parent.project_path /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.xpr [current_project]
+set_property webtalk.parent_dir {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.cache/wt} [current_project]
+set_property parent.project_path {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.cache/ip [current_project]
+set_property ip_output_repo {x:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/my_header.vh
+read_verilog {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/my_header.vh}}
+set_property file_type "Verilog Header" [get_files {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/my_header.vh}}]
 read_verilog -library xil_defaultlib {
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Decoder.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/btn_edge.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v
-  /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/top.v
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/ALU.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Decoder.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Fetch_unit.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/Register_file.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/btn_edge.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/datapath.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/debounce.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/inst_ROM.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/memory.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/reg_param.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/imports/vga.v}
+  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/sources_1/new/top.v}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -51,8 +52,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc
-set_property used_in_implementation false [get_files /ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc]
+read_xdc {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc}}
+set_property used_in_implementation false [get_files {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.srcs/constrs_1/imports/Nexys4DDR_Master.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

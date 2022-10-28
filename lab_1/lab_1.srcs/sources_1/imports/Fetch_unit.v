@@ -35,7 +35,7 @@ module Fetch_unit(
     assign ctrl_nop = (!ctrl_ap_start || (|stall_ns) || (|stall_cs));
 
     // Assign outputs
-    assign inst_out = (ctrl_nop) ? 16'b1111_110000_110000 : inst_in;
+    assign inst_out = (ctrl_nop) ? 16'b1111_000000_000000 : inst_in;
     assign PC_out = (rst) ? `inst_start : ((|stall_ns) ? PC_in : ((ctrl_jump) ? {{4{1'b0}}, imm_in} : ((|stall_cs) ? PC_in : PC_in + 1)));
     assign PC_en = (ctrl_ap_start || rst) ? 1'b1 : 1'b0;
     

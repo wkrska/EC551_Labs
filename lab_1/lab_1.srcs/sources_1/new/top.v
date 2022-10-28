@@ -36,15 +36,26 @@ wire [11:0] user_inst_addr_ROM;
 wire [15:0] user_inst_write_ROM;
 wire resume;
 
+// Slow clock for debugging
+    reg slow_clk;
+    reg [26:0] counter=0;
+    always @(posedge CLK100MHZ)
+    begin
+        counter <= (counter>=((`clk_div*400)*2-1)) ? 0 : counter+1;
+        slow_clk <= (counter < (`clk_div*400)) ? 1'b0 : 1'b1;
+    end
+
 btn_edge btn(
     .reset(rst),
     .btnIn(resume_btn),
     .CLK(CLK100MHZ),
+//    .CLK(slow_clk),
     .btnOut(resume)
     );
 
 datapath dp1(
-    .clk(CLK100MHZ),
+    .clk(slow_clk),
+//    .clk(CLK100MHZ),
     .rst(rst),
     .resume(resume),
     .user_inst_write(user_inst_write_ROM),
@@ -55,7 +66,8 @@ datapath dp1(
     );
     
 inst_ROM  ROM1(
-    .clk(CLK100MHZ),
+    .clk(slow_clk),
+//    .clk(CLK100MHZ),
     .rst(rst),
     .ap_start(ap_start_ROM),
     .user_inst_addr(user_inst_addr_ROM),

@@ -14,6 +14,8 @@ module datapath (
     input ap_start, resume,
     output [`dwidth_dat-1:0] disp_RD
 );
+    
+
 
     // Define ops
     localparam op_add  = 4'b0101; 
@@ -49,6 +51,7 @@ module datapath (
     // Stalls entire datapath when a halt is encounterd by disconnecting the clock
     wire clk_local, halt_flag;
     reg clk_sel;
+//    assign clk_local = (clk_sel) ? slow_clk : 'b0;
     assign clk_local = (clk_sel) ? clk : 'b0;
     reg [2:0] halt_cs, halt_ns;
     always @(*) begin
