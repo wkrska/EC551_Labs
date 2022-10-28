@@ -27,8 +27,17 @@ module top(
     output wire [3:0] VGA_G,
     output wire [3:0] VGA_B,
     output wire VGA_HS,
-    output wire VGA_VS
+    output wire VGA_VS,
+    output wire [15:0] LED
 );
+
+reg [26:0] counter=0;
+reg slow_clk;
+always @(posedge CLK100MHZ)
+begin
+    counter <= (counter>=((`clk_div*200)*2-1)) ? 0 : counter+1;
+    slow_clk <= (counter < (`clk_div*200)) ? 1'b0 : 1'b1;
+end
 
 wire [15:0] register_data;
 wire ap_start_ROM;
@@ -44,18 +53,22 @@ btn_edge btn(
     );
 
 datapath dp1(
-    .clk(CLK100MHZ),
+//    .clk(CLK100MHZ),
+    .clk(slow_clk),
     .rst(rst),
-    .resume(resume),
+//    .resume(resume),
+    .resume(resume_btn),
     .user_inst_write(user_inst_write_ROM),
     .user_inst_addr(user_inst_addr_ROM),
     .disp_RS(switch_RS),
     .ap_start(ap_start_ROM),
-    .disp_RD(register_data)
+    .disp_RD(register_data),
+    .disp_inst(LED)
     );
     
 inst_ROM  ROM1(
-    .clk(CLK100MHZ),
+//    .clk(CLK100MHZ),
+    .clk(slow_clk),
     .rst(rst),
     .ap_start(ap_start_ROM),
     .user_inst_addr(user_inst_addr_ROM),

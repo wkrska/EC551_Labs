@@ -12,7 +12,8 @@ module datapath (
     input [`awidth_mem-1:0] user_inst_addr,
     input [`awidth_reg-1:0] disp_RS,
     input ap_start, resume,
-    output [`dwidth_dat-1:0] disp_RD
+    output [`dwidth_dat-1:0] disp_RD,
+    output [`dwidth_dat-1:0] disp_inst
 );
 
     // Define ops
@@ -58,7 +59,7 @@ module datapath (
                 clk_sel = 1; // normal clk
             end
             2'b01 : begin // halted
-                halt_ns = (resume) ? 2'b10 : halt_ns;
+                halt_ns = (resume) ? 2'b10 : halt_cs;
                 clk_sel = 0; // halted clk
             end
             2'b10 : begin // 1 clk delay to clear halt flag
@@ -118,6 +119,8 @@ module datapath (
     );
 
     //----------- ID stage -----------//
+    
+    assign disp_inst = INST_curr;
     
     Decoder decoder_0(
         .Instr_in(INST_curr),

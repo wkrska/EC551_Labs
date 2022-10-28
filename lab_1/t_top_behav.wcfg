@@ -13,13 +13,13 @@
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
       <ZoomEndTime time="711000001fs"></ZoomEndTime>
-      <Cursor1Time time="565113000fs"></Cursor1Time>
+      <Cursor1Time time="527412000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="163"></NameColumnWidth>
-      <ValueColumnWidth column_width="87"></ValueColumnWidth>
+      <ValueColumnWidth column_width="83"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="7" />
    <wvobject fp_name="group347" type="group">
       <obj_property name="label">Conor TB</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -359,7 +359,6 @@
    <wvobject fp_name="group428" type="group">
       <obj_property name="label">rf</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/t_top/t1/dp1/rf_0/RS1" type="array">
          <obj_property name="ElementShortName">RS1[5:0]</obj_property>
          <obj_property name="ObjectShortName">RS1[5:0]</obj_property>
@@ -433,7 +432,6 @@
    <wvobject fp_name="group466" type="group">
       <obj_property name="label">ALU</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/t_top/t1/dp1/alu_0/op" type="array">
          <obj_property name="ElementShortName">op[3:0]</obj_property>
          <obj_property name="ObjectShortName">op[3:0]</obj_property>
@@ -489,70 +487,6 @@
       <wvobject fp_name="/t_top/t1/dp1/alu_0/dout_t" type="array">
          <obj_property name="ElementShortName">dout_t[15:0]</obj_property>
          <obj_property name="ObjectShortName">dout_t[15:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_add" type="array">
-         <obj_property name="ElementShortName">op_add[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_add[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_sub" type="array">
-         <obj_property name="ElementShortName">op_sub[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_sub[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_inc" type="array">
-         <obj_property name="ElementShortName">op_inc[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_inc[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_xor" type="array">
-         <obj_property name="ElementShortName">op_xor[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_xor[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_cmp" type="array">
-         <obj_property name="ElementShortName">op_cmp[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_cmp[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_mov0" type="array">
-         <obj_property name="ElementShortName">op_mov0[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_mov0[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_mov1" type="array">
-         <obj_property name="ElementShortName">op_mov1[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_mov1[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_mov2" type="array">
-         <obj_property name="ElementShortName">op_mov2[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_mov2[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_mov3" type="array">
-         <obj_property name="ElementShortName">op_mov3[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_mov3[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_mov4" type="array">
-         <obj_property name="ElementShortName">op_mov4[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_mov4[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_sadd" type="array">
-         <obj_property name="ElementShortName">op_sadd[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_sadd[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_jmp" type="array">
-         <obj_property name="ElementShortName">op_jmp[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_jmp[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_jne" type="array">
-         <obj_property name="ElementShortName">op_jne[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_jne[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_je" type="array">
-         <obj_property name="ElementShortName">op_je[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_je[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_nop" type="array">
-         <obj_property name="ElementShortName">op_nop[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_nop[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/t_top/t1/dp1/alu_0/op_halt" type="array">
-         <obj_property name="ElementShortName">op_halt[3:0]</obj_property>
-         <obj_property name="ObjectShortName">op_halt[3:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group498" type="group">
@@ -658,6 +592,18 @@
       <wvobject fp_name="/t_top/t1/dp1/mem_0/i" type="array">
          <obj_property name="ElementShortName">i[31:0]</obj_property>
          <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group292" type="group">
+      <obj_property name="label">Written_Memory</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/t_top/t1/dp1/mem_0/mem[2]" type="array">
+         <obj_property name="ElementShortName">[2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/t_top/t1/dp1/mem_0/mem[1]" type="array">
+         <obj_property name="ElementShortName">[1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][15:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
