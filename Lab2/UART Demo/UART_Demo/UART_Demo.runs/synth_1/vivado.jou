@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.1 (64-bit)
+# SW Build 3526262 on Mon Apr 18 15:48:16 MDT 2022
+# IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+# Start of session at: Thu Jul 28 11:48:38 2022
+# Process ID: 341664
+# Current directory: D:/WorkBORI/gpio/Nexys-A7/hw/proj/hw.runs/synth_1
+# Command line: vivado.exe -log GPIO_demo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source GPIO_demo.tcl
+# Log file: D:/WorkBORI/gpio/Nexys-A7/hw/proj/hw.runs/synth_1/GPIO_demo.vds
+# Journal file: D:/WorkBORI/gpio/Nexys-A7/hw/proj/hw.runs/synth_1\vivado.jou
+# Running On: sim-ro, OS: Windows, CPU Frequency: 2993 MHz, CPU Physical cores: 16, Host memory: 343200 MB
+#-----------------------------------------------------------
+source GPIO_demo.tcl -notrace
