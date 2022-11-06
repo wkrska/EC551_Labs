@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Nov  6 10:29:17 2022
+# Process ID: 1132
+# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent22040 X:\EC551\Labs\Lab1\Final Copy\EC551_Labs\Lab2\UART Demo\UART_Demo\UART_Demo.xpr
+# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/vivado.log
+# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.xpr}
+update_compile_order -fileset sources_1

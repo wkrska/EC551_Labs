@@ -146,30 +146,33 @@ constant BTN_STR_LEN : natural := 24;
 --are the ASCII values of the indicated character.
 constant WELCOME_STR : CHAR_ARRAY(0 to 28) := (X"0A",  --\n
 															  X"0D",  --\r
-															  X"4E",  --N
+															  X"48",  --H
 															  X"45",  --E
-															  X"58",  --X
-															  X"59",  --Y
-															  X"53",  --S
+															  X"6C",  --L
+															  X"6C",  --L
+															  X"6F",  --O
 															  X"20",  -- 
-															  X"41",  --A
-															  X"37",  --7
-															  X"20",  -- 
-															  X"47",  --G
-															  X"50",  --P
-															  X"49",  --I
-															  X"4F",  --O
-															  X"2F",  --/
-															  X"55",  --U
-															  X"41",  --A
-															  X"52",  --R
-															  X"54",  --T
-															  X"20",  -- 
-															  X"44",  --D
 															  X"45",  --E
+															  X"43",  --C
+															  X"35",  --5 
+															  X"35",  --5
+															  X"31",  --1
+															  X"2E",  --.
+															  X"20",  --
 															  X"4D",  --M
-															  X"4F",  --O
-															  X"21",  --!
+															  X"79",  --Y
+															  X"20",  --
+															  X"65",  --I
+															  X"73",  --S
+															  X"20",  --
+															  X"57",  --W
+															  X"65",  --I
+															  X"6C",  --L
+															  X"6C",  --L
+															  X"43",  --C
+															  X"6F",  --O
+															  X"6E",  --N
+															  X"2E",  --.
 															  X"0A",  --\n
 															  X"0A",  --\n
 															  X"0D"); --\r

@@ -21,7 +21,7 @@ module Register_file(RS1, RS2, disp_RS, WS, WD, WE, RD1, RD2, disp_RD, PC_IN, PC
     // Asyncronous read of register file.
     always @(RS1, reg_file[RS1], WS)
         begin
-            RD1 = (RS1 == WS) ? WD : reg_file[RS1]; // 2 ahead forwarding
+            RD1 = (RS1 == WS && WE) ? WD : reg_file[RS1]; // 2 ahead forwarding
         end
 
     // Asyncronous read of register file.
