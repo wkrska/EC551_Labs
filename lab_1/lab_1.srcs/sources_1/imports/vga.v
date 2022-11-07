@@ -394,6 +394,7 @@ vga_controller_640_60 vga_controller(
 reduced_font_rom rom_data(.addr(address), .data(data_char));
 
 //determine addresses of text to display based on register file value
+    // 4 char output
 genvar i;
 generate 
     for(i=0;i<4;i=i+1) begin
