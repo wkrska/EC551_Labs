@@ -8,8 +8,8 @@
 module vga_controller_640_60(rst, pixel_clk,HS,VS,hcounter,vcounter,blank);
 
 	input pixel_clk, rst;
-	output reg HS, VS, blank;
-	output reg [10:0] hcounter, vcounter;
+	output HS, VS, blank;
+	output [10:0] hcounter, vcounter;
 
 	parameter HMAX = 800; // maximum value for the horizontal pixel counter, orig: 800
 	parameter VMAX = 525; // maximum value for the vertical pixel counter, orig: 525
@@ -22,7 +22,8 @@ module vga_controller_640_60(rst, pixel_clk,HS,VS,hcounter,vcounter,blank);
 	parameter SPP = 0;
 
 	wire video_enable;
-
+	reg HS,VS,blank;
+	reg [10:0] hcounter,vcounter;
 
 	always@(posedge pixel_clk)begin
 		blank <= ~video_enable; 
@@ -393,6 +394,7 @@ vga_controller_640_60 vga_controller(
 reduced_font_rom rom_data(.addr(address), .data(data_char));
 
 //determine addresses of text to display based on register file value
+    // 4 char output
 genvar i;
 generate 
     for(i=0;i<4;i=i+1) begin

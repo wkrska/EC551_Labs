@@ -1,0 +1,596 @@
+
+*** Running vivado
+    with args -log GPIO_demo.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source GPIO_demo.tcl
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source GPIO_demo.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/WorkBORI/gpio/Nexys-A7/hw/repo'; Can't find the specified path.
+If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is x:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.cache/ip 
+Command: synth_design -top GPIO_demo -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 12824 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 819.398 ; gain = 179.219
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'GPIO_demo' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:73]
+	Parameter DEBNC_CLOCKS bound to: 65536 - type: integer 
+	Parameter PORT_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'debouncer' declared at 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:352]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/debouncer.vhd:50]
+	Parameter DEBNC_CLOCKS bound to: 65536 - type: integer 
+	Parameter PORT_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (1#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/debouncer.vhd:50]
+INFO: [Synth 8-3491] module 'UART_TX_CTRL' declared at 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:42' bound to instance 'Inst_UART_TX_CTRL' of component 'UART_TX_CTRL' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:482]
+INFO: [Synth 8-638] synthesizing module 'UART_TX_CTRL' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'UART_TX_CTRL' (2#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:50]
+INFO: [Synth 8-3491] module 'RGB_controller' declared at 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/RGB_controller.vhd:20' bound to instance 'RGB_Core' of component 'RGB_controller' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:496]
+INFO: [Synth 8-638] synthesizing module 'RGB_controller' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/RGB_controller.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'RGB_controller' (3#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/RGB_controller.vhd:28]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_demo' (4#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:73]
+WARNING: [Synth 8-3917] design GPIO_demo has port micLRSel driven by constant 0
+WARNING: [Synth 8-3917] design GPIO_demo has port ampSD driven by constant 1
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 884.188 ; gain = 244.008
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 884.188 ; gain = 244.008
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 884.188 ; gain = 244.008
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/GPIO_demo_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/GPIO_demo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1009.289 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1009.289 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1009.289 ; gain = 369.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:17 . Memory (MB): peak = 1009.289 ; gain = 369.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1009.289 ; gain = 369.109
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'txState_reg' in module 'UART_TX_CTRL'
+INFO: [Synth 8-4471] merging register 'rgbLedReg2_reg[2:2]' into 'rgbLedReg1_reg[2:2]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/RGB_controller.vhd:169]
+INFO: [Synth 8-4471] merging register 'rgbLedReg2_reg[1:1]' into 'rgbLedReg1_reg[1:1]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/RGB_controller.vhd:182]
+INFO: [Synth 8-4471] merging register 'rgbLedReg2_reg[0:0]' into 'rgbLedReg1_reg[0:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/RGB_controller.vhd:195]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[11][7:0]' into 'sendStr_reg[10][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[29][7:0]' into 'sendStr_reg[28][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[37][7:0]' into 'sendStr_reg[28][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[40][7:0]' into 'sendStr_reg[24][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[41][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[42][7:0]' into 'sendStr_reg[25][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[43][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[44][7:0]' into 'sendStr_reg[32][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[46][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[48][7:0]' into 'sendStr_reg[25][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[49][7:0]' into 'sendStr_reg[39][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[50][7:0]' into 'sendStr_reg[25][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[52][7:0]' into 'sendStr_reg[31][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[54][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[56][7:0]' into 'sendStr_reg[34][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[57][7:0]' into 'sendStr_reg[35][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.srcs/sources_1/imports/hdl/top.vhd:446]
+INFO: [Synth 8-802] inferred FSM for state register 'uartState_reg' in module 'GPIO_demo'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                     rdy |                               00 |                               00
+                load_bit |                               01 |                               01
+                send_bit |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'txState_reg' using encoding 'sequential' in module 'UART_TX_CTRL'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 rst_reg |                              000 |                              000
+             ld_init_str |                              001 |                              001
+               send_char |                              010 |                              010
+                 rdy_low |                              011 |                              011
+                wait_rdy |                              100 |                              100
+                wait_btn |                              101 |                              101
+              ld_btn_str |                              110 |                              110
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'uartState_reg' using encoding 'sequential' in module 'GPIO_demo'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:20 . Memory (MB): peak = 1009.289 ; gain = 369.109
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	               31 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 44    
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   3 Input     31 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 5     
+	   3 Input      8 Bit        Muxes := 22    
+	   2 Input      7 Bit        Muxes := 11    
+	   2 Input      6 Bit        Muxes := 6     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   7 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 14    
+	   3 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module GPIO_demo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               31 Bit    Registers := 1     
+	                8 Bit    Registers := 43    
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   3 Input     31 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 22    
+	   2 Input      7 Bit        Muxes := 10    
+	   2 Input      6 Bit        Muxes := 6     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   7 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 6     
+	   7 Input      1 Bit        Muxes := 1     
+Module debouncer 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 5     
+Module UART_TX_CTRL 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+Module RGB_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      7 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "strEnd0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[23]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[22]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[21]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[20]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[19]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[18]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[17]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[16]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[15]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[14]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[13]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[10]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[9]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[8]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[7]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[6]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[5]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[4]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[3]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[2]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[1]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sendStr_reg[0]0" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-3917] design GPIO_demo has port micLRSel driven by constant 0
+WARNING: [Synth 8-3917] design GPIO_demo has port ampSD driven by constant 1
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[0]' (FDRE) to 'strEnd_reg[2]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[1]' (FDSE) to 'strEnd_reg[5]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[2]' (FDRE) to 'strEnd_reg[6]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[3]' (FDSE) to 'strEnd_reg[4]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\strEnd_reg[4] )
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[6]' (FDRE) to 'strEnd_reg[7]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[7]' (FDRE) to 'strEnd_reg[8]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[8]' (FDRE) to 'strEnd_reg[9]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[9]' (FDRE) to 'strEnd_reg[10]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[10]' (FDRE) to 'strEnd_reg[11]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[11]' (FDRE) to 'strEnd_reg[12]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[12]' (FDRE) to 'strEnd_reg[13]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[13]' (FDRE) to 'strEnd_reg[14]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[14]' (FDRE) to 'strEnd_reg[15]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[15]' (FDRE) to 'strEnd_reg[16]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[16]' (FDRE) to 'strEnd_reg[17]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[17]' (FDRE) to 'strEnd_reg[18]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[18]' (FDRE) to 'strEnd_reg[19]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[19]' (FDRE) to 'strEnd_reg[20]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[20]' (FDRE) to 'strEnd_reg[21]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[21]' (FDRE) to 'strEnd_reg[22]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[22]' (FDRE) to 'strEnd_reg[23]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[23]' (FDRE) to 'strEnd_reg[24]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[24]' (FDRE) to 'strEnd_reg[25]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[25]' (FDRE) to 'strEnd_reg[26]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[26]' (FDRE) to 'strEnd_reg[27]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[27]' (FDRE) to 'strEnd_reg[28]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[28]' (FDRE) to 'strEnd_reg[29]'
+INFO: [Synth 8-3886] merging instance 'strEnd_reg[29]' (FDRE) to 'strEnd_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\strEnd_reg[30] )
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[55][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[53][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[51][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[47][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[45][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[39][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[38][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[36][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[35][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[34][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[33][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[32][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[27][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[26][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[25][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[24][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[28][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[31][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[30][7]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[23][7]' (FDRE) to 'sendStr_reg[23][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[22][7]' (FDRE) to 'sendStr_reg[22][6]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[21][7]' (FDRE) to 'sendStr_reg[21][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[20][7]' (FDRE) to 'sendStr_reg[20][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[19][7]' (FDRE) to 'sendStr_reg[19][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[18][7]' (FDRE) to 'sendStr_reg[18][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[17][7]' (FDRE) to 'sendStr_reg[17][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[16][7]' (FDRE) to 'sendStr_reg[16][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[15][7]' (FDRE) to 'sendStr_reg[15][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[14][7]' (FDRE) to 'sendStr_reg[14][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[13][7]' (FDRE) to 'sendStr_reg[13][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[12][7]' (FDRE) to 'sendStr_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[10][7]' (FDRE) to 'sendStr_reg[10][3]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[9][7]' (FDRE) to 'sendStr_reg[9][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[8][7]' (FDRE) to 'sendStr_reg[8][3]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[7][7]' (FDRE) to 'sendStr_reg[7][3]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[6][7]' (FDRE) to 'sendStr_reg[6][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[5][7]' (FDRE) to 'sendStr_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[4][7]' (FDRE) to 'sendStr_reg[4][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[3][7]' (FDRE) to 'sendStr_reg[12][6]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[2][7]' (FDRE) to 'sendStr_reg[2][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[1][7]' (FDRE) to 'sendStr_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[0][7]' (FDRE) to 'sendStr_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[55][6]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[53][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[51][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[47][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[45][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[39][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[38][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[36][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[35][6]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[34][6]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[33][6]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[32][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[27][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[26][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[25][6]' (FDRE) to 'sendStr_reg[55][0]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[24][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[28][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[31][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[30][6]' (FDSE) to 'sendStr_reg[55][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[23][6]' (FDSE) to 'sendStr_reg[23][5]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[22][6]' (FDRE) to 'sendStr_reg[22][4]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[21][6]' (FDSE) to 'sendStr_reg[21][2]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[20][6]' (FDSE) to 'sendStr_reg[20][5]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[19][6]' (FDSE) to 'sendStr_reg[19][5]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[18][6]' (FDSE) to 'sendStr_reg[18][5]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[17][6]' (FDRE) to 'sendStr_reg[17][1]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[16][6]' (FDSE) to 'sendStr_reg[16][5]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[15][6]' (FDSE) to 'sendStr_reg[15][2]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[14][6]' (FDRE) to 'sendStr_reg[14][2]'
+INFO: [Synth 8-3886] merging instance 'sendStr_reg[12][6]' (FDRE) to 'sendStr_reg[12][3]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[8][6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[2][6] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[17][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[14][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[7][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[6][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[6][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[4][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[10][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[9][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[8][3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[20][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[18][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[17][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[15][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[13][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[5][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[4][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[3][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[23][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[21][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[20][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[19][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[16][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[15][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[14][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[3][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[1][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[0][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[28][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[30][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[23][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[22][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[21][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[19][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[18][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[16][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[13][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[10][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[9][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[7][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[5][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[2][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\sendStr_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sendStr_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\Inst_UART_TX_CTRL/txData_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Inst_UART_TX_CTRL/txData_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\uartData_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\Inst_UART_TX_CTRL/txData_reg[8] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:26 . Memory (MB): peak = 1009.289 ; gain = 369.109
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:33 . Memory (MB): peak = 1009.289 ; gain = 369.109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:34 . Memory (MB): peak = 1018.184 ; gain = 378.004
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1021.727 ; gain = 381.547
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1028.516 ; gain = 388.336
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1028.516 ; gain = 388.336
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1028.516 ; gain = 388.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1028.516 ; gain = 388.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1028.516 ; gain = 388.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1028.516 ; gain = 388.336
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |    63|
+|3     |LUT1   |    15|
+|4     |LUT2   |    35|
+|5     |LUT3   |    27|
+|6     |LUT4   |    52|
+|7     |LUT5   |    45|
+|8     |LUT6   |    64|
+|9     |MUXF7  |     6|
+|10    |FDRE   |   287|
+|11    |FDSE   |     6|
+|12    |IBUF   |    23|
+|13    |OBUF   |    43|
++------+-------+------+
+
+Report Instance Areas: 
++------+--------------------+---------------+------+
+|      |Instance            |Module         |Cells |
++------+--------------------+---------------+------+
+|1     |top                 |               |   667|
+|2     |  Inst_UART_TX_CTRL |UART_TX_CTRL   |    93|
+|3     |  Inst_btn_debounce |debouncer      |   146|
+|4     |  RGB_Core          |RGB_controller |   104|
++------+--------------------+---------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1028.516 ; gain = 388.336
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 2 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:34 . Memory (MB): peak = 1028.516 ; gain = 263.234
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1028.516 ; gain = 388.336
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 69 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1042.094 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+223 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:48 . Memory (MB): peak = 1042.094 ; gain = 663.176
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1042.094 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/synth_1/GPIO_demo.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file GPIO_demo_utilization_synth.rpt -pb GPIO_demo_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Nov  7 16:58:18 2022...
