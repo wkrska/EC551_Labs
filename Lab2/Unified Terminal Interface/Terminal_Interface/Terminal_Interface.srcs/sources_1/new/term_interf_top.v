@@ -28,11 +28,12 @@ module term_interf_top(
     input PS2_CLK,
     output wire [15:0] LED,
     output wire [7:0] SSEG_CA,
-    output wire [7:0] SSEG_AN,
-    input PS2_CLK
+    output wire [7:0] SSEG_AN
     );
     
     wire UART_TXD_keyboard;
+    wire [7:0] mode;
+    reg [2:0] mode_select;
     
     
     GPIO_demo UART_interface(
@@ -60,13 +61,20 @@ module term_interf_top(
     .CLK100MHZ(CLK100MHZ),
     .PS2_CLK(PS2_CLK),
     .PS2_DATA(PS2_DATA),
-    .SEG(SEG),
-    .AN(AN),
-    .DP(DP),
-    .UART_TXD(UART_TXD_keyboard)
+    .UART_TXD(UART_TXD_keyboard),
+    .mode(mode)
     );
     
+    always @(mode)
+    case(mode)
+    'h43:mode_select = 3'b000;    //Mode I   Keyboard Instruction
+    'h4B:mode_select = 3'b001;    //Mode L  UART
+    'h1C:mode_select = 3'b010;    //Mode A   ALU
+    'h32:mode_select = 3'b011;    //Mode B    Benchmark
     
+    default:mode_select = 3'b100;
+	
+	endcase
     
     
     

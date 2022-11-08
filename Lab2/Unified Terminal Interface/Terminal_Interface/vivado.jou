@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Nov  7 16:32:48 2022
+# Process ID: 7920
+# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent23108 X:\EC551\Labs\Lab1\Final Copy\EC551_Labs\Lab2\Unified Terminal Interface\Terminal_Interface\Terminal_Interface.xpr
+# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/vivado.log
+# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.xpr}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1

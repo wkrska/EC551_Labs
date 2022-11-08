@@ -1,0 +1,10 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sim_1/new/t_top.v,1667860212,verilog,,,,t_top,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sources_1/imports/hdl/PS2Receiver.v,1667741559,verilog,,X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sources_1/imports/hdl/Seg_7_Display.v,,PS2Receiver,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sources_1/imports/hdl/Seg_7_Display.v,1667741559,verilog,,X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sources_1/imports/hdl/debouncer.v,,seg7decimal,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sources_1/imports/hdl/debouncer.v,1667741559,verilog,,X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sources_1/imports/hdl/top.v,,debouncer,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sources_1/imports/hdl/top.v,1667749388,verilog,,X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Keyboard Demo/Keyboard_Demo/Keyboard_Demo.srcs/sim_1/new/t_top.v,,top,,,,,,,,

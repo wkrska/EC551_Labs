@@ -1,67 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1658998114">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1667858236">
+  <File Type="BITSTR-BMM" Name="GPIO_demo_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="GPIO_demo_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="GPIO_demo_timing_summary_init.rpt"/>
   <File Type="ROUTE-PWR" Name="GPIO_demo_power_routed.rpt"/>
   <File Type="PA-TCL" Name="GPIO_demo.tcl"/>
+  <File Type="OPT-TIMING" Name="GPIO_demo_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="GPIO_demo_opt.dcp"/>
   <File Type="ROUTE-PWR-SUM" Name="GPIO_demo_power_summary_routed.pb"/>
   <File Type="REPORTS-TCL" Name="GPIO_demo_reports.tcl"/>
-  <File Type="BITSTR-MSK" Name="GPIO_demo.msk"/>
-  <File Type="ROUTE-CLK" Name="GPIO_demo_clock_utilization_routed.rpt"/>
-  <File Type="RDI-RDI" Name="GPIO_demo.vdi"/>
-  <File Type="BG-BIT" Name="GPIO_demo.bit"/>
-  <File Type="BG-DRC" Name="GPIO_demo.drc"/>
-  <File Type="BG-BGN" Name="GPIO_demo.bgn"/>
-  <File Type="BG-BIN" Name="GPIO_demo.bin"/>
-  <File Type="BITSTR-RBT" Name="GPIO_demo.rbt"/>
-  <File Type="BITSTR-NKY" Name="GPIO_demo.nky"/>
-  <File Type="BITSTR-BMM" Name="GPIO_demo_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="GPIO_demo.mmi"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="GPIO_demo_methodology_drc_routed.rpt"/>
-  <File Type="BITSTR-SYSDEF" Name="GPIO_demo.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="GPIO_demo.ltx"/>
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
   <File Type="OPT-DRC" Name="GPIO_demo_drc_opted.rpt"/>
   <File Type="OPT-HWDEF" Name="GPIO_demo.hwdef"/>
+  <File Type="PWROPT-DCP" Name="GPIO_demo_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="GPIO_demo_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="GPIO_demo_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="GPIO_demo_placed.dcp"/>
   <File Type="PLACE-IO" Name="GPIO_demo_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="GPIO_demo_clock_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="GPIO_demo_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="GPIO_demo_utilization_placed.pb"/>
   <File Type="PLACE-CTRL" Name="GPIO_demo_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="GPIO_demo_incremental_reuse_placed.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="GPIO_demo_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="GPIO_demo.bgn"/>
+  <File Type="PLACE-TIMING" Name="GPIO_demo_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="GPIO_demo_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="GPIO_demo.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="GPIO_demo_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="GPIO_demo_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="GPIO_demo_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="GPIO_demo.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="GPIO_demo_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="GPIO_demo_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="GPIO_demo_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="GPIO_demo_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="GPIO_demo_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="GPIO_demo_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="GPIO_demo.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="GPIO_demo_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="GPIO_demo.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="GPIO_demo_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="GPIO_demo_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="GPIO_demo.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="GPIO_demo_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="GPIO_demo_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="GPIO_demo_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="GPIO_demo_route_status.pb"/>
-  <File Type="ROUTE-DCP" Name="GPIO_demo_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="GPIO_demo_routed_error.dcp"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="GPIO_demo_routed_bb.dcp"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="GPIO_demo_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="GPIO_demo_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="GPIO_demo_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="GPIO_demo_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="GPIO_demo_clock_utilization_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW" Name="GPIO_demo_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="GPIO_demo_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="GPIO_demo_bus_skew_routed.rpx"/>
-  <File Type="OPT-DCP" Name="GPIO_demo_opt.dcp"/>
-  <File Type="PLACE-DCP" Name="GPIO_demo_placed.dcp"/>
-  <File Type="PWROPT-DCP" Name="GPIO_demo_pwropt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="GPIO_demo_postplace_pwropt.dcp"/>
-  <File Type="PHYSOPT-DCP" Name="GPIO_demo_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="GPIO_demo_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="GPIO_demo_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="GPIO_demo_methodology_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="GPIO_demo_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="GPIO_demo_methodology_drc_routed.rpx"/>
-  <File Type="PDI-FILE" Name="GPIO_demo.pdi"/>
-  <File Type="RCFI_FILE" Name="GPIO_demo.rcfi"/>
-  <File Type="CFI_FILE" Name="GPIO_demo.cfi"/>
-  <File Type="RNPI_FILE" Name="GPIO_demo.rnpi"/>
-  <File Type="NPI_FILE" Name="GPIO_demo.npi"/>
-  <File Type="RBD_FILE" Name="GPIO_demo.rbd"/>
-  <File Type="ROUTE-RQS" Name="GPIO_demo_routed.rqs"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS" Name="GPIO_demo_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
-  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="GPIO_demo_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="GPIO_demo_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="GPIO_demo_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="GPIO_demo_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="GPIO_demo_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="GPIO_demo.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="GPIO_demo_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="GPIO_demo.rbt"/>
+  <File Type="BITSTR-NKY" Name="GPIO_demo.nky"/>
+  <File Type="BG-DRC" Name="GPIO_demo.drc"/>
+  <File Type="RDI-RDI" Name="GPIO_demo.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/hdl/RGB_controller.vhd">
       <FileInfo>
@@ -95,6 +103,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/imports/hw/archive_project_summary.txt">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../Lab2/UART Demo/hw/archive_project_summary.txt"/>
+        <Attr Name="ImportTime" Val="1667504844"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="GPIO_demo"/>
@@ -122,7 +136,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2022"/>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -132,6 +146,5 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

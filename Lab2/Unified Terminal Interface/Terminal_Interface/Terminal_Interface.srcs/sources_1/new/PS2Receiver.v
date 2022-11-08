@@ -25,7 +25,7 @@ module PS2Receiver(
    input clk,
     input kclk,
     input kdata,
-    output [31:0] keycodeout
+    output reg [7:0] mode
     );
     
     
@@ -79,7 +79,11 @@ always @(posedge flag)begin
         dataprev<=datacur;
     end
 end
-    
-assign keycodeout=keycode;
+
+always @(posedge flag)begin
+    if (datacur == 'h5A) begin
+        mode <= dataprev;
+    end
+end
     
 endmodule

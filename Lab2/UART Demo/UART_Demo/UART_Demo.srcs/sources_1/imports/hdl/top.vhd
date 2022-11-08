@@ -137,20 +137,20 @@ constant TMR_VAL_MAX : std_logic_vector(3 downto 0) := "1001"; --9
 
 constant RESET_CNTR_MAX : std_logic_vector(17 downto 0) := "110000110101000000";-- 100,000,000 * 0.002 = 200,000 = clk cycles per 2 ms
 
-constant MAX_STR_LEN : integer := 29;
+constant MAX_STR_LEN : integer := 58;
 
-constant WELCOME_STR_LEN : natural := 29;
+constant WELCOME_STR_LEN : natural := 58;
 constant BTN_STR_LEN : natural := 24;
 
 --Welcome string definition. Note that the values stored at each index
 --are the ASCII values of the indicated character.
-constant WELCOME_STR : CHAR_ARRAY(0 to 28) := (X"0A",  --\n
+constant WELCOME_STR : CHAR_ARRAY(0 to 57) := (X"0A",  --\n
 															  X"0D",  --\r
 															  X"48",  --H
-															  X"45",  --E
-															  X"6C",  --L
-															  X"6C",  --L
-															  X"6F",  --O
+															  X"65",  --e
+															  X"6C",  --l
+															  X"6C",  --l
+															  X"6F",  --o
 															  X"20",  -- 
 															  X"45",  --E
 															  X"43",  --C
@@ -160,20 +160,46 @@ constant WELCOME_STR : CHAR_ARRAY(0 to 28) := (X"0A",  --\n
 															  X"2E",  --.
 															  X"20",  --
 															  X"4D",  --M
-															  X"79",  --Y
+															  X"79",  --y
 															  X"20",  --
-															  X"65",  --I
-															  X"73",  --S
+															  X"6E",  --n
+															  X"61",  --a
+															  X"6D",  --m
+															  X"65",  --e
+															  X"20",  --
+															  X"69",  --i
+															  X"73",  --s
 															  X"20",  --
 															  X"57",  --W
-															  X"65",  --I
-															  X"6C",  --L
-															  X"6C",  --L
+															  X"69",  --i
+															  X"6C",  --l
+															  X"6C",  --l
 															  X"43",  --C
-															  X"6F",  --O
-															  X"6E",  --N
+															  X"6F",  --o
+															  X"6E",  --n
 															  X"2E",  --.
 															  X"0A",  --\n
+															  X"0D",  --\r
+															  X"50",  --P
+															  X"6C",  --l
+															  X"65",  --e
+															  X"61",  --a
+															  X"73",  --s
+															  X"65",  --e
+															  X"20",  --
+															  X"65",  --e
+															  X"6E",  --n
+															  X"74",  --t
+															  X"65",  --e
+															  X"72",  --r
+															  X"20",  --
+															  X"61",  --a
+															  X"20",  --
+															  X"6D",  --m
+															  X"6F",  --o
+															  X"64",  --d
+															  X"65",  --e
+															  X"3A",  --:
 															  X"0A",  --\n
 															  X"0D"); --\r
 															  

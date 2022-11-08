@@ -123,7 +123,7 @@ end component;
 -- LD_BTN_STR  -- The Button String is loaded into the sendStr variable and the strIndex
 --                variable is set to zero. The button string length is stored in the StrEnd
 --                variable. The state is set to SEND_CHAR.
-type UART_STATE_TYPE is (RST_REG, LD_INIT_STR, SEND_CHAR, RDY_LOW, WAIT_RDY, WAIT_BTN, LD_BTN_STR);
+type UART_STATE_TYPE is (RST_REG, LD_INIT_STR, SEND_CHAR, RDY_LOW, WAIT_RDY, WAIT_MODE, LD_BTN_STR);
 
 --The CHAR_ARRAY type is a variable length array of 8 bit std_logic_vectors. 
 --Each std_logic_vector contains an ASCII value and represents a character in
@@ -137,68 +137,190 @@ constant TMR_VAL_MAX : std_logic_vector(3 downto 0) := "1001"; --9
 
 constant RESET_CNTR_MAX : std_logic_vector(17 downto 0) := "110000110101000000";-- 100,000,000 * 0.002 = 200,000 = clk cycles per 2 ms
 
-constant MAX_STR_LEN : integer := 29;
+constant MAX_STR_LEN : integer := 58;
 
-constant WELCOME_STR_LEN : natural := 29;
+constant WELCOME_STR_LEN : natural := 58;
 constant BTN_STR_LEN : natural := 24;
 
 --Welcome string definition. Note that the values stored at each index
 --are the ASCII values of the indicated character.
-constant WELCOME_STR : CHAR_ARRAY(0 to 28) := (X"0A",  --\n
+constant WELCOME_STR : CHAR_ARRAY(0 to 57) := (X"0A",  --\n
 															  X"0D",  --\r
-															  X"4E",  --N
+															  X"48",  --H
+															  X"65",  --e
+															  X"6C",  --l
+															  X"6C",  --l
+															  X"6F",  --o
+															  X"20",  -- 
 															  X"45",  --E
-															  X"58",  --X
-															  X"59",  --Y
-															  X"53",  --S
-															  X"20",  -- 
-															  X"41",  --A
-															  X"37",  --7
-															  X"20",  -- 
-															  X"47",  --G
-															  X"50",  --P
-															  X"49",  --I
-															  X"4F",  --O
-															  X"2F",  --/
-															  X"55",  --U
-															  X"41",  --A
-															  X"52",  --R
-															  X"54",  --T
-															  X"20",  -- 
-															  X"44",  --D
-															  X"45",  --E
+															  X"43",  --C
+															  X"35",  --5 
+															  X"35",  --5
+															  X"31",  --1
+															  X"2E",  --.
+															  X"20",  --
 															  X"4D",  --M
-															  X"4F",  --O
-															  X"21",  --!
+															  X"79",  --y
+															  X"20",  --
+															  X"6E",  --n
+															  X"61",  --a
+															  X"6D",  --m
+															  X"65",  --e
+															  X"20",  --
+															  X"69",  --i
+															  X"73",  --s
+															  X"20",  --
+															  X"57",  --W
+															  X"69",  --i
+															  X"6C",  --l
+															  X"6C",  --l
+															  X"43",  --C
+															  X"6F",  --o
+															  X"6E",  --n
+															  X"2E",  --.
 															  X"0A",  --\n
+															  X"0D",  --\r
+															  X"50",  --P
+															  X"6C",  --l
+															  X"65",  --e
+															  X"61",  --a
+															  X"73",  --s
+															  X"65",  --e
+															  X"20",  --
+															  X"65",  --e
+															  X"6E",  --n
+															  X"74",  --t
+															  X"65",  --e
+															  X"72",  --r
+															  X"20",  --
+															  X"61",  --a
+															  X"20",  --
+															  X"6D",  --m
+															  X"6F",  --o
+															  X"64",  --d
+															  X"65",  --e
+															  X"3A",  --:
 															  X"0A",  --\n
 															  X"0D"); --\r
 															  
 --Button press string definition.
-constant BTN_STR : CHAR_ARRAY(0 to 23) :=     (X"42",  --B
-															  X"75",  --u
-															  X"74",  --t
-															  X"74",  --t
+constant LD_MODE_I_STR : CHAR_ARRAY(0 to 25) :=              (X"4D",  --M
 															  X"6F",  --o
-															  X"6E",  --n
-															  X"20",  -- 
-															  X"70",  --p
-															  X"72",  --r
-															  X"65",  --e
-															  X"73",  --s
-															  X"73",  --s
-															  X"20",  --
 															  X"64",  --d
 															  X"65",  --e
+															  X"20",  --
+															  X"49",  --I
+															  X"3A",  --:
+															  X"20",  --
+															  X"45",  --E
+															  X"6E",  --n
 															  X"74",  --t
 															  X"65",  --e
+															  X"72",  --r
+															  X"20",  --
+															  X"49",  --I
+															  X"6E",  --n
+															  X"73",  --s
+															  X"74",  --t
+															  X"72",  --r
+															  X"75",  --u
 															  X"63",  --c
 															  X"74",  --t
-															  X"65",  --e
+															  X"69",  --i
+															  X"6F",  --o
+															  X"6E",  --n
+															  X"73",  --s
+															  X"0A",  --\n
+															  X"0D"); --\r
+
+--Button press string definition.
+constant LD_MODE_L_STR : CHAR_ARRAY(0 to 34) :=              (X"4D",  --M
+															  X"6F",  --o
 															  X"64",  --d
+															  X"65",  --e
+															  X"20",  --
+															  X"4C",  --L
+															  X"3A",  --:
+															  X"20",  --
+															  X"45",  --L
+															  X"6E",  --o
+															  X"74",  --a
+															  X"65",  --d
+															  X"20",  --
+															  X"49",  --I
+															  X"6E",  --n
+															  X"73",  --s
+															  X"74",  --t
+															  X"72",  --r
+															  X"75",  --u
+															  X"63",  --c
+															  X"74",  --t
+															  X"69",  --i
+															  X"6F",  --o
+															  X"6E",  --n
+															  X"73",  --s
+															  X"20",  --
+															  X"66",  --f
+															  X"72",  --r
+															  X"6F",  --o
+															  X"6D",  --m
+															  X"20",  --
+															  X"55",  --U
+															  X"41",  --A
+															  X"52",  --R
+															  X"54",  --T
+															  X"0A",  --\n
+															  X"0D"); --\r
+
+--Button press string definition.
+constant LD_MODE_X_STR : CHAR_ARRAY(0 to 24) :=              (X"49",  --I
+															  X"6E",  --n
+															  X"76",  --v
+															  X"61",  --a
+															  X"6C",  --l
+															  X"69",  --i
+															  X"64",  --d
+															  X"20",  --
+															  X"45",  --E
+															  X"6E",  --n
+															  X"74",  --t
+															  X"72",  --r
+															  X"79",  --y
 															  X"21",  --!
 															  X"0A",  --\n
 															  X"0D"); --\r
+															 
+--Button press string definition.
+constant LD_MODE_A_STR : CHAR_ARRAY(0 to 27) :=              (X"4D",  --M
+															  X"6F",  --o
+															  X"64",  --d
+															  X"65",  --e
+															  X"20",  --
+															  X"49",  --A
+															  X"3A",  --:
+															  X"20",  --
+															  X"45",  --R
+															  X"6E",  --u
+															  X"74",  --n
+															  X"65",  --
+															  X"72",  --a
+															  X"20",  --n
+															  X"49",  --
+															  X"6E",  --A
+															  X"73",  --L
+															  X"74",  --U
+															  X"72",  --
+															  X"75",  --o
+															  X"63",  --p
+															  X"74",  --e
+															  X"69",  --r
+															  X"6F",  --a
+															  X"6E",  --t
+															  X"73",  --i
+															  X"6E",  --o
+															  X"73",  --n
+															  X"0A",  --\n
+															  X"0D"); --\r															 
 
 --This is used to determine when the 7-segment display should be
 --incremented
@@ -390,14 +512,22 @@ begin
 			when WAIT_RDY =>
 				if (uartRdy = '1') then
 					if (strEnd = strIndex) then
-						uartState <= WAIT_BTN;
+						uartState <= WAIT_MODE;
 					else
 						uartState <= SEND_CHAR;
 					end if;
 				end if;
-			when WAIT_BTN =>
-				if (btnDetect = '1') then
-					uartState <= LD_BTN_STR;
+			when WAIT_MODE =>
+				if (mode_select = 3'b000) then
+					uartState <= LD_MODE_I_STR;
+			    elsif(mode_select = 3'b001) then
+			        uartState <= LD_MODE_L_STR;
+			    elsif(mode_select = 3'b010) then
+			        uartState <= LD_MODE_A_STR;
+			    elsif(mode_select = 3'b011) then
+			        uartState <= LD_MODE_B_STR;
+			    elsif(mode_select = 3'b100) then
+			        uartState <= LD_MODE_X_STR;
 				end if;
 			when LD_BTN_STR =>
 				uartState <= SEND_CHAR;
@@ -416,9 +546,21 @@ begin
 		if (uartState = LD_INIT_STR) then
 			sendStr <= WELCOME_STR;
 			strEnd <= WELCOME_STR_LEN;
-		elsif (uartState = LD_BTN_STR) then
-			sendStr(0 to 23) <= BTN_STR;
-			strEnd <= BTN_STR_LEN;
+		elsif (uartState = LD_MODE_I_STR) then
+			sendStr(0 to 23) <= MODE_I_STR;
+			strEnd <= MODE_I_STR_LEN;
+	    elsif (uartState = LD_MODE_L_STR) then
+			sendStr(0 to 23) <= MODE_L_STR;
+			strEnd <= MODE_L_STR_LEN;
+		elsif (uartState = LD_MODE_A_STR) then
+			sendStr(0 to 23) <= MODE_A_STR;
+			strEnd <= MODE_A_STR_LEN;
+		elsif (uartState = LD_MODE_B_STR) then
+			sendStr(0 to 23) <= MODE_B_STR;
+			strEnd <= MODE_B_STR_LEN;
+		elsif (uartState = LD_MODE_X_STR) then
+			sendStr(0 to 23) <= MODE_X_STR;
+			strEnd <= MODE_X_STR_LEN;
 		end if;
 	end if;
 end process;

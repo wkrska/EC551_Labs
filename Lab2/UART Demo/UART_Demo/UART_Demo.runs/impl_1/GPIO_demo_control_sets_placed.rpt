@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2022.1 (win64) Build 3526262 Mon Apr 18 15:48:16 MDT 2022
-| Date         : Thu Jul 28 11:50:42 2022
-| Host         : sim-ro running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Mon Nov  7 16:59:12 2022
+| Host         : ECE-PHO115-02 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file GPIO_demo_control_sets_placed.rpt
 | Design       : GPIO_demo
 | Device       : xc7a100t
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    20 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    44 |
+| Unused register locations in slices containing registers |    48 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -42,10 +42,10 @@ Table of Contents
 | Total control sets |    20 |
 | >= 0 to < 4        |     2 |
 | >= 4 to < 6        |     1 |
-| >= 6 to < 8        |     4 |
+| >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
-| >= 12 to < 14      |     0 |
+| >= 12 to < 14      |     1 |
 | >= 14 to < 16      |     1 |
 | >= 16              |    11 |
 +--------------------+-------+
@@ -58,41 +58,41 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              28 |           14 |
+| No           | No                    | No                     |              26 |           16 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             173 |           46 |
-| Yes          | No                    | No                     |              21 |           11 |
+| No           | Yes                   | No                     |             179 |           49 |
+| Yes          | No                    | No                     |              21 |           12 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              70 |           19 |
+| Yes          | Yes                   | No                     |              70 |           20 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+---------------------------------+-----------------------------------------------+------------------+----------------+--------------+
-|  Clock Signal  |          Enable Signal          |                Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+---------------------------------+-----------------------------------------------+------------------+----------------+--------------+
-|  CLK_IBUF_BUFG | pwm_val_reg_i_1_n_0             |                                               |                1 |              1 |         1.00 |
-|  CLK_IBUF_BUFG | RGB_Core/valcount[8]_i_1_n_0    | RGB_Core/valcount                             |                1 |              3 |         3.00 |
-|  CLK_IBUF_BUFG | eqOp2_in                        | tmrVal[3]_i_1_n_0                             |                1 |              4 |         4.00 |
-|  CLK_IBUF_BUFG |                                 | sendStr[19][0]_i_1_n_0                        |                1 |              6 |         6.00 |
-|  CLK_IBUF_BUFG | RGB_Core/valcount[8]_i_1_n_0    |                                               |                2 |              6 |         3.00 |
-|  CLK_IBUF_BUFG | strIndex                        |                                               |                5 |              7 |         1.40 |
-|  CLK_IBUF_BUFG | uartSend                        |                                               |                3 |              7 |         2.33 |
-|  CLK_IBUF_BUFG |                                 | RGB_Core/windowcount[7]_i_1_n_0               |                4 |              8 |         2.00 |
-|  CLK_IBUF_BUFG |                                 | Inst_UART_TX_CTRL/bitTmr                      |                4 |             14 |         3.50 |
-|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[2][0]_i_1_n_0 |                4 |             16 |         4.00 |
-|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[4][0]_i_1_n_0 |                4 |             16 |         4.00 |
-|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[3][0]_i_1_n_0 |                4 |             16 |         4.00 |
-|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[1][0]_i_1_n_0 |                4 |             16 |         4.00 |
-|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[0][0]_i_1_n_0 |                4 |             16 |         4.00 |
-|  CLK_IBUF_BUFG |                                 | reset_cntr0                                   |                5 |             18 |         3.60 |
-|  CLK_IBUF_BUFG |                                 | RGB_Core/clear                                |                5 |             20 |         4.00 |
-|  CLK_IBUF_BUFG |                                 | tmrCntr0                                      |                7 |             27 |         3.86 |
-|  CLK_IBUF_BUFG |                                 |                                               |               14 |             28 |         2.00 |
-|  CLK_IBUF_BUFG | strIndex                        | strIndex0                                     |                8 |             31 |         3.88 |
-|  CLK_IBUF_BUFG | Inst_UART_TX_CTRL/txBit_i_2_n_0 | Inst_UART_TX_CTRL/READY                       |                9 |             32 |         3.56 |
-+----------------+---------------------------------+-----------------------------------------------+------------------+----------------+--------------+
++----------------+---------------------------------+-----------------------------------------------+------------------+----------------+
+|  Clock Signal  |          Enable Signal          |                Set/Reset Signal               | Slice Load Count | Bel Load Count |
++----------------+---------------------------------+-----------------------------------------------+------------------+----------------+
+|  CLK_IBUF_BUFG | pwm_val_reg_i_1_n_0             |                                               |                1 |              1 |
+|  CLK_IBUF_BUFG | RGB_Core/valcount[8]_i_1_n_0    | RGB_Core/valcount                             |                1 |              3 |
+|  CLK_IBUF_BUFG | eqOp2_in                        | tmrVal[3]_i_1_n_0                             |                2 |              4 |
+|  CLK_IBUF_BUFG | RGB_Core/valcount[8]_i_1_n_0    |                                               |                4 |              6 |
+|  CLK_IBUF_BUFG | strIndex                        |                                               |                5 |              7 |
+|  CLK_IBUF_BUFG | uartSend                        |                                               |                2 |              7 |
+|  CLK_IBUF_BUFG |                                 | RGB_Core/windowcount[7]_i_1_n_0               |                4 |              8 |
+|  CLK_IBUF_BUFG |                                 | sendStr[3][0]_i_1_n_0                         |                4 |             12 |
+|  CLK_IBUF_BUFG |                                 | Inst_UART_TX_CTRL/bitTmr                      |                4 |             14 |
+|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[2][0]_i_1_n_0 |                4 |             16 |
+|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[1][0]_i_1_n_0 |                4 |             16 |
+|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[4][0]_i_1_n_0 |                4 |             16 |
+|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[0][0]_i_1_n_0 |                4 |             16 |
+|  CLK_IBUF_BUFG |                                 | Inst_btn_debounce/sig_cntrs_ary[3][0]_i_1_n_0 |                4 |             16 |
+|  CLK_IBUF_BUFG |                                 | reset_cntr0                                   |                5 |             18 |
+|  CLK_IBUF_BUFG |                                 | RGB_Core/clear                                |                5 |             20 |
+|  CLK_IBUF_BUFG |                                 |                                               |               16 |             26 |
+|  CLK_IBUF_BUFG |                                 | tmrCntr0                                      |                7 |             27 |
+|  CLK_IBUF_BUFG | strIndex                        | strIndex0                                     |                8 |             31 |
+|  CLK_IBUF_BUFG | Inst_UART_TX_CTRL/txBit_i_2_n_0 | Inst_UART_TX_CTRL/READY                       |                9 |             32 |
++----------------+---------------------------------+-----------------------------------------------+------------------+----------------+
 
 
