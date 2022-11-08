@@ -80,7 +80,7 @@ always @(posedge flag)begin
     end
 end
 
-always @(posedge flag)begin
+always @(negedge datacur)begin
     if (datacur == 'h5A) begin
         mode <= dataprev;
     end

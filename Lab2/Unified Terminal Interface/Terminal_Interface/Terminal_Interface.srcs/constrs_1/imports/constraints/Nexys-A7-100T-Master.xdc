@@ -47,12 +47,12 @@ set_property -dict { PACKAGE_PIN V14   IOSTANDARD LVCMOS33 } [get_ports { LED[13
 set_property -dict { PACKAGE_PIN V12   IOSTANDARD LVCMOS33 } [get_ports { LED[14] }]; #IO_L20N_T3_A07_D23_14 Sch=led[14]
 set_property -dict { PACKAGE_PIN V11   IOSTANDARD LVCMOS33 } [get_ports { LED[15] }]; #IO_L21N_T3_DQS_A06_D22_14 Sch=led[15]
 
-set_property -dict { PACKAGE_PIN R12   IOSTANDARD LVCMOS33 } [get_ports { RGB1_Blue }]; #IO_L5P_T0_D06_14 Sch=led16_b
-set_property -dict { PACKAGE_PIN M16   IOSTANDARD LVCMOS33 } [get_ports { RGB1_Green }]; #IO_L10P_T1_D14_14 Sch=led16_g
-set_property -dict { PACKAGE_PIN N15   IOSTANDARD LVCMOS33 } [get_ports { RGB1_Red }]; #IO_L11P_T1_SRCC_14 Sch=led16_r
-set_property -dict { PACKAGE_PIN G14   IOSTANDARD LVCMOS33 } [get_ports { RGB2_Blue }]; #IO_L15N_T2_DQS_ADV_B_15 Sch=led17_b
-set_property -dict { PACKAGE_PIN R11   IOSTANDARD LVCMOS33 } [get_ports { RGB2_Green }]; #IO_0_14 Sch=led17_g
-set_property -dict { PACKAGE_PIN N16   IOSTANDARD LVCMOS33 } [get_ports { RGB2_Red }]; #IO_L11N_T1_SRCC_14 Sch=led17_r
+#set_property -dict { PACKAGE_PIN R12   IOSTANDARD LVCMOS33 } [get_ports { RGB1_Blue }]; #IO_L5P_T0_D06_14 Sch=led16_b
+#set_property -dict { PACKAGE_PIN M16   IOSTANDARD LVCMOS33 } [get_ports { RGB1_Green }]; #IO_L10P_T1_D14_14 Sch=led16_g
+#set_property -dict { PACKAGE_PIN N15   IOSTANDARD LVCMOS33 } [get_ports { RGB1_Red }]; #IO_L11P_T1_SRCC_14 Sch=led16_r
+#set_property -dict { PACKAGE_PIN G14   IOSTANDARD LVCMOS33 } [get_ports { RGB2_Blue }]; #IO_L15N_T2_DQS_ADV_B_15 Sch=led17_b
+#set_property -dict { PACKAGE_PIN R11   IOSTANDARD LVCMOS33 } [get_ports { RGB2_Green }]; #IO_0_14 Sch=led17_g
+#set_property -dict { PACKAGE_PIN N16   IOSTANDARD LVCMOS33 } [get_ports { RGB2_Red }]; #IO_L11N_T1_SRCC_14 Sch=led17_r
 
 
 ##7 segment display
@@ -203,15 +203,15 @@ set_property -dict { PACKAGE_PIN P18   IOSTANDARD LVCMOS33 } [get_ports { BTN[3]
 
 ##Omnidirectional Microphone
 
-set_property -dict { PACKAGE_PIN J5    IOSTANDARD LVCMOS33 } [get_ports { micClk }]; #IO_25_35 Sch=m_clk
-set_property -dict { PACKAGE_PIN H5    IOSTANDARD LVCMOS33 } [get_ports { micData }]; #IO_L24N_T3_35 Sch=m_data
-set_property -dict { PACKAGE_PIN F5    IOSTANDARD LVCMOS33 } [get_ports { micLRSel }]; #IO_0_35 Sch=m_lrsel
+#set_property -dict { PACKAGE_PIN J5    IOSTANDARD LVCMOS33 } [get_ports { micClk }]; #IO_25_35 Sch=m_clk
+#set_property -dict { PACKAGE_PIN H5    IOSTANDARD LVCMOS33 } [get_ports { micData }]; #IO_L24N_T3_35 Sch=m_data
+#set_property -dict { PACKAGE_PIN F5    IOSTANDARD LVCMOS33 } [get_ports { micLRSel }]; #IO_0_35 Sch=m_lrsel
 
 
 ##PWM Audio Amplifier
 
-set_property -dict { PACKAGE_PIN A11   IOSTANDARD LVCMOS33 } [get_ports { ampPWM }]; #IO_L4N_T0_15 Sch=aud_pwm
-set_property -dict { PACKAGE_PIN D12   IOSTANDARD LVCMOS33 } [get_ports { ampSD }]; #IO_L6P_T0_15 Sch=aud_sd
+#set_property -dict { PACKAGE_PIN A11   IOSTANDARD LVCMOS33 } [get_ports { ampPWM }]; #IO_L4N_T0_15 Sch=aud_pwm
+#set_property -dict { PACKAGE_PIN D12   IOSTANDARD LVCMOS33 } [get_ports { ampSD }]; #IO_L6P_T0_15 Sch=aud_sd
 
 
 ##USB-RS232 Interface

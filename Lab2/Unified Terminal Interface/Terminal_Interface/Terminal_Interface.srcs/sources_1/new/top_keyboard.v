@@ -24,7 +24,7 @@ module top_keyboard(
     input CLK100MHZ,
     input PS2_CLK,
     input PS2_DATA,
-    output UART_TXD,
+//    output UART_TXD,
     output [7:0] mode
     );
     

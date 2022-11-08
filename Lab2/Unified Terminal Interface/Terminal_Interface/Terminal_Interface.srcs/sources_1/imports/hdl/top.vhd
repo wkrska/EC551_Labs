@@ -55,18 +55,19 @@ entity GPIO_demo is
            LED 			: out  STD_LOGIC_VECTOR (15 downto 0);
            SSEG_CA 		: out  STD_LOGIC_VECTOR (7 downto 0);
            SSEG_AN 		: out  STD_LOGIC_VECTOR (7 downto 0);
-           UART_TXD 	: out  STD_LOGIC;
-           RGB1_Red		: out  STD_LOGIC;
-           RGB1_Green	: out  STD_LOGIC;
-           RGB1_Blue	: out  STD_LOGIC;	
-           RGB2_Red		: out  STD_LOGIC;
-           RGB2_Green	: out  STD_LOGIC;
-           RGB2_Blue	: out  STD_LOGIC;
-           micClk       : out STD_LOGIC;
-           micLRSel     : out STD_LOGIC;
-           micData      : in STD_LOGIC;
-           ampPWM       : out STD_LOGIC;
-           ampSD        : out STD_LOGIC			  
+           mode_select  : in  STD_LOGIC_VECTOR (2 downto 0);
+           UART_TXD 	: out  STD_LOGIC
+--           RGB1_Red		: out  STD_LOGIC;
+--           RGB1_Green	: out  STD_LOGIC;
+--           RGB1_Blue	: out  STD_LOGIC;	
+--           RGB2_Red		: out  STD_LOGIC;
+--           RGB2_Green	: out  STD_LOGIC;
+--           RGB2_Blue	: out  STD_LOGIC;
+--           micClk       : out STD_LOGIC;
+--           micLRSel     : out STD_LOGIC;
+--           micData      : in STD_LOGIC;
+--           ampPWM       : out STD_LOGIC;
+--           ampSD        : out STD_LOGIC			  
 			  );
 end GPIO_demo;
 
@@ -123,7 +124,7 @@ end component;
 -- LD_BTN_STR  -- The Button String is loaded into the sendStr variable and the strIndex
 --                variable is set to zero. The button string length is stored in the StrEnd
 --                variable. The state is set to SEND_CHAR.
-type UART_STATE_TYPE is (RST_REG, LD_INIT_STR, SEND_CHAR, RDY_LOW, WAIT_RDY, WAIT_MODE, LD_BTN_STR);
+type UART_STATE_TYPE is (RST_REG, LD_INIT_STR, SEND_CHAR, RDY_LOW, WAIT_RDY, WAIT_MODE, LD_MODE_I_STR, LD_MODE_L_STR, LD_MODE_A_STR, LD_MODE_B_STR, LD_MODE_X_STR);
 
 --The CHAR_ARRAY type is a variable length array of 8 bit std_logic_vectors. 
 --Each std_logic_vector contains an ASCII value and represents a character in
@@ -140,7 +141,11 @@ constant RESET_CNTR_MAX : std_logic_vector(17 downto 0) := "110000110101000000";
 constant MAX_STR_LEN : integer := 58;
 
 constant WELCOME_STR_LEN : natural := 58;
-constant BTN_STR_LEN : natural := 24;
+constant MODE_I_STR_LEN : natural := 28;
+constant MODE_L_STR_LEN : natural := 37;
+constant MODE_A_STR_LEN : natural := 30;
+constant MODE_B_STR_LEN : natural := 27;
+constant MODE_X_STR_LEN : natural := 16;
 
 --Welcome string definition. Note that the values stored at each index
 --are the ASCII values of the indicated character.
@@ -204,7 +209,7 @@ constant WELCOME_STR : CHAR_ARRAY(0 to 57) := (X"0A",  --\n
 															  X"0D"); --\r
 															  
 --Button press string definition.
-constant LD_MODE_I_STR : CHAR_ARRAY(0 to 25) :=              (X"4D",  --M
+constant MODE_I_STR : CHAR_ARRAY(0 to 27) :=              (X"4D",  --M
 															  X"6F",  --o
 															  X"64",  --d
 															  X"65",  --e
@@ -234,7 +239,7 @@ constant LD_MODE_I_STR : CHAR_ARRAY(0 to 25) :=              (X"4D",  --M
 															  X"0D"); --\r
 
 --Button press string definition.
-constant LD_MODE_L_STR : CHAR_ARRAY(0 to 34) :=              (X"4D",  --M
+constant MODE_L_STR : CHAR_ARRAY(0 to 36) :=              (X"4D",  --M
 															  X"6F",  --o
 															  X"64",  --d
 															  X"65",  --e
@@ -272,26 +277,10 @@ constant LD_MODE_L_STR : CHAR_ARRAY(0 to 34) :=              (X"4D",  --M
 															  X"0A",  --\n
 															  X"0D"); --\r
 
---Button press string definition.
-constant LD_MODE_X_STR : CHAR_ARRAY(0 to 24) :=              (X"49",  --I
-															  X"6E",  --n
-															  X"76",  --v
-															  X"61",  --a
-															  X"6C",  --l
-															  X"69",  --i
-															  X"64",  --d
-															  X"20",  --
-															  X"45",  --E
-															  X"6E",  --n
-															  X"74",  --t
-															  X"72",  --r
-															  X"79",  --y
-															  X"21",  --!
-															  X"0A",  --\n
-															  X"0D"); --\r
+
 															 
 --Button press string definition.
-constant LD_MODE_A_STR : CHAR_ARRAY(0 to 27) :=              (X"4D",  --M
+constant MODE_A_STR : CHAR_ARRAY(0 to 29) :=              (X"4D",  --M
 															  X"6F",  --o
 															  X"64",  --d
 															  X"65",  --e
@@ -320,7 +309,54 @@ constant LD_MODE_A_STR : CHAR_ARRAY(0 to 27) :=              (X"4D",  --M
 															  X"6E",  --o
 															  X"73",  --n
 															  X"0A",  --\n
-															  X"0D"); --\r															 
+															  X"0D"); --\r		
+															  
+--Button press string definition.
+constant MODE_B_STR : CHAR_ARRAY(0 to 26) :=              (X"4D",  --M
+															  X"6F",  --o
+															  X"64",  --d
+															  X"65",  --e
+															  X"20",  --
+															  X"42",  --B
+															  X"3A",  --:
+															  X"20",  --
+															  X"42",  --B
+															  X"65",  --e
+															  X"6E",  --n
+															  X"63",  --c
+															  X"68",  --h
+															  X"6D",  --m
+															  X"61",  --a
+															  X"72",  --r
+															  X"6B",  --k
+															  X"20",  --
+															  X"50",  --P
+															  X"72",  --r
+															  X"6F",  --o
+															  X"67",  --g
+															  X"72",  --r
+															  X"61",  --a
+															  X"6D",  --m
+															  X"0A",  --\n
+															  X"0D"); --\r															  
+															  
+--Button press string definition.
+constant MODE_X_STR : CHAR_ARRAY(0 to 15) :=              (X"49",  --I
+															  X"6E",  --n
+															  X"76",  --v
+															  X"61",  --a
+															  X"6C",  --l
+															  X"69",  --i
+															  X"64",  --d
+															  X"20",  --
+															  X"45",  --E
+															  X"6E",  --n
+															  X"74",  --t
+															  X"72",  --r
+															  X"79",  --y
+															  X"21",  --!
+															  X"0A",  --\n
+															  X"0D"); --\r															 													 
 
 --This is used to determine when the 7-segment display should be
 --incremented
@@ -518,18 +554,18 @@ begin
 					end if;
 				end if;
 			when WAIT_MODE =>
-				if (mode_select = 3'b000) then
+				if (mode_select = "000") then
 					uartState <= LD_MODE_I_STR;
-			    elsif(mode_select = 3'b001) then
+			    elsif(mode_select = "001") then
 			        uartState <= LD_MODE_L_STR;
-			    elsif(mode_select = 3'b010) then
+			    elsif(mode_select = "010") then
 			        uartState <= LD_MODE_A_STR;
-			    elsif(mode_select = 3'b011) then
+			    elsif(mode_select = "011") then
 			        uartState <= LD_MODE_B_STR;
-			    elsif(mode_select = 3'b100) then
+			    elsif(mode_select = "100") then
 			        uartState <= LD_MODE_X_STR;
 				end if;
-			when LD_BTN_STR =>
+			when LD_MODE_I_STR | LD_MODE_L_STR | LD_MODE_A_STR | LD_MODE_B_STR | LD_MODE_X_STR =>
 				uartState <= SEND_CHAR;
 			when others=> --should never be reached
 				uartState <= RST_REG;
@@ -547,19 +583,19 @@ begin
 			sendStr <= WELCOME_STR;
 			strEnd <= WELCOME_STR_LEN;
 		elsif (uartState = LD_MODE_I_STR) then
-			sendStr(0 to 23) <= MODE_I_STR;
+			sendStr(0 to 27) <= MODE_I_STR;
 			strEnd <= MODE_I_STR_LEN;
 	    elsif (uartState = LD_MODE_L_STR) then
-			sendStr(0 to 23) <= MODE_L_STR;
+			sendStr(0 to 36) <= MODE_L_STR;
 			strEnd <= MODE_L_STR_LEN;
 		elsif (uartState = LD_MODE_A_STR) then
-			sendStr(0 to 23) <= MODE_A_STR;
+			sendStr(0 to 29) <= MODE_A_STR;
 			strEnd <= MODE_A_STR_LEN;
 		elsif (uartState = LD_MODE_B_STR) then
-			sendStr(0 to 23) <= MODE_B_STR;
+			sendStr(0 to 26) <= MODE_B_STR;
 			strEnd <= MODE_B_STR_LEN;
 		elsif (uartState = LD_MODE_X_STR) then
-			sendStr(0 to 23) <= MODE_X_STR;
+			sendStr(0 to 15) <= MODE_X_STR;
 			strEnd <= MODE_X_STR_LEN;
 		end if;
 	end if;
@@ -570,7 +606,7 @@ end process;
 char_count_process : process (CLK)
 begin
 	if (rising_edge(CLK)) then
-		if (uartState = LD_INIT_STR or uartState = LD_BTN_STR) then
+		if (uartState = LD_INIT_STR or uartState = LD_MODE_I_STR or uartState = LD_MODE_L_STR or uartState = LD_MODE_A_STR or uartState = LD_MODE_B_STR or uartState = LD_MODE_X_STR) then
 			strIndex <= 0;
 		elsif (uartState = SEND_CHAR) then
 			strIndex <= strIndex + 1;
@@ -606,15 +642,15 @@ UART_TXD <= uartTX;
 ------            RGB LED Control                  -------
 ----------------------------------------------------------
 
-RGB_Core: RGB_controller port map(
-	GCLK => CLK, 			
-	RGB_LED_1_O(0) => RGB1_Green, 
-	RGB_LED_1_O(1) => RGB1_Blue,
-	RGB_LED_1_O(2) => RGB1_Red,
-	RGB_LED_2_O(0) => RGB2_Green, 
-	RGB_LED_2_O(1) => RGB2_Blue,
-	RGB_LED_2_O(2) => RGB2_Red
-	);
+--RGB_Core: RGB_controller port map(
+--	GCLK => CLK, 			
+--	RGB_LED_1_O(0) => RGB1_Green, 
+--	RGB_LED_1_O(1) => RGB1_Blue,
+--	RGB_LED_1_O(2) => RGB1_Red,
+--	RGB_LED_2_O(0) => RGB2_Green, 
+--	RGB_LED_2_O(1) => RGB2_Blue,
+--	RGB_LED_2_O(2) => RGB2_Red
+--	);
 	
 
 ----------------------------------------------------------
@@ -626,27 +662,27 @@ RGB_Core: RGB_controller port map(
 --the sound captured by the microphone to be played over 
 --the audio out port.
 
-process(CLK)
-begin
-  if (rising_edge(CLK)) then
-    clk_cntr_reg <= clk_cntr_reg + 1;
-  end if;
-end process;
+--process(CLK)
+--begin
+--  if (rising_edge(CLK)) then
+--    clk_cntr_reg <= clk_cntr_reg + 1;
+--  end if;
+--end process;
 
---micClk = 100MHz / 32 = 3.125 MHz
-micClk <= clk_cntr_reg(4);
+----micClk = 100MHz / 32 = 3.125 MHz
+--micClk <= clk_cntr_reg(4);
 
-process(CLK)
-begin
-  if (rising_edge(CLK)) then
-    if (clk_cntr_reg = "01111") then
-      pwm_val_reg <= micData;
-    end if;
-  end if;
-end process;
+--process(CLK)
+--begin
+--  if (rising_edge(CLK)) then
+--    if (clk_cntr_reg = "01111") then
+--      pwm_val_reg <= micData;
+--    end if;
+--  end if;
+--end process;
 
-micLRSel <= '0';
-ampPWM <= pwm_val_reg;
-ampSD <= '1';
+--micLRSel <= '0';
+--ampPWM <= pwm_val_reg;
+--ampSD <= '1';
 
 end Behavioral;

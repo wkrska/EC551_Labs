@@ -1,0 +1,1370 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Tue Nov  8 18:19:04 2022
+| Host         : ECE-PHO115-02 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file term_interf_top_timing_summary_routed.rpt -pb term_interf_top_timing_summary_routed.pb -rpx term_interf_top_timing_summary_routed.rpx -warn_on_violation
+| Design       : term_interf_top
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 14 register/latch pins with no clock driven by root clock pin: keyboard_interface/CLK50MHZ_reg/Q (HIGH)
+
+ There are 13 register/latch pins with no clock driven by root clock pin: keyboard_interface/keyboard/debouncer1/O0_reg/Q (HIGH)
+
+ There are 10 register/latch pins with no clock driven by root clock pin: keyboard_interface/keyboard/flag_reg/Q (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: keyboard_interface/keyboard/keycode_reg[16]/Q (HIGH)
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 89 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 7 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 16 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      4.967        0.000                      0                  711        0.144        0.000                      0                  711        4.500        0.000                       0                   319  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin         4.967        0.000                      0                  711        0.144        0.000                      0                  711        4.500        0.000                       0                   319  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :            0  Failing Endpoints,  Worst Slack        4.967ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.144ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             4.967ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[2]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.770ns  (logic 1.061ns (22.244%)  route 3.709ns (77.756%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.275ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.551    10.078    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.588    15.010    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[2]/C
+                         clock pessimism              0.275    15.285    
+                         clock uncertainty           -0.035    15.250    
+    SLICE_X85Y115        FDRE (Setup_fdre_C_CE)      -0.205    15.045    UART_interface/FSM_onehot_uartState_reg[2]
+  -------------------------------------------------------------------
+                         required time                         15.045    
+                         arrival time                         -10.078    
+  -------------------------------------------------------------------
+                         slack                                  4.967    
+
+Slack (MET) :             4.967ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[5]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.770ns  (logic 1.061ns (22.244%)  route 3.709ns (77.756%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.275ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.551    10.078    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[5]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.588    15.010    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[5]/C
+                         clock pessimism              0.275    15.285    
+                         clock uncertainty           -0.035    15.250    
+    SLICE_X85Y115        FDRE (Setup_fdre_C_CE)      -0.205    15.045    UART_interface/FSM_onehot_uartState_reg[5]
+  -------------------------------------------------------------------
+                         required time                         15.045    
+                         arrival time                         -10.078    
+  -------------------------------------------------------------------
+                         slack                                  4.967    
+
+Slack (MET) :             5.002ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[3]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.721ns  (logic 1.061ns (22.473%)  route 3.660ns (77.527%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        -0.036ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.013ns = ( 15.013 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.502    10.030    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X87Y114        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.591    15.013    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X87Y114        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[3]/C
+                         clock pessimism              0.259    15.272    
+                         clock uncertainty           -0.035    15.237    
+    SLICE_X87Y114        FDRE (Setup_fdre_C_CE)      -0.205    15.032    UART_interface/FSM_onehot_uartState_reg[3]
+  -------------------------------------------------------------------
+                         required time                         15.032    
+                         arrival time                         -10.030    
+  -------------------------------------------------------------------
+                         slack                                  5.002    
+
+Slack (MET) :             5.003ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[4]/CE
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.770ns  (logic 1.061ns (22.244%)  route 3.709ns (77.756%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        -0.023ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.275ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.551    10.078    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X84Y115        FDSE                                         r  UART_interface/FSM_onehot_uartState_reg[4]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.588    15.010    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X84Y115        FDSE                                         r  UART_interface/FSM_onehot_uartState_reg[4]/C
+                         clock pessimism              0.275    15.285    
+                         clock uncertainty           -0.035    15.250    
+    SLICE_X84Y115        FDSE (Setup_fdse_C_CE)      -0.169    15.081    UART_interface/FSM_onehot_uartState_reg[4]
+  -------------------------------------------------------------------
+                         required time                         15.081    
+                         arrival time                         -10.078    
+  -------------------------------------------------------------------
+                         slack                                  5.003    
+
+Slack (MET) :             5.005ns  (required time - arrival time)
+  Source:                 UART_interface/strIndex_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.954ns  (logic 1.749ns (35.308%)  route 3.205ns (64.692%))
+  Logic Levels:           5  (CARRY4=3 LUT6=2)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.010ns = ( 15.010 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.306ns
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.704     5.306    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X81Y112        FDRE                                         r  UART_interface/strIndex_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X81Y112        FDRE (Prop_fdre_C_Q)         0.456     5.762 r  UART_interface/strIndex_reg[0]/Q
+                         net (fo=67, routed)          2.021     7.784    UART_interface/strIndex_reg[0]
+    SLICE_X80Y115        LUT6 (Prop_lut6_I5_O)        0.124     7.908 r  UART_interface/uartState1_carry_i_4/O
+                         net (fo=1, routed)           0.000     7.908    UART_interface/uartState1_carry_i_4_n_0
+    SLICE_X80Y115        CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.513     8.421 r  UART_interface/uartState1_carry/CO[3]
+                         net (fo=1, routed)           0.000     8.421    UART_interface/uartState1_carry_n_0
+    SLICE_X80Y116        CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     8.538 r  UART_interface/uartState1_carry__0/CO[3]
+                         net (fo=1, routed)           0.000     8.538    UART_interface/uartState1_carry__0_n_0
+    SLICE_X80Y117        CARRY4 (Prop_carry4_CI_CO[2])
+                                                      0.229     8.767 r  UART_interface/uartState1_carry__1/CO[2]
+                         net (fo=2, routed)           1.183     9.950    UART_interface/uartState1_carry__1_n_1
+    SLICE_X85Y115        LUT6 (Prop_lut6_I3_O)        0.310    10.260 r  UART_interface/FSM_onehot_uartState[2]_i_1/O
+                         net (fo=1, routed)           0.000    10.260    UART_interface/FSM_onehot_uartState[2]_i_1_n_0
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.588    15.010    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[2]/C
+                         clock pessimism              0.259    15.269    
+                         clock uncertainty           -0.035    15.234    
+    SLICE_X85Y115        FDRE (Setup_fdre_C_D)        0.031    15.265    UART_interface/FSM_onehot_uartState_reg[2]
+  -------------------------------------------------------------------
+                         required time                         15.265    
+                         arrival time                         -10.260    
+  -------------------------------------------------------------------
+                         slack                                  5.005    
+
+Slack (MET) :             5.039ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[10]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.720ns  (logic 1.061ns (22.477%)  route 3.659ns (77.523%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.009ns = ( 15.009 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.299ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.502    10.029    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.587    15.009    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+                         clock pessimism              0.299    15.308    
+                         clock uncertainty           -0.035    15.273    
+    SLICE_X85Y116        FDRE (Setup_fdre_C_CE)      -0.205    15.068    UART_interface/FSM_onehot_uartState_reg[10]
+  -------------------------------------------------------------------
+                         required time                         15.068    
+                         arrival time                         -10.029    
+  -------------------------------------------------------------------
+                         slack                                  5.039    
+
+Slack (MET) :             5.039ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[7]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.720ns  (logic 1.061ns (22.477%)  route 3.659ns (77.523%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.009ns = ( 15.009 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.299ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.502    10.029    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[7]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.587    15.009    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[7]/C
+                         clock pessimism              0.299    15.308    
+                         clock uncertainty           -0.035    15.273    
+    SLICE_X85Y116        FDRE (Setup_fdre_C_CE)      -0.205    15.068    UART_interface/FSM_onehot_uartState_reg[7]
+  -------------------------------------------------------------------
+                         required time                         15.068    
+                         arrival time                         -10.029    
+  -------------------------------------------------------------------
+                         slack                                  5.039    
+
+Slack (MET) :             5.039ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[8]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.720ns  (logic 1.061ns (22.477%)  route 3.659ns (77.523%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.009ns = ( 15.009 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.299ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.502    10.029    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[8]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.587    15.009    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[8]/C
+                         clock pessimism              0.299    15.308    
+                         clock uncertainty           -0.035    15.273    
+    SLICE_X85Y116        FDRE (Setup_fdre_C_CE)      -0.205    15.068    UART_interface/FSM_onehot_uartState_reg[8]
+  -------------------------------------------------------------------
+                         required time                         15.068    
+                         arrival time                         -10.029    
+  -------------------------------------------------------------------
+                         slack                                  5.039    
+
+Slack (MET) :             5.039ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[9]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.720ns  (logic 1.061ns (22.477%)  route 3.659ns (77.523%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        0.000ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.009ns = ( 15.009 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.299ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.502    10.029    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[9]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.587    15.009    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[9]/C
+                         clock pessimism              0.299    15.308    
+                         clock uncertainty           -0.035    15.273    
+    SLICE_X85Y116        FDRE (Setup_fdre_C_CE)      -0.205    15.068    UART_interface/FSM_onehot_uartState_reg[9]
+  -------------------------------------------------------------------
+                         required time                         15.068    
+                         arrival time                         -10.029    
+  -------------------------------------------------------------------
+                         slack                                  5.039    
+
+Slack (MET) :             5.059ns  (required time - arrival time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[0]/CE
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin rise@10.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        4.715ns  (logic 1.061ns (22.505%)  route 3.654ns (77.495%))
+  Logic Levels:           3  (LUT2=1 LUT6=2)
+  Clock Path Skew:        -0.022ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.011ns = ( 15.011 - 10.000 ) 
+    Source Clock Delay      (SCD):    5.308ns
+    Clock Pessimism Removal (CPR):    0.275ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     1.482 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           2.025     3.506    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     3.602 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.706     5.308    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[10]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.456     5.764 r  UART_interface/FSM_onehot_uartState_reg[10]/Q
+                         net (fo=48, routed)          1.733     7.497    UART_interface/p_1_in
+    SLICE_X79Y112        LUT2 (Prop_lut2_I1_O)        0.154     7.651 r  UART_interface/sendStr[12][1]_i_1/O
+                         net (fo=6, routed)           0.827     8.478    UART_interface/sendStr[12][1]_i_1_n_0
+    SLICE_X83Y114        LUT6 (Prop_lut6_I2_O)        0.327     8.805 r  UART_interface/FSM_onehot_uartState[10]_i_5/O
+                         net (fo=1, routed)           0.598     9.403    UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState_reg[0]_0
+    SLICE_X84Y114        LUT6 (Prop_lut6_I5_O)        0.124     9.527 r  UART_interface/Inst_UART_TX_CTRL/FSM_onehot_uartState[10]_i_1/O
+                         net (fo=11, routed)          0.496    10.023    UART_interface/Inst_UART_TX_CTRL_n_1
+    SLICE_X84Y113        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[0]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                     10.000    10.000 r  
+    E3                                                0.000    10.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000    10.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    11.411 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           1.920    13.331    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    13.422 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         1.589    15.011    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X84Y113        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[0]/C
+                         clock pessimism              0.275    15.286    
+                         clock uncertainty           -0.035    15.251    
+    SLICE_X84Y113        FDRE (Setup_fdre_C_CE)      -0.169    15.082    UART_interface/FSM_onehot_uartState_reg[0]
+  -------------------------------------------------------------------
+                         required time                         15.082    
+                         arrival time                         -10.023    
+  -------------------------------------------------------------------
+                         slack                                  5.059    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.144ns  (arrival time - required time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[8]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/sendStr_reg[1][1]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.277ns  (logic 0.186ns (67.052%)  route 0.091ns (32.948%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.514ns
+    Clock Pessimism Removal (CPR):    0.502ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.595     1.514    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y116        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[8]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y116        FDRE (Prop_fdre_C_Q)         0.141     1.655 r  UART_interface/FSM_onehot_uartState_reg[8]/Q
+                         net (fo=35, routed)          0.091     1.747    UART_interface/p_2_in_6
+    SLICE_X84Y116        LUT6 (Prop_lut6_I4_O)        0.045     1.792 r  UART_interface/sendStr[1][1]_i_1/O
+                         net (fo=1, routed)           0.000     1.792    UART_interface/sendStr[1][1]_i_1_n_0
+    SLICE_X84Y116        FDRE                                         r  UART_interface/sendStr_reg[1][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.865     2.030    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X84Y116        FDRE                                         r  UART_interface/sendStr_reg[1][1]/C
+                         clock pessimism             -0.502     1.527    
+    SLICE_X84Y116        FDRE (Hold_fdre_C_D)         0.120     1.647    UART_interface/sendStr_reg[1][1]
+  -------------------------------------------------------------------
+                         required time                         -1.647    
+                         arrival time                           1.792    
+  -------------------------------------------------------------------
+                         slack                                  0.144    
+
+Slack (MET) :             0.164ns  (arrival time - required time)
+  Source:                 UART_interface/uartData_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/Inst_UART_TX_CTRL/txData_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.253ns  (logic 0.141ns (55.730%)  route 0.112ns (44.270%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.596     1.515    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X83Y115        FDRE                                         r  UART_interface/uartData_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y115        FDRE (Prop_fdre_C_Q)         0.141     1.656 r  UART_interface/uartData_reg[6]/Q
+                         net (fo=1, routed)           0.112     1.768    UART_interface/Inst_UART_TX_CTRL/txData_reg[7]_1[6]
+    SLICE_X82Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/txData_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.865     2.030    UART_interface/Inst_UART_TX_CTRL/CLK100MHZ_IBUF_BUFG
+    SLICE_X82Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/txData_reg[7]/C
+                         clock pessimism             -0.501     1.528    
+    SLICE_X82Y116        FDRE (Hold_fdre_C_D)         0.076     1.604    UART_interface/Inst_UART_TX_CTRL/txData_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.604    
+                         arrival time                           1.768    
+  -------------------------------------------------------------------
+                         slack                                  0.164    
+
+Slack (MET) :             0.172ns  (arrival time - required time)
+  Source:                 UART_interface/uartData_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/Inst_UART_TX_CTRL/txData_reg[5]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.260ns  (logic 0.141ns (54.291%)  route 0.119ns (45.709%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.596     1.515    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X82Y115        FDRE                                         r  UART_interface/uartData_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X82Y115        FDRE (Prop_fdre_C_Q)         0.141     1.656 r  UART_interface/uartData_reg[4]/Q
+                         net (fo=1, routed)           0.119     1.775    UART_interface/Inst_UART_TX_CTRL/txData_reg[7]_1[4]
+    SLICE_X82Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/txData_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.865     2.030    UART_interface/Inst_UART_TX_CTRL/CLK100MHZ_IBUF_BUFG
+    SLICE_X82Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/txData_reg[5]/C
+                         clock pessimism             -0.501     1.528    
+    SLICE_X82Y116        FDRE (Hold_fdre_C_D)         0.075     1.603    UART_interface/Inst_UART_TX_CTRL/txData_reg[5]
+  -------------------------------------------------------------------
+                         required time                         -1.603    
+                         arrival time                           1.775    
+  -------------------------------------------------------------------
+                         slack                                  0.172    
+
+Slack (MET) :             0.216ns  (arrival time - required time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[4]/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.349ns  (logic 0.186ns (53.274%)  route 0.163ns (46.726%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.031ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.502ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.596     1.515    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y115        FDRE (Prop_fdre_C_Q)         0.141     1.656 f  UART_interface/FSM_onehot_uartState_reg[2]/Q
+                         net (fo=5, routed)           0.163     1.820    UART_interface/FSM_onehot_uartState_reg_n_0_[2]
+    SLICE_X84Y115        LUT6 (Prop_lut6_I5_O)        0.045     1.865 r  UART_interface/FSM_onehot_uartState[4]_i_1/O
+                         net (fo=1, routed)           0.000     1.865    UART_interface/FSM_onehot_uartState[4]_i_1_n_0
+    SLICE_X84Y115        FDSE                                         r  UART_interface/FSM_onehot_uartState_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.866     2.031    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X84Y115        FDSE                                         r  UART_interface/FSM_onehot_uartState_reg[4]/C
+                         clock pessimism             -0.502     1.528    
+    SLICE_X84Y115        FDSE (Hold_fdse_C_D)         0.120     1.648    UART_interface/FSM_onehot_uartState_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.648    
+                         arrival time                           1.865    
+  -------------------------------------------------------------------
+                         slack                                  0.216    
+
+Slack (MET) :             0.217ns  (arrival time - required time)
+  Source:                 UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/Inst_UART_TX_CTRL/txBit_reg/D
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.321ns  (logic 0.186ns (58.013%)  route 0.135ns (41.987%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.029ns
+    Source Clock Delay      (SCD):    1.514ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.595     1.514    UART_interface/Inst_UART_TX_CTRL/CLK100MHZ_IBUF_BUFG
+    SLICE_X83Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[3]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X83Y116        FDRE (Prop_fdre_C_Q)         0.141     1.655 r  UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[3]/Q
+                         net (fo=3, routed)           0.135     1.790    UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[3]
+    SLICE_X82Y117        LUT5 (Prop_lut5_I1_O)        0.045     1.835 r  UART_interface/Inst_UART_TX_CTRL/txBit_i_3/O
+                         net (fo=1, routed)           0.000     1.835    UART_interface/Inst_UART_TX_CTRL/txBit_i_3_n_0
+    SLICE_X82Y117        FDSE                                         r  UART_interface/Inst_UART_TX_CTRL/txBit_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.863     2.029    UART_interface/Inst_UART_TX_CTRL/CLK100MHZ_IBUF_BUFG
+    SLICE_X82Y117        FDSE                                         r  UART_interface/Inst_UART_TX_CTRL/txBit_reg/C
+                         clock pessimism             -0.501     1.527    
+    SLICE_X82Y117        FDSE (Hold_fdse_C_D)         0.091     1.618    UART_interface/Inst_UART_TX_CTRL/txBit_reg
+  -------------------------------------------------------------------
+                         required time                         -1.618    
+                         arrival time                           1.835    
+  -------------------------------------------------------------------
+                         slack                                  0.217    
+
+Slack (MET) :             0.234ns  (arrival time - required time)
+  Source:                 UART_interface/FSM_onehot_uartState_reg[4]/C
+                            (rising edge-triggered cell FDSE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/FSM_onehot_uartState_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.339ns  (logic 0.209ns (61.705%)  route 0.130ns (38.295%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.031ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.502ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.596     1.515    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X84Y115        FDSE                                         r  UART_interface/FSM_onehot_uartState_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X84Y115        FDSE (Prop_fdse_C_Q)         0.164     1.679 f  UART_interface/FSM_onehot_uartState_reg[4]/Q
+                         net (fo=10, routed)          0.130     1.809    UART_interface/FSM_onehot_uartState_reg_n_0_[4]
+    SLICE_X85Y115        LUT6 (Prop_lut6_I5_O)        0.045     1.854 r  UART_interface/FSM_onehot_uartState[2]_i_1/O
+                         net (fo=1, routed)           0.000     1.854    UART_interface/FSM_onehot_uartState[2]_i_1_n_0
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.866     2.031    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y115        FDRE                                         r  UART_interface/FSM_onehot_uartState_reg[2]/C
+                         clock pessimism             -0.502     1.528    
+    SLICE_X85Y115        FDRE (Hold_fdre_C_D)         0.092     1.620    UART_interface/FSM_onehot_uartState_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.620    
+                         arrival time                           1.854    
+  -------------------------------------------------------------------
+                         slack                                  0.234    
+
+Slack (MET) :             0.251ns  (arrival time - required time)
+  Source:                 UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[4][9]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/Inst_btn_debounce/sig_out_reg_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.355ns  (logic 0.231ns (64.992%)  route 0.124ns (35.008%))
+  Logic Levels:           2  (LUT4=1 LUT5=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.032ns
+    Source Clock Delay      (SCD):    1.516ns
+    Clock Pessimism Removal (CPR):    0.502ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.597     1.516    UART_interface/Inst_btn_debounce/CLK100MHZ_IBUF_BUFG
+    SLICE_X86Y115        FDRE                                         r  UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[4][9]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X86Y115        FDRE (Prop_fdre_C_Q)         0.141     1.657 f  UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[4][9]/Q
+                         net (fo=2, routed)           0.062     1.719    UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[4]_4[9]
+    SLICE_X87Y115        LUT4 (Prop_lut4_I1_O)        0.045     1.764 r  UART_interface/Inst_btn_debounce/sig_out_reg[4]_i_3/O
+                         net (fo=2, routed)           0.063     1.827    UART_interface/Inst_btn_debounce/sig_out_reg[4]_i_3_n_0
+    SLICE_X87Y115        LUT5 (Prop_lut5_I1_O)        0.045     1.872 r  UART_interface/Inst_btn_debounce/sig_out_reg[4]_i_1/O
+                         net (fo=1, routed)           0.000     1.872    UART_interface/Inst_btn_debounce/sig_out_reg[4]_i_1_n_0
+    SLICE_X87Y115        FDRE                                         r  UART_interface/Inst_btn_debounce/sig_out_reg_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.866     2.032    UART_interface/Inst_btn_debounce/CLK100MHZ_IBUF_BUFG
+    SLICE_X87Y115        FDRE                                         r  UART_interface/Inst_btn_debounce/sig_out_reg_reg[4]/C
+                         clock pessimism             -0.502     1.529    
+    SLICE_X87Y115        FDRE (Hold_fdre_C_D)         0.091     1.620    UART_interface/Inst_btn_debounce/sig_out_reg_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.620    
+                         arrival time                           1.872    
+  -------------------------------------------------------------------
+                         slack                                  0.251    
+
+Slack (MET) :             0.255ns  (arrival time - required time)
+  Source:                 UART_interface/uartData_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/Inst_UART_TX_CTRL/txData_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.315ns  (logic 0.141ns (44.693%)  route 0.174ns (55.307%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.596     1.515    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X82Y113        FDRE                                         r  UART_interface/uartData_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X82Y113        FDRE (Prop_fdre_C_Q)         0.141     1.656 r  UART_interface/uartData_reg[1]/Q
+                         net (fo=1, routed)           0.174     1.831    UART_interface/Inst_UART_TX_CTRL/txData_reg[7]_1[1]
+    SLICE_X82Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/txData_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.865     2.030    UART_interface/Inst_UART_TX_CTRL/CLK100MHZ_IBUF_BUFG
+    SLICE_X82Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/txData_reg[2]/C
+                         clock pessimism             -0.501     1.528    
+    SLICE_X82Y116        FDRE (Hold_fdre_C_D)         0.047     1.575    UART_interface/Inst_UART_TX_CTRL/txData_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.575    
+                         arrival time                           1.831    
+  -------------------------------------------------------------------
+                         slack                                  0.255    
+
+Slack (MET) :             0.257ns  (arrival time - required time)
+  Source:                 UART_interface/uartData_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/Inst_UART_TX_CTRL/txData_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.341ns  (logic 0.141ns (41.338%)  route 0.200ns (58.662%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.030ns
+    Source Clock Delay      (SCD):    1.515ns
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.596     1.515    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X82Y113        FDRE                                         r  UART_interface/uartData_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X82Y113        FDRE (Prop_fdre_C_Q)         0.141     1.656 r  UART_interface/uartData_reg[5]/Q
+                         net (fo=1, routed)           0.200     1.857    UART_interface/Inst_UART_TX_CTRL/txData_reg[7]_1[5]
+    SLICE_X82Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/txData_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.865     2.030    UART_interface/Inst_UART_TX_CTRL/CLK100MHZ_IBUF_BUFG
+    SLICE_X82Y116        FDRE                                         r  UART_interface/Inst_UART_TX_CTRL/txData_reg[6]/C
+                         clock pessimism             -0.501     1.528    
+    SLICE_X82Y116        FDRE (Hold_fdre_C_D)         0.071     1.599    UART_interface/Inst_UART_TX_CTRL/txData_reg[6]
+  -------------------------------------------------------------------
+                         required time                         -1.599    
+                         arrival time                           1.857    
+  -------------------------------------------------------------------
+                         slack                                  0.257    
+
+Slack (MET) :             0.261ns  (arrival time - required time)
+  Source:                 UART_interface/reset_cntr_reg[11]/C
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            UART_interface/reset_cntr_reg[11]/D
+                            (rising edge-triggered cell FDRE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin rise@0.000ns - sys_clk_pin rise@0.000ns)
+  Data Path Delay:        0.366ns  (logic 0.249ns (67.994%)  route 0.117ns (32.006%))
+  Logic Levels:           1  (CARRY4=1)
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.033ns
+    Source Clock Delay      (SCD):    1.516ns
+    Clock Pessimism Removal (CPR):    0.516ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     0.250 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.644     0.894    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     0.920 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.597     1.516    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y112        FDRE                                         r  UART_interface/reset_cntr_reg[11]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X85Y112        FDRE (Prop_fdre_C_Q)         0.141     1.657 r  UART_interface/reset_cntr_reg[11]/Q
+                         net (fo=2, routed)           0.117     1.775    UART_interface/reset_cntr_reg[11]
+    SLICE_X85Y112        CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.108     1.883 r  UART_interface/reset_cntr_reg[8]_i_1/O[3]
+                         net (fo=1, routed)           0.000     1.883    UART_interface/reset_cntr_reg[8]_i_1_n_4
+    SLICE_X85Y112        FDRE                                         r  UART_interface/reset_cntr_reg[11]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin rise edge)
+                                                      0.000     0.000 r  
+    E3                                                0.000     0.000 r  CLK100MHZ (IN)
+                         net (fo=0)                   0.000     0.000    CLK100MHZ
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     0.438 r  CLK100MHZ_IBUF_inst/O
+                         net (fo=1, routed)           0.699     1.136    CLK100MHZ_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.165 r  CLK100MHZ_IBUF_BUFG_inst/O
+                         net (fo=318, routed)         0.868     2.033    UART_interface/CLK100MHZ_IBUF_BUFG
+    SLICE_X85Y112        FDRE                                         r  UART_interface/reset_cntr_reg[11]/C
+                         clock pessimism             -0.516     1.516    
+    SLICE_X85Y112        FDRE (Hold_fdre_C_D)         0.105     1.621    UART_interface/reset_cntr_reg[11]
+  -------------------------------------------------------------------
+                         required time                         -1.621    
+                         arrival time                           1.883    
+  -------------------------------------------------------------------
+                         slack                                  0.261    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { CLK100MHZ }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     BUFG/I   n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  CLK100MHZ_IBUF_BUFG_inst/I
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y119   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[13]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y119   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[14]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y119   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[15]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y120   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[16]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y120   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[17]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y120   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[18]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y120   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[19]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y116   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[1]/C
+Min Period        n/a     FDRE/C   n/a            1.000         10.000      9.000      SLICE_X83Y121   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[20]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X83Y118   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[8]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X83Y118   UART_interface/Inst_UART_TX_CTRL/bitIndex_reg[9]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X4Y76     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[3][0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X78Y110   UART_interface/sendStr_reg[18][2]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y113   UART_interface/sendStr_reg[20][0]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X81Y113   UART_interface/strIndex_reg[5]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X81Y113   UART_interface/strIndex_reg[6]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X81Y113   UART_interface/strIndex_reg[7]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X81Y114   UART_interface/strIndex_reg[8]/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X81Y114   UART_interface/strIndex_reg[9]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X1Y83     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[1][10]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X1Y83     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[1][11]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X1Y84     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[1][12]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X1Y84     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[1][13]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X1Y84     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[1][14]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X1Y84     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[1][15]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X80Y112   UART_interface/sendStr_reg[18][4]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X81Y112   UART_interface/strIndex_reg[1]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X6Y83     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[0][10]/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         5.000       4.500      SLICE_X6Y83     UART_interface/Inst_btn_debounce/sig_cntrs_ary_reg[0][11]/C
+
+
+
