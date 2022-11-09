@@ -28,10 +28,11 @@ module term_interf_top(
     input PS2_CLK,
     output wire [15:0] LED,
     output wire [7:0] SSEG_CA,
-    output wire [7:0] SSEG_AN
+    output wire [7:0] SSEG_AN,
+    output wire UART_TXD
     );
     
-    wire UART_TXD_keyboard;
+//    wire UART_TXD_keyboard;
     wire [7:0] mode;
     reg [2:0] mode_select;
     
@@ -43,25 +44,15 @@ module term_interf_top(
     .LED(LED),
     .SSEG_CA(SSEG_CA),
     .SSEG_AN(SSEG_AN),
-    .UART_TXD(UART_TXD),
-    .RGB1_Red(RGB1_Red),
-    .RGB1_Green(RGB1_Green),
-    .RGB1_Blue(RGB1_Blue),
-    .RGB2_Red(RGB2_Red),
-    .RGB2_Green(RGB2_Green),
-    .RGB2_Blue(RGB2_Blue),
-    .micClk(micClk),
-    .micLRSel(micLRSel),
-    .micData(micData),
-    .ampPWM(ampPWM),
-    .ampSD(ampSD)   
+    .mode_select(mode_select),
+    .UART_TXD(UART_TXD)
     );
     
     top_keyboard keyboard_interface(
     .CLK100MHZ(CLK100MHZ),
     .PS2_CLK(PS2_CLK),
     .PS2_DATA(PS2_DATA),
-    .UART_TXD(UART_TXD_keyboard),
+//    .UART_TXD(UART_TXD_keyboard),
     .mode(mode)
     );
     

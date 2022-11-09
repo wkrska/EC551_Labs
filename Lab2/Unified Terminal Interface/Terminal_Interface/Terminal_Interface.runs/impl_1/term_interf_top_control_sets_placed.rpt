@@ -1,0 +1,111 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Tue Nov  8 18:18:28 2022
+| Host         : ECE-PHO115-02 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file term_interf_top_control_sets_placed.rpt
+| Design       : term_interf_top
+| Device       : xc7a100t
+--------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    33 |
+|    Minimum number of control sets                        |    33 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   117 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    33 |
+| >= 0 to < 4        |     5 |
+| >= 4 to < 6        |     8 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     3 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    12 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              33 |           20 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             147 |           40 |
+| Yes          | No                    | No                     |              75 |           29 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             108 |           34 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++--------------------------------------------+--------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
+|                Clock Signal                |                      Enable Signal                     |                       Set/Reset Signal                       | Slice Load Count | Bel Load Count |
++--------------------------------------------+--------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
+|  keyboard_interface/CLK50MHZ               |                                                        |                                                              |                1 |              1 |
+|  keyboard_interface/CLK50MHZ               | keyboard_interface/keyboard/debouncer1/clear           |                                                              |                1 |              1 |
+|  keyboard_interface/CLK50MHZ               | keyboard_interface/keyboard/debouncer1/O1_i_1_n_0      |                                                              |                1 |              1 |
+|  keyboard_interface/CLK50MHZ               | keyboard_interface/keyboard/debouncer1/O0_i_1_n_0      |                                                              |                1 |              1 |
+|  keyboard_interface/CLK50MHZ               | keyboard_interface/keyboard/debouncer1/Iv1_i_1_n_0     |                                                              |                1 |              1 |
+|  keyboard_interface/CLK50MHZ               |                                                        | keyboard_interface/keyboard/debouncer1/clear                 |                1 |              4 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/sendStr[37]_7                                 |                3 |              4 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/eqOp3_in                                | UART_interface/tmrVal[3]_i_1_n_0                             |                1 |              4 |
+| ~keyboard_interface/keyboard/debouncer1/O0 | keyboard_interface/keyboard/cnt                        | keyboard_interface/keyboard/cnt[3]_i_1_n_0                   |                2 |              4 |
+|  keyboard_interface/CLK50MHZ               | keyboard_interface/keyboard/debouncer1/cnt1[4]_i_1_n_0 | keyboard_interface/keyboard/debouncer1/Iv1_i_1_n_0           |                1 |              5 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/sendStr[14][6]_i_1_n_0                  | UART_interface/sendStr[37]_7                                 |                2 |              5 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/sendStr[14][2]_i_2_n_0                  | UART_interface/sendStr[14][2]_i_1_n_0                        |                2 |              5 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/sendStr[11][2]_i_1_n_0                  |                                                              |                3 |              5 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/uartSend                                |                                                              |                1 |              7 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/strIndex                                |                                                              |                5 |              7 |
+| ~keyboard_interface/keyboard/keycode[16]   | keyboard_interface/keyboard/mode_0                     |                                                              |                1 |              8 |
+| ~keyboard_interface/keyboard/debouncer1/O0 |                                                        |                                                              |                3 |              9 |
+|  keyboard_interface/keyboard/flag          | keyboard_interface/keyboard/keycode[16]_i_1_n_0        |                                                              |                4 |             10 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/sendStr[2][3]_i_1_n_0                   | UART_interface/sendStr[37]_7                                 |                4 |             11 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/Inst_UART_TX_CTRL/E[0]                  | UART_interface/Inst_btn_debounce/SR[0]                       |                5 |             11 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/Inst_UART_TX_CTRL/bitTmr                      |                4 |             14 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/Inst_btn_debounce/sig_cntrs_ary[2][0]_i_1_n_0 |                4 |             16 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/Inst_btn_debounce/sig_cntrs_ary[3][0]_i_1_n_0 |                4 |             16 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/Inst_btn_debounce/sig_cntrs_ary[1][0]_i_1_n_0 |                4 |             16 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/Inst_btn_debounce/sig_cntrs_ary[0][0]_i_1_n_0 |                4 |             16 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/Inst_btn_debounce/sig_cntrs_ary[4][0]_i_1_n_0 |                4 |             16 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/sendStr[18][1]_i_1_n_0                  |                                                              |                6 |             17 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/sendStr[9][3]_i_1_n_0                   |                                                              |                5 |             17 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/reset_cntr0                                   |                5 |             18 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        |                                                              |               16 |             23 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_interface/tmrCntr0                                      |                7 |             27 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/strIndex                                | UART_interface/sendStr[9][3]_i_1_n_0                         |                8 |             31 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_interface/Inst_UART_TX_CTRL/bitIndex              | UART_interface/Inst_UART_TX_CTRL/READY                       |                9 |             32 |
++--------------------------------------------+--------------------------------------------------------+--------------------------------------------------------------+------------------+----------------+
+
+

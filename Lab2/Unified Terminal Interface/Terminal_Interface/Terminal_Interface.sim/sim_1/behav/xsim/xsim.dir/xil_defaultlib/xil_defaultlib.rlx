@@ -1,0 +1,13 @@
+0.6
+2019.1
+May 24 2019
+15:06:07
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.sim/sim_1/behav/xsim/glbl.v,1558713910,verilog,,,,glbl,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new/t_term_interf_top.v,1667948541,verilog,,,,t_term_interf_top,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd,1667741562,vhdl,,,,uart_tx_ctrl,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd,1667741562,vhdl,,,,debouncer,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd,1667946321,vhdl,,,,gpio_demo,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v,1667948398,verilog,,X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/keyboard_debouncer.v,,PS2Receiver,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/keyboard_debouncer.v,1667744377,verilog,,X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/term_interf_top.v,,keyboard_debouncer,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/term_interf_top.v,1667946961,verilog,,X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/top_keyboard.v,,term_interf_top,,,,,,,,
+X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/top_keyboard.v,1667946911,verilog,,X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new/t_term_interf_top.v,,top_keyboard,,,,,,,,

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1667949387">
+  <File Type="BITSTR-BMM" Name="term_interf_top_bd.bmm"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="term_interf_top_methodology_drc_opted.rpt"/>
+  <File Type="INIT-TIMING" Name="term_interf_top_timing_summary_init.rpt"/>
+  <File Type="ROUTE-PWR" Name="term_interf_top_power_routed.rpt"/>
+  <File Type="PA-TCL" Name="term_interf_top.tcl"/>
+  <File Type="OPT-TIMING" Name="term_interf_top_timing_summary_opted.rpt"/>
+  <File Type="OPT-DCP" Name="term_interf_top_opt.dcp"/>
+  <File Type="ROUTE-PWR-SUM" Name="term_interf_top_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="term_interf_top_reports.tcl"/>
+  <File Type="OPT-DRC" Name="term_interf_top_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="term_interf_top.hwdef"/>
+  <File Type="PWROPT-DCP" Name="term_interf_top_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="term_interf_top_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="term_interf_top_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="term_interf_top_placed.dcp"/>
+  <File Type="PLACE-IO" Name="term_interf_top_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="term_interf_top_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="term_interf_top_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="term_interf_top_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="term_interf_top_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="term_interf_top_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="term_interf_top_incremental_reuse_pre_placed.rpt"/>
+  <File Type="BG-BGN" Name="term_interf_top.bgn"/>
+  <File Type="PLACE-TIMING" Name="term_interf_top_timing_summary_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="term_interf_top_postplace_pwropt.dcp"/>
+  <File Type="BG-BIN" Name="term_interf_top.bin"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="term_interf_top_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="term_interf_top_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="term_interf_top_drc_physopted.rpt"/>
+  <File Type="BITSTR-MSK" Name="term_interf_top.msk"/>
+  <File Type="PHYSOPT-TIMING" Name="term_interf_top_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="term_interf_top_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="term_interf_top_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="term_interf_top_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="term_interf_top_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="term_interf_top_drc_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="term_interf_top.ltx"/>
+  <File Type="ROUTE-DRC-RPX" Name="term_interf_top_drc_routed.rpx"/>
+  <File Type="BITSTR-MMI" Name="term_interf_top.mmi"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="term_interf_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="term_interf_top_methodology_drc_routed.rpx"/>
+  <File Type="BITSTR-SYSDEF" Name="term_interf_top.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="term_interf_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="term_interf_top_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="term_interf_top_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="term_interf_top_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="term_interf_top_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="term_interf_top_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="term_interf_top_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="term_interf_top_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="term_interf_top_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="term_interf_top_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="term_interf_top_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="term_interf_top_bus_skew_routed.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="term_interf_top_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="term_interf_top_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="term_interf_top_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="term_interf_top_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="term_interf_top_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="term_interf_top_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="term_interf_top_bus_skew_postroute_physopted.pb"/>
+  <File Type="BG-BIT" Name="term_interf_top.bit"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="term_interf_top_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BITSTR-RBT" Name="term_interf_top.rbt"/>
+  <File Type="BITSTR-NKY" Name="term_interf_top.nky"/>
+  <File Type="BG-DRC" Name="term_interf_top.drc"/>
+  <File Type="RDI-RDI" Name="term_interf_top.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/PS2Receiver.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/keyboard_debouncer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/top_keyboard.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/UART_TX_CTRL.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/WorkBORI/gpio/Nexys-A7/hw/src/hdl/UART_TX_CTRL.vhd"/>
+        <Attr Name="ImportTime" Val="1658995627"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/debouncer.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/WorkBORI/gpio/Nexys-A7/hw/src/hdl/debouncer.vhd"/>
+        <Attr Name="ImportTime" Val="1658995627"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/top.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/WorkBORI/gpio/Nexys-A7/hw/src/hdl/top.vhd"/>
+        <Attr Name="ImportTime" Val="1658995627"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/term_interf_top.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/RGB_controller.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="D:/WorkBORI/gpio/Nexys-A7/hw/src/hdl/RGB_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1658995627"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/seg7decimal.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hw/archive_project_summary.txt">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../Lab2/UART Demo/hw/archive_project_summary.txt"/>
+        <Attr Name="ImportTime" Val="1667504844"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="term_interf_top"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="D:/WorkBORI/gpio/Nexys-A7/hw/src/constraints/Nexys-A7-100T-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1658995627"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>
