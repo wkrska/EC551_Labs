@@ -10,10 +10,10 @@ module datapath (
     input rst,
     input [`dwidth_dat-1:0] user_inst_write,
     input [`awidth_mem-1:0] user_inst_addr,
-    input [`awidth_reg-1:0] disp_RS,
     input ap_start, resume,
-    output [`dwidth_dat-1:0] disp_RD,
-    output [`dwidth_dat-1:0] disp_inst
+    output [`dwidth_dat*6-1:0] rf_out,
+    output [`dwidth_dat-1:0] disp_inst,
+    output wire halt
 );
 
     // Define ops
@@ -138,7 +138,7 @@ module datapath (
         .rst(rst),
         .RS1(RN_ID),
         .RS2((OP_ID == op_mov0 || OP_ID == op_nop) ? 6'b0 : RM_ID), // avoid X
-        .disp_RS(disp_RS),
+        .disp_RS(1'b0), // hardwire out for now
         .WS(RN_WB),
         .WD(RES_WB),
         .WE(RF_WE),
@@ -146,7 +146,8 @@ module datapath (
         .PC_EN(PC_en),
         .RD1(RF_D1_ID),
         .RD2(RF_D2_ID), // corresponds to RM
-        .disp_RD(disp_RD),
+        // .disp_RD(disp_RD),
+        .RF_OUT(rf_out),
         .PC_OUT(PC_curr)
     );
 

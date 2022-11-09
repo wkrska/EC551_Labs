@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../Sources/Design" \
+"../../../../../Sources/Design/mat3mult.v" \
+"../../../../../Sources/Design/vect3mac.v" \
+"../../../../../Sources/Simulation/test_mat3mult.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

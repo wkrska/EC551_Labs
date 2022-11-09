@@ -5,19 +5,22 @@
     `include "my_header.vh"
 // `endif
 
-module Register_file(RS1, RS2, disp_RS, WS, WD, WE, RD1, RD2, disp_RD, PC_IN, PC_EN, PC_OUT, clk, rst);
+module Register_file(RS1, RS2, disp_RS, WS, WD, WE, RD1, RD2, disp_RD, PC_IN, PC_EN, PC_OUT, RF_OUT, clk, rst);
 
     parameter REGSIZE = 7; // 6 registers and 1 PC
     input [`awidth_reg-1:0] RS1, RS2, WS, disp_RS;
     input [`dwidth_dat-1:0] WD, PC_IN;
     input WE, PC_EN;
     output reg [`dwidth_dat-1:0] RD1, RD2, PC_OUT, disp_RD;
+    output reg [`dwidth_dat*6-1:0] RF_OUT;
     input clk, rst;
 
     reg [`dwidth_dat-1:0] reg_file [REGSIZE-1:0];   // Entire list of registers
 
     integer i;                                  // Used below to rst all registers
     
+    assign RF_OUT = {reg_file[5],reg_file[4],reg_file[3],reg_file[2],reg_file[1],reg_file[0]};
+
     // Asyncronous read of register file.
     always @(RS1, reg_file[RS1], WS)
         begin

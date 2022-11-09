@@ -1,26 +1,14 @@
 Vivado Simulator 2019.1
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto cea4847d71294ce09da085bb15d9b020 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot t_term_interf_top_behav xil_defaultlib.t_term_interf_top xil_defaultlib.glbl -log elaborate.log 
-Using 2 slave threads.
+Running: /ad/eng/opt/xilinx/Vivado/2019.1/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab -wto cea4847d71294ce09da085bb15d9b020 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot test_mat3mult_behav xil_defaultlib.test_mat3mult xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling package std.standard
-Compiling package std.textio
-Compiling package ieee.std_logic_1164
-Compiling package ieee.std_logic_arith
-Compiling package ieee.std_logic_unsigned
-Compiling package ieee.numeric_std
-Compiling package ieee.math_real
-Compiling architecture behavioral of entity xil_defaultlib.debouncer [debouncer_default]
-Compiling architecture behavioral of entity xil_defaultlib.UART_TX_CTRL [uart_tx_ctrl_default]
-Compiling architecture behavioral of entity xil_defaultlib.GPIO_demo [gpio_demo_default]
-Compiling module xil_defaultlib.keyboard_debouncer
-Compiling module xil_defaultlib.PS2Receiver
-Compiling module xil_defaultlib.top_keyboard
-Compiling module xil_defaultlib.term_interf_top
-Compiling module xil_defaultlib.t_term_interf_top
+Compiling module xil_defaultlib.vect3mac
+Compiling module xil_defaultlib.mat3mult_default
+Compiling module xil_defaultlib.test_mat3mult
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot t_term_interf_top_behav
+Built simulation snapshot test_mat3mult_behav

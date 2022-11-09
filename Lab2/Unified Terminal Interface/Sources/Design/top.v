@@ -19,11 +19,11 @@ begin
     slow_clk <= (counter < (`clk_div*200)) ? 1'b0 : 1'b1;
 end
 
-wire [15:0] register_data;
+wire [`dwidth_dat*6-1:0] register_data;
 wire ap_start_ROM;
 wire [11:0] user_inst_addr_ROM;
 wire [15:0] user_inst_write_ROM;
-wire resume;
+wire resume,halt;
 
 btn_edge btn(
     .reset(rst),
@@ -40,10 +40,11 @@ datapath dp1(
     .resume(resume_btn),
     .user_inst_write(user_inst_write_ROM),
     .user_inst_addr(user_inst_addr_ROM),
-    .disp_RS(switch_RS),
+    // .disp_RS(switch_RS),
     .ap_start(ap_start_ROM),
-    .disp_RD(register_data),
-    .disp_inst(LED)
+    .rf_out(register_data),
+    .disp_inst(LED),
+    .halt(halt)
     );
     
 inst_ROM  ROM1(
@@ -55,16 +56,16 @@ inst_ROM  ROM1(
     .user_inst_write(user_inst_write_ROM)
     );
     
-top_VGA  VGA1(
-    .reg_value(register_data),
-    .CLK100MHZ(CLK100MHZ),
-    .rst(rst),
-    .VGA_R(VGA_R),
-    .VGA_G(VGA_G),
-    .VGA_B(VGA_B),
-    .VGA_HS(VGA_HS),
-    .VGA_VS(VGA_VS)
-    );
+// top_VGA  VGA1(
+//     .reg_value(register_data),
+//     .CLK100MHZ(CLK100MHZ),
+//     .rst(rst),
+//     .VGA_R(VGA_R),
+//     .VGA_G(VGA_G),
+//     .VGA_B(VGA_B),
+//     .VGA_HS(VGA_HS),
+//     .VGA_VS(VGA_VS)
+//     );
 
 
 endmodule
