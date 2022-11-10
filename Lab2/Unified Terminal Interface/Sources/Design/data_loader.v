@@ -4,7 +4,7 @@
 
 module data_loader(
     input wire clk,
-    inpur wire rst,
+    input wire rst,
     input wire [2:0] mode, // 0=I, 1=L, 2=A, 3=B
     input wire wen_mode,
     input wire [7:0] key,
@@ -42,7 +42,8 @@ always @(key) begin
         8'h55 : assign trans_key = 5'h15; // +
         8'h4e : assign trans_key = 5'h16; // -
         8'h3e : assign trans_key = 5'h17; // * (8) custom function
-        default: assign trans_key = 5'h18; // D/C
+        8'h2d : assign trans_key = 5'h18; // r
+        default: assign trans_key = 5'h1F; // D/C
     endcase
 end
 
@@ -62,10 +63,10 @@ reg result_ready_c,result_ready_n;
 reg [`dwidth_mat*3*3-1:0] mat_a, mat_b;
 //states
 localparam [7:0]    IDLE=8'h00,
-                    I_c0=8'h10, // first char entered, or run
-                    I_c1=8'h11, // second char
-                    I_c2=8'h12, // third char
-                    I_c3=8'h13, // fourth char
+                    I_ch=8'h10, // first char entered, or run
+                    // I_c1=8'h11, // second char
+                    // I_c2=8'h12, // third char
+                    // I_c3=8'h13, // fourth char
                     I_wb=8'h14, // write inst on enter
                     A_c0=8'h30, // First operand
                     A_c1=8'h31, // Operator
@@ -108,7 +109,7 @@ always @(*) begin
             result_ready_n = 'b0;
         end
         I_c0: begin
-            
+            if (wen_key)
         end
         I_c1: begin
 
