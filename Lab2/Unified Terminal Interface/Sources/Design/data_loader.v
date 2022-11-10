@@ -15,7 +15,8 @@ module data_loader(
     output wire [`dwidth_dat_user*2-1:0] alu_out,
     output wire [`dwidth_mat*3*3-1:0] bench_out,
     output reg result_ready,
-    output reg ap_start
+    output reg ap_start,
+    output wire [7:0] debug_state
 );
 
 reg [4:0] trans_key;
@@ -53,7 +54,7 @@ end
 
 //----------- control FSM ----------//
 reg [7:0] curr_state, next_state;
-
+assign debug_state = curr_state;
 reg [3:0] count_c,count_n;
 // Inst write
 reg [`dwidth_dat-1:0] inst_write_n;
