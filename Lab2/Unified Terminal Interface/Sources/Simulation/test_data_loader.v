@@ -17,8 +17,9 @@ wire [15:0] inst_write;
 wire [`dwidth_dat_user*2-1:0] alu_out;
 wire [`dwidth_mat*3*3-1:0] bench_out;
 wire result_ready;
+wire ap_start;
 
-data_loader dl(clk,rst,mode,wen_mode,key,wen_key,run,inst_addr,inst_write,alu_out,bench_out,result_ready);
+data_loader dl(clk,rst,mode,wen_mode,key,wen_key,run,inst_addr,inst_write,alu_out,bench_out,result_ready,ap_start);
 
 always
     #1 clk<=~clk;
@@ -33,13 +34,88 @@ initial begin
     run <= 'b0;
 
     #10; rst<=1; #10; rst<=0;
-
-    #10; mode=2;
-    #10; wen_mode=1; #2; wen_mode=0;
-
+    
+    // Inst write
+    #10; mode<=0;
+    #10; wen_mode<=1; #2; wen_mode<=0;
+    
+    // Simulate button presses for inst in
+    #10; trans_key<=5'h01;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h02;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h03;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h04;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h11;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h05;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h06;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h07;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h08;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h11;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h09;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h0a;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h0b;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h0c;#10; wen_key<=1; #2; wen_key<=0;
+    #10; trans_key<=5'h11;#10; wen_key<=1; #2; wen_key<=0;
+    #10; run<=1; #2; run<=0;
+    #10;
+    
+    // mat write
+    #10; mode<=2;
+    #10; wen_mode<=1; #4; wen_mode<=0;
+    
+    // Simulate button presses for mat_a in
+    #5; trans_key<=5'h03;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h12;#5; wen_key<=1; #2; wen_key<=0;//shift
+    #5; trans_key<=5'h14;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h0a;#5; wen_key<=1; #2; wen_key<=0;
+    
+    #10; mode<=2;#10; wen_mode<=1; #4; wen_mode<=0;
+    #5; trans_key<=5'h03;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h13;#5; wen_key<=1; #2; wen_key<=0;//shift
+    #5; trans_key<=5'h15;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h0a;#5; wen_key<=1; #2; wen_key<=0;
+    
+    #10; mode<=2;#10; wen_mode<=1; #4; wen_mode<=0;
+    #5; trans_key<=5'h03;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h12;#5; wen_key<=1; #2; wen_key<=0;//shift
+    #5; trans_key<=5'h16;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h0a;#5; wen_key<=1; #2; wen_key<=0;
+    
+    #10; mode<=2;#10; wen_mode<=1; #4; wen_mode<=0;
+    #5; trans_key<=5'h03;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h12;#5; wen_key<=1; #2; wen_key<=0;//shift
+    #5; trans_key<=5'h17;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h0a;#5; wen_key<=1; #2; wen_key<=0;
+    
+    
+    // mat write
+    #10; mode<=3;
+    #10; wen_mode<=1; #4; wen_mode<=0;
+    
+    // Simulate button presses for mat_a in
+    #5; trans_key<=5'h01;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h02;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h03;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h11;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h04;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h05;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h06;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h11;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h07;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h08;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h09;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h11;#5; wen_key<=1; #2; wen_key<=0;
+    
+    #5; trans_key<=5'h01;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h00;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h00;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h11;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h00;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h01;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h00;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h11;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h00;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h00;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h10;#5; wen_key<=1; #2; wen_key<=0;
+    #5; trans_key<=5'h01;#5; wen_key<=1; #2; wen_key<=0;#5; trans_key<=5'h11;#5; wen_key<=1; #2; wen_key<=0;
+    
+    #10;
+    
     $finish;
-endmodule
-
+end
 
 
 always @(trans_key) begin
@@ -71,3 +147,5 @@ always @(trans_key) begin
         5'h18 : key = 8'h2d; //r
     endcase
 end
+
+endmodule

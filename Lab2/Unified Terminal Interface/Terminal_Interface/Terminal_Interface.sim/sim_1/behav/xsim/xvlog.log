@@ -1,6 +1,10 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/Lab2/Unified Terminal Interface/Sources/Design/data_loader.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_loader
 INFO: [VRFC 10-2263] Analyzing Verilog file "/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/Lab2/Unified Terminal Interface/Sources/Design/mat3mult.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module mat3mult
+INFO: [VRFC 10-2263] Analyzing Verilog file "/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/Lab2/Unified Terminal Interface/Sources/Design/mini_ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mini_ALU
 INFO: [VRFC 10-2263] Analyzing Verilog file "/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/Lab2/Unified Terminal Interface/Sources/Design/vect3mac.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module vect3mac
-INFO: [VRFC 10-2263] Analyzing Verilog file "/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/Lab2/Unified Terminal Interface/Sources/Simulation/test_mat3mult.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module test_mat3mult
+INFO: [VRFC 10-2263] Analyzing Verilog file "/ad/eng/users/w/k/wkrska/Documents/EC551/EC551_Labs/Lab2/Unified Terminal Interface/Sources/Simulation/test_data_loader.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test_data_loader
