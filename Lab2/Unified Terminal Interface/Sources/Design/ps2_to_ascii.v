@@ -66,7 +66,7 @@ always @(*) begin
         8'h22: ascii = 8'h58; // X
         8'h35: ascii = 8'h59; // Y
         8'h1A: ascii = 8'h5A; // Z
-        default: trans_key_ps2 = 8'h0; // D/C
+        default: ascii = 8'h0; // D/C
     endcase
 end
 
