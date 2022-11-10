@@ -2,13 +2,13 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Nov  8 17:56:09 2022
-# Process ID: 22240
-# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12464 X:\EC551\Labs\Lab1\Final Copy\EC551_Labs\lab_1\lab_1.xpr
-# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/vivado.log
-# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1\vivado.jou
+# Start of session at: Wed Nov  9 17:18:03 2022
+# Process ID: 10412
+# Current directory: X:/EC551/Labs/Lab2_new/EC551_Labs/lab_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent21208 X:\EC551\Labs\Lab2_new\EC551_Labs\lab_1\lab_1.xpr
+# Log file: X:/EC551/Labs/Lab2_new/EC551_Labs/lab_1/vivado.log
+# Journal file: X:/EC551/Labs/Lab2_new/EC551_Labs/lab_1\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/lab_1/lab_1.xpr}
+open_project X:/EC551/Labs/Lab2_new/EC551_Labs/lab_1/lab_1.xpr
 update_compile_order -fileset sources_1

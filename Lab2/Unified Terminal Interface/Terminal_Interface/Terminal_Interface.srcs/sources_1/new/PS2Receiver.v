@@ -21,13 +21,14 @@
 
 
 module PS2Receiver(
-
-   input clk,
+    input clk,
     input kclk,
     input kdata,
-    output reg [7:0] mode
+    output reg [7:0] mode,
+    output reg [7:0] keystroke,
+    output reg keyflag,
+    output reg modeflag
     );
-    
     
     wire kclkf, kdataf;
     reg [7:0]datacur;
@@ -80,10 +81,22 @@ always @(posedge flag)begin
     end
 end
 
-always @(negedge datacur)begin
-    if (datacur == 'h5A) begin
-        mode <= dataprev;
+always @(posedge flag)begin
+    if (dataprev!=datacur)begin
+        if (keycode[15:8] == 'hF0)begin
+            keyflag<=1;
+            keystroke<=keycode[7:0];
+            if (keycode[7:0] == 'h5A) begin
+                mode <= keycode[31:24];
+                modeflag<= 1;
+            end 
+        end
+    end
+    else begin
+        keyflag<=0;
+        modeflag<=0;
     end
 end
+
     
 endmodule

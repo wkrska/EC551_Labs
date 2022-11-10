@@ -1,117 +1,26 @@
-<<<<<<< HEAD
 #-----------------------------------------------------------
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Nov  7 16:33:04 2022
-# Process ID: 15068
-# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15816 X:\EC551\Labs\Lab1\Final Copy\EC551_Labs\Lab2\UART Demo\UART_Demo\UART_Demo.xpr
-# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/vivado.log
-# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo\vivado.jou
+# Start of session at: Wed Nov  9 16:47:30 2022
+# Process ID: 18484
+# Current directory: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/UART Demo/UART_Demo
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent5908 X:\EC551\Labs\Lab2_new\EC551_Labs\Lab2\UART Demo\UART_Demo\UART_Demo.xpr
+# Log file: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/UART Demo/UART_Demo/vivado.log
+# Journal file: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/UART Demo/UART_Demo\vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.xpr}
+open_project {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.xpr}
+INFO: [Project 1-313] Project file moved from 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo' since last save.
 Scanning sources...
 Finished scanning sources
 WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'D:/WorkBORI/gpio/Nexys-A7/hw/repo'.
+INFO: [filemgmt 56-1] IPUserFilesDir: Directory not found as 'X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.ip_user_files'; using path 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.ip_user_files' instead.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/WorkBORI/gpio/Nexys-A7/hw/repo'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 784.082 ; gain = 90.156
-update_compile_order -fileset sources_1
-open_hw
-launch_runs synth_1 -jobs 6
-[Mon Nov  7 16:37:32 2022] Launched synth_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/synth_1/runme.log
-close_hw
-reset_run synth_1
-launch_runs synth_1 -jobs 6
-[Mon Nov  7 16:39:25 2022] Launched synth_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1 -jobs 6
-[Mon Nov  7 16:40:51 2022] Launched synth_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/synth_1/runme.log
-reset_run synth_1
-launch_runs synth_1 -jobs 6
-[Mon Nov  7 16:42:02 2022] Launched synth_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/synth_1/runme.log
-launch_runs impl_1 -jobs 6
-[Mon Nov  7 16:43:17 2022] Launched impl_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/impl_1/runme.log
-open_hw
-connect_hw_server
-INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
-INFO: [Labtools 27-2222] Launching hw_server...
-INFO: [Labtools 27-2221] Launch Output:
-
-****** Xilinx hw_server v2019.1
-  **** Build date : May 24 2019 at 15:13:31
-    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
-
-
-open_hw_target
-INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292ABF909A
-current_hw_device [get_hw_devices xc7a100t_0]
-refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov  7 16:45:21 2022] Launched impl_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/impl_1/GPIO_demo.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov  7 16:55:51 2022] Launched synth_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/synth_1/runme.log
-[Mon Nov  7 16:55:51 2022] Launched impl_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 6
-[Mon Nov  7 16:57:17 2022] Launched synth_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/synth_1/runme.log
-[Mon Nov  7 16:57:17 2022] Launched impl_1...
-Run output will be captured here: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
-set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.runs/impl_1/GPIO_demo.bit} [get_hw_devices xc7a100t_0]
-program_hw_devices [get_hw_devices xc7a100t_0]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
-INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
-close_hw
-exit
-INFO: [Common 17-206] Exiting Vivado at Mon Nov  7 19:05:57 2022...
-=======
-#-----------------------------------------------------------
-# Vivado v2019.1 (64-bit)
-# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
-# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Nov  8 17:05:03 2022
-# Process ID: 10280
-# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15180 X:\EC551\Labs\Lab1\Final Copy\EC551_Labs\Lab2\UART Demo\UART_Demo\UART_Demo.xpr
-# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/vivado.log
-# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo\vivado.jou
-#-----------------------------------------------------------
-start_gui
-open_project {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/UART Demo/UART_Demo/UART_Demo.xpr}
-Scanning sources...
-Finished scanning sources
-WARNING: [filemgmt 56-3] IP Repository Path: Could not find the directory 'D:/WorkBORI/gpio/Nexys-A7/hw/repo'.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/WorkBORI/gpio/Nexys-A7/hw/repo'; Can't find the specified path.
-If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:08 . Memory (MB): peak = 820.496 ; gain = 141.340
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 821.902 ; gain = 144.102
 update_compile_order -fileset sources_1
 exit
-INFO: [Common 17-206] Exiting Vivado at Tue Nov  8 18:20:28 2022...
->>>>>>> af46c7d2b440cfc52d3b4969143f9c7c42fc9002
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  9 19:01:54 2022...

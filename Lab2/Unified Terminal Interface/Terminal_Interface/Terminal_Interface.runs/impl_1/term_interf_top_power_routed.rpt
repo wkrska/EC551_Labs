@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Tue Nov  8 18:19:04 2022
+| Date             : Wed Nov  9 19:03:46 2022
 | Host             : ECE-PHO115-02 running 64-bit major release  (build 9200)
 | Command          : report_power -file term_interf_top_power_routed.rpt -pb term_interf_top_power_summary_routed.pb -rpx term_interf_top_power_routed.rpx
 | Design           : term_interf_top
@@ -52,14 +52,15 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.001 |      782 |       --- |             --- |
-|   LUT as Logic |     0.001 |      272 |     63400 |            0.43 |
+| Clocks         |     0.003 |        3 |       --- |             --- |
+| Slice Logic    |     0.001 |      853 |       --- |             --- |
+|   LUT as Logic |    <0.001 |      284 |     63400 |            0.45 |
 |   CARRY4       |    <0.001 |       55 |     15850 |            0.35 |
-|   Register     |    <0.001 |      363 |    126800 |            0.29 |
-|   F7/F8 Muxes  |    <0.001 |       22 |     63400 |            0.03 |
+|   Register     |    <0.001 |      416 |    126800 |            0.33 |
+|   F7/F8 Muxes  |    <0.001 |       28 |     63400 |            0.04 |
+|   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       13 |       --- |             --- |
-| Signals        |     0.002 |      620 |       --- |             --- |
+| Signals        |     0.001 |      669 |       --- |             --- |
 | I/O            |     0.014 |       57 |       210 |           27.14 |
 | Static Power   |     0.097 |          |           |                 |
 | Total          |     0.116 |          |           |                 |
@@ -138,11 +139,12 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| term_interf_top  |     0.019 |
-|   UART_interface |     0.004 |
-+------------------+-----------+
++-----------------------+-----------+
+| Name                  | Power (W) |
++-----------------------+-----------+
+| term_interf_top       |     0.019 |
+|   UART_interface      |     0.004 |
+|     Inst_btn_debounce |     0.001 |
++-----------------------+-----------+
 
 

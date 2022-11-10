@@ -52,10 +52,13 @@ entity GPIO_demo is
     Port ( SW 			: in  STD_LOGIC_VECTOR (15 downto 0);
            BTN 			: in  STD_LOGIC_VECTOR (4 downto 0);
            CLK 			: in  STD_LOGIC;
+           keyflag		: in  STD_LOGIC;
+           modeflag		: in  STD_LOGIC;
            LED 			: out  STD_LOGIC_VECTOR (15 downto 0);
            SSEG_CA 		: out  STD_LOGIC_VECTOR (7 downto 0);
            SSEG_AN 		: out  STD_LOGIC_VECTOR (7 downto 0);
            mode_select  : in  STD_LOGIC_VECTOR (2 downto 0);
+           key_select  : in  STD_LOGIC_VECTOR (7 downto 0);
            UART_TXD 	: out  STD_LOGIC
 --           RGB1_Red		: out  STD_LOGIC;
 --           RGB1_Green	: out  STD_LOGIC;
@@ -247,10 +250,10 @@ constant MODE_L_STR : CHAR_ARRAY(0 to 36) :=              (X"4D",  --M
 															  X"4C",  --L
 															  X"3A",  --:
 															  X"20",  --
-															  X"45",  --L
-															  X"6E",  --o
-															  X"74",  --a
-															  X"65",  --d
+															  X"4C",  --L
+															  X"6F",  --o
+															  X"61",  --a
+															  X"64",  --d
 															  X"20",  --
 															  X"49",  --I
 															  X"6E",  --n
@@ -285,29 +288,29 @@ constant MODE_A_STR : CHAR_ARRAY(0 to 29) :=              (X"4D",  --M
 															  X"64",  --d
 															  X"65",  --e
 															  X"20",  --
-															  X"49",  --A
+															  X"41",  --A
 															  X"3A",  --:
 															  X"20",  --
-															  X"45",  --R
-															  X"6E",  --u
-															  X"74",  --n
-															  X"65",  --
-															  X"72",  --a
-															  X"20",  --n
-															  X"49",  --
-															  X"6E",  --A
-															  X"73",  --L
-															  X"74",  --U
-															  X"72",  --
-															  X"75",  --o
-															  X"63",  --p
-															  X"74",  --e
-															  X"69",  --r
-															  X"6F",  --a
-															  X"6E",  --t
-															  X"73",  --i
-															  X"6E",  --o
-															  X"73",  --n
+															  X"52",  --R
+															  X"75",  --u
+															  X"6E",  --n
+															  X"20",  --
+															  X"61",  --a
+															  X"6E",  --n
+															  X"20",  --
+															  X"41",  --A
+															  X"4C",  --L
+															  X"55",  --U
+															  X"20",  --
+															  X"6F",  --o
+															  X"70",  --p
+															  X"65",  --e
+															  X"72",  --r
+															  X"61",  --a
+															  X"74",  --t
+															  X"69",  --i
+															  X"6F",  --o
+															  X"6E",  --n
 															  X"0A",  --\n
 															  X"0D"); --\r		
 															  
@@ -553,18 +556,23 @@ begin
 						uartState <= SEND_CHAR;
 					end if;
 				end if;
-			when WAIT_MODE =>
-				if (mode_select = "000") then
-					uartState <= LD_MODE_I_STR;
-			    elsif(mode_select = "001") then
-			        uartState <= LD_MODE_L_STR;
-			    elsif(mode_select = "010") then
-			        uartState <= LD_MODE_A_STR;
-			    elsif(mode_select = "011") then
-			        uartState <= LD_MODE_B_STR;
-			    elsif(mode_select = "100") then
-			        uartState <= LD_MODE_X_STR;
-				end if;
+			when WAIT_MODE =>            --Ready to send a UART signal, we will either send the mode message or the keystroke
+			    if (modeflag = '1') then
+                    if (mode_select = "000") then
+                        uartState <= LD_MODE_I_STR;
+                    elsif(mode_select = "001") then
+                        uartState <= LD_MODE_L_STR;
+                    elsif(mode_select = "010") then
+                        uartState <= LD_MODE_A_STR;
+                    elsif(mode_select = "011") then
+                        uartState <= LD_MODE_B_STR;
+                    elsif(mode_select = "100") then
+                        uartState <= LD_MODE_X_STR;
+                    end if;
+--                elsif (keyflag = '1') then
+--                    uartState <= LD_User_Key;
+--                end if;
+                end if;
 			when LD_MODE_I_STR | LD_MODE_L_STR | LD_MODE_A_STR | LD_MODE_B_STR | LD_MODE_X_STR =>
 				uartState <= SEND_CHAR;
 			when others=> --should never be reached

@@ -18,7 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 3
-set_param synth.incrementalSynthesisCache {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/.Xil/Vivado-15536-ECE-PHO115-02/incrSyn}
+set_param synth.incrementalSynthesisCache {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/.Xil/Vivado-23132-ECE-PHO115-02/incrSyn}
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -27,24 +27,24 @@ create_project -in_memory -part xc7a100tcsg324-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.cache/wt} [current_project]
-set_property parent.project_path {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.xpr} [current_project]
+set_property webtalk.parent_dir {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.cache/wt} [current_project]
+set_property parent.project_path {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.xpr} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property ip_repo_paths d:/WorkBORI/gpio/Nexys-A7/hw/repo [current_project]
 update_ip_catalog
-set_property ip_output_repo {x:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.cache/ip} [current_project]
+set_property ip_output_repo {x:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.cache/ip} [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v}
-  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/keyboard_debouncer.v}
-  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/top_keyboard.v}
-  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/term_interf_top.v}
+  {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v}
+  {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/keyboard_debouncer.v}
+  {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/top_keyboard.v}
+  {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/term_interf_top.v}
 }
 read_vhdl -library xil_defaultlib {
-  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd}
-  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd}
-  {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd}
+  {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd}
+  {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd}
+  {X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd}
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -54,8 +54,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc}}
-set_property used_in_implementation false [get_files {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc}}]
+read_xdc {{X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc}}
+set_property used_in_implementation false [get_files {{X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc}}]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

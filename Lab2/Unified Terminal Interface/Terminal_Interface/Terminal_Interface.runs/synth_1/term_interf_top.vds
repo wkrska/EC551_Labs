@@ -2,12 +2,12 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Nov  8 18:16:31 2022
-# Process ID: 10900
-# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1
+# Start of session at: Wed Nov  9 19:01:02 2022
+# Process ID: 24320
+# Current directory: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1
 # Command line: vivado.exe -log term_interf_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source term_interf_top.tcl
-# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1/term_interf_top.vds
-# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1\vivado.jou
+# Log file: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1/term_interf_top.vds
+# Journal file: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source term_interf_top.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -15,42 +15,51 @@ WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'd:/WorkBORI/gpio/N
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
 WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is x:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.cache/ip 
+Current IP cache path is x:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.cache/ip 
 Command: synth_design -top term_interf_top -part xc7a100tcsg324-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12328 
+INFO: Helper process launched with PID 12300 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 818.172 ; gain = 178.004
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 819.012 ; gain = 178.688
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'term_interf_top' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/term_interf_top.v:23]
-INFO: [Synth 8-638] synthesizing module 'GPIO_demo' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:74]
+INFO: [Synth 8-6157] synthesizing module 'term_interf_top' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/term_interf_top.v:23]
+INFO: [Synth 8-638] synthesizing module 'GPIO_demo' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:77]
 	Parameter DEBNC_CLOCKS bound to: 65536 - type: integer 
 	Parameter PORT_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-3491] module 'debouncer' declared at 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:481]
-INFO: [Synth 8-638] synthesizing module 'debouncer' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd:50]
+INFO: [Synth 8-3491] module 'debouncer' declared at 'X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:484]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd:50]
 	Parameter DEBNC_CLOCKS bound to: 65536 - type: integer 
 	Parameter PORT_WIDTH bound to: 5 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'debouncer' (1#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd:50]
-INFO: [Synth 8-3491] module 'UART_TX_CTRL' declared at 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:42' bound to instance 'Inst_UART_TX_CTRL' of component 'UART_TX_CTRL' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:631]
-INFO: [Synth 8-638] synthesizing module 'UART_TX_CTRL' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'UART_TX_CTRL' (2#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:50]
-WARNING: [Synth 8-6014] Unused sequential element btnReg_reg was removed.  [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:495]
-INFO: [Synth 8-256] done synthesizing module 'GPIO_demo' (3#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:74]
-INFO: [Synth 8-6157] synthesizing module 'top_keyboard' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/top_keyboard.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PS2Receiver' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v:23]
-INFO: [Synth 8-6157] synthesizing module 'keyboard_debouncer' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/keyboard_debouncer.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'keyboard_debouncer' (4#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/keyboard_debouncer.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v:54]
-INFO: [Synth 8-6155] done synthesizing module 'PS2Receiver' (5#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'top_keyboard' (6#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/top_keyboard.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'term_interf_top' (7#1) [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/term_interf_top.v:23]
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (1#1) [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/debouncer.vhd:50]
+INFO: [Synth 8-3491] module 'UART_TX_CTRL' declared at 'X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:42' bound to instance 'Inst_UART_TX_CTRL' of component 'UART_TX_CTRL' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:639]
+INFO: [Synth 8-638] synthesizing module 'UART_TX_CTRL' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'UART_TX_CTRL' (2#1) [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/UART_TX_CTRL.vhd:50]
+WARNING: [Synth 8-6014] Unused sequential element btnReg_reg was removed.  [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:498]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_demo' (3#1) [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:77]
+INFO: [Synth 8-6157] synthesizing module 'top_keyboard' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/top_keyboard.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PS2Receiver' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v:23]
+INFO: [Synth 8-6157] synthesizing module 'keyboard_debouncer' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/keyboard_debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'keyboard_debouncer' (4#1) [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/keyboard_debouncer.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v:55]
+INFO: [Synth 8-6155] done synthesizing module 'PS2Receiver' (5#1) [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_keyboard' (6#1) [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/top_keyboard.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'term_interf_top' (7#1) [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/term_interf_top.v:23]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port keyflag
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port key_select[7]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port key_select[6]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port key_select[5]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port key_select[4]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port key_select[3]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port key_select[2]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port key_select[1]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port key_select[0]
 WARNING: [Synth 8-3331] design term_interf_top has unconnected port rst
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 884.102 ; gain = 243.934
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 883.820 ; gain = 243.496
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -63,53 +72,52 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 884.102 ; gain = 243.934
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 886.375 ; gain = 246.051
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 884.102 ; gain = 243.934
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 886.375 ; gain = 246.051
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]
-Finished Parsing XDC File [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/term_interf_top_propImpl.xdc].
+Parsing XDC File [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/constrs_1/imports/constraints/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/term_interf_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/term_interf_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1013.176 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1020.848 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1013.176 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1020.848 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1013.176 ; gain = 373.008
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1020.848 ; gain = 380.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1013.176 ; gain = 373.008
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1020.848 ; gain = 380.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1013.176 ; gain = 373.008
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:21 . Memory (MB): peak = 1020.848 ; gain = 380.523
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'txState_reg' in module 'UART_TX_CTRL'
-INFO: [Synth 8-4471] merging register 'sendStr_reg[41][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:583]
-INFO: [Synth 8-4471] merging register 'sendStr_reg[43][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:583]
-INFO: [Synth 8-4471] merging register 'sendStr_reg[46][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:583]
-INFO: [Synth 8-4471] merging register 'sendStr_reg[48][7:0]' into 'sendStr_reg[42][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:583]
-INFO: [Synth 8-4471] merging register 'sendStr_reg[49][7:0]' into 'sendStr_reg[39][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:583]
-INFO: [Synth 8-4471] merging register 'sendStr_reg[50][7:0]' into 'sendStr_reg[42][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:583]
-INFO: [Synth 8-4471] merging register 'sendStr_reg[54][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:583]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[41][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:591]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[43][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:591]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[46][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:591]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[48][7:0]' into 'sendStr_reg[42][7:0]' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:591]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[49][7:0]' into 'sendStr_reg[39][7:0]' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:591]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[50][7:0]' into 'sendStr_reg[42][7:0]' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:591]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[54][7:0]' into 'sendStr_reg[38][7:0]' [X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/imports/hdl/top.vhd:591]
 INFO: [Synth 8-802] inferred FSM for state register 'uartState_reg' in module 'GPIO_demo'
 INFO: [Synth 8-5544] ROM "SSEG_CA" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-WARNING: [Synth 8-3936] Found unconnected internal register 'keycode_reg' and it is trimmed from '32' to '24' bits. [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v:75]
 INFO: [Synth 8-5546] ROM "mode_select" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -136,7 +144,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'txState_reg' using encodin
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'uartState_reg' using encoding 'one-hot' in module 'GPIO_demo'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:22 . Memory (MB): peak = 1013.176 ; gain = 373.008
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:25 . Memory (MB): peak = 1020.848 ; gain = 380.523
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -154,28 +162,29 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input      1 Bit         XORs := 5     
 +---Registers : 
+	               32 Bit    Registers := 1     
 	               31 Bit    Registers := 1     
-	               24 Bit    Registers := 1     
 	               10 Bit    Registers := 1     
-	                8 Bit    Registers := 55    
+	                8 Bit    Registers := 56    
 	                5 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 8     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 12    
 +---Muxes : 
 	   6 Input     31 Bit        Muxes := 1     
 	   7 Input     31 Bit        Muxes := 1     
 	   5 Input     31 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 1     
 	  13 Input     11 Bit        Muxes := 1     
-	   3 Input      8 Bit        Muxes := 1     
-	   6 Input      8 Bit        Muxes := 5     
-	   7 Input      8 Bit        Muxes := 7     
-	   5 Input      8 Bit        Muxes := 6     
-	   4 Input      8 Bit        Muxes := 9     
-	   2 Input      8 Bit        Muxes := 1     
-	   6 Input      7 Bit        Muxes := 9     
-	   4 Input      7 Bit        Muxes := 2     
-	   5 Input      7 Bit        Muxes := 9     
+	   5 Input      8 Bit        Muxes := 12    
+	   6 Input      8 Bit        Muxes := 4     
+	   7 Input      8 Bit        Muxes := 6     
+	   4 Input      8 Bit        Muxes := 10    
+	   3 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   6 Input      7 Bit        Muxes := 8     
+	   4 Input      7 Bit        Muxes := 4     
+	   5 Input      7 Bit        Muxes := 7     
 	   3 Input      7 Bit        Muxes := 1     
 	   6 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 2     
@@ -183,9 +192,10 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 16    
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 17    
 	   3 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 5     
 	   7 Input      1 Bit        Muxes := 2     
 	   6 Input      1 Bit        Muxes := 1     
 	  12 Input      1 Bit        Muxes := 2     
@@ -234,15 +244,15 @@ Detailed RTL Component Info :
 	   5 Input     31 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 1     
 	  13 Input     11 Bit        Muxes := 1     
-	   3 Input      8 Bit        Muxes := 1     
-	   6 Input      8 Bit        Muxes := 5     
-	   7 Input      8 Bit        Muxes := 7     
-	   5 Input      8 Bit        Muxes := 6     
-	   4 Input      8 Bit        Muxes := 9     
-	   2 Input      8 Bit        Muxes := 1     
-	   6 Input      7 Bit        Muxes := 9     
-	   4 Input      7 Bit        Muxes := 2     
-	   5 Input      7 Bit        Muxes := 9     
+	   5 Input      8 Bit        Muxes := 12    
+	   6 Input      8 Bit        Muxes := 4     
+	   7 Input      8 Bit        Muxes := 6     
+	   4 Input      8 Bit        Muxes := 10    
+	   3 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   6 Input      7 Bit        Muxes := 8     
+	   4 Input      7 Bit        Muxes := 4     
+	   5 Input      7 Bit        Muxes := 7     
 	   3 Input      7 Bit        Muxes := 1     
 	   6 Input      6 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 1     
@@ -265,19 +275,23 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
-	               24 Bit    Registers := 1     
-	                8 Bit    Registers := 3     
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
 	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 1     
 	   3 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
 	  12 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
 Module top_keyboard 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input      2 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 4     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -294,17 +308,16 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3936] Found unconnected internal register 'keyboard_interface/keyboard/keycode_reg' and it is trimmed from '24' to '17' bits. [X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sources_1/new/PS2Receiver.v:75]
 INFO: [Synth 8-5546] ROM "mode_select" won't be mapped to RAM because it is too sparse
 WARNING: [Synth 8-3331] design term_interf_top has unconnected port rst
-INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/keycode_reg[6]' (FDE) to 'keyboard_interface/keyboard/dataprev_reg[6]'
-INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/keycode_reg[1]' (FDE) to 'keyboard_interface/keyboard/dataprev_reg[1]'
-INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/keycode_reg[4]' (FDE) to 'keyboard_interface/keyboard/dataprev_reg[4]'
-INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/keycode_reg[5]' (FDE) to 'keyboard_interface/keyboard/dataprev_reg[5]'
-INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/keycode_reg[2]' (FDE) to 'keyboard_interface/keyboard/dataprev_reg[2]'
-INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/keycode_reg[3]' (FDE) to 'keyboard_interface/keyboard/dataprev_reg[3]'
-INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/keycode_reg[0]' (FDE) to 'keyboard_interface/keyboard/dataprev_reg[0]'
-INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/keycode_reg[7]' (FDE) to 'keyboard_interface/keyboard/dataprev_reg[7]'
+INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/dataprev_reg[6]' (FDE) to 'keyboard_interface/keyboard/keycode_reg[6]'
+INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/dataprev_reg[7]' (FDE) to 'keyboard_interface/keyboard/keycode_reg[7]'
+INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/dataprev_reg[0]' (FDE) to 'keyboard_interface/keyboard/keycode_reg[0]'
+INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/dataprev_reg[1]' (FDE) to 'keyboard_interface/keyboard/keycode_reg[1]'
+INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/dataprev_reg[2]' (FDE) to 'keyboard_interface/keyboard/keycode_reg[2]'
+INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/dataprev_reg[3]' (FDE) to 'keyboard_interface/keyboard/keycode_reg[3]'
+INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/dataprev_reg[4]' (FDE) to 'keyboard_interface/keyboard/keycode_reg[4]'
+INFO: [Synth 8-3886] merging instance 'keyboard_interface/keyboard/dataprev_reg[5]' (FDE) to 'keyboard_interface/keyboard/keycode_reg[5]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/strEnd_reg[6]' (FDRE) to 'UART_interface/strEnd_reg[7]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/strEnd_reg[7]' (FDRE) to 'UART_interface/strEnd_reg[8]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/strEnd_reg[8]' (FDRE) to 'UART_interface/strEnd_reg[9]'
@@ -355,8 +368,9 @@ INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[29][7]' (FDRE)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[20][7] )
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[17][7]' (FDRE) to 'UART_interface/sendStr_reg[17][3]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[14][7]' (FDRE) to 'UART_interface/sendStr_reg[14][4]'
+INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[13][7]' (FDRE) to 'UART_interface/sendStr_reg[13][4]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[8][7]' (FDRE) to 'UART_interface/sendStr_reg[8][5]'
-INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[7][7]' (FDRE) to 'UART_interface/sendStr_reg[7][6]'
+INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[7][7]' (FDRE) to 'UART_interface/sendStr_reg[7][0]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[5][7]' (FDRE) to 'UART_interface/sendStr_reg[5][4]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[4][7]' (FDRE) to 'UART_interface/sendStr_reg[4][4]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[3][7]' (FDRE) to 'UART_interface/sendStr_reg[3][4]'
@@ -392,12 +406,11 @@ INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[23][6]' (FDE) 
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[21][6]' (FDE) to 'UART_interface/sendStr_reg[23][5]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[20][6]' (FDSE) to 'UART_interface/sendStr_reg[20][5]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[19][6]' (FDE) to 'UART_interface/sendStr_reg[23][5]'
-INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[18][6]' (FDE) to 'UART_interface/sendStr_reg[23][5]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[17][6]' (FDRE) to 'UART_interface/sendStr_reg[17][4]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[16][6]' (FDE) to 'UART_interface/sendStr_reg[23][5]'
-INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[9][6]' (FDE) to 'UART_interface/sendStr_reg[11][5]'
+INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[9][6]' (FDE) to 'UART_interface/sendStr_reg[12][5]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[8][6] )
-INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[7][6]' (FDRE) to 'UART_interface/sendStr_reg[7][4]'
+INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[7][6]' (FDRE) to 'UART_interface/sendStr_reg[7][0]'
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[6][6]' (FDE) to 'UART_interface/sendStr_reg[6][2]'
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[5][6] )
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[4][6]' (FDSE) to 'UART_interface/sendStr_reg[4][2]'
@@ -406,24 +419,25 @@ INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_int
 INFO: [Synth 8-3886] merging instance 'UART_interface/sendStr_reg[1][6]' (FDRE) to 'UART_interface/sendStr_reg[1][5]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[20][5] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[17][5] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[16][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[19][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[8][5] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[7][5] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[4][5] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[35][4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[32][4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[28][4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[14][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[13][4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[5][4] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[1][4] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[35][3] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[28][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[8][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[17][3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[0][3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[30][2] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[29][2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[25][2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[12][2] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[10][2] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[1][2] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[36][1] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[33][1] )
@@ -434,7 +448,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_int
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[34][0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[33][0] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[31][0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[17][0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[7][0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/sendStr_reg[4][0] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (\UART_interface/sendStr_reg[3][0] )
@@ -444,7 +457,7 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_int
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/uartData_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\UART_interface/Inst_UART_TX_CTRL/txData_reg[8] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:28 . Memory (MB): peak = 1013.176 ; gain = 373.008
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:33 . Memory (MB): peak = 1020.848 ; gain = 380.523
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -456,13 +469,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1013.176 ; gain = 373.008
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:40 . Memory (MB): peak = 1020.848 ; gain = 380.523
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:37 . Memory (MB): peak = 1015.016 ; gain = 374.848
+Finished Timing Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:42 . Memory (MB): peak = 1023.945 ; gain = 383.621
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -474,7 +487,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:37 . Memory (MB): peak = 1020.895 ; gain = 380.727
+Finished Technology Mapping : Time (s): cpu = 00:00:26 ; elapsed = 00:00:42 . Memory (MB): peak = 1026.770 ; gain = 386.445
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -498,7 +511,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:39 . Memory (MB): peak = 1022.750 ; gain = 382.582
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.582 ; gain = 392.258
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -511,7 +524,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:39 . Memory (MB): peak = 1022.750 ; gain = 382.582
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.582 ; gain = 392.258
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -523,25 +536,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:26 ; elapsed = 00:00:39 . Memory (MB): peak = 1022.750 ; gain = 382.582
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.582 ; gain = 392.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:39 . Memory (MB): peak = 1022.750 ; gain = 382.582
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.582 ; gain = 392.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 1022.750 ; gain = 382.582
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.582 ; gain = 392.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 1022.750 ; gain = 382.582
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.582 ; gain = 392.258
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -557,18 +570,18 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     1|
+|1     |BUFG   |     2|
 |2     |CARRY4 |    55|
 |3     |LUT1   |    15|
-|4     |LUT2   |    44|
-|5     |LUT3   |    44|
-|6     |LUT4   |    83|
-|7     |LUT5   |    58|
-|8     |LUT6   |    85|
-|9     |MUXF7  |    18|
-|10    |MUXF8  |     4|
-|11    |FDRE   |   350|
-|12    |FDSE   |    13|
+|4     |LUT2   |    40|
+|5     |LUT3   |    48|
+|6     |LUT4   |    91|
+|7     |LUT5   |    52|
+|8     |LUT6   |    94|
+|9     |MUXF7  |    26|
+|10    |MUXF8  |     2|
+|11    |FDRE   |   397|
+|12    |FDSE   |    19|
 |13    |IBUF   |    24|
 |14    |OBUF   |    33|
 +------+-------+------+
@@ -577,36 +590,36 @@ Report Instance Areas:
 +------+----------------------+-------------------+------+
 |      |Instance              |Module             |Cells |
 +------+----------------------+-------------------+------+
-|1     |top                   |                   |   827|
-|2     |  UART_interface      |GPIO_demo          |   659|
+|1     |top                   |                   |   898|
+|2     |  UART_interface      |GPIO_demo          |   695|
 |3     |    Inst_UART_TX_CTRL |UART_TX_CTRL       |    93|
 |4     |    Inst_btn_debounce |debouncer          |   144|
-|5     |  keyboard_interface  |top_keyboard       |    94|
-|6     |    keyboard          |PS2Receiver        |    92|
+|5     |  keyboard_interface  |top_keyboard       |   128|
+|6     |    keyboard          |PS2Receiver        |   118|
 |7     |      debouncer1      |keyboard_debouncer |    29|
 +------+----------------------+-------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:40 . Memory (MB): peak = 1022.750 ; gain = 382.582
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.582 ; gain = 392.258
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:37 . Memory (MB): peak = 1022.750 ; gain = 253.508
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:40 . Memory (MB): peak = 1022.750 ; gain = 382.582
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:42 . Memory (MB): peak = 1032.582 ; gain = 257.785
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:45 . Memory (MB): peak = 1032.582 ; gain = 392.258
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 77 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 83 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1038.828 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1034.062 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-191 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+191 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:51 . Memory (MB): peak = 1038.828 ; gain = 659.766
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1038.828 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:57 . Memory (MB): peak = 1034.062 ; gain = 655.117
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1034.062 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1/term_interf_top.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1/term_interf_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file term_interf_top_utilization_synth.rpt -pb term_interf_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Nov  8 18:17:31 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Nov  9 19:02:09 2022...

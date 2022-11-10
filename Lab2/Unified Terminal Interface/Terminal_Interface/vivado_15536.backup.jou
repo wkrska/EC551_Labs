@@ -1,0 +1,118 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov  8 16:52:08 2022
+# Process ID: 15536
+# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent18040 X:\EC551\Labs\Lab1\Final Copy\EC551_Labs\Lab2\Unified Terminal Interface\Terminal_Interface\Terminal_Interface.xpr
+# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/vivado.log
+# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.xpr}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+synth_design -rtl -name rtl_1
+synth_design -rtl -name rtl_1
+synth_design -rtl -name rtl_1
+synth_design -rtl -name rtl_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_hw
+close_design
+synth_design -rtl -name rtl_1
+synth_design -rtl -name rtl_1
+reset_run synth_1
+launch_runs synth_1 -jobs 6
+wait_on_run synth_1
+launch_runs impl_1 -jobs 6
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+close_hw
+refresh_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+undo
+close_hw
+file mkdir X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new
+file mkdir X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new
+file mkdir X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new
+file mkdir X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new
+file mkdir X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+file mkdir X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new
+file mkdir {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new}
+close [ open {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new/t_term_interf_top.v} w ]
+add_files -fileset sim_1 {{X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.srcs/sim_1/new/t_term_interf_top.v}}
+update_compile_order -fileset sim_1
+launch_simulation
+source t_term_interf_top.tcl
+update_compile_order -fileset sim_1
+close_sim
+launch_simulation
+source t_term_interf_top.tcl
+run 30 ns
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+close_sim
+refresh_design
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+current_hw_device [get_hw_devices xc7a100t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a100t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a100t_0]
+set_property PROGRAM.FILE {X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/impl_1/term_interf_top.bit} [get_hw_devices xc7a100t_0]
+program_hw_devices [get_hw_devices xc7a100t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a100t_0] 0]

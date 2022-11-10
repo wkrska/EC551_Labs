@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date                      : Tue Nov  8 18:18:27 2022
+| Date                      : Wed Nov  9 19:03:07 2022
 | Host                      : ECE-PHO115-02 running 64-bit major release  (build 9200)
 | Command                   : report_io -file term_interf_top_io_placed.rpt
 | Design                    : term_interf_top

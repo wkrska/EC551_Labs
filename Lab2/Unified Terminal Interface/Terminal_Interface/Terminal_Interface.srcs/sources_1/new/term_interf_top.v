@@ -35,16 +35,22 @@ module term_interf_top(
 //    wire UART_TXD_keyboard;
     wire [7:0] mode;
     reg [2:0] mode_select;
+    wire [7:0] key_select;
+    wire keyflag_temp;
+    wire modeflagtop_temp;
     
     
     GPIO_demo UART_interface(
     .SW(SW),
     .BTN(BTN),
     .CLK(CLK100MHZ),
+    .keyflag(keyflag_temp),
+    .modeflag(modeflagtop_temp),
     .LED(LED),
     .SSEG_CA(SSEG_CA),
     .SSEG_AN(SSEG_AN),
     .mode_select(mode_select),
+    .key_select(key_select),
     .UART_TXD(UART_TXD)
     );
     
@@ -53,7 +59,10 @@ module term_interf_top(
     .PS2_CLK(PS2_CLK),
     .PS2_DATA(PS2_DATA),
 //    .UART_TXD(UART_TXD_keyboard),
-    .mode(mode)
+    .mode(mode),
+    .keystroke(key_select),
+    .keyflagtop(keyflag_temp),
+    .modeflagtop(modeflagtop_temp)
     );
     
     always @(mode)
@@ -63,7 +72,7 @@ module term_interf_top(
     'h1C:mode_select = 3'b010;    //Mode A   ALU
     'h32:mode_select = 3'b011;    //Mode B    Benchmark
     
-    default:mode_select = 3'b100;
+    default:mode_select = 3'b100;  //Mode X Invalid Entry
 	
 	endcase
     

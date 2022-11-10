@@ -2,11 +2,11 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Nov  8 18:16:31 2022
-# Process ID: 10900
-# Current directory: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1
+# Start of session at: Wed Nov  9 19:01:02 2022
+# Process ID: 24320
+# Current directory: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1
 # Command line: vivado.exe -log term_interf_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source term_interf_top.tcl
-# Log file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1/term_interf_top.vds
-# Journal file: X:/EC551/Labs/Lab1/Final Copy/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1\vivado.jou
+# Log file: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1/term_interf_top.vds
+# Journal file: X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source term_interf_top.tcl -notrace
