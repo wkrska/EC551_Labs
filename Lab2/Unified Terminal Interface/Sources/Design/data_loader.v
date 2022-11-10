@@ -3,7 +3,8 @@
 `include "my_header.vh"
 
 module data_loader(
-    input wire clk,
+    input wire clk_ps2,
+    input wire clk_100,
     input wire rst,
     input wire [2:0] mode, // 0=I, 1=L, 2=A, 3=B
     input wire wen_mode,
@@ -56,7 +57,7 @@ always @(key_ps2) begin
 end
 
 // Translate UART inputs
-reg [4:0] trans_key_ps2;
+reg [4:0] trans_key_uart;
 // abridged LUT from key_ps2 to hex
 always @(key_ps2) begin
     case(key_ps2) // 0X is number, 1X is char
@@ -122,7 +123,7 @@ localparam [7:0]    IDLE=8'h00,
                     B_wb=8'h42; // wb result
                     
 // Clocked portion of FSM
-always @(posedge clk) begin
+always @(posedge clk_ps2) begin
     if (rst) begin
         curr_state <= IDLE;
         count_c <= 0;

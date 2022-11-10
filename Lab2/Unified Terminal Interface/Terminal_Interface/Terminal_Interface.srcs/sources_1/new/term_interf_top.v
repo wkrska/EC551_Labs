@@ -1,4 +1,6 @@
 `timescale 1ns / 1ps
+
+`include "my_header.vh"
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -24,14 +26,26 @@ module term_interf_top(
     input wire CLK100MHZ, rst,
     input wire [15:0] SW,
     input wire [4:0] BTN, 
+    
+    // PS2
     input PS2_DATA,
     input PS2_CLK,
     output wire [15:0] LED,
     output wire [7:0] SSEG_CA,
     output wire [7:0] SSEG_AN,
-    output wire UART_TXD
+    
+    // UART
+    output wire UART_TXD,
+    
+    // VGA
+    output wire [3:0] VGA_R,
+    output wire [3:0] VGA_G,
+    output wire [3:0] VGA_B,
+    output wire VGA_HS,
+    output wire VGA_VS
     );
     
+    //============= UART and PS/2 =============//
 //    wire UART_TXD_keyboard;
     wire [7:0] mode;
     reg [2:0] mode_select;
@@ -39,14 +53,13 @@ module term_interf_top(
     wire keyflag_temp;
     wire modeflagtop_temp;
     
-    
     GPIO_demo UART_interface(
     .SW(SW),
     .BTN(BTN),
     .CLK(CLK100MHZ),
     .keyflag(keyflag_temp),
     .modeflag(modeflagtop_temp),
-    .LED(LED),
+//    .LED(LED),
     .SSEG_CA(SSEG_CA),
     .SSEG_AN(SSEG_AN),
     .mode_select(mode_select),
@@ -63,6 +76,8 @@ module term_interf_top(
     .keystroke(key_select),
     .keyflagtop(keyflag_temp),
     .modeflagtop(modeflagtop_temp)
+    
+    
     );
     
     always @(mode)
@@ -75,6 +90,84 @@ module term_interf_top(
     default:mode_select = 3'b100;  //Mode X Invalid Entry
 	
 	endcase
+    
+    //============= Data Loader and Datapath =============//
+
+    wire wen_mode, wen_key_ps2, wen_key_uart, run, result_ready, ap_start;
+    wire [7:0] key_ps2, key_uart, debug_state;
+    wire [11:0] inst_addr;
+    wire [15:0] inst_write;
+    wire [`dwidth_dat_user*2-1:0] alu_out;
+    wire [`dwidth_mat*3*3-1:0] bench_out;
+    
+    data_loader dl(
+        .clk_ps2     (PS2_CLK     ),
+        .clk_100     (CLK100MHZ   ),
+        .rst         (rst         ),
+        .mode        (mode_select ),
+        .wen_mode    (modeflagtop_temp ),
+        .key_ps2     (key_select  ),
+        .wen_key_ps2 (keyflag_temp),
+        .key_uart    (key_uart    ),// not connected
+        .wen_key_uart(wen_key_uart),// not connected
+        .run         (run         ),// not connected
+        .inst_addr   (inst_addr   ),
+        .inst_write  (inst_write  ),
+        .alu_out     (alu_out     ),// not connected
+        .bench_out   (bench_out   ),// not connected
+        .result_ready(result_ready),
+        .ap_start    (ap_start    ),
+        .debug_state (debug_state )
+    );
+    assign LED = {8'b0,debug_state};
+    
+    wire resume_btn;
+    
+    reg [26:0] counter=0;
+    reg slow_clk;
+    always @(posedge CLK100MHZ)
+    begin
+        counter <= (counter>=((`clk_div*200)*2-1)) ? 0 : counter+1;
+        slow_clk <= (counter < (`clk_div*200)) ? 1'b0 : 1'b1;
+    end
+    
+    wire [`dwidth_dat*6-1:0] register_data;
+    wire ap_start_ROM;
+    wire resume,halt;
+    
+    btn_edge btn(
+        .reset(rst),
+        .btnIn(resume_btn),
+        .CLK(CLK100MHZ),
+        .btnOut(resume)
+        );
+    
+    datapath dp1(
+    //    .clk(CLK100MHZ),
+        .clk(slow_clk),
+        .rst(rst),
+        .resume(resume),
+        .resume(resume_btn),
+        .user_inst_write(inst_write),
+        .user_inst_addr(inst_addr),
+        .ap_start(ap_start),
+        .rf_out(register_data),
+//        .disp_inst(LED),
+        .halt(halt)
+        );
+        
+     top_VGA  VGA1(
+     .reg_value(register_data),
+     .CLK100MHZ(CLK100MHZ),
+     .rst(rst),
+     .VGA_R(VGA_R),
+     .VGA_G(VGA_G),
+     .VGA_B(VGA_B),
+     .VGA_HS(VGA_HS),
+     .VGA_VS(VGA_VS)
+     );
+    
+    
     
     
     
