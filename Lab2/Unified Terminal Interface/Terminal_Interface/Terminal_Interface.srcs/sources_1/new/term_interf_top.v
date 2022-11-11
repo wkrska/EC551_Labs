@@ -49,7 +49,7 @@ module term_interf_top(
 //    wire UART_TXD_keyboard;
     wire [7:0] mode;
     reg [2:0] mode_select;
-    wire [7:0] key_select;
+    wire [7:0] key_select_ps2, key_select_ascii;
     wire keyflag_temp;
     wire modeflagtop_temp;
     
@@ -59,12 +59,16 @@ module term_interf_top(
     .CLK(CLK100MHZ),
     .keyflag(keyflag_temp),
     .modeflag(modeflagtop_temp),
-//    .LED(LED),
     .SSEG_CA(SSEG_CA),
     .SSEG_AN(SSEG_AN),
     .mode_select(mode_select),
-    .key_select(key_select),
+    .key_select(key_select_ascii),
     .UART_TXD(UART_TXD)
+    );
+
+    ps2_to_ascii p2a(
+        .ps2(key_select_ps2),
+        .ascii(key_select_ascii)
     );
     
     top_keyboard keyboard_interface(
@@ -73,7 +77,7 @@ module term_interf_top(
     .PS2_DATA(PS2_DATA),
 //    .UART_TXD(UART_TXD_keyboard),
     .mode(mode),
-    .keystroke(key_select),
+    .keystroke(key_select_ps2),
     .keyflagtop(keyflag_temp),
     .modeflagtop(modeflagtop_temp)
     
@@ -106,10 +110,10 @@ module term_interf_top(
         .rst         (rst         ),
         .mode        (mode_select ),
         .wen_mode    (modeflagtop_temp ),
-        .key_ps2     (key_select  ),
+        .key_ps2     (key_select_ps2  ),
         .wen_key_ps2 (keyflag_temp),
-        .key_uart    (key_uart    ),// not connected
-        .wen_key_uart(wen_key_uart),// not connected
+        .key_uart    ('b0),//key_uart    ),// not connected
+        .wen_key_uart('b0),//wen_key_uart),// not connected
         .run         (run         ),// not connected
         .inst_addr   (inst_addr   ),
         .inst_write  (inst_write  ),
@@ -123,14 +127,6 @@ module term_interf_top(
     
     wire resume_btn;
     
-    reg [26:0] counter=0;
-    reg slow_clk;
-    always @(posedge CLK100MHZ)
-    begin
-        counter <= (counter>=((`clk_div*200)*2-1)) ? 0 : counter+1;
-        slow_clk <= (counter < (`clk_div*200)) ? 1'b0 : 1'b1;
-    end
-    
     wire [`dwidth_dat*6-1:0] register_data;
     wire ap_start_ROM;
     wire resume,halt;
@@ -143,8 +139,7 @@ module term_interf_top(
         );
     
     datapath dp1(
-    //    .clk(CLK100MHZ),
-        .clk(slow_clk),
+        .clk(CLK100MHZ),
         .rst(rst),
         .resume(resume),
         .resume(resume_btn),
@@ -152,20 +147,19 @@ module term_interf_top(
         .user_inst_addr(inst_addr),
         .ap_start(ap_start),
         .rf_out(register_data),
-//        .disp_inst(LED),
         .halt(halt)
         );
         
-     top_VGA  VGA1(
-     .reg_value(register_data),
-     .CLK100MHZ(CLK100MHZ),
-     .rst(rst),
-     .VGA_R(VGA_R),
-     .VGA_G(VGA_G),
-     .VGA_B(VGA_B),
-     .VGA_HS(VGA_HS),
-     .VGA_VS(VGA_VS)
-     );
+    top_VGA  VGA1(
+        .reg_value(register_data),
+        .CLK100MHZ(CLK100MHZ),
+        .rst(rst),
+        .VGA_R(VGA_R),
+        .VGA_G(VGA_G),
+        .VGA_B(VGA_B),
+        .VGA_HS(VGA_HS),
+        .VGA_VS(VGA_VS)
+        );
     
     
     
