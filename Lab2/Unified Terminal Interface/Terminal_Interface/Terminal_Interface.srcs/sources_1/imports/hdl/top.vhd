@@ -54,23 +54,14 @@ entity GPIO_demo is
            CLK 			: in  STD_LOGIC;
            keyflag		: in  STD_LOGIC;
            modeflag		: in  STD_LOGIC;
+           alu_out      : in  STD_LOGIC_VECTOR (7 downto 0);
+           bench_out    : in  STD_LOGIC_VECTOR (
            LED 			: out  STD_LOGIC_VECTOR (15 downto 0);
            SSEG_CA 		: out  STD_LOGIC_VECTOR (7 downto 0);
            SSEG_AN 		: out  STD_LOGIC_VECTOR (7 downto 0);
            mode_select  : in  STD_LOGIC_VECTOR (2 downto 0);
            key_select  : in  STD_LOGIC_VECTOR (7 downto 0);
-           UART_TXD 	: out  STD_LOGIC
---           RGB1_Red		: out  STD_LOGIC;
---           RGB1_Green	: out  STD_LOGIC;
---           RGB1_Blue	: out  STD_LOGIC;	
---           RGB2_Red		: out  STD_LOGIC;
---           RGB2_Green	: out  STD_LOGIC;
---           RGB2_Blue	: out  STD_LOGIC;
---           micClk       : out STD_LOGIC;
---           micLRSel     : out STD_LOGIC;
---           micData      : in STD_LOGIC;
---           ampPWM       : out STD_LOGIC;
---           ampSD        : out STD_LOGIC			  
+           UART_TXD 	: out  STD_LOGIC	  
 			  );
 end GPIO_demo;
 
