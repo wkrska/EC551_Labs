@@ -187,8 +187,16 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/term_interf_top.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/UART_TX_CTRL.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="D:/WorkBORI/gpio/Nexys-A7/hw/src/hdl/UART_TX_CTRL.vhd"/>
           <Attr Name="ImportTime" Val="1658995627"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -197,6 +205,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/debouncer.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="D:/WorkBORI/gpio/Nexys-A7/hw/src/hdl/debouncer.vhd"/>
           <Attr Name="ImportTime" Val="1658995627"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -205,16 +214,10 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/hdl/top.vhd">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="D:/WorkBORI/gpio/Nexys-A7/hw/src/hdl/top.vhd"/>
           <Attr Name="ImportTime" Val="1658995627"/>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/term_interf_top.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
