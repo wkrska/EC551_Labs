@@ -57,48 +57,10 @@ always @(key_ps2) begin
 end
 
 // Translate UART inputs
-// Latch UART inputs
-reg [1:0] uart_cs, uart_ns;
-reg wen_key_uart_sus, wen_key_uart_sus_n;
-reg [7:0] key_uart_sus, key_uart_sus_n;
-
-always @(clk_100) begin
-    if (rst) begin
-        uart_cs <= 'b0;
-        wen_key_uart_sus <= 'b0;
-        key_uart_sus <= 'b0;
-    end else begin
-        uart_cs <= uart_ns;
-        wen_key_uart_sus <= wen_key_uart_sus_n;
-        key_uart_sus <= key_uart_sus_n;
-    end
-end
-
-always @(*) begin
-    case (uart_cs)
-        2'b00: begin
-            uart_ns = (wen_key_uart) ? 2'b01 : 2'b00;
-            wen_key_uart_sus_n = (wen_key_uart) ? 1'b1 : 'b0;
-            key_uart_sus_n = (wen_key_uart) ? key_uart : 'b0;
-        end
-        2'b01: begin
-            uart_ns = (clk_ps2) ? 2'b10 : 2'b01;
-            wen_key_uart_sus_n = 1'b1;
-            key_uart_sus_n = key_uart_sus;
-        end
-        2'b10: begin
-            uart_ns = (~clk_ps2) ? 2'b00 : 2'b10;
-            wen_key_uart_sus_n = 1'b1;
-            key_uart_sus_n = key_uart_sus;
-        end
-    endcase
-end
-
-
 reg [4:0] trans_key_uart;
 // abridged LUT from key_ps2 to hex
-always @(key_uart_sus) begin
-    case(key_uart_sus) // 0X is number, 1X is char
+always @(key_uart) begin
+    case(key_uart) // 0X is number, 1X is char
         8'h30 : trans_key_uart = 5'h00; // nums
         8'h31 : trans_key_uart = 5'h01;
         8'h32 : trans_key_uart = 5'h02;
@@ -252,9 +214,9 @@ always @(*) begin
             mat_b_n = 'b0;
         end
         L_ch: begin // loads the typed keys into 
-            next_state=(wen_key_uart_sus && (~trans_key_uart[4]) && count_c==3) ? L_wb : ((run) ? L_rn : L_ch);
-            inst_write_n=(wen_key_uart_sus && (~trans_key_uart[4]) && count_c<4) ? {inst_write[11:0],trans_key_uart[3:0]} : inst_write;
-            count_n=(wen_key_uart_sus && (~trans_key_ps2[4]) && count_c<4) ? count_c+1:count_c;
+            next_state=(wen_key_uart && (~trans_key_uart[4]) && count_c==3) ? L_wb : ((run) ? L_rn : L_ch);
+            inst_write_n=(wen_key_uart && (~trans_key_uart[4]) && count_c<4) ? {inst_write[11:0],trans_key_uart[3:0]} : inst_write;
+            count_n=(wen_key_uart && (~trans_key_ps2[4]) && count_c<4) ? count_c+1:count_c;
             inst_addr_n = inst_addr;
             ap_start_n = 'b0;
             ALU_mode_n = 'b0;
@@ -265,10 +227,10 @@ always @(*) begin
             mat_b_n = 'b0;
         end
         L_wb: begin
-            next_state=(wen_key_uart_sus && trans_key_uart==5'h11) ? L_ch : L_wb;
-            inst_addr_n=(wen_key_uart_sus && trans_key_uart==5'h11) ? inst_addr+1:inst_addr;
+            next_state=(wen_key_uart && trans_key_uart==5'h11) ? L_ch : L_wb;
+            inst_addr_n=(wen_key_uart && trans_key_uart==5'h11) ? inst_addr+1:inst_addr;
             count_n='b0;
-            inst_write_n=(wen_key_uart_sus && trans_key_uart==5'h11) ? 'b0 : inst_write;
+            inst_write_n=(wen_key_uart && trans_key_uart==5'h11) ? 'b0 : inst_write;
             ap_start_n = 'b0;
             ALU_mode_n = 'b0;
             result_ready_n = 'b0;
