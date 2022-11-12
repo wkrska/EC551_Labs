@@ -36,6 +36,7 @@ module term_interf_top(
     
     // UART
     output wire UART_TXD,
+    input wire UART_RXD,
     
     // VGA
     output wire [3:0] VGA_R,
@@ -46,24 +47,33 @@ module term_interf_top(
     );
     
     //============= UART and PS/2 =============//
-//    wire UART_TXD_keyboard;
     wire [7:0] mode;
     reg [2:0] mode_select;
     wire [7:0] key_select_ps2, key_select_ascii;
     wire keyflag_temp;
     wire modeflagtop_temp;
+    wire [103:0] disp_mat;
+    wire [31:0] disp_alu;
+    wire [7:0] uart_dat;
+    wire uart_dv;
     
     GPIO_demo UART_interface(
     .SW(SW),
     .BTN(BTN),
     .CLK(CLK100MHZ),
+    .RST(rst),
     .keyflag(keyflag_temp),
     .modeflag(modeflagtop_temp),
-    .SSEG_CA(SSEG_CA),
-    .SSEG_AN(SSEG_AN),
+    .alu_out(disp_alu),
+    .bench_out(disp_mat),
+    // .SSEG_CA(SSEG_CA),
+    // .SSEG_AN(SSEG_AN),
     .mode_select(mode_select),
     .key_select(key_select_ascii),
-    .UART_TXD(UART_TXD)
+    .UART_TXD(UART_TXD),
+    .UART_RXD(UART_RXD),
+    .uart_dat(uart_dat),
+    .uart_dv(uart_dv)
     );
 
     ps2_to_ascii p2a(
@@ -75,13 +85,17 @@ module term_interf_top(
     .CLK100MHZ(CLK100MHZ),
     .PS2_CLK(PS2_CLK),
     .PS2_DATA(PS2_DATA),
-//    .UART_TXD(UART_TXD_keyboard),
     .mode(mode),
     .keystroke(key_select_ps2),
     .keyflagtop(keyflag_temp),
-    .modeflagtop(modeflagtop_temp)
-    
-    
+    .modeflagtop(modeflagtop_temp)    
+    );
+
+    seg7decimal sevseg(
+        .x({24'b0,key_uart}),
+        .clk(CLK100MHZ),
+        .seg(SSEG_CA),
+        .an(SSEG_AN)
     );
     
     always @(mode)
@@ -97,12 +111,13 @@ module term_interf_top(
     
     //============= Data Loader and Datapath =============//
 
-    wire wen_mode, wen_key_ps2, wen_key_uart, run, result_ready, ap_start;
+    wire wen_mode, wen_key_ps2, wen_key_uart, result_ready, ap_start;
     wire [7:0] key_ps2, key_uart, debug_state;
     wire [11:0] inst_addr;
     wire [15:0] inst_write;
     wire [`dwidth_dat_user*2-1:0] alu_out;
     wire [`dwidth_mat*3*3-1:0] bench_out;
+    
     
     data_loader dl(
         .clk_ps2     (PS2_CLK     ),
@@ -112,28 +127,45 @@ module term_interf_top(
         .wen_mode    (modeflagtop_temp ),
         .key_ps2     (key_select_ps2  ),
         .wen_key_ps2 (keyflag_temp),
-        .key_uart    ('b0),//key_uart    ),// not connected
-        .wen_key_uart('b0),//wen_key_uart),// not connected
-        .run         (run         ),// not connected
+        .key_uart    (key_uart    ),
+        .wen_key_uart(wen_key_uart),
         .inst_addr   (inst_addr   ),
         .inst_write  (inst_write  ),
-        .alu_out     (alu_out     ),// not connected
-        .bench_out   (bench_out   ),// not connected
+        .alu_out     (alu_out     ),
+        .bench_out   (bench_out   ),
         .result_ready(result_ready),
         .ap_start    (ap_start    ),
         .debug_state (debug_state )
     );
     assign LED = {8'b0,debug_state};
     
-    wire resume_btn;
+    uart_arbiter(
+        .clk_100(CLK100MHZ),
+        .clk_ps2(PS2_CLK),
+        .rst(rst),
+        .uart_dat(uart_dat),
+        .uart_dv(uart_dv),
+        .key_uart(key_uart),
+        .wen_uart(wen_key_uart)
+    );
     
+    mat_to_ascii m2a(
+        bench_out,
+        disp_mat
+    );
+    
+    alu_to_ascii a2a(
+        alu_out,
+        disp_alu
+    );
+        
     wire [`dwidth_dat*6-1:0] register_data;
     wire ap_start_ROM;
     wire resume,halt;
     
     btn_edge btn(
         .reset(rst),
-        .btnIn(resume_btn),
+        .btnIn(BTN[4]),
         .CLK(CLK100MHZ),
         .btnOut(resume)
         );
@@ -142,7 +174,6 @@ module term_interf_top(
         .clk(CLK100MHZ),
         .rst(rst),
         .resume(resume),
-        .resume(resume_btn),
         .user_inst_write(inst_write),
         .user_inst_addr(inst_addr),
         .ap_start(ap_start),

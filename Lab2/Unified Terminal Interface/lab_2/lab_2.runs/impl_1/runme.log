@@ -1,0 +1,706 @@
+
+*** Running vivado
+    with args -log term_interf_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source term_interf_top.tcl -notrace
+
+
+****** Vivado v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source term_interf_top.tcl -notrace
+Command: link_design -top term_interf_top -part xc7a100tcsg324-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 3968 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/constrs_1/imports/Constraints/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/constrs_1/imports/Constraints/Nexys-A7-100T-Master.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 805.004 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 809.012 ; gain = 450.961
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:00.861 . Memory (MB): peak = 816.062 ; gain = 7.051
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1acab2dcd
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1371.801 ; gain = 555.738
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1acab2dcd
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 0 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1c669ae2b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 10d873125
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 10d873125
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 10d873125
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 10d873125
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |               0  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.079 . Memory (MB): peak = 1515.359 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1da899dfd
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1515.359 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1da899dfd
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1515.359 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1da899dfd
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1515.359 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1515.359 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1da899dfd
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:16 . Memory (MB): peak = 1515.359 ; gain = 706.348
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1515.359 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/impl_1/term_interf_top_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file term_interf_top_drc_opted.rpt -pb term_interf_top_drc_opted.pb -rpx term_interf_top_drc_opted.rpx
+Command: report_drc -file term_interf_top_drc_opted.rpt -pb term_interf_top_drc_opted.pb -rpx term_interf_top_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/impl_1/term_interf_top_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1515.359 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 1be697631
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 1515.359 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1515.359 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: e762637d
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:03 . Memory (MB): peak = 1515.359 ; gain = 0.000
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 17a896996
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 17a896996
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 1581.363 ; gain = 66.004
+Phase 1 Placer Initialization | Checksum: 17a896996
+
+Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1721fdf65
+
+Time (s): cpu = 00:00:13 ; elapsed = 00:00:08 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1581.363 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+----------------------------------------------------------------------------------------------------------------------------------------
+|  Very High Fanout              |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  HD Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                         |            0  |              0  |                     0  |           0  |           5  |  00:00:00  |
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 13763ed93
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:19 . Memory (MB): peak = 1581.363 ; gain = 66.004
+Phase 2.2 Global Placement Core | Checksum: 1d17c0e17
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:20 . Memory (MB): peak = 1581.363 ; gain = 66.004
+Phase 2 Global Placement | Checksum: 1d17c0e17
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:20 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: fd04767e
+
+Time (s): cpu = 00:00:36 ; elapsed = 00:00:21 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 142789789
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:21 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 211596b85
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:22 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 2125aea4c
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:22 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 213b9824c
+
+Time (s): cpu = 00:00:43 ; elapsed = 00:00:26 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1e6c1ca28
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:32 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 1fc33e984
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:35 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 1f08e633f
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:35 . Memory (MB): peak = 1581.363 ; gain = 66.004
+Phase 3 Detail Placement | Checksum: 1f08e633f
+
+Time (s): cpu = 00:00:52 ; elapsed = 00:00:35 . Memory (MB): peak = 1581.363 ; gain = 66.004
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 24b3c7066
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 24b3c7066
+
+Time (s): cpu = 00:01:01 ; elapsed = 00:00:41 . Memory (MB): peak = 1633.438 ; gain = 118.078
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.521. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1acf19f69
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:42 . Memory (MB): peak = 1633.438 ; gain = 118.078
+Phase 4.1 Post Commit Optimization | Checksum: 1acf19f69
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:42 . Memory (MB): peak = 1633.438 ; gain = 118.078
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1acf19f69
+
+Time (s): cpu = 00:01:02 ; elapsed = 00:00:42 . Memory (MB): peak = 1633.438 ; gain = 118.078
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 1acf19f69
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:42 . Memory (MB): peak = 1633.438 ; gain = 118.078
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1633.438 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 1b677485f
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:42 . Memory (MB): peak = 1633.438 ; gain = 118.078
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 1b677485f
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:43 . Memory (MB): peak = 1633.438 ; gain = 118.078
+Ending Placer Task | Checksum: 19221f9df
+
+Time (s): cpu = 00:01:03 ; elapsed = 00:00:43 . Memory (MB): peak = 1633.438 ; gain = 118.078
+INFO: [Common 17-83] Releasing license: Implementation
+56 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:01:04 ; elapsed = 00:00:44 . Memory (MB): peak = 1633.438 ; gain = 118.078
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1633.438 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 1633.438 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/impl_1/term_interf_top_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file term_interf_top_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.163 . Memory (MB): peak = 1633.438 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file term_interf_top_utilization_placed.rpt -pb term_interf_top_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file term_interf_top_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.245 . Memory (MB): peak = 1633.438 ; gain = 0.000
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 9b214a73 ConstDB: 0 ShapeSum: f700af6c RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 1970b47eb
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:31 . Memory (MB): peak = 1729.590 ; gain = 86.957
+Post Restoration Checksum: NetGraph: 97e22cd5 NumContArr: ff291b16 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 1970b47eb
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:31 . Memory (MB): peak = 1760.020 ; gain = 117.387
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 1970b47eb
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:31 . Memory (MB): peak = 1766.598 ; gain = 123.965
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 1970b47eb
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:31 . Memory (MB): peak = 1766.598 ; gain = 123.965
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 76b147da
+
+Time (s): cpu = 00:00:55 ; elapsed = 00:00:45 . Memory (MB): peak = 1795.699 ; gain = 153.066
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.770  | TNS=0.000  | WHS=-0.911 | THS=-54.978|
+
+Phase 2 Router Initialization | Checksum: 1176144fc
+
+Time (s): cpu = 00:00:59 ; elapsed = 00:00:48 . Memory (MB): peak = 1810.086 ; gain = 167.453
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.4891 %
+  Global Horizontal Routing Utilization  = 1.66702 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 15090
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 14931
+  Number of Partially Routed Nets     = 159
+  Number of Node Overlaps             = 3790
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 13157db65
+
+Time (s): cpu = 00:01:07 ; elapsed = 00:00:52 . Memory (MB): peak = 1836.285 ; gain = 193.652
+INFO: [Route 35-580] Design has 10 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[22]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[26]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[25]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[18]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[24]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 7160
+ Number of Nodes with overlaps = 731
+ Number of Nodes with overlaps = 160
+ Number of Nodes with overlaps = 90
+ Number of Nodes with overlaps = 62
+ Number of Nodes with overlaps = 37
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 18
+ Number of Nodes with overlaps = 17
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.304  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 145b7bf04
+
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:29 . Memory (MB): peak = 1836.285 ; gain = 193.652
+Phase 4 Rip-up And Reroute | Checksum: 145b7bf04
+
+Time (s): cpu = 00:02:02 ; elapsed = 00:01:29 . Memory (MB): peak = 1836.285 ; gain = 193.652
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 22aef095f
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:30 . Memory (MB): peak = 1836.285 ; gain = 193.652
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.391  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 5.1 Delay CleanUp | Checksum: 22aef095f
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:30 . Memory (MB): peak = 1836.285 ; gain = 193.652
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 22aef095f
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:30 . Memory (MB): peak = 1836.285 ; gain = 193.652
+Phase 5 Delay and Skew Optimization | Checksum: 22aef095f
+
+Time (s): cpu = 00:02:03 ; elapsed = 00:01:30 . Memory (MB): peak = 1836.285 ; gain = 193.652
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 14150cc50
+
+Time (s): cpu = 00:02:05 ; elapsed = 00:01:31 . Memory (MB): peak = 1836.285 ; gain = 193.652
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.391  | TNS=0.000  | WHS=0.125  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 22b5928bc
+
+Time (s): cpu = 00:02:05 ; elapsed = 00:01:31 . Memory (MB): peak = 1836.285 ; gain = 193.652
+Phase 6 Post Hold Fix | Checksum: 22b5928bc
+
+Time (s): cpu = 00:02:05 ; elapsed = 00:01:31 . Memory (MB): peak = 1836.285 ; gain = 193.652
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 6.11142 %
+  Global Horizontal Routing Utilization  = 7.8138 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1ff02ea4e
+
+Time (s): cpu = 00:02:05 ; elapsed = 00:01:31 . Memory (MB): peak = 1836.285 ; gain = 193.652
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1ff02ea4e
+
+Time (s): cpu = 00:02:05 ; elapsed = 00:01:31 . Memory (MB): peak = 1836.285 ; gain = 193.652
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 27de98816
+
+Time (s): cpu = 00:02:09 ; elapsed = 00:01:35 . Memory (MB): peak = 1836.285 ; gain = 193.652
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.391  | TNS=0.000  | WHS=0.125  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: 27de98816
+
+Time (s): cpu = 00:02:09 ; elapsed = 00:01:35 . Memory (MB): peak = 1836.285 ; gain = 193.652
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:02:09 ; elapsed = 00:01:35 . Memory (MB): peak = 1836.285 ; gain = 193.652
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+75 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:02:12 ; elapsed = 00:01:37 . Memory (MB): peak = 1836.285 ; gain = 202.848
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1836.285 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:06 ; elapsed = 00:00:02 . Memory (MB): peak = 1836.285 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/impl_1/term_interf_top_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file term_interf_top_drc_routed.rpt -pb term_interf_top_drc_routed.pb -rpx term_interf_top_drc_routed.rpx
+Command: report_drc -file term_interf_top_drc_routed.rpt -pb term_interf_top_drc_routed.pb -rpx term_interf_top_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/impl_1/term_interf_top_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file term_interf_top_methodology_drc_routed.rpt -pb term_interf_top_methodology_drc_routed.pb -rpx term_interf_top_methodology_drc_routed.rpx
+Command: report_methodology -file term_interf_top_methodology_drc_routed.rpt -pb term_interf_top_methodology_drc_routed.pb -rpx term_interf_top_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/impl_1/term_interf_top_methodology_drc_routed.rpt.
+report_methodology completed successfully
+report_methodology: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1852.285 ; gain = 16.000
+INFO: [runtcl-4] Executing : report_power -file term_interf_top_power_routed.rpt -pb term_interf_top_power_summary_routed.pb -rpx term_interf_top_power_routed.rpx
+Command: report_power -file term_interf_top_power_routed.rpt -pb term_interf_top_power_summary_routed.pb -rpx term_interf_top_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+87 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+report_power: Time (s): cpu = 00:00:17 ; elapsed = 00:00:12 . Memory (MB): peak = 1864.992 ; gain = 12.707
+INFO: [runtcl-4] Executing : report_route_status -file term_interf_top_route_status.rpt -pb term_interf_top_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file term_interf_top_timing_summary_routed.rpt -pb term_interf_top_timing_summary_routed.pb -rpx term_interf_top_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [runtcl-4] Executing : report_incremental_reuse -file term_interf_top_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file term_interf_top_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file term_interf_top_bus_skew_routed.rpt -pb term_interf_top_bus_skew_routed.pb -rpx term_interf_top_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force term_interf_top.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a100t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC CFGBVS-1] Missing CFGBVS and CONFIG_VOLTAGE Design Properties: Neither the CFGBVS nor CONFIG_VOLTAGE voltage property is set in the current_design.  Configuration bank voltage select (CFGBVS) must be set to VCCO or GND, and CONFIG_VOLTAGE must be set to the correct configuration voltage, in order to determine the I/O voltage support for the pins in bank 0.  It is suggested to specify these either using the 'Edit Device Properties' function in the GUI or directly in the XDC file using the following syntax:
+
+ set_property CFGBVS value1 [current_design]
+ #where value1 is either VCCO or GND
+
+ set_property CONFIG_VOLTAGE value2 [current_design]
+ #where value2 is the voltage provided to configuration bank 0
+
+Refer to the device configuration user guide for more information.
+WARNING: [DRC PDRC-153] Gated clock check: Net VGA1/vga_controller/E[0] is a gated clock net sourced by a combinational pin VGA1/vga_controller/address_reg[7]_i_2/O, cell VGA1/vga_controller/address_reg[7]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net VGA1/vga_controller/hcounter_reg[2]_0 is a gated clock net sourced by a combinational pin VGA1/vga_controller/VGA_R_reg[3]_i_2/O, cell VGA1/vga_controller/VGA_R_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net VGA1/vga_controller/hcounter_reg[8]_0[0] is a gated clock net sourced by a combinational pin VGA1/vga_controller/address_init_part_reg[7]_i_2/O, cell VGA1/vga_controller/address_init_part_reg[7]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dl/FSM_sequential_next_state_reg[3]_i_2_n_1 is a gated clock net sourced by a combinational pin dl/FSM_sequential_next_state_reg[3]_i_2/O, cell dl/FSM_sequential_next_state_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/fetch_0/stall_ns_reg[1]_i_1_n_1 is a gated clock net sourced by a combinational pin dp1/fetch_0/stall_ns_reg[1]_i_1/O, cell dp1/fetch_0/stall_ns_reg[1]_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/halt_ns is a gated clock net sourced by a combinational pin dp1/clk_sel_reg_i_1/O, cell dp1/clk_sel_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg1/dout_reg[60]_6 is a gated clock net sourced by a combinational pin dp1/reg1/cmp_flag_reg_i_1/O, cell dp1/reg1/cmp_flag_reg_i_1. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4][0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[47][15]_i_2/O, cell dp1/reg2/mem_reg[47][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_0[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[30][15]_i_2/O, cell dp1/reg2/mem_reg[30][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_10[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[36][15]_i_2/O, cell dp1/reg2/mem_reg[36][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_11[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[33][15]_i_2/O, cell dp1/reg2/mem_reg[33][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_12[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[83][15]_i_2/O, cell dp1/reg2/mem_reg[83][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_13[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[108][15]_i_2/O, cell dp1/reg2/mem_reg[108][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_14[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[20][15]_i_2/O, cell dp1/reg2/mem_reg[20][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_15[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[21][15]_i_2/O, cell dp1/reg2/mem_reg[21][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_16[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[16][15]_i_2/O, cell dp1/reg2/mem_reg[16][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_17[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[81][15]_i_2/O, cell dp1/reg2/mem_reg[81][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_18[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[15][15]_i_2/O, cell dp1/reg2/mem_reg[15][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_19[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[14][15]_i_2/O, cell dp1/reg2/mem_reg[14][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_1[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[118][15]_i_2/O, cell dp1/reg2/mem_reg[118][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_20[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[13][15]_i_2/O, cell dp1/reg2/mem_reg[13][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_21[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[80][15]_i_2/O, cell dp1/reg2/mem_reg[80][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_22[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[110][15]_i_2/O, cell dp1/reg2/mem_reg[110][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_23[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[65][15]_i_2/O, cell dp1/reg2/mem_reg[65][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_24[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[57][15]_i_2/O, cell dp1/reg2/mem_reg[57][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_25[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[112][15]_i_2/O, cell dp1/reg2/mem_reg[112][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_26[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[55][15]_i_2/O, cell dp1/reg2/mem_reg[55][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_27[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[28][15]_i_2/O, cell dp1/reg2/mem_reg[28][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_28[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[123][15]_i_2/O, cell dp1/reg2/mem_reg[123][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_29[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[29][15]_i_2/O, cell dp1/reg2/mem_reg[29][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_2[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[126][15]_i_2/O, cell dp1/reg2/mem_reg[126][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_30[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[52][15]_i_2/O, cell dp1/reg2/mem_reg[52][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_31[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[127][15]_i_2/O, cell dp1/reg2/mem_reg[127][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_32[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[48][15]_i_2/O, cell dp1/reg2/mem_reg[48][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_33[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[128][15]_i_2/O, cell dp1/reg2/mem_reg[128][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_34[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[32][15]_i_2/O, cell dp1/reg2/mem_reg[32][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_35[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[42][15]_i_2/O, cell dp1/reg2/mem_reg[42][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_36[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[34][15]_i_2/O, cell dp1/reg2/mem_reg[34][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_37[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[18][15]_i_2/O, cell dp1/reg2/mem_reg[18][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_38[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[17][15]_i_2/O, cell dp1/reg2/mem_reg[17][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_39[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[22][15]_i_2/O, cell dp1/reg2/mem_reg[22][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_3[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[122][15]_i_2/O, cell dp1/reg2/mem_reg[122][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_40[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[23][15]_i_2/O, cell dp1/reg2/mem_reg[23][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_41[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[12][15]_i_2/O, cell dp1/reg2/mem_reg[12][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_42[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[11][15]_i_2/O, cell dp1/reg2/mem_reg[11][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_43[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[10][15]_i_2/O, cell dp1/reg2/mem_reg[10][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_44[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[9][15]_i_2/O, cell dp1/reg2/mem_reg[9][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_45[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[8][15]_i_2/O, cell dp1/reg2/mem_reg[8][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_46[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[7][15]_i_2/O, cell dp1/reg2/mem_reg[7][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_47[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[6][15]_i_2/O, cell dp1/reg2/mem_reg[6][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_48[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[5][15]_i_2/O, cell dp1/reg2/mem_reg[5][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_49[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[4][15]_i_2/O, cell dp1/reg2/mem_reg[4][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_4[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[116][15]_i_2/O, cell dp1/reg2/mem_reg[116][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_50[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[3][15]_i_2/O, cell dp1/reg2/mem_reg[3][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_51[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[2][15]_i_2/O, cell dp1/reg2/mem_reg[2][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_52[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[1][15]_i_2/O, cell dp1/reg2/mem_reg[1][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_53[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[0][15]_i_2/O, cell dp1/reg2/mem_reg[0][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_5[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[120][15]_i_2/O, cell dp1/reg2/mem_reg[120][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_6[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[124][15]_i_2/O, cell dp1/reg2/mem_reg[124][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_7[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[121][15]_i_2/O, cell dp1/reg2/mem_reg[121][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_8[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[125][15]_i_2/O, cell dp1/reg2/mem_reg[125][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/BTN[4]_9[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[117][15]_i_2/O, cell dp1/reg2/mem_reg[117][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/E[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[77][15]_i_2/O, cell dp1/reg2/mem_reg[77][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/ap_start_cs_reg[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[64][15]_i_2/O, cell dp1/reg2/mem_reg[64][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/ap_start_cs_reg_0[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[113][15]_i_2/O, cell dp1/reg2/mem_reg[113][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/ap_start_cs_reg_1[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[73][15]_i_2/O, cell dp1/reg2/mem_reg[73][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/ap_start_cs_reg_2[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[114][15]_i_2/O, cell dp1/reg2/mem_reg[114][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/ap_start_cs_reg_3[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[107][15]_i_2/O, cell dp1/reg2/mem_reg[107][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_10[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[40][15]_i_2/O, cell dp1/reg2/mem_reg[40][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_11[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[84][15]_i_2/O, cell dp1/reg2/mem_reg[84][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_12[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[102][15]_i_2/O, cell dp1/reg2/mem_reg[102][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_13[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[98][15]_i_2/O, cell dp1/reg2/mem_reg[98][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_14[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[106][15]_i_2/O, cell dp1/reg2/mem_reg[106][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_15[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[75][15]_i_2/O, cell dp1/reg2/mem_reg[75][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_3[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[62][15]_i_2/O, cell dp1/reg2/mem_reg[62][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_4[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[88][15]_i_2/O, cell dp1/reg2/mem_reg[88][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_5[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[31][15]_i_2/O, cell dp1/reg2/mem_reg[31][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_6[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[104][15]_i_2/O, cell dp1/reg2/mem_reg[104][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_7[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[96][15]_i_2/O, cell dp1/reg2/mem_reg[96][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_8[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[46][15]_i_2/O, cell dp1/reg2/mem_reg[46][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[17]_9[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[44][15]_i_2/O, cell dp1/reg2/mem_reg[44][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[18]_26[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[63][15]_i_2/O, cell dp1/reg2/mem_reg[63][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[18]_27[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[79][15]_i_2/O, cell dp1/reg2/mem_reg[79][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[18]_28[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[72][15]_i_2/O, cell dp1/reg2/mem_reg[72][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[19]_33[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[45][15]_i_2/O, cell dp1/reg2/mem_reg[45][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[19]_34[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[41][15]_i_2/O, cell dp1/reg2/mem_reg[41][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[19]_35[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[38][15]_i_2/O, cell dp1/reg2/mem_reg[38][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[19]_37[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[60][15]_i_2/O, cell dp1/reg2/mem_reg[60][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[20]_31[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[103][15]_i_2/O, cell dp1/reg2/mem_reg[103][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[20]_32[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[111][15]_i_2/O, cell dp1/reg2/mem_reg[111][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[20]_33[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[115][15]_i_2/O, cell dp1/reg2/mem_reg[115][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_19[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[25][15]_i_2/O, cell dp1/reg2/mem_reg[25][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_20[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[56][15]_i_2/O, cell dp1/reg2/mem_reg[56][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_21[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[91][15]_i_2/O, cell dp1/reg2/mem_reg[91][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_22[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[24][15]_i_2/O, cell dp1/reg2/mem_reg[24][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_23[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[92][15]_i_2/O, cell dp1/reg2/mem_reg[92][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_24[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[71][15]_i_2/O, cell dp1/reg2/mem_reg[71][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_25[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[69][15]_i_2/O, cell dp1/reg2/mem_reg[69][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_26[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[68][15]_i_2/O, cell dp1/reg2/mem_reg[68][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+WARNING: [DRC PDRC-153] Gated clock check: Net dp1/reg2/dout_reg[22]_27[0] is a gated clock net sourced by a combinational pin dp1/reg2/mem_reg[100][15]_i_2/O, cell dp1/reg2/mem_reg[100][15]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
+INFO: [Common 17-14] Message 'DRC PDRC-153' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 140 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./term_interf_top.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Common 17-83] Releasing license: Implementation
+106 Infos, 102 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:29 ; elapsed = 00:00:21 . Memory (MB): peak = 2357.383 ; gain = 487.848
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 11 20:20:02 2022...

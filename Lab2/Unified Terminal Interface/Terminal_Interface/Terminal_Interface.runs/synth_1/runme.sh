@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='X:/EC551/Labs/Lab2_new/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1'
+HD_PWD='C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/Terminal_Interface/Terminal_Interface.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

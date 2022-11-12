@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1668215510">
+  <File Type="PA-TCL" Name="term_interf_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="term_interf_top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="term_interf_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="term_interf_top.vds"/>
+  <File Type="RDS-UTIL" Name="term_interf_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="term_interf_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="term_interf_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="term_interf_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="term_interf_top_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/my_header.vh">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/my_header.vh"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/ALU.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/ALU.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/Decoder.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/Decoder.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/Fetch_unit.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/Fetch_unit.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/PS2Receiver.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/PS2Receiver.v"/>
+        <Attr Name="ImportTime" Val="1668202604"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/Register_file.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/Register_file.v"/>
+        <Attr Name="ImportTime" Val="1668195851"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/UART_RX_CTRL.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/UART_RX_CTRL.v"/>
+        <Attr Name="ImportTime" Val="1668194696"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/alu_to_ascii.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/alu_to_ascii.v"/>
+        <Attr Name="ImportTime" Val="1668196467"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/btn_edge.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/btn_edge.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/data_loader.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/data_loader.v"/>
+        <Attr Name="ImportTime" Val="1668195407"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/datapath.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/datapath.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/debounce.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/debounce.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/hex_to_ascii.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/hex_to_ascii.v"/>
+        <Attr Name="ImportTime" Val="1668191096"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/keyboard_debouncer.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/keyboard_debouncer.v"/>
+        <Attr Name="ImportTime" Val="1668189021"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/mat3mult.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/mat3mult.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/mat_to_ascii.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/mat_to_ascii.v"/>
+        <Attr Name="ImportTime" Val="1668191403"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/memory.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/memory.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/mini_ALU.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/mini_ALU.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/ps2_to_ascii.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/ps2_to_ascii.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/reg_param.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/reg_param.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/top_keyboard.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/top_keyboard.v"/>
+        <Attr Name="ImportTime" Val="1668201564"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/uart_arbiter.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/uart_arbiter.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/vect3mac.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/vect3mac.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/vga.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/vga.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/UART_TX_CTRL.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/UART_TX_CTRL.vhd"/>
+        <Attr Name="ImportTime" Val="1668189021"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/debouncer.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/debouncer.vhd"/>
+        <Attr Name="ImportTime" Val="1668189021"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/top.vhd">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/top.vhd"/>
+        <Attr Name="ImportTime" Val="1668203422"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/term_interf_top.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/term_interf_top.v"/>
+        <Attr Name="ImportTime" Val="1668200082"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/temp_top.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/seg7decimal.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/seg7decimal.v"/>
+        <Attr Name="ImportTime" Val="1668200354"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/vga_full_rf.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/vga_full_rf.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/Sources/Design/inst_ROM.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Design/inst_ROM.v"/>
+        <Attr Name="ImportTime" Val="1668189020"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="term_interf_top"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/imports/Constraints/Nexys-A7-100T-Master.xdc">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../Sources/Constraints/Nexys-A7-100T-Master.xdc"/>
+        <Attr Name="ImportTime" Val="1668197609"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>

@@ -1,0 +1,14 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[22]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[26]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[25]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[18]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[24]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[27]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[20]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[17]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[19]/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                                   dp1/reg1/dout_reg[14]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
