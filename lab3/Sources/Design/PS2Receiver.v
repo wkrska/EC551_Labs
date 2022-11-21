@@ -1,34 +1,11 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/06/2022 09:20:13 AM
-// Design Name: 
-// Module Name: PS2Receiver
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
 module PS2Receiver(
     input wire clk,
     input wire rst,
     input wire kclk,
     input wire kdata,
-    output reg [7:0] mode,
     output reg [7:0] keystroke,
-    output reg keyflag,
-    output reg modeflag
+    output reg keyflag
     );
     
     wire kclkf, kdataf;
@@ -71,39 +48,34 @@ always@(negedge(kclkf)) begin // on negedge of ps2 clk (per protocol)
     else cnt<=0;    
 end
 
-// keycode = [ k0  k1  k2  k4 ] s.t [ mode  wtf  release  enter]
-always @(posedge flag)begin // when full byte is recieved
-    if (dataprev!=datacur) begin
-        keycode[31:24]<=keycode[23:16];
-        keycode[23:16]<=keycode[15:8];
-        keycode[15:8]<=dataprev;
-        keycode[7:0]<=datacur;
-        dataprev<=datacur;
-    end
+
+// keycode output FSM
+reg [1:0] cs,ns;
+localparam [1:0] IDLE = 2'b0, RELEASE = 2'b01, KEY = 2'b10;
+always @(posedge flag) begin
+    cs <= (rst) ? IDLE : ns;
+end
+always @(*) begin
+    case(cs)
+        IDLE: begin
+            ns = (datacur == 8'hF0) ? RELEASE : IDLE;
+            keystroke = 'b0;
+            keyflag = 'b0;
+        end
+        RELEASE: begin
+            ns = KEY;
+            keystroke = 'b0;
+            keyflag = 'b0;
+        end
+        KEY: begin
+            ns = IDLE;
+            keystroke = datacur;
+            keyflag = 'b1;
+        end
+    endcase
 end
 
-// general description:
-//      when full byte recieved
-//      proceed only if new byte recieved
-//      
-//
-//
-always @(posedge flag) begin
-    if (dataprev!=datacur)begin
-        if (keycode[15:8] == 'hF0)begin
-            keyflag<=1;
-            keystroke<=keycode[7:0];
-            if (keycode[7:0] == 'h5A) begin
-                mode <= keycode[31:24];
-                modeflag<= 1;
-            end
-        end
-    end
-    else begin
-        keyflag<=0;
-        modeflag<=0;
-    end
-end
+
 
     
 endmodule

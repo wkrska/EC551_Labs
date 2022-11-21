@@ -37,7 +37,7 @@ reg [19:0] clkdiv;
 
 assign dp = 1;
 assign s = clkdiv[19:17];
-assign aen = 8'b11111100; // all turned off initially
+assign aen = 8'b00000011; // all turned off initially
 
 // quad 4to1 MUX.
 

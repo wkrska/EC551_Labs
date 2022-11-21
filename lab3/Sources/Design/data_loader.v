@@ -3,15 +3,14 @@
 `include "my_header.vh"
 
 module data_loader(
-    input wire clk_ps2,
     input wire clk_100,
     input wire rst,
-    input wire [2:0] mode, // 0=I, 1=L, 2=A, 3=B
-    input wire wen_mode,
     input wire [7:0] key_ps2,
     input wire wen_key_ps2,
     input wire [7:0] key_uart,
     input wire wen_key_uart,
+    output wire [2:0] mode, // 0=I, 1=L, 2=A, 3=B
+    output reg mode_flag,
     output reg [11:0] inst_addr,
     output reg [15:0] inst_write,
     output wire [`dwidth_dat_user*2-1:0] alu_out,
@@ -94,6 +93,7 @@ end
 reg [7:0] curr_state, next_state;
 assign debug_state = curr_state;
 reg [3:0] count_c,count_n;
+reg mode_flag_n;
 // Inst write
 reg [`dwidth_dat-1:0] inst_write_n;
 reg [`awidth_mem-1:0] inst_addr_n;
@@ -104,27 +104,34 @@ reg [`dwidth_dat_user-1:0] alu_a,alu_b,alu_a_n,alu_b_n;
 reg result_ready_n;
 // Benchmark
 reg [`dwidth_mat*3*3-1:0] mat_a, mat_b, mat_a_n, mat_b_n;
+
+
 //states
-localparam [7:0]    IDLE=8'h00,
-                    I_ch=8'h10, // first char entered, or run
-                    I_wb=8'h11, // write inst on enter
-                    I_rn=8'h12, // Start datapath
-                    L_ch=8'h20, // first char entered, or run
-                    L_wb=8'h21, // write inst on enter
-                    L_rn=8'h22, // Start datapath
-                    A_aa=8'h30, // First operand
-                    A_sh=8'h31, // shift?
-                    A_op=8'h32, // Operator
-                    A_bb=8'h33, // Seond operand
-                    A_wb=8'h34, // wb result
-                    B_ma=8'h40, // loop until count, writing to first mat
-                    B_mb=8'h41, // loop until connt, writing to second mat
-                    B_wb=8'h42; // wb result
-                    
+//  note that upper 4 bits are the mode encoding, whereas he lower 4 bits are the state encoding
+localparam [7:0]    IDLE=8'h40,
+                    I_ch=8'h00, // first char entered, or run
+                    I_wb=8'h01, // write inst on enter
+                    I_rn=8'h02, // Start datapath
+                    L_ch=8'h10, // first char entered, or run
+                    L_wb=8'h11, // write inst on enter
+                    L_rn=8'h12, // Start datapath
+                    A_aa=8'h20, // First operand
+                    A_sh=8'h21, // shift?
+                    A_op=8'h22, // Operator
+                    A_bb=8'h23, // Seond operand
+                    A_wb=8'h24, // wb result
+                    B_ma=8'h30, // loop until count, writing to first mat
+                    B_mb=8'h31, // loop until connt, writing to second mat
+                    B_wb=8'h32; // wb result
+
+// Extract mode encoding
+assign mode = curr_state[7:4];
+
 // Clocked portion of FSM
-always @(posedge clk_ps2) begin
+always @(posedge clk_100) begin
     if (rst) begin
         curr_state <= IDLE;
+        mode_flag <= 0;
         count_c <= 0;
         ap_start <= 0;
         ALU_mode_c <= 0;
@@ -137,6 +144,7 @@ always @(posedge clk_ps2) begin
         mat_b <= 0;
     end else begin
         curr_state <= next_state;
+        mode_flag <= mode_flag_n;
         count_c <= count_n;
         ap_start <= ap_start_n;
         ALU_mode_c <= ALU_mode_n;
@@ -154,14 +162,16 @@ end
 always @(*) begin
     case(curr_state)
         IDLE: begin
-            case(mode)
-                3'd0 : next_state = (wen_mode) ? I_ch : IDLE;
-                3'd1 : next_state = (wen_mode) ? L_ch : IDLE;
-                3'd2 : next_state = (wen_mode) ? A_aa : IDLE;
-                3'd3 : next_state = (wen_mode) ? B_ma : IDLE;
-                3'd4 : next_state = (wen_mode) ? IDLE : IDLE;
-                default: next_state = IDLE;
-            endcase
+            if (wen_key_ps2) begin
+                case(key_ps2)
+                    8'h43 : next_state = I_ch;
+                    8'h4B : next_state = L_ch;
+                    8'h1C : next_state = A_aa;
+                    8'h32 : next_state = B_ma;
+                    default: next_state = IDLE;
+                endcase
+                mode_flag_n = 'b1;
+            end
             count_n = 'b0;
             ap_start_n = 'b0;
             ALU_mode_n = 'b0;
@@ -185,6 +195,7 @@ always @(*) begin
             alu_b_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         I_wb: begin
             next_state=(wen_key_ps2 && trans_key_ps2==5'h11) ? I_ch : I_wb;
@@ -198,6 +209,7 @@ always @(*) begin
             alu_b_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         I_rn: begin
             next_state = IDLE;
@@ -211,6 +223,7 @@ always @(*) begin
             alu_b_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         L_ch: begin // loads the typed keys into 
             next_state=(wen_key_uart && (~trans_key_uart[4]) && count_c==3) ? L_wb : ((wen_key_uart && trans_key_uart == 5'h18) ? L_rn : L_ch);
@@ -224,6 +237,7 @@ always @(*) begin
             alu_b_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         L_wb: begin
             next_state=(wen_key_uart && trans_key_uart==5'h11) ? L_ch : L_wb;
@@ -237,6 +251,7 @@ always @(*) begin
             alu_b_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         L_rn: begin
             next_state = IDLE;
@@ -250,6 +265,7 @@ always @(*) begin
             alu_b_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         A_aa: begin
             next_state = (wen_key_ps2 && ~trans_key_ps2[4]) ? A_sh : A_aa;
@@ -265,6 +281,7 @@ always @(*) begin
             result_ready_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         A_sh: begin // UNFINISHED
             next_state = (wen_key_ps2 && (trans_key_ps2==5'h12 || trans_key_ps2==5'h13)) ? A_op : A_sh;
@@ -280,6 +297,7 @@ always @(*) begin
             ap_start_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         A_op: begin
 //            next_state = (wen_key_ps2 && (trans_key_ps2==5'h14 || trans_key_ps2==5'h15 || trans_key_ps2==5'h16 || trans_key_ps2==5'h17)) ? A_bb : A_op;
@@ -304,6 +322,7 @@ always @(*) begin
             ap_start_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         A_bb: begin
             next_state = (wen_key_ps2 && ~trans_key_ps2[4]) ? A_wb : A_bb;
@@ -319,6 +338,7 @@ always @(*) begin
             ap_start_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         A_wb: begin
             next_state = IDLE;
@@ -334,9 +354,10 @@ always @(*) begin
             ap_start_n = 'b0;
             mat_a_n = 'b0;
             mat_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         B_ma: begin
-            next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==8) ? B_mb : B_ma;
+            next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==9) ? B_mb : B_ma;
             count_n = (count_c<9) ? ((wen_key_ps2 && (~trans_key_ps2[4])) ? count_c+1 : count_c) : 'b0;
             mat_a_n = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c<9) ? {mat_a[31:0],trans_key_ps2[3:0]} : mat_a;
             mat_b_n = 'b0;
@@ -349,9 +370,10 @@ always @(*) begin
             ALU_mode_n = 'b0;
             alu_a_n = 'b0;
             alu_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         B_mb: begin
-            next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==8) ? B_wb : B_mb;
+            next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==9) ? B_wb : B_mb;
             count_n = (count_c<9) ? ((wen_key_ps2 && (~trans_key_ps2[4])) ? count_c+1 : count_c) : 'b0;
             mat_a_n = mat_a;
             mat_b_n = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c<9) ? {mat_b[31:0],trans_key_ps2[3:0]} : mat_b;
@@ -364,6 +386,7 @@ always @(*) begin
             ALU_mode_n = 'b0;
             alu_a_n = 'b0;
             alu_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
         B_wb: begin
             next_state = IDLE;
@@ -379,6 +402,7 @@ always @(*) begin
             ALU_mode_n = 'b0;
             alu_a_n = 'b0;
             alu_b_n = 'b0;
+            mode_flag_n = 'b0;
         end
     endcase
 end

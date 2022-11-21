@@ -23,7 +23,7 @@
 
 
 module term_interf_top(
-    input wire CLK100MHZ, rst,
+    input wire CLK100MHZ, rst_n,
     input wire [15:0] SW,
     input wire [4:0] BTN, 
     
@@ -47,11 +47,10 @@ module term_interf_top(
     );
     
     //============= UART and PS/2 =============//
-    wire [7:0] mode;
-    reg [2:0] mode_select;
+    wire [2:0] mode_select;
     wire [7:0] key_select_ps2, key_select_ascii;
-    wire keyflag_temp;
-    wire modeflagtop_temp;
+    wire keyflag;
+    wire modeflag;
     wire [103:0] disp_mat;
     wire [31:0] disp_alu;
     wire [7:0] uart_dat;
@@ -61,13 +60,13 @@ module term_interf_top(
     .SW(SW),
     .BTN(BTN),
     .CLK(CLK100MHZ),
-    .RST(rst),
-    .keyflag(keyflag_temp),
-    .modeflag(modeflagtop_temp),
+    .RST(BTN[4]),
+    .keyflag(keyflag),
+    .modeflag(modeflag),
     .alu_out(disp_alu),
     .bench_out(disp_mat),
-    // .SSEG_CA(SSEG_CA),
-    // .SSEG_AN(SSEG_AN),
+    .SSEG_CA(SSEG_CA),
+    .SSEG_AN(SSEG_AN),
     .mode_select(mode_select),
     .key_select(key_select_ascii),
     .UART_TXD(UART_TXD),
@@ -83,31 +82,19 @@ module term_interf_top(
     
     top_keyboard keyboard_interface(
     .CLK100MHZ(CLK100MHZ),
+    .rst(BTN[4]),
     .PS2_CLK(PS2_CLK),
     .PS2_DATA(PS2_DATA),
-    .mode(mode),
     .keystroke(key_select_ps2),
-    .keyflagtop(keyflag_temp),
-    .modeflagtop(modeflagtop_temp)    
+    .keyflagtop(keyflag)
     );
 
-    seg7decimal sevseg(
-        .x({24'b0,key_uart}),
-        .clk(CLK100MHZ),
-        .seg(SSEG_CA),
-        .an(SSEG_AN)
-    );
-    
-    always @(mode)
-    case(mode)
-    'h43:mode_select = 3'b000;    //Mode I   Keyboard Instruction
-    'h4B:mode_select = 3'b001;    //Mode L  UART
-    'h1C:mode_select = 3'b010;    //Mode A   ALU
-    'h32:mode_select = 3'b011;    //Mode B    Benchmark
-    
-    default:mode_select = 3'b100;  //Mode X Invalid Entry
-	
-	endcase
+    // seg7decimal sevseg(
+    //     .x({24'b0,key_uart}),
+    //     .clk(CLK100MHZ),
+    //     .seg(SSEG_CA),
+    //     .an(SSEG_AN)
+    // );
     
     //============= Data Loader and Datapath =============//
 
@@ -120,29 +107,28 @@ module term_interf_top(
     
     
     data_loader dl(
-        .clk_ps2     (PS2_CLK     ),
-        .clk_100     (CLK100MHZ   ),
-        .rst         (rst         ),
-        .mode        (mode_select ),
-        .wen_mode    (modeflagtop_temp ),
-        .key_ps2     (key_select_ps2  ),
-        .wen_key_ps2 (keyflag_temp),
-        .key_uart    (key_uart    ),
-        .wen_key_uart(wen_key_uart),
-        .inst_addr   (inst_addr   ),
-        .inst_write  (inst_write  ),
-        .alu_out     (alu_out     ),
-        .bench_out   (bench_out   ),
-        .result_ready(result_ready),
-        .ap_start    (ap_start    ),
-        .debug_state (debug_state )
+        .clk_100     (CLK100MHZ     ),
+        .rst         (BTN[4]        ),
+        .key_ps2     (key_select_ps2),
+        .wen_key_ps2 (keyflag       ),
+        .key_uart    (key_uart      ),
+        .wen_key_uart(wen_key_uart  ),
+        .mode        (mode_select   ),
+        .mode_flag   (modeflag      ),
+        .inst_addr   (inst_addr     ),
+        .inst_write  (inst_write    ),
+        .alu_out     (alu_out       ),
+        .bench_out   (bench_out     ),
+        .result_ready(result_ready  ),
+        .ap_start    (ap_start      ),
+        .debug_state (debug_state   )
     );
     assign LED = {8'b0,debug_state};
     
     uart_arbiter(
         .clk_100(CLK100MHZ),
         .clk_ps2(PS2_CLK),
-        .rst(rst),
+        .rst(BTN[4]),
         .uart_dat(uart_dat),
         .uart_dv(uart_dv),
         .key_uart(key_uart),
@@ -164,15 +150,15 @@ module term_interf_top(
     wire resume,halt;
     
     btn_edge btn(
-        .reset(rst),
+        .reset(BTN[4]),
         .btnIn(BTN[4]),
         .CLK(CLK100MHZ),
         .btnOut(resume)
         );
     
     datapath dp1(
-        .clk(CLK100MHZ),
-        .rst(rst),
+        .clk((mode_select==4'h1 || mode_select==4'h2) ? CLK100MHZ : 'b0), // Clock gating, turns off datapath when not in right mode;
+        .rst(BTN[4]),
         .resume(resume),
         .user_inst_write(inst_write),
         .user_inst_addr(inst_addr),
@@ -184,16 +170,18 @@ module term_interf_top(
     top_VGA  VGA1(
         .reg_value(register_data),
         .CLK100MHZ(CLK100MHZ),
-        .rst(rst),
+        .rst(BTN[4]),
         .VGA_R(VGA_R),
         .VGA_G(VGA_G),
         .VGA_B(VGA_B),
         .VGA_HS(VGA_HS),
         .VGA_VS(VGA_VS)
         );
+    reg [7:0] cnt=0;
     
+    always @(posedge keyflag)
+        cnt = cnt+1;
     
-    
-    
+    assign LED = {cnt,debug_state};
     
 endmodule

@@ -36,7 +36,6 @@ always @(*) begin
         8'h79: ascii = 8'h2B; // +
         8'h55: ascii = 8'h3D; // =
         8'h5A: ascii = 8'hA; // Enter
-        8'hE0: ascii = 8'hA; // Enter
         8'h12: ascii = 8'h0; // Shift (Left)
         8'h59: ascii = 8'h0; // Shift (Right)
         8'h29: ascii = 8'h20; // Spacebar
