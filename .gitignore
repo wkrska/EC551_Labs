@@ -1,0 +1,7 @@
+*.cache
+*.sim
+*.hw
+*.ip_user_files
+vivado*
+*.jou
+*.backup
