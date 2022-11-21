@@ -23,11 +23,19 @@
 module char_stager(
         input wire clk,
         input wire rst,
+
+        // generated data in
         input wire [`dwidth_dat_user*2-1:0] alu_in,
         input wire [`dwidth_mat*3*3-1:0] bench_in,
         input wire result_ready,
-        input wire [7:0] PS2_char,
-        input wire [7:0] UART_char,
+
+        // user data in
+        input wire [7:0] key_ps2,
+        input wire wen_key_ps2,
+        input wire [7:0] key_uart,
+        input wire wen_key_uart,
+
+        // control
         input wire [2:0] mode,
         input wire pop,
         output wire [7:0] char_out,
@@ -47,17 +55,24 @@ module char_stager(
     
     case [3:0] cs,ns;
     
-    localparam [3:0]    IDLE       = 'h0,
+    localparam [3:0]    IDLE       = 'h0, // also just passthrough mode
                         ALU_WAIT   = 'h1,
                         ALU_WRITE  = 'h2,
-                        BNCH_WAIT  = 'h3
+                        BNCH_WAIT  = 'h3,
                         BCNH_WRITE = 'h4,
-                        PS2_WAIT   = 'h5,
-                        PS2_WRITE  = 'h6,
-                        UART_WAIT  = 'h7,
-                        UART_WRITE = 'h8,
+                        BCNH_SPACE = 'h5,
                         NWLN       = 'hE,
-                        CRTN       = 'hF;
+                        CRTN       = 'hF,
+                        MODE_I     = 'h0,
+                        MODE_L     = 'h1,
+                        MODE_A     = 'h2,
+                        MODE_B     = 'h3;
+    
+    wire [7:0] hex_char;
+    hex_to_ascii h2a(
+        .in((cs==ALU_WRITE) ? alu_hold[3:0] : (cs==BENCH_WRITE) ? bench_hold[3:0] : 4'b0),
+        .out(hex_char)
+    );
     
     always @(posedge clk) begin
         if (rst) begin
@@ -69,7 +84,7 @@ module char_stager(
             push <= 'b0;
             count <= 'b0;
         end else begin
-            cs         <= cs_n        ;
+            cs         <= ns        ;
             mode_hold  <= mode_hold_n ;
             alu_hold   <= alu_hold_n  ;
             bench_hold <= bench_hold_n;
@@ -80,106 +95,87 @@ module char_stager(
     end
 
     
+
     always @(*) begin
         case (cs)
             IDLE       : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
+                case (mode) 
+                    MODE_A : ns = ALU_WAIT;
+                    MODE_B : ns = BENCH_WAIT;
+                    default : ns = IDLE;
+                endcase
+                mode_hold_n  = 'b0;
+                alu_hold_n   = 'b0;
+                bench_hold_n = 'b0;
+                fifo_char_n  = 'b0;
+                push_n       = 'b0;
+                count_n      = 'b0;
             end
             ALU_WAIT   : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
+                ns           = (result_ready) ? ALU_WRITE : ALU_WAIT;
+                mode_hold_n  = MODE_A;
+                alu_hold_n   = (result_ready) ? alu_in : 'b0;
+                bench_hold_n = 'b0;
+                fifo_char_n  = 'b0;
+                push_n       = 'b0;
+                count_n      = 'b0;
             end
             ALU_WRITE  : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
+                ns           = (count == 'b1) ? NWLN : ALU_WRITE;
+                mode_hold_n  = MODE_A;
+                alu_hold_n   = alu_hold >> 4;
+                bench_hold_n = 'b0;
+                fifo_char_n  = hex_char
+                push_n       = 'b1;
+                count_n      = count+1;
             end
             BNCH_WAIT  : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
+                ns           = (result_ready) ? BCNH_WRITE : BNCH_WAIT;
+                mode_hold_n  = MODE_B;
+                alu_hold_n   = 'b0;
+                bench_hold_n = (result_ready) ? bench_in : 'b0;
+                fifo_char_n  = 'b0;
+                push_n       = 'b0;
+                count_n      = 'b0;
             end
             BCNH_WRITE : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
+                ns           = (count%3<2) ? BNCH_SPACE : NWLN;
+                mode_hold_n  = MODE_B;
+                alu_hold_n   = 'b0;
+                bench_hold_n = bench_hold >> 4;
+                fifo_char_n  = hex_char
+                push_n       = 'b1;
+                count_n      = count+1;
             end
-            PS2_WAIT   : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
-            end
-            PS2_WRITE  : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
-            end
-            UART_WAIT  : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
-            end
-            UART_WRITE : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
+            BNCH_SPACE : begin
+                ns           = BNCH_WRITE;
+                mode_hold_n  = MODE_B;
+                alu_hold_n   = alu_hold;
+                bench_hold_n = bench_hold;
+                fifo_char_n  = 8'h20;
+                push_n       = 'b1;
+                count_n      = count;
             end
             NWLN       : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
+                ns           = CRTN
+                mode_hold_n  = mode_hold;
+                alu_hold_n   = alu_hold;
+                bench_hold_n = bench_hold;
+                fifo_char_n  = 8'hA;
+                push_n       = 'b1;
+                count_n      = count;
             end
             CRTN       : begin 
-                cs_n         =
-                mode_hold_n  =
-                alu_hold_n   =
-                bench_hold_n =
-                fifo_char_n  =
-                push_n       =
-                count_n      =
+                case (mode_hold)
+                    MODE_B : ns = (count==8) ? IDLE : BNCH_WRITE;
+                    default: ns = IDLE;
+                endcase
+                mode_hold_n  = mode_hold;
+                alu_hold_n   = alu_hold;
+                bench_hold_n = bench_hold;
+                fifo_char_n  = 8'hD;
+                push_n       = 'b1;
+                count_n      = count;
             end
         endcase
     end
@@ -189,8 +185,8 @@ module char_stager(
     ascii_char_fifo your_instance_name (
        .clk(clk),      // input wire clk
        .srst(rst),    // input wire srst
-       .din(din),      // input wire [7 : 0] din
-       .wr_en(push),  // input wire wr_en
+       .din((push) ? fifo_char : ((wen_key_ps2) ? key_ps2 : ((wen_key_uart) ? key_uart : 'b0))),      // input wire [7 : 0] din, if push is high, that measnt the FSM "wants" to write something, otherwise let the PS2 write something
+       .wr_en(push | wen_key_ps2 | wen_key_uart),  // input wire wr_en
        .rd_en(pop),  // input wire rd_en
        .dout(char_out),    // output wire [7 : 0] dout
 //       .full(full),    // output wire full
