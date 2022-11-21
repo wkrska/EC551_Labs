@@ -10,27 +10,20 @@ entity GPIO_demo is
     Port ( SW 			: in  STD_LOGIC_VECTOR (15 downto 0);
            BTN 			: in  STD_LOGIC_VECTOR (4 downto 0);
            CLK 			: in  STD_LOGIC;
+           RST          : in  STD_LOGIC;
            keyflag		: in  STD_LOGIC;
            modeflag		: in  STD_LOGIC;
-        --    LED 			: out  STD_LOGIC_VECTOR (15 downto 0);
-           SSEG_CA 		: out  STD_LOGIC_VECTOR (7 downto 0);
-           SSEG_AN 		: out  STD_LOGIC_VECTOR (7 downto 0);
+           alu_out      : in  STD_LOGIC_VECTOR (31 downto 0);
+           bench_out    : in  STD_LOGIC_VECTOR (103 downto 0);
+           SSEG_CA 		: out STD_LOGIC_VECTOR (7 downto 0);
+           SSEG_AN 		: out STD_LOGIC_VECTOR (7 downto 0);
            mode_select  : in  STD_LOGIC_VECTOR (2 downto 0);
-           key_select  : in  STD_LOGIC_VECTOR (7 downto 0);
+           key_select   : in  STD_LOGIC_VECTOR (7 downto 0);
+           UART_TXD 	: out STD_LOGIC;	  
            UART_RXD 	: in  STD_LOGIC;
-		   UART_TXD 	: out  STD_LOGIC
---           RGB1_Red		: out  STD_LOGIC;
---           RGB1_Green	: out  STD_LOGIC;
---           RGB1_Blue	: out  STD_LOGIC;	
---           RGB2_Red		: out  STD_LOGIC;
---           RGB2_Green	: out  STD_LOGIC;
---           RGB2_Blue	: out  STD_LOGIC;
---           micClk       : out STD_LOGIC;
---           micLRSel     : out STD_LOGIC;
---           micData      : in STD_LOGIC;
---           ampPWM       : out STD_LOGIC;
---           ampSD        : out STD_LOGIC			  
-			  );
+           uart_dat     : out STD_LOGIC_VECTOR (7 downto 0);
+           uart_dv      : out STD_LOGIC	  
+	);
 end GPIO_demo;
 
 architecture Behavioral of GPIO_demo is
@@ -47,8 +40,8 @@ end component;
 
 component UART_RX_CTRL
 Port(
-    Receive     : in std_logic;
-    i_Clk       : in  std_logic;
+    i_Rst_L       : in  std_logic;
+    i_Clock       : in  std_logic;
     i_RX_Serial : in  std_logic;
     o_RX_DV     : out std_logic;
     o_RX_Byte   : out std_logic_vector(7 downto 0)
@@ -121,7 +114,6 @@ constant MODE_X_STR_LEN : natural := 18;
 constant User_Key_LEN : natural := 1;
 
 signal mode_sent : std_logic register;
-signal uartReceive : std_logic register;
 
 --Welcome string definition. Note that the values stored at each index
 --are the ASCII values of the indicated character.
@@ -391,14 +383,6 @@ signal reset_cntr : std_logic_vector (17 downto 0) := (others=>'0');
 
 begin
 
--- ----------------------------------------------------------
--- ------                LED Control                  -------
--- ----------------------------------------------------------
-
--- with BTN(4) select
--- 	LED <= SW 			when '0',
--- 			 "0000000000000000" when others;
-			 			 
 ----------------------------------------------------------
 ------           7-Seg Display Control             -------
 ----------------------------------------------------------
@@ -446,17 +430,17 @@ end process;
 --This select statement encodes the value of tmrVal to the necessary
 --cathode signals to display it on the 7-segment
 with tmrVal select
-	SSEG_CA <= "11000000" when "0000",
-				  "11111001" when "0001",
-				  "10100100" when "0010",
-				  "10110000" when "0011",
-				  "10011001" when "0100",
-				  "10010010" when "0101",
-				  "10000010" when "0110",
-				  "11111000" when "0111",
-				  "10000000" when "1000",
-				  "10010000" when "1001",
-				  "11111111" when others;
+	SSEG_CA <= 	"11000000" when "0000",
+				"11111001" when "0001",
+				"10100100" when "0010",
+				"10110000" when "0011",
+				"10011001" when "0100",
+				"10010010" when "0101",
+				"10000010" when "0110",
+				"11111000" when "0111",
+				"10000000" when "1000",
+				"10010000" when "1001",
+				"11111111" when others;
 
 
 ----------------------------------------------------------
@@ -526,9 +510,9 @@ begin
 		else	
 			case uartState is 
 			when RST_REG =>
-        if (reset_cntr = RESET_CNTR_MAX) then
-          uartState <= LD_INIT_STR;
-        end if;
+				if (reset_cntr = RESET_CNTR_MAX) then
+				uartState <= LD_INIT_STR;
+				end if;
 			when LD_INIT_STR =>
 				uartState <= SEND_CHAR;
 			when SEND_CHAR | SEND_CHAR_USER =>
@@ -641,76 +625,16 @@ Inst_UART_TX_CTRL: UART_TX_CTRL port map(
 
 UART_TXD <= uartTX;
 
-----Controls the UART_RX_CTRL signals
---char_receive_process : process (CLK)
---begin
---	if (rising_edge(CLK)) then
---		if (mode_select = "001") then
---			uartReceive <= '1';
---			uartData <= sendStr(strIndex);
---		else
---			uartSend <= '0';
---		end if;
---	end if;
---end process;
 
+--Component used to send a byte of data over a UART line.
+Inst_UART_RX_CTRL: UART_RX_CTRL port map(
+        i_Rst_L => RST,
+		i_Clock => CLK,
+		i_RX_Serial => uartRX,
+		o_RX_DV => uart_dv,
+		o_RX_Byte => uart_dat 
+	);
 
-----Component used to send a byte of data over a UART line.
---Inst_UART_RX_CTRL: UART_RX_CTRL port map(
---		Receive => uartReceive,
---		i_Clk => CLK,
---		i_RX_Serial => CLK,
---		o_RX_DV => uartRXV,
---		o_RX_Byte => uartRX 
---	);
-
---UART_RXD <= uartRX;
-
-----------------------------------------------------------
-------            RGB LED Control                  -------
-----------------------------------------------------------
-
---RGB_Core: RGB_controller port map(
---	GCLK => CLK, 			
---	RGB_LED_1_O(0) => RGB1_Green, 
---	RGB_LED_1_O(1) => RGB1_Blue,
---	RGB_LED_1_O(2) => RGB1_Red,
---	RGB_LED_2_O(0) => RGB2_Green, 
---	RGB_LED_2_O(1) => RGB2_Blue,
---	RGB_LED_2_O(2) => RGB2_Red
---	);
-	
-
-----------------------------------------------------------
-------              MIC Control                    -------
-----------------------------------------------------------
---PDM data from the microphone is registered on the rising 
---edge of every micClk, converting it to PWM. The PWM data
---is then connected to the mono audio out circuit, causing 
---the sound captured by the microphone to be played over 
---the audio out port.
-
---process(CLK)
---begin
---  if (rising_edge(CLK)) then
---    clk_cntr_reg <= clk_cntr_reg + 1;
---  end if;
---end process;
-
-----micClk = 100MHz / 32 = 3.125 MHz
---micClk <= clk_cntr_reg(4);
-
---process(CLK)
---begin
---  if (rising_edge(CLK)) then
---    if (clk_cntr_reg = "01111") then
---      pwm_val_reg <= micData;
---    end if;
---  end if;
---end process;
-
---micLRSel <= '0';
---ampPWM <= pwm_val_reg;
---ampSD <= '1';
+uartRX <= UART_RXD;
 
 end Behavioral;

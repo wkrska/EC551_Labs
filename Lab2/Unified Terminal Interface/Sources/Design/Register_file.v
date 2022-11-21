@@ -12,7 +12,7 @@ module Register_file(RS1, RS2, disp_RS, WS, WD, WE, RD1, RD2, disp_RD, PC_IN, PC
     input [`dwidth_dat-1:0] WD, PC_IN;
     input WE, PC_EN;
     output reg [`dwidth_dat-1:0] RD1, RD2, PC_OUT, disp_RD;
-    output reg [`dwidth_dat*6-1:0] RF_OUT;
+    output wire [`dwidth_dat*6-1:0] RF_OUT;
     input clk, rst;
 
     reg [`dwidth_dat-1:0] reg_file [REGSIZE-1:0];   // Entire list of registers

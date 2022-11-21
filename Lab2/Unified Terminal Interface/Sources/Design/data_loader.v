@@ -12,7 +12,6 @@ module data_loader(
     input wire wen_key_ps2,
     input wire [7:0] key_uart,
     input wire wen_key_uart,
-    input wire run, // pulsed when 'r' is hit in mode 1,2
     output reg [11:0] inst_addr,
     output reg [15:0] inst_write,
     output wire [`dwidth_dat_user*2-1:0] alu_out,
@@ -175,7 +174,7 @@ always @(*) begin
             mat_b_n = 'b0;
         end
         I_ch: begin // loads the typed keys into 
-            next_state=(wen_key_ps2 && (~trans_key_ps2[4]) && count_c==3) ? I_wb : ((run) ? I_rn : I_ch);
+            next_state=(wen_key_ps2 && (~trans_key_ps2[4]) && count_c==3) ? I_wb : ((wen_key_ps2 && trans_key_ps2 == 5'h18) ? I_rn : I_ch);
             inst_write_n=(wen_key_ps2 && (~trans_key_ps2[4]) && count_c<4) ? {inst_write[11:0],trans_key_ps2[3:0]} : inst_write;
             count_n=(wen_key_ps2 && (~trans_key_ps2[4]) && count_c<4) ? count_c+1:count_c;
             inst_addr_n = inst_addr;
@@ -214,7 +213,7 @@ always @(*) begin
             mat_b_n = 'b0;
         end
         L_ch: begin // loads the typed keys into 
-            next_state=(wen_key_uart && (~trans_key_uart[4]) && count_c==3) ? L_wb : ((run) ? L_rn : L_ch);
+            next_state=(wen_key_uart && (~trans_key_uart[4]) && count_c==3) ? L_wb : ((wen_key_uart && trans_key_uart == 5'h18) ? L_rn : L_ch);
             inst_write_n=(wen_key_uart && (~trans_key_uart[4]) && count_c<4) ? {inst_write[11:0],trans_key_uart[3:0]} : inst_write;
             count_n=(wen_key_uart && (~trans_key_ps2[4]) && count_c<4) ? count_c+1:count_c;
             inst_addr_n = inst_addr;

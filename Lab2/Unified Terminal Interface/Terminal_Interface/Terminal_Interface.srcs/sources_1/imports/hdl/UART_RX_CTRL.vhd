@@ -12,7 +12,7 @@ library ieee;
 use ieee.std_logic_1164.ALL;
 use ieee.numeric_std.all;
  
-entity UART_RX is
+entity UART_RX_CTRL is
   generic (
     g_CLKS_PER_BIT : integer := 10417     -- Needs to be set correctly
     );
@@ -22,10 +22,10 @@ entity UART_RX is
     o_RX_DV     : out std_logic;
     o_RX_Byte   : out std_logic_vector(7 downto 0)
     );
-end UART_RX;
+end UART_RX_CTRL;
  
  
-architecture rtl of UART_RX is
+architecture rtl of UART_RX_CTRL is
  
   type t_SM_Main is (s_Idle, s_RX_Start_Bit, s_RX_Data_Bits,
                      s_RX_Stop_Bit, s_Cleanup);
@@ -53,7 +53,7 @@ begin
           r_Clk_Count <= 0;
           r_Bit_Index <= 0;
  
-          if r_RX_Data = '0' then       -- Start bit detected
+          if (r_RX_Data = '0') then       -- Start bit detected
             r_SM_Main <= s_RX_Start_Bit;
           else
             r_SM_Main <= s_Idle; end if; -- Check middle of start bit to make sure it's still low when s_RX_Start_Bit =>

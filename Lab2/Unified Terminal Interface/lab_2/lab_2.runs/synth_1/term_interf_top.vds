@@ -1,0 +1,1562 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Fri Nov 11 20:11:53 2022
+# Process ID: 19096
+# Current directory: C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/synth_1
+# Command line: vivado.exe -log term_interf_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source term_interf_top.tcl
+# Log file: C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/synth_1/term_interf_top.vds
+# Journal file: C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source term_interf_top.tcl -notrace
+Command: synth_design -top term_interf_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13784 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 810.352 ; gain = 177.910
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'term_interf_top' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:25]
+INFO: [Synth 8-638] synthesizing module 'GPIO_demo' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:29]
+	Parameter DEBNC_CLOCKS bound to: 65536 - type: integer 
+	Parameter PORT_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-3491] module 'debouncer' declared at 'C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debouncer.vhd:42' bound to instance 'Inst_btn_debounce' of component 'debouncer' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:455]
+INFO: [Synth 8-638] synthesizing module 'debouncer' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debouncer.vhd:50]
+	Parameter DEBNC_CLOCKS bound to: 65536 - type: integer 
+	Parameter PORT_WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'debouncer' (1#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debouncer.vhd:50]
+INFO: [Synth 8-3491] module 'UART_TX_CTRL' declared at 'C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_TX_CTRL.vhd:42' bound to instance 'Inst_UART_TX_CTRL' of component 'UART_TX_CTRL' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:619]
+INFO: [Synth 8-638] synthesizing module 'UART_TX_CTRL' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_TX_CTRL.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'UART_TX_CTRL' (2#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_TX_CTRL.vhd:50]
+INFO: [Synth 8-3491] module 'UART_RX_CTRL' declared at 'C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_RX_CTRL.v:15' bound to instance 'Inst_UART_RX_CTRL' of component 'UART_RX_CTRL' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:631]
+INFO: [Synth 8-6157] synthesizing module 'UART_RX_CTRL' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_RX_CTRL.v:15]
+	Parameter CLKS_PER_BIT bound to: 217 - type: integer 
+	Parameter IDLE bound to: 3'b000 
+	Parameter RX_START_BIT bound to: 3'b001 
+	Parameter RX_DATA_BITS bound to: 3'b010 
+	Parameter RX_STOP_BIT bound to: 3'b011 
+	Parameter CLEANUP bound to: 3'b100 
+WARNING: [Synth 8-5788] Register r_Clock_Count_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_RX_CTRL.v:50]
+WARNING: [Synth 8-5788] Register r_Bit_Index_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_RX_CTRL.v:51]
+WARNING: [Synth 8-5788] Register o_RX_Byte_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_RX_CTRL.v:91]
+INFO: [Synth 8-6155] done synthesizing module 'UART_RX_CTRL' (3#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/UART_RX_CTRL.v:15]
+WARNING: [Synth 8-6014] Unused sequential element btnReg_reg was removed.  [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:469]
+INFO: [Synth 8-256] done synthesizing module 'GPIO_demo' (4#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:29]
+INFO: [Synth 8-6157] synthesizing module 'ps2_to_ascii' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/ps2_to_ascii.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ps2_to_ascii' (5#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/ps2_to_ascii.v:5]
+INFO: [Synth 8-6157] synthesizing module 'top_keyboard' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top_keyboard.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top_keyboard.v:43]
+INFO: [Synth 8-6157] synthesizing module 'PS2Receiver' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:2]
+	Parameter IDLE bound to: 2'b00 
+	Parameter RELEASE bound to: 2'b01 
+	Parameter KEY bound to: 2'b10 
+INFO: [Synth 8-6157] synthesizing module 'keyboard_debouncer' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/keyboard_debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'keyboard_debouncer' (6#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/keyboard_debouncer.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:33]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'PS2Receiver' (7#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'top_keyboard' (8#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top_keyboard.v:23]
+INFO: [Synth 8-6157] synthesizing module 'data_loader' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:5]
+	Parameter IDLE bound to: 8'b01000000 
+	Parameter I_ch bound to: 8'b00000000 
+	Parameter I_wb bound to: 8'b00000001 
+	Parameter I_rn bound to: 8'b00000010 
+	Parameter L_ch bound to: 8'b00010000 
+	Parameter L_wb bound to: 8'b00010001 
+	Parameter L_rn bound to: 8'b00010010 
+	Parameter A_aa bound to: 8'b00100000 
+	Parameter A_sh bound to: 8'b00100001 
+	Parameter A_op bound to: 8'b00100010 
+	Parameter A_bb bound to: 8'b00100011 
+	Parameter A_wb bound to: 8'b00100100 
+	Parameter B_ma bound to: 8'b00110000 
+	Parameter B_mb bound to: 8'b00110001 
+	Parameter B_wb bound to: 8'b00110010 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:163]
+INFO: [Synth 8-6157] synthesizing module 'mini_ALU' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mini_ALU.v:5]
+INFO: [Synth 8-226] default block is never used [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mini_ALU.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'mini_ALU' (9#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mini_ALU.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mat3mult' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:5]
+INFO: [Synth 8-6157] synthesizing module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/vect3mac.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'vect3mac' (10#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/vect3mac.v:5]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'mat3mult' (11#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat3mult.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'data_loader' (12#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:5]
+INFO: [Synth 8-6157] synthesizing module 'uart_arbiter' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/uart_arbiter.v:7]
+	Parameter IDLE bound to: 2'b00 
+	Parameter FLAG bound to: 2'b01 
+	Parameter WAIT bound to: 2'b10 
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/uart_arbiter.v:49]
+INFO: [Synth 8-6155] done synthesizing module 'uart_arbiter' (13#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/uart_arbiter.v:7]
+INFO: [Synth 8-6157] synthesizing module 'mat_to_ascii' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat_to_ascii.v:25]
+INFO: [Synth 8-6157] synthesizing module 'hex_to_ascii' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/hex_to_ascii.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/hex_to_ascii.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'hex_to_ascii' (14#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/hex_to_ascii.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mat_to_ascii' (15#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/mat_to_ascii.v:25]
+INFO: [Synth 8-6157] synthesizing module 'alu_to_ascii' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/alu_to_ascii.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'alu_to_ascii' (16#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/alu_to_ascii.v:23]
+INFO: [Synth 8-6157] synthesizing module 'btn_edge' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/btn_edge.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debounce.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_div' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debounce.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'clock_div' (17#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debounce.v:41]
+INFO: [Synth 8-6157] synthesizing module 'my_dff' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debounce.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'my_dff' (18#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debounce.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (19#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/debounce.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'btn_edge' (20#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/btn_edge.v:23]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:8]
+	Parameter op_add bound to: 4'b0101 
+	Parameter op_sub bound to: 4'b0110 
+	Parameter op_inc bound to: 4'b0001 
+	Parameter op_xor bound to: 4'b0111 
+	Parameter op_cmp bound to: 4'b1000 
+	Parameter op_mov0 bound to: 4'b1001 
+	Parameter op_mov1 bound to: 4'b1010 
+	Parameter op_mov2 bound to: 4'b1011 
+	Parameter op_mov3 bound to: 4'b1100 
+	Parameter op_mov4 bound to: 4'b1101 
+	Parameter op_sadd bound to: 4'b1110 
+	Parameter op_jmp bound to: 4'b0010 
+	Parameter op_jne bound to: 4'b0011 
+	Parameter op_je bound to: 4'b0100 
+	Parameter op_nop bound to: 4'b1111 
+	Parameter op_halt bound to: 4'b0000 
+WARNING: [Synth 8-567] referenced signal 'ap_start_cs' should be on the sensitivity list [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:40]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:56]
+INFO: [Synth 8-6157] synthesizing module 'Fetch_unit' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Fetch_unit.v:8]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Fetch_unit.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'Fetch_unit' (21#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Fetch_unit.v:8]
+WARNING: [Synth 8-689] width (16) of port connection 'imm_in' does not match port width (12) of module 'Fetch_unit' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:105]
+INFO: [Synth 8-6157] synthesizing module 'reg_param' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/reg_param.v:3]
+	Parameter SIZE bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reg_param' (22#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/reg_param.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Decoder' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Decoder.v:8]
+	Parameter op_jmp bound to: 4'b0010 
+	Parameter op_jne bound to: 4'b0011 
+	Parameter op_je bound to: 4'b0100 
+INFO: [Synth 8-6155] done synthesizing module 'Decoder' (23#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Decoder.v:8]
+WARNING: [Synth 8-689] width (4) of port connection 'op' does not match port width (6) of module 'Decoder' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:129]
+INFO: [Synth 8-6157] synthesizing module 'Register_file' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Register_file.v:8]
+	Parameter REGSIZE bound to: 7 - type: integer 
+WARNING: [Synth 8-567] referenced signal 'WE' should be on the sensitivity list [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Register_file.v:25]
+WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Register_file.v:25]
+WARNING: [Synth 8-567] referenced signal 'WE' should be on the sensitivity list [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Register_file.v:31]
+WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Register_file.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'Register_file' (24#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Register_file.v:8]
+WARNING: [Synth 8-7023] instance 'rf_0' of module 'Register_file' has 15 connections declared, but only 14 given [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:136]
+INFO: [Synth 8-6157] synthesizing module 'memory' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:8]
+WARNING: [Synth 8-324] index 129 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 130 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 131 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 132 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 133 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 134 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 135 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 136 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 137 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 138 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 139 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 140 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 141 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 142 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 143 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 144 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 145 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 146 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 147 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 148 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 149 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 150 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 151 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 152 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 153 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 154 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 155 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 156 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 157 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 158 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 159 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 160 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 161 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 162 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 163 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 164 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 165 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 166 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 167 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 168 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 169 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 170 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 171 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 172 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 173 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 174 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 175 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 176 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 177 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 178 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 179 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 180 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 181 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 182 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 183 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 184 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 185 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 186 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 187 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 188 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 189 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 190 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 191 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 192 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 193 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 194 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 195 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 196 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 197 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 198 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 199 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 200 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 201 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 202 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 203 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 204 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 205 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 206 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 207 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 208 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 209 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 210 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 211 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 212 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 213 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 214 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 215 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 216 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 217 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 218 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 219 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 220 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 221 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 222 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 223 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 224 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 225 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 226 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 227 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-324] index 228 out of range [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-6155] done synthesizing module 'memory' (25#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:8]
+WARNING: [Synth 8-689] width (16) of port connection 'raddr_i' does not match port width (12) of module 'memory' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:158]
+WARNING: [Synth 8-689] width (16) of port connection 'raddr_d' does not match port width (12) of module 'memory' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:159]
+WARNING: [Synth 8-689] width (16) of port connection 'waddr' does not match port width (12) of module 'memory' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:160]
+INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized0' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/reg_param.v:3]
+	Parameter SIZE bound to: 88 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized0' (25#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/reg_param.v:3]
+WARNING: [Synth 8-689] width (76) of port connection 'dout' does not match port width (88) of module 'reg_param__parameterized0' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:171]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/ALU.v:8]
+	Parameter op_add bound to: 4'b0101 
+	Parameter op_sub bound to: 4'b0110 
+	Parameter op_inc bound to: 4'b0001 
+	Parameter op_xor bound to: 4'b0111 
+	Parameter op_cmp bound to: 4'b1000 
+	Parameter op_mov0 bound to: 4'b1001 
+	Parameter op_mov1 bound to: 4'b1010 
+	Parameter op_mov2 bound to: 4'b1011 
+	Parameter op_mov3 bound to: 4'b1100 
+	Parameter op_mov4 bound to: 4'b1101 
+	Parameter op_sadd bound to: 4'b1110 
+	Parameter op_jmp bound to: 4'b0010 
+	Parameter op_jne bound to: 4'b0011 
+	Parameter op_je bound to: 4'b0100 
+	Parameter op_nop bound to: 4'b1111 
+	Parameter op_halt bound to: 4'b0000 
+INFO: [Synth 8-226] default block is never used [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/ALU.v:42]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/ALU.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (26#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/ALU.v:8]
+INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized1' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/reg_param.v:3]
+	Parameter SIZE bound to: 49 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized1' (26#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/reg_param.v:3]
+WARNING: [Synth 8-3848] Net halt in module/entity datapath does not have driver. [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (27#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/datapath.v:8]
+WARNING: [Synth 8-7023] instance 'dp1' of module 'datapath' has 9 connections declared, but only 8 given [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:160]
+INFO: [Synth 8-6157] synthesizing module 'top_VGA' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/vga.v:357]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller_640_60' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/vga.v:8]
+	Parameter HMAX bound to: 800 - type: integer 
+	Parameter VMAX bound to: 525 - type: integer 
+	Parameter HLINES bound to: 640 - type: integer 
+	Parameter HFP bound to: 648 - type: integer 
+	Parameter HSP bound to: 744 - type: integer 
+	Parameter VLINES bound to: 480 - type: integer 
+	Parameter VFP bound to: 482 - type: integer 
+	Parameter VSP bound to: 484 - type: integer 
+	Parameter SPP bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller_640_60' (28#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/vga.v:8]
+INFO: [Synth 8-6157] synthesizing module 'reduced_font_rom' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/vga.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'reduced_font_rom' (29#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/vga.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'top_VGA' (30#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/vga.v:357]
+WARNING: [Synth 8-689] width (96) of port connection 'reg_value' does not match port width (16) of module 'top_VGA' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:172]
+INFO: [Synth 8-6155] done synthesizing module 'term_interf_top' (31#1) [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:25]
+WARNING: [Synth 8-3917] design term_interf_top has port LED[15] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[14] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[13] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[12] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[11] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[10] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[9] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[8] driven by constant 0
+WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[11]
+WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[10]
+WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[9]
+WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[8]
+WARNING: [Synth 8-3331] design Register_file has unconnected port disp_RS[5]
+WARNING: [Synth 8-3331] design Register_file has unconnected port disp_RS[4]
+WARNING: [Synth 8-3331] design Register_file has unconnected port disp_RS[3]
+WARNING: [Synth 8-3331] design datapath has unconnected port halt
+WARNING: [Synth 8-3331] design PS2Receiver has unconnected port rst
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[15]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[14]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[13]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[12]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[11]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[10]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[9]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[8]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[7]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[6]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[5]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[4]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[3]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[2]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[1]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port SW[0]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[31]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[30]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[29]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[28]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[27]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[26]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[25]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[24]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[23]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[22]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[21]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[20]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[19]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[18]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[17]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[16]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[15]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[14]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[13]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[12]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[11]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[10]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[9]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[8]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[7]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[6]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[5]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[4]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[3]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[2]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[1]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port alu_out[0]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[103]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[102]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[101]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[100]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[99]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[98]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[97]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[96]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[95]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[94]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[93]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[92]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[91]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[90]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[89]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[88]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[87]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[86]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[85]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[84]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[83]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[82]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[81]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[80]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[79]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[78]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[77]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[76]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[75]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[74]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[73]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[72]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[71]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[70]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[69]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[68]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[67]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[66]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[65]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[64]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[63]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[62]
+WARNING: [Synth 8-3331] design GPIO_demo has unconnected port bench_out[61]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1027.883 ; gain = 395.441
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1027.883 ; gain = 395.441
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1027.883 ; gain = 395.441
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/constrs_1/imports/Constraints/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/constrs_1/imports/Constraints/Nexys-A7-100T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/constrs_1/imports/Constraints/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/term_interf_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/term_interf_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1167.195 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1167.195 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1167.195 ; gain = 534.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1167.195 ; gain = 534.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1167.195 ; gain = 534.754
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'txState_reg' in module 'UART_TX_CTRL'
+INFO: [Synth 8-4471] merging register 'sendStr_reg[43][7:0]' into 'sendStr_reg[41][7:0]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:568]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[46][7:0]' into 'sendStr_reg[41][7:0]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:568]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[48][7:0]' into 'sendStr_reg[42][7:0]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:568]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[49][7:0]' into 'sendStr_reg[39][7:0]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:568]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[50][7:0]' into 'sendStr_reg[42][7:0]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:568]
+INFO: [Synth 8-4471] merging register 'sendStr_reg[54][7:0]' into 'sendStr_reg[41][7:0]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top.vhd:568]
+INFO: [Synth 8-802] inferred FSM for state register 'uartState_reg' in module 'GPIO_demo'
+INFO: [Synth 8-5544] ROM "SSEG_CA" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'cs_reg' in module 'PS2Receiver'
+INFO: [Synth 8-802] inferred FSM for state register 'cs_reg' in module 'top_keyboard'
+INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'data_loader'
+INFO: [Synth 8-5587] ROM size for "trans_key_ps2" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "trans_key_uart" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5546] ROM "count_n" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'uart_cs_reg' in module 'uart_arbiter'
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/ALU.v:42]
+INFO: [Synth 8-802] inferred FSM for state register 'halt_cs_reg' in module 'datapath'
+INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                     rdy |                               00 |                               00
+                load_bit |                               01 |                               01
+                send_bit |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'txState_reg' using encoding 'sequential' in module 'UART_TX_CTRL'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 rst_reg |                    0000000010000 |                             0000
+             ld_init_str |                    0000100000000 |                             0001
+               send_char |                    0000000001000 |                             0010
+                 rdy_low |                    0000000000010 |                             0100
+                wait_rdy |                    0000000000100 |                             0101
+               wait_mode |                    0100000000000 |                             0110
+           ld_mode_i_str |                    0001000000000 |                             0111
+           ld_mode_l_str |                    1000000000000 |                             1000
+           ld_mode_a_str |                    0010000000000 |                             1001
+           ld_mode_b_str |                    0000010000000 |                             1010
+           ld_mode_x_str |                    0000001000000 |                             1011
+             ld_user_key |                    0000000100000 |                             1100
+          send_char_user |                    0000000000001 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'uartState_reg' using encoding 'one-hot' in module 'GPIO_demo'
+WARNING: [Synth 8-327] inferring latch for variable 'keystroke_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:62]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:61]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+                 RELEASE |                              010 |                               01
+                     KEY |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'cs_reg' using encoding 'one-hot' in module 'PS2Receiver'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'keyflag_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/PS2Receiver.v:63]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top_keyboard.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top_keyboard.v:44]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                              001 |                               00
+                  iSTATE |                              010 |                               01
+                 iSTATE1 |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'cs_reg' using encoding 'one-hot' in module 'top_keyboard'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/top_keyboard.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:167]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:167]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0000 |                         01000000
+                    I_ch |                             0001 |                         00000000
+                    I_wb |                             0010 |                         00000001
+                    I_rn |                             0011 |                         00000010
+                    L_ch |                             0100 |                         00010000
+                    L_wb |                             0101 |                         00010001
+                    L_rn |                             0110 |                         00010010
+                    A_aa |                             0111 |                         00100000
+                    A_sh |                             1000 |                         00100001
+                    A_op |                             1001 |                         00100010
+                    A_bb |                             1010 |                         00100011
+                    A_wb |                             1011 |                         00100100
+                    B_ma |                             1100 |                         00110000
+                    B_mb |                             1101 |                         00110001
+                    B_wb |                             1110 |                         00110010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'data_loader'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:167]
+WARNING: [Synth 8-327] inferring latch for variable 'count_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:175]
+WARNING: [Synth 8-327] inferring latch for variable 'ALU_mode_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:177]
+WARNING: [Synth 8-327] inferring latch for variable 'inst_write_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:179]
+WARNING: [Synth 8-327] inferring latch for variable 'inst_addr_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:180]
+WARNING: [Synth 8-327] inferring latch for variable 'alu_a_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:181]
+WARNING: [Synth 8-327] inferring latch for variable 'alu_b_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:182]
+WARNING: [Synth 8-327] inferring latch for variable 'mat_a_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:183]
+WARNING: [Synth 8-327] inferring latch for variable 'mat_b_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:184]
+WARNING: [Synth 8-327] inferring latch for variable 'mode_flag_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:173]
+WARNING: [Synth 8-327] inferring latch for variable 'result_ready_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:178]
+WARNING: [Synth 8-327] inferring latch for variable 'ap_start_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/data_loader.v:176]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_uart_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/uart_arbiter.v:51]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_uart_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/uart_arbiter.v:51]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+                    FLAG |                              010 |                               01
+                    WAIT |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'uart_cs_reg' using encoding 'one-hot' in module 'uart_arbiter'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_uart_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/uart_arbiter.v:51]
+WARNING: [Synth 8-327] inferring latch for variable 'key_uart_n_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/uart_arbiter.v:52]
+WARNING: [Synth 8-327] inferring latch for variable 'stall_ns_reg' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/Fetch_unit.v:21]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[128]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[127]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[126]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[125]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[124]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[123]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[122]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[121]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[120]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[119]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[118]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[117]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[116]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[115]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[114]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[113]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[112]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[111]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[110]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[109]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[108]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[107]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[106]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[105]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[104]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[103]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[102]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[101]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[100]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[99]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[98]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[97]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[96]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[95]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[94]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[93]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[92]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[91]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[90]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[89]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[88]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[87]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[86]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[85]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[84]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[83]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[82]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[81]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[80]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[79]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[78]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[77]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[76]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[75]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[74]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[73]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[72]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[71]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[70]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[69]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[68]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[67]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[66]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[65]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[64]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[63]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[62]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[61]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[60]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[59]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[58]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[57]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[56]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/memory.v:27]
+INFO: [Common 17-14] Message 'Synth 8-327' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                              001 |                              000
+                 iSTATE1 |                              010 |                              001
+                 iSTATE2 |                              100 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'halt_cs_reg' using encoding 'one-hot' in module 'datapath'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:43 ; elapsed = 00:00:44 . Memory (MB): peak = 1167.195 ; gain = 534.754
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |memory__GB0          |           1|     26981|
+|2     |memory__GB1          |           1|     26226|
+|3     |memory__GB2          |           1|     31448|
+|4     |memory__GB3          |           1|      8180|
+|5     |memory__GB4          |           1|     12270|
+|6     |memory__GB5          |           1|     26993|
+|7     |memory__GB6          |           1|     18669|
+|8     |memory__GB7          |           1|     17375|
+|9     |memory__GB8          |           1|     31492|
+|10    |memory__GB9          |           1|     10224|
+|11    |memory__GB10         |           1|     12266|
+|12    |memory__GB11         |           1|     29806|
+|13    |memory__GB12         |           1|     26017|
+|14    |datapath__GC0        |           1|      1555|
+|15    |term_interf_top__GC0 |           1|      9136|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   3 Input     16 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 3     
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 3     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
+	   2 Input      8 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	               88 Bit    Registers := 1     
+	               49 Bit    Registers := 1     
+	               36 Bit    Registers := 2     
+	               31 Bit    Registers := 1     
+	               16 Bit    Registers := 9     
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 58    
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 27    
++---Muxes : 
+	   2 Input     36 Bit        Muxes := 2     
+	  15 Input     36 Bit        Muxes := 2     
+	   6 Input     31 Bit        Muxes := 1     
+	   7 Input     31 Bit        Muxes := 1     
+	   5 Input     31 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 147   
+	  16 Input     16 Bit        Muxes := 3     
+	   7 Input     16 Bit        Muxes := 1     
+	  15 Input     16 Bit        Muxes := 1     
+	  15 Input     13 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 3     
+	  15 Input     12 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 2     
+	   6 Input      8 Bit        Muxes := 5     
+	   2 Input      8 Bit        Muxes := 7     
+	   7 Input      8 Bit        Muxes := 6     
+	   5 Input      8 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 9     
+	   3 Input      8 Bit        Muxes := 2     
+	  15 Input      8 Bit        Muxes := 1     
+	   6 Input      7 Bit        Muxes := 11    
+	   5 Input      7 Bit        Muxes := 8     
+	   4 Input      7 Bit        Muxes := 4     
+	   3 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
+	  24 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  27 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 16    
+	   6 Input      4 Bit        Muxes := 2     
+	  15 Input      4 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	  16 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 11    
+	   4 Input      3 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 4     
+	   6 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 6     
+	  15 Input      2 Bit        Muxes := 1     
+	 130 Input      1 Bit        Muxes := 129   
+	   2 Input      1 Bit        Muxes := 48    
+	   4 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 18    
+	   6 Input      1 Bit        Muxes := 4     
+	   5 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 4     
+	  12 Input      1 Bit        Muxes := 2     
+	  15 Input      1 Bit        Muxes := 7     
+	  16 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module term_interf_top 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+Module memory 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 130   
+	 130 Input      1 Bit        Muxes := 129   
+	   2 Input      1 Bit        Muxes := 8     
+Module Fetch_unit 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+Module reg_param 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module Register_file 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 8     
+Module reg_param__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               88 Bit    Registers := 1     
+Module ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     16 Bit       Adders := 1     
++---XORs : 
+	   2 Input     16 Bit         XORs := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	  16 Input     16 Bit        Muxes := 3     
+	   7 Input     16 Bit        Muxes := 1     
+	  16 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 1     
+Module reg_param__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               49 Bit    Registers := 1     
+Module datapath 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 4     
+	   2 Input     12 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 4     
+Module debouncer 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 5     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 5     
+Module UART_TX_CTRL 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 1     
+Module UART_RX_CTRL 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 2     
+	                3 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   6 Input      8 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 2     
+	   6 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 3     
+Module GPIO_demo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               31 Bit    Registers := 1     
+	                8 Bit    Registers := 53    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   6 Input     31 Bit        Muxes := 1     
+	   7 Input     31 Bit        Muxes := 1     
+	   5 Input     31 Bit        Muxes := 1     
+	  15 Input     13 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 3     
+	   7 Input      8 Bit        Muxes := 6     
+	   5 Input      8 Bit        Muxes := 4     
+	   4 Input      8 Bit        Muxes := 8     
+	   2 Input      8 Bit        Muxes := 1     
+	   6 Input      7 Bit        Muxes := 11    
+	   5 Input      7 Bit        Muxes := 8     
+	   4 Input      7 Bit        Muxes := 4     
+	   3 Input      7 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 4     
+	   8 Input      1 Bit        Muxes := 3     
+Module keyboard_debouncer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 2     
++---Registers : 
+	                5 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module PS2Receiver 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 4     
+Module top_keyboard 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 2     
+Module mini_ALU 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input      8 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
++---XORs : 
+	   2 Input      8 Bit         XORs := 1     
++---Muxes : 
+	   4 Input      8 Bit        Muxes := 1     
+Module data_loader 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	               36 Bit    Registers := 2     
+	               16 Bit    Registers := 1     
+	               12 Bit    Registers := 1     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     36 Bit        Muxes := 2     
+	  15 Input     36 Bit        Muxes := 2     
+	   2 Input     16 Bit        Muxes := 4     
+	  15 Input     16 Bit        Muxes := 1     
+	   2 Input     12 Bit        Muxes := 2     
+	  15 Input     12 Bit        Muxes := 1     
+	  15 Input      8 Bit        Muxes := 1     
+	  24 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 2     
+	  27 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 15    
+	  15 Input      4 Bit        Muxes := 4     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 4     
+	  15 Input      2 Bit        Muxes := 1     
+	  15 Input      1 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 2     
+Module uart_arbiter 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 3     
+	   3 Input      1 Bit        Muxes := 3     
+Module clock_div 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module my_dff 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module btn_edge 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
+Module vga_controller_640_60 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     11 Bit        Muxes := 2     
+Module top_VGA 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	  16 Input      4 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	  16 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5587] ROM size for "trans_key_ps2" is below threshold of ROM address width. It will be mapped to LUTs
+INFO: [Synth 8-5587] ROM size for "trans_key_uart" is below threshold of ROM address width. It will be mapped to LUTs
+WARNING: [Synth 8-3917] design term_interf_top has port LED[15] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[14] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[13] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[12] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[11] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[10] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[9] driven by constant 0
+WARNING: [Synth 8-3917] design term_interf_top has port LED[8] driven by constant 0
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[0]' (FDR) to 'dp1i_14/reg1/dout_reg[64]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[1]' (FDR) to 'dp1i_14/reg1/dout_reg[65]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[2]' (FDR) to 'dp1i_14/reg1/dout_reg[66]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[3]' (FDR) to 'dp1i_14/reg1/dout_reg[67]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[4]' (FDR) to 'dp1i_14/reg1/dout_reg[68]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[5]' (FDR) to 'dp1i_14/reg1/dout_reg[69]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[6]' (FDR) to 'dp1i_14/reg1/dout_reg[70]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[7]' (FDR) to 'dp1i_14/reg1/dout_reg[71]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[8]' (FDR) to 'dp1i_14/reg1/dout_reg[72]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[9]' (FDR) to 'dp1i_14/reg1/dout_reg[73]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[10]' (FDR) to 'dp1i_14/reg1/dout_reg[74]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[11]' (FDR) to 'dp1i_14/reg1/dout_reg[75]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (dp1i_14/\fetch_0/stall_ns_reg[2] )
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[76]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[77]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[78]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[79]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[80]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[81]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[82]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[83]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[84]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[85]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[86]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'dp1i_14/reg1/dout_reg[87]' (FDR) to 'dp1i_14/fetch_0/stall_cs_reg[2]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[6]' (FDRE) to 'i_0/UART_interface/strEnd_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[7]' (FDRE) to 'i_0/UART_interface/strEnd_reg[8]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[8]' (FDRE) to 'i_0/UART_interface/strEnd_reg[9]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[9]' (FDRE) to 'i_0/UART_interface/strEnd_reg[10]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[10]' (FDRE) to 'i_0/UART_interface/strEnd_reg[11]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[11]' (FDRE) to 'i_0/UART_interface/strEnd_reg[12]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[12]' (FDRE) to 'i_0/UART_interface/strEnd_reg[13]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[13]' (FDRE) to 'i_0/UART_interface/strEnd_reg[14]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[14]' (FDRE) to 'i_0/UART_interface/strEnd_reg[15]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[15]' (FDRE) to 'i_0/UART_interface/strEnd_reg[16]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[16]' (FDRE) to 'i_0/UART_interface/strEnd_reg[17]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[17]' (FDRE) to 'i_0/UART_interface/strEnd_reg[18]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[18]' (FDRE) to 'i_0/UART_interface/strEnd_reg[19]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[19]' (FDRE) to 'i_0/UART_interface/strEnd_reg[20]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[20]' (FDRE) to 'i_0/UART_interface/strEnd_reg[21]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[21]' (FDRE) to 'i_0/UART_interface/strEnd_reg[22]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[22]' (FDRE) to 'i_0/UART_interface/strEnd_reg[23]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[23]' (FDRE) to 'i_0/UART_interface/strEnd_reg[24]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[24]' (FDRE) to 'i_0/UART_interface/strEnd_reg[25]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[25]' (FDRE) to 'i_0/UART_interface/strEnd_reg[26]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[26]' (FDRE) to 'i_0/UART_interface/strEnd_reg[27]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[27]' (FDRE) to 'i_0/UART_interface/strEnd_reg[28]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[28]' (FDRE) to 'i_0/UART_interface/strEnd_reg[29]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/strEnd_reg[29]' (FDRE) to 'i_0/UART_interface/strEnd_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\strEnd_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/btn/\db/d0/Q_reg )
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[57][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[56][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[55][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[53][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[52][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[51][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[47][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[45][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[44][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[42][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[41][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[40][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[39][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[38][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[38][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[37][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[37][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[36][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[36][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[35][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[35][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[34][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[34][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[33][7] )
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[32][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[32][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[31][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[31][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[18][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[17][7] )
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[15][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[15][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[9][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[9][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[5][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[5][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[4][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[4][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[3][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[3][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[1][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[0][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[0][7]' (FDRE) to 'i_0/UART_interface/sendStr_reg[0][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[57][6]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[56][6]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[55][6]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[53][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[52][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[51][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[47][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[45][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[44][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[42][6]' (FDRE) to 'i_0/UART_interface/sendStr_reg[57][1]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[41][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[40][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[39][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[57][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[38][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[38][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[37][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[38][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[36][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[36][4]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[35][6]' (FDRE) to 'i_0/UART_interface/sendStr_reg[38][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[34][6]' (FDRE) to 'i_0/UART_interface/sendStr_reg[38][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[33][6]' (FDRE) to 'i_0/UART_interface/sendStr_reg[38][3]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[32][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[38][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[31][6]' (FDSE) to 'i_0/UART_interface/sendStr_reg[31][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[30][6]' (FDE) to 'i_0/UART_interface/sendStr_reg[30][0]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[29][6]' (FDE) to 'i_0/UART_interface/sendStr_reg[29][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[28][6]' (FDE) to 'i_0/UART_interface/sendStr_reg[28][5]'
+INFO: [Synth 8-3886] merging instance 'i_0/UART_interface/sendStr_reg[27][6]' (FDE) to 'i_0/UART_interface/sendStr_reg[27][0]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[18][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[35][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[32][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[21][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[5][5] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[36][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[31][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[30][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[15][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[3][4] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[37][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[34][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[33][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[27][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[11][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[9][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[4][2] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[3][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[38][1] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[30][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[5][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[2][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[42][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[39][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[38][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[37][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[36][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[32][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[31][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[4][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\sendStr_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\sendStr_reg[0][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/VGA1/\address_init_part_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (i_0/UART_interface/\Inst_UART_TX_CTRL/txData_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\Inst_UART_TX_CTRL/txData_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\uartData_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/btn/BTN_f_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/UART_interface/\Inst_UART_TX_CTRL/txData_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_0/btn/BTN_f_reg)
+WARNING: [Synth 8-3332] Sequential element (ALU_mode_n_reg[1]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (ALU_mode_n_reg[0]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (alu_a_n_reg[3]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (alu_a_n_reg[2]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (alu_a_n_reg[1]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (alu_a_n_reg[0]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (alu_b_n_reg[3]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (alu_b_n_reg[2]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (alu_b_n_reg[1]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (alu_b_n_reg[0]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[35]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[34]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[33]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[32]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[31]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[30]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[29]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[28]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[27]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[26]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[25]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[24]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[23]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[22]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[21]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[20]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[19]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[18]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[17]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[16]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[15]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[14]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[13]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[12]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[11]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[10]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[9]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[8]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[7]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[6]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[5]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[4]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[3]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[2]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[1]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_a_n_reg[0]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[35]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[34]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[33]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[32]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[31]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[30]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[29]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[28]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[27]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[26]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[25]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[24]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[23]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[22]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[21]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[20]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[19]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[18]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[17]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[16]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[15]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[14]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[13]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[12]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[11]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[10]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[9]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[8]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[7]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[6]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[5]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[4]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[3]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[2]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[1]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (mat_b_n_reg[0]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (result_ready_n_reg) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (address_init_part_reg[3]) is unused and will be removed from module top_VGA.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[15] with 1st driver pin 'i_0/cnt0_inferred/out[7]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[15] with 2nd driver pin 'GND' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LED[15] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[14] with 1st driver pin 'i_0/cnt0_inferred/out[6]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[14] with 2nd driver pin 'GND' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LED[14] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[13] with 1st driver pin 'i_0/cnt0_inferred/out[5]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[13] with 2nd driver pin 'GND' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LED[13] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[12] with 1st driver pin 'i_0/cnt0_inferred/out[4]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[12] with 2nd driver pin 'GND' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LED[12] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[11] with 1st driver pin 'i_0/cnt0_inferred/out[3]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[11] with 2nd driver pin 'GND' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LED[11] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[10] with 1st driver pin 'i_0/cnt0_inferred/out[2]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[10] with 2nd driver pin 'GND' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LED[10] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[9] with 1st driver pin 'i_0/cnt0_inferred/out[1]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[9] with 2nd driver pin 'GND' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LED[9] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[8] with 1st driver pin 'i_0/cnt0_inferred/out[0]' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LED[8] with 2nd driver pin 'GND' [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LED[8] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.srcs/sources_1/imports/Sources/Design/term_interf_top.v:184]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (dp1i_14/\FSM_onehot_halt_ns_reg[2] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:33 ; elapsed = 00:01:54 . Memory (MB): peak = 1167.195 ; gain = 534.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-----------------+---------------+---------------+----------------+
+|Module Name      | RTL Object    | Depth x Width | Implemented As | 
++-----------------+---------------+---------------+----------------+
+|ps2_to_ascii     | ascii         | 256x7         | LUT            | 
+|reduced_font_rom | data          | 256x8         | LUT            | 
+|top_VGA          | rom_data/data | 256x8         | LUT            | 
+|term_interf_top  | p2a/ascii     | 256x7         | LUT            | 
++-----------------+---------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |memory__GB0          |           1|      4422|
+|2     |memory__GB1          |           1|      4477|
+|3     |memory__GB2          |           1|      5235|
+|4     |memory__GB3          |           1|      2602|
+|5     |memory__GB4          |           1|      2810|
+|6     |memory__GB5          |           1|      4340|
+|7     |memory__GB6          |           1|      5419|
+|8     |memory__GB7          |           1|      3874|
+|9     |memory__GB8          |           1|      5248|
+|10    |memory__GB9          |           1|      2730|
+|11    |memory__GB10         |           1|      2710|
+|12    |memory__GB11         |           1|      6932|
+|13    |memory__GB12         |           1|      4715|
+|14    |datapath__GC0        |           1|      1283|
+|15    |term_interf_top__GC0 |           1|      3280|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:42 ; elapsed = 00:02:04 . Memory (MB): peak = 1167.195 ; gain = 534.754
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:46 ; elapsed = 00:03:09 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |memory__GB0          |           1|      4422|
+|2     |memory__GB1          |           1|      4477|
+|3     |memory__GB2          |           1|      5235|
+|4     |memory__GB3          |           1|      2602|
+|5     |memory__GB4          |           1|      2810|
+|6     |memory__GB5          |           1|      4340|
+|7     |memory__GB6          |           1|      5419|
+|8     |memory__GB7          |           1|      3874|
+|9     |memory__GB8          |           1|      5248|
+|10    |memory__GB9          |           1|      2730|
+|11    |memory__GB10         |           1|      2710|
+|12    |memory__GB12         |           1|      4715|
+|13    |term_interf_top__GC0 |           1|      3280|
+|14    |term_interf_top_GT0  |           1|      8657|
++------+---------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:00 ; elapsed = 00:03:22 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:07 ; elapsed = 00:03:30 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:07 ; elapsed = 00:03:30 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:10 ; elapsed = 00:03:33 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:11 ; elapsed = 00:03:34 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:14 ; elapsed = 00:03:37 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:14 ; elapsed = 00:03:37 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     4|
+|2     |CARRY4 |    77|
+|3     |LUT1   |    22|
+|4     |LUT2   |   193|
+|5     |LUT3   |   497|
+|6     |LUT4   |   209|
+|7     |LUT5   |  5184|
+|8     |LUT6   | 10446|
+|9     |MUXF7  |  2647|
+|10    |MUXF8  |  1244|
+|11    |FDCE   |     4|
+|12    |FDRE   |   689|
+|13    |FDSE   |    29|
+|14    |LD     |    81|
+|15    |LDC    |  2066|
+|16    |IBUF   |     9|
+|17    |OBUF   |    47|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------------+--------------------------+------+
+|      |Instance              |Module                    |Cells |
++------+----------------------+--------------------------+------+
+|1     |top                   |                          | 23448|
+|2     |  UART_interface      |GPIO_demo                 |   771|
+|3     |    Inst_UART_RX_CTRL |UART_RX_CTRL              |    75|
+|4     |    Inst_UART_TX_CTRL |UART_TX_CTRL              |    91|
+|5     |    Inst_btn_debounce |debouncer                 |   145|
+|6     |  VGA1                |top_VGA                   |   235|
+|7     |    rom_data          |reduced_font_rom          |    45|
+|8     |    vga_controller    |vga_controller_640_60     |   169|
+|9     |  dl                  |data_loader               |   172|
+|10    |  dp1                 |datapath                  | 21955|
+|11    |    alu_0             |ALU                       |     7|
+|12    |    fetch_0           |Fetch_unit                |    40|
+|13    |    mem_0             |memory                    | 15456|
+|14    |    reg0              |reg_param                 |    52|
+|15    |    reg1              |reg_param__parameterized0 |   158|
+|16    |    reg2              |reg_param__parameterized1 |  6043|
+|17    |    rf_0              |Register_file             |   188|
+|18    |  keyboard_interface  |top_keyboard              |   144|
+|19    |    keyboard          |PS2Receiver               |   135|
+|20    |      debouncer1      |keyboard_debouncer        |    31|
+|21    |  nolabel_line129     |uart_arbiter              |    65|
+|22    |  p2a                 |ps2_to_ascii              |    46|
++------+----------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:14 ; elapsed = 00:03:37 . Memory (MB): peak = 1581.426 ; gain = 948.984
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 24 critical warnings and 257 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:54 ; elapsed = 00:03:31 . Memory (MB): peak = 1581.426 ; gain = 809.672
+Synthesis Optimization Complete : Time (s): cpu = 00:03:14 ; elapsed = 00:03:38 . Memory (MB): peak = 1581.426 ; gain = 948.984
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 6115 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1581.426 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 2147 instances were transformed.
+  LD => LDCE: 81 instances
+  LDC => LDCE: 2066 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+274 Infos, 429 Warnings, 24 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:25 ; elapsed = 00:03:50 . Memory (MB): peak = 1581.426 ; gain = 1226.539
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1581.426 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/wkrska/Downloads/temp/EC551_Labs/Lab2/Unified Terminal Interface/lab_2/lab_2.runs/synth_1/term_interf_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file term_interf_top_utilization_synth.rpt -pb term_interf_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 11 20:15:55 2022...
