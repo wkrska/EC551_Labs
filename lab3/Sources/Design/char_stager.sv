@@ -22,7 +22,7 @@ module char_stager(
         input wire mode_flag,
         input wire pop,
         output wire [7:0] char_out,
-        output reg char_wen
+        output wire char_wen
     );
     
     // functionality spec
@@ -34,7 +34,7 @@ module char_stager(
     reg [`dwidth_mat*3*3-1:0] bench_hold, bench_hold_n;
     reg [7:0] fifo_char, fifo_char_n;
     reg push, push_n;
-    reg [7:0] count, count_n;
+    reg [4:0] count, count_n;
     
     reg [3:0] cs,ns;
     
@@ -68,22 +68,21 @@ module char_stager(
                         len_A      = 32,
                         len_B      = 29,
                         len_X      = 18;
-                
-//    reg [7:0] msg_wlcm [len_wlcm-1:0];
-//    reg [7:0] msg_I    [len_I   -1:0];
-//    reg [7:0] msg_L    [len_L   -1:0];
-//    reg [7:0] msg_A    [len_A   -1:0];
-//    reg [7:0] msg_B    [len_B   -1:0];
-//    reg [7:0] msg_X    [len_X   -1:0];
-    
-        // Messages
-    reg [58*8-1:0] msg_wlcm = {8'h0A,8'h0D,8'h48,8'h65,8'h6C,8'h6C,8'h6F,8'h20,8'h45,8'h43,8'h35,8'h35,8'h31,8'h2E,8'h20,8'h4D,8'h79,8'h20,8'h6E,8'h61,8'h6D,8'h65,8'h20,8'h69,8'h73,8'h20,8'h57,8'h69,8'h6C,8'h6C,8'h43,8'h6F,8'h6E,8'h2E,8'h0A,8'h0D,8'h50,8'h6C,8'h65,8'h61,8'h73,8'h65,8'h20,8'h65,8'h6E,8'h74,8'h65,8'h72,8'h20,8'h61,8'h20,8'h6D,8'h6F,8'h64,8'h65,8'h3A,8'h0A,8'h0D};						  
-    reg [30*8-1:0] msg_I    = {8'h0A,8'h0D,8'h4D,8'h6F,8'h64,8'h65,8'h20,8'h49,8'h3A,8'h20,8'h45,8'h6E,8'h74,8'h65,8'h72,8'h20,8'h49,8'h6E,8'h73,8'h74,8'h72,8'h75,8'h63,8'h74,8'h69,8'h6F,8'h6E,8'h73,8'h0A,8'h0D};
-    reg [39*8-1:0] msg_L    = {8'h0A,8'h0D,8'h4D,8'h6F,8'h64,8'h65,8'h20,8'h4C,8'h3A,8'h20,8'h4C,8'h6F,8'h61,8'h64,8'h20,8'h49,8'h6E,8'h73,8'h74,8'h72,8'h75,8'h63,8'h74,8'h69,8'h6F,8'h6E,8'h73,8'h20,8'h66,8'h72,8'h6F,8'h6D,8'h20,8'h55,8'h41,8'h52,8'h54,8'h0A,8'h0D};
-    reg [32*8-1:0] msg_A    = {8'h0A,8'h0D,8'h4D,8'h6F,8'h64,8'h65,8'h20,8'h41,8'h3A,8'h20,8'h52,8'h75,8'h6E,8'h20,8'h61,8'h6E,8'h20,8'h41,8'h4C,8'h55,8'h20,8'h6F,8'h70,8'h65,8'h72,8'h61,8'h74,8'h69,8'h6F,8'h6E,8'h0A,8'h0D};
-    reg [29*8-1:0] msg_B    = {8'h0A,8'h0D,8'h4D,8'h6F,8'h64,8'h65,8'h20,8'h42,8'h3A,8'h20,8'h42,8'h65,8'h6E,8'h63,8'h68,8'h6D,8'h61,8'h72,8'h6B,8'h20,8'h50,8'h72,8'h6F,8'h67,8'h72,8'h61,8'h6D,8'h0A,8'h0D};
-    reg [18*8-1:0] msg_X    = {8'h0A,8'h0D,8'h49,8'h6E,8'h76,8'h61,8'h6C,8'h69,8'h64,8'h20,8'h45,8'h6E,8'h74,8'h72,8'h79,8'h21,8'h0A,8'h0D};
-  
+
+    // Messages
+    reg [58*8-1:0] temp_msg_wlcm = {8'h0D,8'h0D,8'h48,8'h65,8'h6C,8'h6C,8'h6F,8'h20,8'h45,8'h43,8'h35,8'h35,8'h31,8'h2E,8'h20,8'h4D,8'h79,8'h20,8'h6E,8'h61,8'h6D,8'h65,8'h20,8'h69,8'h73,8'h20,8'h57,8'h69,8'h6C,8'h6C,8'h43,8'h6F,8'h6E,8'h2E,8'h0A,8'h0D,8'h50,8'h6C,8'h65,8'h61,8'h73,8'h65,8'h20,8'h65,8'h6E,8'h74,8'h65,8'h72,8'h20,8'h61,8'h20,8'h6D,8'h6F,8'h64,8'h65,8'h3A,8'h0A,8'h0D};						  
+    reg [30*8-1:0] temp_msg_I    = {8'h0D,8'h0D,8'h4D,8'h6F,8'h64,8'h65,8'h20,8'h49,8'h3A,8'h20,8'h45,8'h6E,8'h74,8'h65,8'h72,8'h20,8'h49,8'h6E,8'h73,8'h74,8'h72,8'h75,8'h63,8'h74,8'h69,8'h6F,8'h6E,8'h73,8'h0A,8'h0D};
+    reg [39*8-1:0] temp_msg_L    = {8'h0A,8'h0D,8'h4D,8'h6F,8'h64,8'h65,8'h20,8'h4C,8'h3A,8'h20,8'h4C,8'h6F,8'h61,8'h64,8'h20,8'h49,8'h6E,8'h73,8'h74,8'h72,8'h75,8'h63,8'h74,8'h69,8'h6F,8'h6E,8'h73,8'h20,8'h66,8'h72,8'h6F,8'h6D,8'h20,8'h55,8'h41,8'h52,8'h54,8'h0A,8'h0D};
+    reg [32*8-1:0] temp_msg_A    = {8'h0A,8'h0D,8'h4D,8'h6F,8'h64,8'h65,8'h20,8'h41,8'h3A,8'h20,8'h52,8'h75,8'h6E,8'h20,8'h61,8'h6E,8'h20,8'h41,8'h4C,8'h55,8'h20,8'h6F,8'h70,8'h65,8'h72,8'h61,8'h74,8'h69,8'h6F,8'h6E,8'h0A,8'h0D};
+    reg [29*8-1:0] temp_msg_B    = {8'h0A,8'h0D,8'h4D,8'h6F,8'h64,8'h65,8'h20,8'h42,8'h3A,8'h20,8'h42,8'h65,8'h6E,8'h63,8'h68,8'h6D,8'h61,8'h72,8'h6B,8'h20,8'h50,8'h72,8'h6F,8'h67,8'h72,8'h61,8'h6D,8'h0A,8'h0D};
+    reg [18*8-1:0] temp_msg_X    = {8'h0A,8'h0D,8'h49,8'h6E,8'h76,8'h61,8'h6C,8'h69,8'h64,8'h20,8'h45,8'h6E,8'h74,8'h72,8'h79,8'h21,8'h0A,8'h0D};
+                     
+    reg [7:0] msg_wlcm [len_wlcm-1:0];
+    reg [7:0] msg_I    [len_I   -1:0];
+    reg [7:0] msg_L    [len_L   -1:0];
+    reg [7:0] msg_A    [len_A   -1:0];
+    reg [7:0] msg_B    [len_B   -1:0];
+    reg [7:0] msg_X    [len_X   -1:0];
     wire [7:0] hex_char;
     hex_to_ascii h2a(
         .in((cs===ALU_WRITE) ? alu_hold[7:4] : ((cs===BNCH_WRITE) ? bench_hold[3:0] : 4'b0)),
@@ -118,7 +117,7 @@ module char_stager(
                 mode_hold_n = MODE_I;
                 alu_hold_n  = 'b0;
                 bench_hold_n= 'b0;
-                fifo_char_n = msg_wlcm[8*(len_wlcm-count)-1 -: 8];
+                fifo_char_n = msg_wlcm[8*(len_wlcm-count)-1:8*(len_wlcm-count-1)];
                 push_n      = 'b1;
                 count_n     = count+1;
             end
@@ -144,7 +143,7 @@ module char_stager(
                 mode_hold_n = MODE_I;
                 alu_hold_n  = 'b0;
                 bench_hold_n= 'b0;
-                fifo_char_n = msg_I[8*(len_I-count)-1 -: 8];
+                fifo_char_n = msg_I[8*(len_I-count)-1:8*(len_I-count-1)];
                 push_n      = 'b1;
                 count_n     = count+1;
             end
@@ -153,7 +152,7 @@ module char_stager(
                 mode_hold_n = MODE_L;
                 alu_hold_n  = 'b0;
                 bench_hold_n= 'b0;
-                fifo_char_n = msg_L[8*(len_L-count)-1 -: 8];
+                fifo_char_n = msg_L[8*(len_L-count)-1:8*(len_L-count-1)];
                 push_n      = 'b1;
                 count_n     = count+1;
             end
@@ -162,7 +161,7 @@ module char_stager(
                 mode_hold_n = MODE_A;
                 alu_hold_n  = 'b0;
                 bench_hold_n= 'b0;
-                fifo_char_n = msg_A[8*(len_A-count)-1 -: 8];
+                fifo_char_n = msg_A[8*(len_A-count)-1:8*(len_A-count-1)];
                 push_n      = 'b1;
                 count_n     = count+1;
             end
@@ -171,7 +170,7 @@ module char_stager(
                 mode_hold_n = MODE_B;
                 alu_hold_n  = 'b0;
                 bench_hold_n= 'b0;
-                fifo_char_n = msg_B[8*(len_B-count)-1 -: 8];
+                fifo_char_n = msg_B[8*(len_B-count)-1:8*(len_B-count-1)];
                 push_n      = 'b1;
                 count_n     = count+1;
             end
@@ -180,7 +179,7 @@ module char_stager(
                 mode_hold_n = MODE_X;
                 alu_hold_n  = 'b0;
                 bench_hold_n= 'b0;
-                fifo_char_n = msg_X[8*(len_X-count)-1 -: 8];
+                fifo_char_n = msg_X[8*(len_X-count)-1:8*(len_X-count-1)];
                 push_n      = 'b1;
                 count_n     = count+1;
             end
@@ -240,8 +239,8 @@ module char_stager(
             end
             CRTN       : begin 
                 case (mode_hold)
-                    MODE_B : ns = (count==5'd9) ? WLCM : BNCH_WRITE;
-                    default: ns = WLCM;
+                    MODE_B : ns = (count==5'd9) ? IDLE : BNCH_WRITE;
+                    default: ns = IDLE;
                 endcase
                 mode_hold_n  = mode_hold;
                 alu_hold_n   = alu_hold;
@@ -265,40 +264,21 @@ module char_stager(
         endcase
     end
 
-    // read FSM
-    reg [1:0] rd_c, rd_n;
-    always @(posedge clk)
-        rd_c <= (rst) ? 'b0 : rd_n;
-
-    always @(*) begin
-        case (rd_c)
-            'h0: rd_n = (pop) ? 'h1 : 'h0;
-            'h1: rd_n = 'h2;
-            'h2: rd_n = (~pop) ? 'h0 : 'h2;
-        endcase
-    end
-
     wire empty;
     wire wr_en;
     wire [7:0] din;
     assign din = (nl_c) ? 8'hD : ((push) ? fifo_char : ((wen_key_ps2) ? key_ps2 : ((wen_key_uart) ? key_uart : 'b0)));
     assign wr_en = nl_c | push | wen_key_ps2 | wen_key_uart;
-    always @(posedge clk)
-        char_wen = pop && ~empty;
+    assign char_wen = ~empty;
     fifo_8bit fifo (
        .clk(clk),      // input wire clk
        .rst(rst),    // input wire srst
        .din(din),      // input wire [7 : 0] din, if push is high, that measnt the FSM "wants" to write something, otherwise let the PS2 write something
        .push(wr_en),  // input wire wr_en
-       .pop(pop && ~(|rd_c)),  // input wire rd_en
+       .pop(pop),  // input wire rd_en
        .dout(char_out),    // output wire [7 : 0] dout
 //       .full(full),    // output wire full
        .empty(empty)  // output wire empty
     );
-    
-    
-    
-  
-
    
 endmodule

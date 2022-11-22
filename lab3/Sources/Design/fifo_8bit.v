@@ -2,7 +2,7 @@
 
 
 module fifo_8bit #(parameter fifo_width=8,
-                   parameter fifo_size=128) (
+                   parameter fifo_size=512) (
     input wire clk,
     input wire rst,
     input wire push,

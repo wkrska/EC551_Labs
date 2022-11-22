@@ -1,9 +1,6 @@
 `timescale 1ns / 1ps
 
-//`ifndef MY_HEADER
-//    `define MY_HEADER
-    `include "my_header.vh"
-//`endif
+`include "my_header.vh"
 
 module datapath (
     input clk,

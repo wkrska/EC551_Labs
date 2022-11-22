@@ -45,35 +45,83 @@ module term_interf_top(
     output wire VGA_HS,
     output wire VGA_VS
     );
-    
-    //============= UART and PS/2 =============//
+    // uart and ps2 lines
     wire [2:0] mode_select;
     wire [7:0] key_select_ps2, key_select_ascii;
     wire keyflag;
     wire modeflag;
     wire [103:0] disp_mat;
     wire [31:0] disp_alu;
-    wire [7:0] uart_dat;
-    wire uart_dv;
+    wire [7:0] uart_rx_dat, uart_tx_dat;
+    wire uart_rx_dv, uart_tx_send, uart_tx_ready;
     
-    UART_top UART_top(
-    .SW(SW),
-    .BTN(BTN),
-    .CLK(CLK100MHZ),
-    .RST(BTN[4]),
-    .keyflag(keyflag),
-    .modeflag(modeflag),
-    .alu_out(disp_alu),
-    .bench_out(disp_mat),
-    .SSEG_CA(SSEG_CA),
-    .SSEG_AN(SSEG_AN),
-    .mode_select(mode_select),
-    .key_select(key_select_ascii),
-    .UART_TXD(UART_TXD),
-    .UART_RXD(UART_RXD),
-    .uart_dat(uart_dat),
-    .uart_dv(uart_dv)
+    // data lines
+    wire wen_mode, wen_key_ps2, wen_key_uart, result_ready, ap_start;
+    wire [7:0] key_ps2, key_uart, debug_state;
+    wire [11:0] inst_addr;
+    wire [15:0] inst_write;
+    wire [`dwidth_dat_user*2-1:0] alu_out;
+    wire [`dwidth_mat*3*3-1:0] bench_out;
+    //============= UART and PS/2 =============//
+    
+    
+//    UART_top UART_top(
+//    .SW(SW),
+//    .BTN(BTN),
+//    .CLK(CLK100MHZ),
+//    .RST(BTN[4]),
+//    .keyflag(keyflag),
+//    .modeflag(modeflag),
+//    .alu_out(disp_alu),
+//    .bench_out(disp_mat),
+//    .SSEG_CA(SSEG_CA),
+//    .SSEG_AN(SSEG_AN),
+//    .mode_select(mode_select),
+//    .key_select(key_select_ascii),
+//    .UART_TXD(UART_TXD),
+//    .UART_RXD(UART_RXD),
+//    .uart_dat(uart_dat),
+//    .uart_dv(uart_dv)
+//    );
+    UART_controller UART_con(
+        .CLK           (CLK100MHZ    ),
+        .RST           (BTN[4]       ),
+        .UART_TX_DAT   (uart_tx_dat  ),
+        .UART_TX_SEND  (uart_tx_send ),
+        .UART_RXD      (UART_RXD     ),
+        .UART_TXD      (UART_TXD     ),
+        .UART_TX_READY (uart_tx_ready),
+        .UART_RX_DAT   (uart_rx_dat  ),
+        .UART_RX_VALID (uart_rx_dv   ) 
     );
+    
+    uart_arbiter(
+        .clk_100(CLK100MHZ),
+        .clk_ps2(PS2_CLK),
+        .rst(BTN[4]),
+        .uart_dat(uart_rx_dat),
+        .uart_dv(uart_rx_dv),
+        .key_uart(key_uart),
+        .wen_uart(wen_key_uart)
+    );
+    
+    char_stager cs(
+        .clk         (CLK100MHZ    ),
+        .rst         (BTN[4]       ),
+        .alu_in      (alu_out      ),
+        .bench_in    (bench_out    ),
+        .result_ready(result_ready ),
+        .key_ps2     (key_ps2      ),
+        .wen_key_ps2 (wen_key_ps2  ),
+        .key_uart    (key_uart     ),
+        .wen_key_uart(wen_key_uart ),
+        .mode        (mode_select  ),
+        .mode_flag   (modeflag     ),
+        .pop         (uart_tx_ready),
+        .char_out    (uart_tx_dat  ),
+        .char_wen    (uart_tx_send )
+    );
+    
 
     ps2_to_ascii p2a(
         .ps2(key_select_ps2),
@@ -85,8 +133,8 @@ module term_interf_top(
     .rst(BTN[4]),
     .PS2_CLK(PS2_CLK),
     .PS2_DATA(PS2_DATA),
-    .keystroke(key_select_ps2),
-    .keyflagtop(keyflag)
+    .keystroke(key_ps2),
+    .keyflagtop(wen_key_ps2)
     );
 
     // seg7decimal sevseg(
@@ -97,20 +145,12 @@ module term_interf_top(
     // );
     
     //============= Data Loader and Datapath =============//
-
-    wire wen_mode, wen_key_ps2, wen_key_uart, result_ready, ap_start;
-    wire [7:0] key_ps2, key_uart, debug_state;
-    wire [11:0] inst_addr;
-    wire [15:0] inst_write;
-    wire [`dwidth_dat_user*2-1:0] alu_out;
-    wire [`dwidth_mat*3*3-1:0] bench_out;
-    
     
     data_loader dl(
         .clk_100     (CLK100MHZ     ),
         .rst         (BTN[4]        ),
-        .key_ps2     (key_select_ps2),
-        .wen_key_ps2 (keyflag       ),
+        .key_ps2     (key_ps2       ),
+        .wen_key_ps2 (wen_key_ps2   ),
         .key_uart    (key_uart      ),
         .wen_key_uart(wen_key_uart  ),
         .mode        (mode_select   ),
@@ -125,15 +165,7 @@ module term_interf_top(
     );
     assign LED = {8'b0,debug_state};
     
-    uart_arbiter(
-        .clk_100(CLK100MHZ),
-        .clk_ps2(PS2_CLK),
-        .rst(BTN[4]),
-        .uart_dat(uart_dat),
-        .uart_dv(uart_dv),
-        .key_uart(key_uart),
-        .wen_uart(wen_key_uart)
-    );
+    
     
     mat_to_ascii m2a(
         bench_out,
