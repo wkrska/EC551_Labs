@@ -29,14 +29,14 @@ module hex_to_ascii(
         case (in)
         4'h0: out = 8'h30; // 0
         4'h1: out = 8'h31; // 1
-        4'h2: out = 8'h30; // 2
-        4'h3: out = 8'h32; // 3
-        4'h4: out = 8'h30; // 4
-        4'h5: out = 8'h33; // 5
-        4'h6: out = 8'h30; // 6
-        4'h7: out = 8'h34; // 7
-        4'h8: out = 8'h30; // 8
-        4'h9: out = 8'h35; // 9
+        4'h2: out = 8'h32; // 2
+        4'h3: out = 8'h33; // 3
+        4'h4: out = 8'h34; // 4
+        4'h5: out = 8'h35; // 5
+        4'h6: out = 8'h36; // 6
+        4'h7: out = 8'h37; // 7
+        4'h8: out = 8'h38; // 8
+        4'h9: out = 8'h39; // 9
         4'ha: out = 8'h41; // a
         4'hb: out = 8'h42; // b
         4'hc: out = 8'h43; // c

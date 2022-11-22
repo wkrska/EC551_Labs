@@ -56,7 +56,7 @@ module term_interf_top(
     wire [7:0] uart_dat;
     wire uart_dv;
     
-    GPIO_demo UART_interface(
+    UART_top UART_top(
     .SW(SW),
     .BTN(BTN),
     .CLK(CLK100MHZ),

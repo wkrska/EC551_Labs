@@ -1,24 +1,6 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 11/21/2022 03:21:11 PM
-// Design Name: 
-// Module Name: char_stager
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
+`include "my_header.vh"
 
 module char_stager(
         input wire clk,
@@ -49,28 +31,30 @@ module char_stager(
     reg [2:0] mode_hold, mode_hold_n;
     reg [`dwidth_dat_user*2-1:0] alu_hold, alu_hold_n;
     reg [`dwidth_mat*3*3-1:0] bench_hold, bench_hold_n;
-    reg fifo_char, fifo_char_n;
+    reg [7:0] fifo_char, fifo_char_n;
     reg push, push_n;
     reg [4:0] count, count_n;
     
-    case [3:0] cs,ns;
+    reg [3:0] cs,ns;
     
     localparam [3:0]    IDLE       = 'h0, // also just passthrough mode
                         ALU_WAIT   = 'h1,
                         ALU_WRITE  = 'h2,
                         BNCH_WAIT  = 'h3,
-                        BCNH_WRITE = 'h4,
-                        BCNH_SPACE = 'h5,
+                        BNCH_WRITE = 'h4,
+                        BNCH_SPACE = 'h5,
                         NWLN       = 'hE,
-                        CRTN       = 'hF,
-                        MODE_I     = 'h0,
+                        CRTN       = 'hF;
+                        
+    localparam [2:0]    MODE_I     = 'h0,
                         MODE_L     = 'h1,
                         MODE_A     = 'h2,
-                        MODE_B     = 'h3;
+                        MODE_B     = 'h3,
+                        MODE_X     = 'h4;
     
     wire [7:0] hex_char;
     hex_to_ascii h2a(
-        .in((cs==ALU_WRITE) ? alu_hold[3:0] : (cs==BENCH_WRITE) ? bench_hold[3:0] : 4'b0),
+        .in((cs===ALU_WRITE) ? alu_hold[7:4] : ((cs===BNCH_WRITE) ? bench_hold[3:0] : 4'b0)),
         .out(hex_char)
     );
     
@@ -101,10 +85,10 @@ module char_stager(
             IDLE       : begin 
                 case (mode) 
                     MODE_A : ns = ALU_WAIT;
-                    MODE_B : ns = BENCH_WAIT;
+                    MODE_B : ns = BNCH_WAIT;
                     default : ns = IDLE;
                 endcase
-                mode_hold_n  = 'b0;
+                mode_hold_n  = MODE_X;
                 alu_hold_n   = 'b0;
                 bench_hold_n = 'b0;
                 fifo_char_n  = 'b0;
@@ -123,14 +107,14 @@ module char_stager(
             ALU_WRITE  : begin 
                 ns           = (count == 'b1) ? NWLN : ALU_WRITE;
                 mode_hold_n  = MODE_A;
-                alu_hold_n   = alu_hold >> 4;
+                alu_hold_n   = alu_hold << 4;
                 bench_hold_n = 'b0;
-                fifo_char_n  = hex_char
+                fifo_char_n  = hex_char;
                 push_n       = 'b1;
                 count_n      = count+1;
             end
             BNCH_WAIT  : begin 
-                ns           = (result_ready) ? BCNH_WRITE : BNCH_WAIT;
+                ns           = (result_ready) ? BNCH_WRITE : BNCH_WAIT;
                 mode_hold_n  = MODE_B;
                 alu_hold_n   = 'b0;
                 bench_hold_n = (result_ready) ? bench_in : 'b0;
@@ -138,12 +122,12 @@ module char_stager(
                 push_n       = 'b0;
                 count_n      = 'b0;
             end
-            BCNH_WRITE : begin 
+            BNCH_WRITE : begin 
                 ns           = (count%3<2) ? BNCH_SPACE : NWLN;
                 mode_hold_n  = MODE_B;
                 alu_hold_n   = 'b0;
                 bench_hold_n = bench_hold >> 4;
-                fifo_char_n  = hex_char
+                fifo_char_n  = hex_char;
                 push_n       = 'b1;
                 count_n      = count+1;
             end
@@ -157,7 +141,7 @@ module char_stager(
                 count_n      = count;
             end
             NWLN       : begin 
-                ns           = CRTN
+                ns           = CRTN;
                 mode_hold_n  = mode_hold;
                 alu_hold_n   = alu_hold;
                 bench_hold_n = bench_hold;
@@ -167,7 +151,7 @@ module char_stager(
             end
             CRTN       : begin 
                 case (mode_hold)
-                    MODE_B : ns = (count==8) ? IDLE : BNCH_WRITE;
+                    MODE_B : ns = (count==5'd9) ? IDLE : BNCH_WRITE;
                     default: ns = IDLE;
                 endcase
                 mode_hold_n  = mode_hold;
@@ -180,14 +164,30 @@ module char_stager(
         endcase
     end
 
+    // newline FSM
+    reg nl_c, nl_n;
+    always @(posedge clk)
+        nl_c <= (rst) ? 0 : nl_n;
+
+    always @(*) begin
+        case (nl_c)
+            1'b0 : nl_n = ((wen_key_ps2 && key_ps2==8'hA) || (wen_key_uart && key_uart==8'hA)) ? 1'b1 : 1'b0; // if write_en and char is an enter;
+            1'b1 : nl_n = 1'b0;
+        endcase
+    end
+
     wire empty;
+    wire wr_en;
+    wire [7:0] din;
+    assign din = (nl_c) ? 8'hD : ((push) ? fifo_char : ((wen_key_ps2) ? key_ps2 : ((wen_key_uart) ? key_uart : 'b0)));
+    assign wr_en = nl_c | push | wen_key_ps2 | wen_key_uart;
     assign char_wen = ~empty;
-    ascii_char_fifo your_instance_name (
+    fifo_8bit fifo (
        .clk(clk),      // input wire clk
-       .srst(rst),    // input wire srst
-       .din((push) ? fifo_char : ((wen_key_ps2) ? key_ps2 : ((wen_key_uart) ? key_uart : 'b0))),      // input wire [7 : 0] din, if push is high, that measnt the FSM "wants" to write something, otherwise let the PS2 write something
-       .wr_en(push | wen_key_ps2 | wen_key_uart),  // input wire wr_en
-       .rd_en(pop),  // input wire rd_en
+       .rst(rst),    // input wire srst
+       .din(din),      // input wire [7 : 0] din, if push is high, that measnt the FSM "wants" to write something, otherwise let the PS2 write something
+       .push(wr_en),  // input wire wr_en
+       .pop(pop),  // input wire rd_en
        .dout(char_out),    // output wire [7 : 0] dout
 //       .full(full),    // output wire full
        .empty(empty)  // output wire empty
