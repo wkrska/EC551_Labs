@@ -38,6 +38,8 @@ module test_char_stager();
 
     always
         #1 clk<=~clk;
+    always
+        #4 pop <= ~pop;
 
     initial begin
         clk         <='b0;
@@ -56,9 +58,9 @@ module test_char_stager();
         #10; rst<=0;
 
         #10;
-        pop <= 1'b1;
-        #150;
-        pop <= 'b0;
+//        pop <= 1'b1;
+        #1200;
+//        pop <= 'b0;
         
         // incoming keys 
         key_ps2 <= 'hff; wen_key_ps2 <= 'b1; #2; // fake mode
@@ -66,17 +68,17 @@ module test_char_stager();
         wen_key_ps2 <= 'b0;
         
         #10;
-        pop <= 1'b1;
-        #100;
-        pop <= 'b0;
+//        pop <= 1'b1;
+        #800;
+//        pop <= 'b0;
 
         mode <= 2; mode_flag   <='b1; #10;// goes into ALU mode
         mode_flag   <='b0;
         
         #10;
-        pop <= 1'b1;
-        #100;
-        pop <= 'b0;
+//        pop <= 1'b1;
+        #800;
+//        pop <= 'b0;
         
         key_ps2 <= 'haa; wen_key_ps2 <= 'b1; #2; // fake mode
         key_ps2 <= 'hab; wen_key_ps2 <= 'b1; #2; // enter
@@ -90,17 +92,17 @@ module test_char_stager();
         alu_in <= 8'h25; result_ready <= 0; #2;
         
         #10;
-        pop <= 1'b1;
-        #100;
-        pop <= 'b0;
+//        pop <= 1'b1;
+        #800;
+//        pop <= 'b0;
 
         mode <= 3; mode_flag   <='b1; #10;// goes into Benchmark mode
         mode_flag   <='b0;
         
         #10;
-        pop <= 1'b1;
-        #100;
-        pop <= 'b0;
+//        pop <= 1'b1;
+        #800;
+//        pop <= 'b0;
         
         bench_in <= 36'hfedcba987; result_ready <= 1; #2;
         result_ready <= 0; #2;
@@ -112,9 +114,9 @@ module test_char_stager();
         // ff 0a 0d aa ab ac ad 32 34 0a 0d  37 20 38 20 39 0a 0d 41 20 42 20 43 0a 0d 44 20 45 20 46 0a 0d
 
         #10;
-        pop <= 1'b1;
-        #100;
-        pop <= 'b0;
+//        pop <= 1'b1;
+        #800;
+//        pop <= 'b0;
         $finish;
     end
 endmodule

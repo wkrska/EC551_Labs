@@ -17,7 +17,8 @@ module data_loader(
     output wire [`dwidth_mat*3*3-1:0] bench_out,
     output reg result_ready,
     output reg ap_start,
-    output wire [7:0] debug_state
+    output wire [7:0] debug_state,
+    output wire [3:0] count_debug
 );
 
 // Translate PS/2 inputs
@@ -93,6 +94,7 @@ end
 reg [7:0] curr_state, next_state;
 assign debug_state = curr_state;
 reg [3:0] count_c,count_n;
+assign count_debug = count_c;
 reg mode_flag_n;
 // Inst write
 reg [`dwidth_dat-1:0] inst_write_n;
@@ -171,6 +173,8 @@ always @(*) begin
                     default: next_state = IDLE;
                 endcase
                 mode_flag_n = 'b1;
+            end else begin
+                next_state = IDLE;
             end
             count_n = 'b0;
             ap_start_n = 'b0;
@@ -357,8 +361,8 @@ always @(*) begin
             mode_flag_n = 'b0;
         end
         B_ma: begin
-            next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==9) ? B_mb : B_ma;
-            count_n = (count_c<9) ? ((wen_key_ps2 && (~trans_key_ps2[4])) ? count_c+1 : count_c) : 'b0;
+            next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==8) ? B_mb : B_ma;
+            count_n = (count_c<=8) ? ((wen_key_ps2 && (~trans_key_ps2[4])) ? count_c+1 : count_c) : 'b0;
             mat_a_n = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c<9) ? {mat_a[31:0],trans_key_ps2[3:0]} : mat_a;
             mat_b_n = 'b0;
             result_ready_n = 'b0;
@@ -373,8 +377,8 @@ always @(*) begin
             mode_flag_n = 'b0;
         end
         B_mb: begin
-            next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==9) ? B_wb : B_mb;
-            count_n = (count_c<9) ? ((wen_key_ps2 && (~trans_key_ps2[4])) ? count_c+1 : count_c) : 'b0;
+            next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==8) ? B_wb : B_mb;
+            count_n = (count_c<=8) ? ((wen_key_ps2 && (~trans_key_ps2[4])) ? count_c+1 : count_c) : 'b0;
             mat_a_n = mat_a;
             mat_b_n = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c<9) ? {mat_b[31:0],trans_key_ps2[3:0]} : mat_b;
             result_ready_n = 'b0;

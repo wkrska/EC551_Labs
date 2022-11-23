@@ -39,6 +39,7 @@ always @(*) begin
         8'h12: ascii = 8'h0; // Shift (Left)
         8'h59: ascii = 8'h0; // Shift (Right)
         8'h29: ascii = 8'h20; // Spacebar
+        8'h66: ascii = 8'h08; // Backspace
         8'h1C: ascii = 8'h41; // A
         8'h32: ascii = 8'h42; // B
         8'h21: ascii = 8'h43; // C

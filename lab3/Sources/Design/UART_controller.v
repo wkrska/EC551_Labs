@@ -8,10 +8,10 @@ module UART_controller (
     input wire [7:0]    UART_TX_DAT,
     input wire          UART_TX_SEND,
     input wire          UART_RXD,
-    output reg          UART_TXD,
+    output wire          UART_TXD,
     output wire         UART_TX_READY,
-    output reg [7:0]    UART_RX_DAT,
-    output reg          UART_RX_VALID
+    output wire [7:0]    UART_RX_DAT,
+    output wire          UART_RX_VALID
 );
 
     UART_TX_CTRL TX(

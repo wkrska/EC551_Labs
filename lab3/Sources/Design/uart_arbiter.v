@@ -6,12 +6,11 @@
 // takes the input from UART and generates a sustained key value and pulsed wen on the PS/2 clk
 module uart_arbiter(
     input wire clk_100,
-    input wire clk_ps2,
     input wire rst,
     input wire [7:0] uart_dat,
     input wire uart_dv,
     output reg [7:0] key_uart,
-    output reg wen_uart
+    output wire wen_uart
 );
 
 // Two interconnected FSMs, on system clock and ps2 clock respectively
@@ -37,13 +36,7 @@ always @(posedge clk_100) begin
     end
 end
 
-always @(posedge clk_ps2) begin
-    if (rst) begin
-        wen_uart <= 1'b0;
-    end else begin
-        wen_uart <= (uart_cs == FLAG) ? 1'b1 : 1'b0; // will go high for the duration of a ps2 clock only once per input key
-    end
-end
+assign wen_uart = uart_cs[0];
 
 always @(*) begin
     case (uart_cs)
@@ -52,7 +45,7 @@ always @(*) begin
             key_uart_n = (uart_dv) ? uart_dat : key_uart;
         end
         FLAG: begin // wait for wen to be asserted, then move on
-            uart_ns = (wen_uart) ? WAIT : FLAG;
+            uart_ns = WAIT;
             key_uart_n = key_uart;
         end
         WAIT: begin // wait for uart valid to go low

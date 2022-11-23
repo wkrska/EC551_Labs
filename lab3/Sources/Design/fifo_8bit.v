@@ -51,10 +51,10 @@ module fifo_8bit #(parameter fifo_width=8,
              dout <= 'b0;
            else
              begin
-                 if(pop && !empty)
+                 if(!empty)
                     dout <= buf_mem[rd_ptr];
                  else
-                    dout <= 'b0; // we need this because we should make sure to set tvalid to zero when pop==0 (the above condition is not true)
+                    dout <= 'b0;
              end 
      end
 

@@ -29,23 +29,27 @@ keyboard_debouncer debouncer1(
     .O1(kdataf)
 );
     
-always@(negedge(kclkf)) begin // on negedge of ps2 clk (per protocol)
-    case(cnt) // assign data in
-        0:;//Start bit
-        1:datacur[0]<=kdataf;
-        2:datacur[1]<=kdataf;
-        3:datacur[2]<=kdataf;
-        4:datacur[3]<=kdataf;
-        5:datacur[4]<=kdataf;
-        6:datacur[5]<=kdataf;
-        7:datacur[6]<=kdataf;
-        8:datacur[7]<=kdataf;
-        9:flag<=1'b1;
-        10:flag<=1'b0;
-    endcase
-    // it works so dont touch it
-    if(cnt<=9) cnt<=cnt+1;
-    else cnt<=0;    
+always@(negedge(kclkf), negedge(rst)) begin // on negedge of ps2 clk (per protocol)
+    if (rst) begin
+        datacur <= 'b0;
+    end else begin
+        case(cnt) // assign data in
+            0:;//Start bit
+            1:datacur[0]<=kdataf;
+            2:datacur[1]<=kdataf;
+            3:datacur[2]<=kdataf;
+            4:datacur[3]<=kdataf;
+            5:datacur[4]<=kdataf;
+            6:datacur[5]<=kdataf;
+            7:datacur[6]<=kdataf;
+            8:datacur[7]<=kdataf;
+            9:flag<=1'b1;
+            10:flag<=1'b0;
+        endcase
+        // it works so dont touch it
+        if(cnt<=9) cnt<=cnt+1;
+        else cnt<=0;    
+    end
 end
 
 

@@ -22,7 +22,9 @@ module char_stager(
         input wire mode_flag,
         input wire pop,
         output wire [7:0] char_out,
-        output reg char_wen
+        output reg char_wen,
+        output wire [3:0] debug_state,
+        output wire [7:0] count_debug
     );
     
     // functionality spec
@@ -35,7 +37,7 @@ module char_stager(
     reg [7:0] fifo_char, fifo_char_n;
     reg push, push_n;
     reg [7:0] count, count_n;
-    
+    assign count_debug = count;
     reg [3:0] cs,ns;
     
     // States
@@ -62,12 +64,12 @@ module char_stager(
                         MODE_X     = 'h4;
 
     // Lengths
-    localparam [7:0]    len_wlcm   = 58,
-                        len_I      = 30,
-                        len_L      = 39,
-                        len_A      = 32,
-                        len_B      = 29,
-                        len_X      = 18;
+    localparam [7:0]    len_wlcm   = 'd58,
+                        len_I      = 'd30,
+                        len_L      = 'd39,
+                        len_A      = 'd32,
+                        len_B      = 'd29,
+                        len_X      = 'd18;
                 
 //    reg [7:0] msg_wlcm [len_wlcm-1:0];
 //    reg [7:0] msg_I    [len_I   -1:0];
@@ -86,10 +88,10 @@ module char_stager(
   
     wire [7:0] hex_char;
     hex_to_ascii h2a(
-        .in((cs===ALU_WRITE) ? alu_hold[7:4] : ((cs===BNCH_WRITE) ? bench_hold[3:0] : 4'b0)),
+        .in((cs===ALU_WRITE) ? alu_hold[7:4] : ((cs===BNCH_WRITE) ? bench_hold[35:32] : 4'b0)),
         .out(hex_char)
     );
-    
+    assign debug_state = cs;
     always @(posedge clk) begin
         if (rst) begin
             cs <= 'b0;
@@ -114,7 +116,7 @@ module char_stager(
     always @(*) begin
         case (cs)
             WLCM     : begin 
-                ns          = (count<len_wlcm) ? WLCM : IDLE;
+                ns          = (count<len_wlcm-1) ? WLCM : IDLE;
                 mode_hold_n = MODE_I;
                 alu_hold_n  = 'b0;
                 bench_hold_n= 'b0;
@@ -131,6 +133,8 @@ module char_stager(
                         MODE_B : ns = B_INST;
                         default : ns = X_INST;
                     endcase
+                end else begin
+                    ns = IDLE;
                 end
                 mode_hold_n  = MODE_X;
                 alu_hold_n   = 'b0;
@@ -185,7 +189,7 @@ module char_stager(
                 count_n     = count+1;
             end
             ALU_WAIT   : begin 
-                ns           = (result_ready) ? ALU_WRITE : ALU_WAIT;
+                ns           = (result_ready) ? NWLN : ALU_WAIT;
                 mode_hold_n  = MODE_A;
                 alu_hold_n   = (result_ready) ? alu_in : 'b0;
                 bench_hold_n = 'b0;
@@ -203,7 +207,7 @@ module char_stager(
                 count_n      = count+1;
             end
             BNCH_WAIT  : begin 
-                ns           = (result_ready) ? BNCH_WRITE : BNCH_WAIT;
+                ns           = (result_ready) ? NWLN : BNCH_WAIT;
                 mode_hold_n  = MODE_B;
                 alu_hold_n   = 'b0;
                 bench_hold_n = (result_ready) ? bench_in : 'b0;
@@ -215,7 +219,7 @@ module char_stager(
                 ns           = (count%3<2) ? BNCH_SPACE : NWLN;
                 mode_hold_n  = MODE_B;
                 alu_hold_n   = 'b0;
-                bench_hold_n = bench_hold >> 4;
+                bench_hold_n = bench_hold << 4;
                 fifo_char_n  = hex_char;
                 push_n       = 'b1;
                 count_n      = count+1;
@@ -240,6 +244,7 @@ module char_stager(
             end
             CRTN       : begin 
                 case (mode_hold)
+                    MODE_A : ns = (count==0) ? ALU_WRITE : WLCM;
                     MODE_B : ns = (count==5'd9) ? WLCM : BNCH_WRITE;
                     default: ns = WLCM;
                 endcase
@@ -253,18 +258,30 @@ module char_stager(
         endcase
     end
 
-    // newline FSM
+    // newline FSM(s)
+    reg cr_c, cr_n;
+    always @(posedge clk)
+        cr_c <= (rst) ? 0 : cr_n;
+
+    always @(*) begin
+        case (cr_c)
+            1'b0 : cr_n = (wen_key_ps2 && key_ps2==8'hA) ? 1'b1 : 1'b0; // if write_en and char is an enter;
+            1'b1 : cr_n = 1'b0;
+        endcase
+    end
+
     reg nl_c, nl_n;
     always @(posedge clk)
         nl_c <= (rst) ? 0 : nl_n;
 
     always @(*) begin
         case (nl_c)
-            1'b0 : nl_n = ((wen_key_ps2 && key_ps2==8'hA) || (wen_key_uart && key_uart==8'hA)) ? 1'b1 : 1'b0; // if write_en and char is an enter;
+            1'b0 : nl_n = (wen_key_uart && key_uart==8'hD) ? 1'b1 : 1'b0; // if write_en and char is a carriage return;
             1'b1 : nl_n = 1'b0;
         endcase
     end
 
+    
     // read FSM
     reg [1:0] rd_c, rd_n;
     always @(posedge clk)
@@ -281,16 +298,16 @@ module char_stager(
     wire empty;
     wire wr_en;
     wire [7:0] din;
-    assign din = (nl_c) ? 8'hD : ((push) ? fifo_char : ((wen_key_ps2) ? key_ps2 : ((wen_key_uart) ? key_uart : 'b0)));
-    assign wr_en = nl_c | push | wen_key_ps2 | wen_key_uart;
-    always @(posedge clk)
-        char_wen = pop && ~empty;
+    assign din = (nl_c) ? 8'hA : ((cr_c) ? 8'hD : ((push) ? fifo_char : ((wen_key_ps2) ? key_ps2 : ((wen_key_uart) ? key_uart : 'b0))));
+    assign wr_en = nl_c | cr_c | push | wen_key_ps2 | wen_key_uart;
+    always @(*)
+        char_wen = (rd_c==2'h2) && ~empty;
     fifo_8bit fifo (
        .clk(clk),      // input wire clk
        .rst(rst),    // input wire srst
        .din(din),      // input wire [7 : 0] din, if push is high, that measnt the FSM "wants" to write something, otherwise let the PS2 write something
        .push(wr_en),  // input wire wr_en
-       .pop(pop && ~(|rd_c)),  // input wire rd_en
+       .pop(pop && (rd_c=='h0)),  // input wire rd_en
        .dout(char_out),    // output wire [7 : 0] dout
 //       .full(full),    // output wire full
        .empty(empty)  // output wire empty

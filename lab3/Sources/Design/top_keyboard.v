@@ -34,7 +34,7 @@ wire keyflag;
 reg [1:0] cs, ns;
 always @(posedge CLK100MHZ)begin
     CLK50MHZ<=~CLK50MHZ;
-    cs <= ns;
+    cs <= (rst) ? 0 : ns;
 end
 
 assign keyflagtop = cs[0];
