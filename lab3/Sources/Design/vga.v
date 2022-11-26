@@ -355,7 +355,7 @@ endmodule
 
 // top module that instantiate the VGA controller and generate images
 module top_VGA(
-    input wire [15:0] reg_value,
+    input wire [95:0] reg_values,
     input wire CLK100MHZ,
     input wire rst,
     output reg [3:0] VGA_R,
@@ -369,12 +369,16 @@ reg pclk_div_cnt=1'b0;
 reg pixel_clk=1'b0;
 reg rst_VGA=1'b0;
 reg [7:0] address;
-reg [31:0] address_init;
+reg [191:0] address_init;
 wire [10:0] vga_hcnt, vga_vcnt;
 wire [7:0] data_char;
 wire vga_blank;
 reg [7:0] address_init_part;
+reg [31:0] address_init_curr;
 reg [10:0] vga_hcnt_mod;
+reg [10:0] vga_vcnt_mod;
+integer hsection;
+integer vsection;
 
 always @(rst) begin
     rst_VGA <= rst;
@@ -397,9 +401,9 @@ reduced_font_rom rom_data(.addr(address), .data(data_char));
     // 4 char output
 genvar i;
 generate 
-    for(i=0;i<4;i=i+1) begin
+    for(i=0;i<24;i=i+1) begin
     always @(*) begin
-            case(reg_value[(i+1)*4-1:i*4])
+            case(reg_values[(i+1)*4-1:i*4])
                 4'h0: address_init[(i+1)*8-1:i*8] = 8'h00;
                 4'h1: address_init[(i+1)*8-1:i*8] = 8'h10;
                 4'h2: address_init[(i+1)*8-1:i*8] = 8'h20;
@@ -434,70 +438,104 @@ always @(*) begin
     end
     else begin
 
-            //Identify which hex value we are displaying based on vga_hcnt
-            if (vga_hcnt >= 0 && vga_hcnt <= 160) begin          //Reg Hex Value0
-                    address_init_part = address_init[31:24]; end
-            else if (vga_hcnt >= 161 && vga_hcnt <= 320) begin   //Reg Hex Value1
-                    address_init_part = address_init[23:16]; end
-            else if (vga_hcnt >= 321 && vga_hcnt <= 480) begin   //Reg Hex Value2
-                    address_init_part = address_init[15:8]; end
-            else if (vga_hcnt >= 481 && vga_hcnt <= 640) begin   //Reg Hex Value3
-                    address_init_part = address_init[7:0]; end
-                    
+           
+
+            //Identify which quadrant we are displaying based on vga_hcnt
+            if (vga_hcnt >= 0 && vga_hcnt <= 213) begin          //Reg Hex Value0
+                    hsection = 0; end
+            else if (vga_hcnt >= 214 && vga_hcnt <= 426) begin   //Reg Hex Value1
+                    hsection = 1; end
+            else if (vga_hcnt >= 417 && vga_hcnt <= 640) begin   //Reg Hex Value2
+                    hsection = 2; end               
+
+           //Identify which quadrant we are displaying based on vga_vcnt
+            if (vga_vcnt >= 0 && vga_vcnt <= 239) begin          //Reg Hex Value0
+                    vsection = 0; end
+            else if (vga_vcnt >= 240 && vga_vcnt <= 480) begin   //Reg Hex Value1
+                    vsection = 1; end
+                        
+            if  (hsection == 0 && vsection ==0) begin
+                address_init_curr = address_init[31:0]; end
+            else if (hsection == 0 && vsection ==1) begin
+                address_init_curr = address_init[63:32]; end
+            else if (hsection == 0 && vsection ==2) begin
+                address_init_curr = address_init[95:64]; end
+            else if  (hsection == 0 && vsection ==0) begin
+                address_init_curr = address_init[127:96]; end
+            else if (hsection == 0 && vsection ==1) begin
+                address_init_curr = address_init[159:128]; end
+            else if (hsection == 0 && vsection ==2) begin
+                address_init_curr = address_init[191:160]; end
+
+            vga_hcnt_mod = vga_hcnt % 213;
+                
+             //Identify which hex value we are displaying based on vga_hcnt
+            if (vga_hcnt >= 0 && vga_hcnt <= 52) begin          //Reg Hex Value0
+                    address_init_part = address_init_curr[31:24]; end
+            else if (vga_hcnt >= 53 && vga_hcnt <= 105) begin   //Reg Hex Value1
+                    address_init_part = address_init_curr[23:16]; end
+            else if (vga_hcnt >= 106 && vga_hcnt <= 158) begin   //Reg Hex Value2
+                    address_init_part = address_init_curr[15:8]; end
+            else if (vga_hcnt >= 159 && vga_hcnt <= 212) begin   //Reg Hex Value3
+                    address_init_part = address_init_curr[7:0]; end
+
+            vga_vcnt_mod = vga_vcnt % 240;
 
             //Identify which line of the hex value we are displaying based on vga_vcnt
-            if (vga_vcnt >=0 && vga_vcnt <=30)begin
+            if (vga_vcnt_mod >=0 && vga_vcnt_mod <=14)begin
                 address = address_init_part; end
-            else if (vga_vcnt >=31 && vga_vcnt <=60)begin
+            else if (vga_vcnt_mod >=15 && vga_vcnt_mod <=29)begin
                 address = address_init_part+1; end
-            else if (vga_vcnt >=61 && vga_vcnt <=90)begin
+            else if (vga_vcnt_mod >=30 && vga_vcnt_mod <=44)begin
                 address = address_init_part+2; end
-            else if (vga_vcnt >=91 && vga_vcnt <=120)begin
+            else if (vga_vcnt_mod >=45 && vga_vcnt_mod <=59)begin
                 address = address_init_part+3; end
-            else if (vga_vcnt >=121 && vga_vcnt <=150)begin
+            else if (vga_vcnt_mod >=60 && vga_vcnt_mod <=74)begin
                 address = address_init_part+4; end
-            else if (vga_vcnt >=151 && vga_vcnt <=180)begin
+            else if (vga_vcnt_mod >=75 && vga_vcnt_mod <=89)begin
                 address = address_init_part+5; end
-            else if (vga_vcnt >=181 && vga_vcnt <=210)begin
+            else if (vga_vcnt_mod >=90 && vga_vcnt_mod <=104)begin
                 address = address_init_part+6; end
-            else if (vga_vcnt >=211 && vga_vcnt <=240)begin
+            else if (vga_vcnt_mod >=105 && vga_vcnt_mod <=119)begin
                 address = address_init_part+7; end
-            else if (vga_vcnt >=241 && vga_vcnt <=270)begin
+            else if (vga_vcnt_mod >=120 && vga_vcnt_mod <=134)begin
                 address = address_init_part+8; end
-            else if (vga_vcnt >=271 && vga_vcnt <=300)begin
+            else if (vga_vcnt_mod >=135 && vga_vcnt_mod <=149)begin
                 address = address_init_part+9; end
-            else if (vga_vcnt >=301 && vga_vcnt <=330)begin
+            else if (vga_vcnt_mod >=150 && vga_vcnt_mod <=164)begin
                 address = address_init_part+10; end
-            else if (vga_vcnt >=331 && vga_vcnt <=360)begin
+            else if (vga_vcnt_mod >=165 && vga_vcnt_mod <=179)begin
                 address = address_init_part+11; end
-            else if (vga_vcnt >=361 && vga_vcnt <=390)begin
+            else if (vga_vcnt_mod >=180 && vga_vcnt_mod <=194)begin
                 address = address_init_part+12; end
-            else if (vga_vcnt >=391 && vga_vcnt <=420)begin
+            else if (vga_vcnt_mod >=195 && vga_vcnt_mod <=209)begin
                 address = address_init_part+13; end
-            else if (vga_vcnt >=421 && vga_vcnt <=450)begin
+            else if (vga_vcnt_mod >=210 && vga_vcnt_mod <=224)begin
                 address = address_init_part+14; end
-            else if (vga_vcnt >=451 && vga_vcnt <=480)begin
+            else if (vga_vcnt_mod >=225 && vga_vcnt_mod <=239)begin
                 address = address_init_part+15; end
                 
-            vga_hcnt_mod = vga_hcnt % 160;
+            vga_hcnt_mod = vga_hcnt_mod % 53;
 
             //Set VGA R, G, and B values based on output from font ROM
-            if (vga_hcnt_mod >= 1 && vga_hcnt_mod <= 20) begin   //character 0
+            if (vga_hcnt_mod >= 3 && vga_hcnt_mod <= 8) begin   //character 0
                     VGA_R = {4{data_char[7]}}; VGA_G = {4{data_char[7]}}; VGA_B = {4{data_char[7]}}; end
-            else if (vga_hcnt_mod >= 21 && vga_hcnt_mod <= 40) begin   //character 1
+            else if (vga_hcnt_mod >= 9 && vga_hcnt_mod <= 14) begin   //character 1
                     VGA_R = {4{data_char[6]}}; VGA_G = {4{data_char[6]}}; VGA_B = {4{data_char[6]}}; end
-            else if (vga_hcnt_mod >= 41 && vga_hcnt_mod <= 60) begin   //character 2
+            else if (vga_hcnt_mod >= 15 && vga_hcnt_mod <= 20) begin   //character 2
                     VGA_R = {4{data_char[5]}}; VGA_G = {4{data_char[5]}}; VGA_B = {4{data_char[5]}}; end
-            else if (vga_hcnt_mod >= 61 && vga_hcnt_mod <= 80) begin   //character 3
+            else if (vga_hcnt_mod >= 21 && vga_hcnt_mod <= 26) begin   //character 3
                     VGA_R = {4{data_char[4]}}; VGA_G = {4{data_char[4]}}; VGA_B = {4{data_char[4]}}; end
-           else if (vga_hcnt_mod >= 81 && vga_hcnt_mod <= 100)  begin   //character 4
+           else if (vga_hcnt_mod >= 27 && vga_hcnt_mod <= 32)  begin   //character 4
                     VGA_R = {4{data_char[3]}}; VGA_G = {4{data_char[3]}}; VGA_B = {4{data_char[3]}}; end
-           else if (vga_hcnt_mod >= 101 && vga_hcnt_mod <= 120)  begin   //character 5
+           else if (vga_hcnt_mod >= 33 && vga_hcnt_mod <= 38)  begin   //character 5
                     VGA_R = {4{data_char[2]}}; VGA_G = {4{data_char[2]}}; VGA_B = {4{data_char[2]}}; end
-           else if (vga_hcnt_mod >= 121 && vga_hcnt_mod <= 140) begin   //character 6
+           else if (vga_hcnt_mod >= 39 && vga_hcnt_mod <= 44) begin   //character 6
                     VGA_R = {4{data_char[1]}}; VGA_G = {4{data_char[1]}}; VGA_B = {4{data_char[1]}}; end
-           else if (vga_hcnt_mod >= 141 && vga_hcnt_mod <= 159)  begin   //character 7
+           else if (vga_hcnt_mod >= 45 && vga_hcnt_mod <= 50)  begin   //character 7
                     VGA_R = {4{data_char[0]}}; VGA_G = {4{data_char[0]}}; VGA_B = {4{data_char[0]}}; end
+           else begin
+                    VGA_R = 4'b0; VGA_G = 4'b0; VGA_B = 4'b0; end
 		  end
 		
 end

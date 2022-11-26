@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Nov 22 20:29:33 2022
+| Date         : Sat Nov 26 14:43:16 2022
 | Host         : ECE-PHO115-02 running 64-bit major release  (build 9200)
 | Command      : report_drc -file term_interf_top_drc_opted.rpt -pb term_interf_top_drc_opted.pb -rpx term_interf_top_drc_opted.rpx
 | Design       : term_interf_top
@@ -24,12 +24,12 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 2
+             Violations found: 3
 +-------------+----------+-------------------------------------------------------------+------------+
 | Rule        | Severity | Description                                                 | Violations |
 +-------------+----------+-------------------------------------------------------------+------------+
 | CFGBVS-1    | Warning  | Missing CFGBVS and CONFIG_VOLTAGE Design Properties         | 1          |
-| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 1          |
+| PLHOLDVIO-2 | Warning  | Non-Optimal connections which could lead to hold violations | 2          |
 +-------------+----------+-------------------------------------------------------------+------------+
 
 2. REPORT DETAILS
@@ -51,6 +51,12 @@ PLHOLDVIO-2#1 Warning
 Non-Optimal connections which could lead to hold violations  
 A LUT cs/fifo/buf_mem_reg_i_2 is driving clock pin of 16 cells. This could lead to large hold time violations. Involved cells are:
 uart_txs_cnt_reg[0], uart_txs_cnt_reg[10], uart_txs_cnt_reg[11], uart_txs_cnt_reg[12], uart_txs_cnt_reg[13], uart_txs_cnt_reg[14], uart_txs_cnt_reg[15], uart_txs_cnt_reg[1], uart_txs_cnt_reg[2], uart_txs_cnt_reg[3], uart_txs_cnt_reg[4], uart_txs_cnt_reg[5], uart_txs_cnt_reg[6], uart_txs_cnt_reg[7], uart_txs_cnt_reg[8] (the first 15 of 16 listed)
+Related violations: <none>
+
+PLHOLDVIO-2#2 Warning
+Non-Optimal connections which could lead to hold violations  
+A LUT dl/FSM_onehot_halt_cs[2]_i_1 is driving clock pin of 4 cells. This could lead to large hold time violations. Involved cells are:
+dp1/FSM_onehot_halt_cs_reg[0], dp1/FSM_onehot_halt_cs_reg[1], dp1/FSM_onehot_halt_cs_reg[2], dp1/ap_start_cs_reg
 Related violations: <none>
 
 

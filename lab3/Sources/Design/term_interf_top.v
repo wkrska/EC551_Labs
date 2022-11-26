@@ -214,33 +214,34 @@ module term_interf_top(
         .btnOut(resume)
         );
     
-//    datapath dp1(
-//        .clk((mode_select==4'h1 || mode_select==4'h2) ? CLK100MHZ : 'b0), // Clock gating, turns off datapath when not in right mode;
-//        .rst(BTN[4]),
-//        .resume(resume),
-//        .user_inst_write(inst_write),
-//        .user_inst_addr(inst_addr),
-//        .ap_start(ap_start),
-//        .rf_out(register_data),
-//        .halt(halt)
-//    );
-    assign register_data='b0;
-    assign halt = 'b0;
+    datapath dp1(
+        .clk((mode_select==4'h1 || mode_select==4'h2) ? CLK100MHZ : 'b0), // Clock gating, turns off datapath when not in right mode;
+        .rst(BTN[4]),
+        .resume(resume),
+        .user_inst_write(inst_write),
+        .user_inst_addr(inst_addr),
+        .ap_start(ap_start),
+        .rf_out(register_data),
+        .halt(halt)
+    );
+    
+ //   assign register_data='b0;
+ //   assign halt = 'b0;
         
-//    top_VGA  VGA1(
-//        .reg_value(register_data),
-//        .CLK100MHZ(CLK100MHZ),
-//        .rst(BTN[4]),
-//        .VGA_R(VGA_R),
-//        .VGA_G(VGA_G),
-//        .VGA_B(VGA_B),
-//        .VGA_HS(VGA_HS),
-//        .VGA_VS(VGA_VS)
-//        );
-    assign VGA_R  = 'b0;
-    assign VGA_G  = 'b0;
-    assign VGA_B  = 'b0;
-    assign VGA_HS = 'b0;
-    assign VGA_VS = 'b0;
+    top_VGA  VGA1(
+        .reg_values(register_data),
+        .CLK100MHZ(CLK100MHZ),
+        .rst(BTN[4]),
+        .VGA_R(VGA_R),
+        .VGA_G(VGA_G),
+        .VGA_B(VGA_B),
+        .VGA_HS(VGA_HS),
+        .VGA_VS(VGA_VS)
+        );
+//    assign VGA_R  = 'b0;
+//    assign VGA_G  = 'b0;
+//    assign VGA_B  = 'b0;
+//    assign VGA_HS = 'b0;
+//    assign VGA_VS = 'b0;
     
 endmodule
