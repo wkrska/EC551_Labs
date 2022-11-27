@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Sat Nov 26 14:48:22 2022
+| Date             : Sun Nov 27 13:23:00 2022
 | Host             : ECE-PHO115-02 running 64-bit major release  (build 9200)
 | Command          : report_power -file term_interf_top_power_routed.rpt -pb term_interf_top_power_summary_routed.pb -rpx term_interf_top_power_routed.rpx
 | Design           : term_interf_top
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.273        |
+| Total On-Chip Power (W)  | 0.272        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 0.175        |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.010 |        3 |       --- |             --- |
-| Slice Logic    |     0.065 |    25965 |       --- |             --- |
-|   LUT as Logic |     0.062 |    17644 |     63400 |           27.83 |
+| Clocks         |     0.009 |        3 |       --- |             --- |
+| Slice Logic    |     0.065 |    26020 |       --- |             --- |
+|   LUT as Logic |     0.062 |    17699 |     63400 |           27.92 |
 |   F7/F8 Muxes  |     0.002 |     3894 |     63400 |            6.14 |
 |   CARRY4       |     0.001 |      321 |     15850 |            2.03 |
 |   Register     |    <0.001 |     3618 |    126800 |            2.85 |
 |   BUFG         |    <0.001 |        5 |        32 |           15.63 |
 |   Others       |     0.000 |       73 |       --- |             --- |
-| Signals        |     0.075 |    17133 |       --- |             --- |
+| Signals        |     0.076 |    17158 |       --- |             --- |
 | Block RAM      |    <0.001 |      0.5 |       135 |            0.37 |
-| I/O            |     0.025 |       57 |       210 |           27.14 |
+| I/O            |     0.024 |       59 |       210 |           28.10 |
 | Static Power   |     0.098 |          |           |                 |
-| Total          |     0.273 |          |           |                 |
+| Total          |     0.272 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -147,13 +147,13 @@ Table of Contents
 |   VGA1             |     0.002 |
 |     vga_controller |     0.002 |
 |   cs               |     0.007 |
-|     fifo           |     0.007 |
+|     fifo           |     0.006 |
 |   dl               |     0.001 |
 |   dp1              |     0.137 |
-|     mem_0          |     0.082 |
+|     mem_0          |     0.084 |
 |     reg1           |     0.002 |
-|     reg2           |     0.050 |
-|     rf_0           |     0.003 |
+|     reg2           |     0.049 |
+|     rf_0           |     0.002 |
 +--------------------+-----------+
 
 

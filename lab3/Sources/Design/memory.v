@@ -13,7 +13,8 @@ module memory(
     input [`awidth_mem-1:0] raddr_d, // read addr data
     input [`awidth_mem-1:0] waddr,
     output [`dwidth_dat-1:0] iout,
-    output [`dwidth_dat-1:0] dout
+    output [`dwidth_dat-1:0] dout,
+    output [`dwidth_dat*12-1:0] MEM_OUT
     );
 
 //    reg [`dwidth_dat-1:0] mem [(2**`awidth_mem):0];
@@ -35,5 +36,7 @@ module memory(
     // Assign output
     assign iout = mem[raddr_i];
     assign dout = (raddr_d == waddr && wen) ? din : mem[raddr_d];
+    
+    assign MEM_OUT = {mem[41],mem[40],mem[39],mem[38],mem[37],mem[36],mem[35],mem[34],mem[33],mem[32],mem[31],mem[30]};
 
 endmodule

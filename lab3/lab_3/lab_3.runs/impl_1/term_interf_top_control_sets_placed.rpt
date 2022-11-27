@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Sat Nov 26 14:45:41 2022
+| Date         : Sun Nov 27 13:20:29 2022
 | Host         : ECE-PHO115-02 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file term_interf_top_control_sets_placed.rpt
 | Design       : term_interf_top
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             408 |          183 |
-| No           | No                    | Yes                    |              33 |           10 |
-| No           | Yes                   | No                     |            2460 |         2248 |
-| Yes          | No                    | No                     |              14 |            5 |
+| No           | No                    | No                     |             408 |          184 |
+| No           | No                    | Yes                    |              33 |           11 |
+| No           | Yes                   | No                     |            2460 |         2224 |
+| Yes          | No                    | No                     |              14 |            7 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             703 |          219 |
+| Yes          | Yes                   | No                     |             703 |          213 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,186 +73,186 @@ Table of Contents
 +--------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------------+----------------+
 |                Clock Signal                |                      Enable Signal                     |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count |
 +--------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------------+----------------+
-|  VGA1/vga_controller/blank_reg_0           |                                                        |                                                        |                1 |              1 |
-|  dp1/reg1/dout_reg[60]_1                   |                                                        | BTN_IBUF[4]                                            |                1 |              1 |
-|  dl/mode_flag_n_reg_i_2_n_2                |                                                        |                                                        |                1 |              1 |
-|  VGA1/pixel_clk                            |                                                        |                                                        |                1 |              1 |
 |  VGA1/pixel_clk                            |                                                        | VGA1/vga_controller/HS0                                |                1 |              1 |
+|  dl/mode_flag_n_reg_i_2_n_2                |                                                        |                                                        |                1 |              1 |
+|  dp1/reg1/dout_reg[60]_1                   |                                                        | BTN_IBUF[4]                                            |                1 |              1 |
 |  VGA1/pixel_clk                            |                                                        | VGA1/vga_controller/VS0                                |                1 |              1 |
 | ~keyboard_interface/keyboard/debouncer1/O0 |                                                        |                                                        |                1 |              1 |
-|  cs/rd_n_reg[1]_i_2_n_2                    |                                                        |                                                        |                1 |              2 |
+|  VGA1/vga_controller/blank_reg_3           |                                                        |                                                        |                1 |              1 |
+|  VGA1/pixel_clk                            |                                                        |                                                        |                1 |              1 |
 |  dp1/fetch_0/stall_ns_reg[1]_i_1_n_2       |                                                        |                                                        |                1 |              2 |
+|  cs/rd_n_reg[1]_i_2_n_2                    |                                                        |                                                        |                1 |              2 |
 |  VGA1/vga_controller/blank_reg_1[0]        |                                                        |                                                        |                1 |              2 |
 |  keyboard_interface/keyboard/flag_reg_n_2  |                                                        |                                                        |                1 |              3 |
-|  btn/db/u1/slow_clk                        |                                                        |                                                        |                2 |              3 |
 |  keyboard_interface/ns                     |                                                        |                                                        |                1 |              3 |
+|  btn/db/u1/slow_clk                        |                                                        |                                                        |                1 |              3 |
 |  dl/CLK                                    |                                                        | BTN_IBUF[4]                                            |                2 |              4 |
-|  VGA1/vga_controller/blank_reg_3[0]        |                                                        |                                                        |                1 |              4 |
-| ~keyboard_interface/keyboard/debouncer1/O0 | keyboard_interface/keyboard/cnt[3]_i_2_n_2             | keyboard_interface/keyboard/cnt[3]_i_1_n_2             |                1 |              4 |
-|  dp1/halt_ns                               |                                                        |                                                        |                1 |              4 |
 |  keyboard_interface/CLK50MHZ               |                                                        | keyboard_interface/keyboard/debouncer1/clear           |                1 |              4 |
+|  dp1/halt_ns                               |                                                        |                                                        |                1 |              4 |
+| ~keyboard_interface/keyboard/debouncer1/O0 | keyboard_interface/keyboard/cnt[3]_i_2_n_2             | keyboard_interface/keyboard/cnt[3]_i_1_n_2             |                1 |              4 |
+|  VGA1/vga_controller/blank_reg_2[0]        |                                                        |                                                        |                2 |              4 |
 |  keyboard_interface/CLK50MHZ               |                                                        |                                                        |                2 |              5 |
-|  keyboard_interface/CLK50MHZ               | keyboard_interface/keyboard/debouncer1/cnt1[4]_i_2_n_2 | keyboard_interface/keyboard/debouncer1/cnt1[4]_i_1_n_2 |                2 |              5 |
-|  VGA1/vga_controller/E[0]                  |                                                        |                                                        |                5 |              8 |
-| ~keyboard_interface/keyboard/debouncer1/O0 |                                                        | BTN_IBUF[4]                                            |                2 |              8 |
-|  CLK100MHZ_IBUF_BUFG                       | cs/fifo/p_2_in                                         | BTN_IBUF[4]                                            |                2 |              9 |
+|  keyboard_interface/CLK50MHZ               | keyboard_interface/keyboard/debouncer1/cnt1[4]_i_2_n_2 | keyboard_interface/keyboard/debouncer1/cnt1[4]_i_1_n_2 |                1 |              5 |
+| ~keyboard_interface/keyboard/debouncer1/O0 |                                                        | BTN_IBUF[4]                                            |                3 |              8 |
+|  VGA1/vga_controller/blank_reg_0[0]        |                                                        |                                                        |                4 |              8 |
 |  CLK100MHZ_IBUF_BUFG                       | cs/fifo/p_1_in                                         | BTN_IBUF[4]                                            |                2 |              9 |
-|  nolabel_line96/uart_ns                    |                                                        |                                                        |                4 |             11 |
-|  VGA1/pixel_clk                            |                                                        | BTN_IBUF[4]                                            |                6 |             11 |
+|  CLK100MHZ_IBUF_BUFG                       | cs/fifo/p_2_in                                         | BTN_IBUF[4]                                            |                2 |              9 |
+|  VGA1/pixel_clk                            |                                                        | BTN_IBUF[4]                                            |                4 |             11 |
+|  nolabel_line96/uart_ns                    |                                                        |                                                        |                5 |             11 |
 |  VGA1/pixel_clk                            | VGA1/vga_controller/vcounter[10]_i_1_n_2               | BTN_IBUF[4]                                            |                4 |             11 |
 |  keyboard_interface/keyboard/ns            |                                                        |                                                        |                4 |             12 |
 |  CLK100MHZ_IBUF_BUFG                       |                                                        | UART_con/TX/bitTmr                                     |                4 |             14 |
-|  CLK100MHZ_IBUF_BUFG                       | UART_con/RX/r_Clock_Count[13]_i_1_n_2                  |                                                        |                5 |             14 |
+|  CLK100MHZ_IBUF_BUFG                       | UART_con/RX/r_Clock_Count[13]_i_1_n_2                  |                                                        |                7 |             14 |
 |  UART_con/RX/uart_rx_dv                    |                                                        |                                                        |                4 |             16 |
-|  dp1/reg2/mem_reg[61][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  clk_local                                 | dp1/reg2/dout_reg[43]_1[0]                             | BTN_IBUF[4]                                            |                7 |             16 |
-|  clk_local                                 | dp1/reg2/dout_reg[43]_3[0]                             | BTN_IBUF[4]                                            |                8 |             16 |
-|  clk_local                                 | dp1/reg2/dout_reg[43]_2[0]                             | BTN_IBUF[4]                                            |                7 |             16 |
-|  clk_local                                 | dp1/reg2/dout_reg[43]_4[0]                             | BTN_IBUF[4]                                            |                4 |             16 |
-|  clk_local                                 | dp1/reg2/dout_reg[44]_0[0]                             | BTN_IBUF[4]                                            |                7 |             16 |
-|  clk_local                                 | dp1/reg2/dout_reg[45]_0[0]                             | BTN_IBUF[4]                                            |                6 |             16 |
-|  dp1/reg2/mem_reg[78][15]_i_5_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[74][15]_i_6_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[87][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[88][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  cs/fifo/uart_tx_send                      |                                                        |                                                        |                4 |             16 |
-|  dp1/reg2/mem_reg[50][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[58][15]_i_8_2[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[70][15]_i_8_0[0]         |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/mem_reg[77][15]_i_11_1[0]        |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[74][15]_i_6_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[77][15]_i_11_0[0]        |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[88][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[75][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  clk_local                                 | dp1/reg2/dout_reg[44]_0[0]                             | BTN_IBUF[4]                                            |                6 |             16 |
+|  clk_local                                 | dp1/reg2/dout_reg[45]_0[0]                             | BTN_IBUF[4]                                            |                5 |             16 |
+|  clk_local                                 | dp1/reg2/dout_reg[43]_4[0]                             | BTN_IBUF[4]                                            |                5 |             16 |
+|  clk_local                                 | dp1/reg2/dout_reg[43]_1[0]                             | BTN_IBUF[4]                                            |                8 |             16 |
+|  clk_local                                 | dp1/reg2/dout_reg[43]_2[0]                             | BTN_IBUF[4]                                            |                6 |             16 |
+|  clk_local                                 | dp1/reg2/dout_reg[43]_3[0]                             | BTN_IBUF[4]                                            |               10 |             16 |
+|  dp1/reg2/mem_reg[75][15]_i_7_2[0]         |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
 |  dp1/reg2/mem_reg[78][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[74][15]_i_6_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  uart_tx_ready_BUFG                        |                                                        |                                                        |                4 |             16 |
-|  dp1/reg2/mem_reg[89][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[58][15]_i_8_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  VGA1/vga_controller/blank_reg_2[0]        |                                                        |                                                        |               10 |             16 |
-|  dp1/reg2/BTN[4]_12[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_13[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_18[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_0[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_1[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_10[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_11[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_15[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_16[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_19[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_2[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4][0]                        |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_14[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[51][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  VGA1/vga_controller/E[0]                  |                                                        |                                                        |               14 |             16 |
 |  dp1/reg2/BTN[4]_17[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_2[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_20[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_1[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_18[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_10[0]                     |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/BTN[4]_12[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_15[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_14[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_19[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_0[0]                      |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/BTN[4]_11[0]                     |                                                        | BTN_IBUF[4]                                            |               13 |             16 |
+|  dp1/reg2/BTN[4]_13[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4][0]                        |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_16[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/BTN[4]_28[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_23[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/BTN[4]_46[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_40[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_24[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_43[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_38[0]                     |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/BTN[4]_44[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_27[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_42[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_45[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_9[0]                      |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/BTN[4]_33[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_52[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_47[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_48[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_39[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/BTN[4]_29[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_49[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_35[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_40[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_23[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_25[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_53[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_30[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_31[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_34[0]                     |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
 |  dp1/reg2/BTN[4]_4[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/BTN[4]_41[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_42[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_44[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_47[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_20[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_21[0]                     |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
-|  dp1/reg2/BTN[4]_6[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_8[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_38[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_7[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/BTN[4]_26[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_6[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_7[0]                      |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
 |  dp1/reg2/BTN[4]_37[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_24[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_52[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_31[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_33[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_50[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_22[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_35[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_34[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_51[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_30[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_32[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/BTN[4]_36[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_25[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_48[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_3[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_32[0]                     |                                                        | BTN_IBUF[4]                                            |               13 |             16 |
+|  dp1/reg2/BTN[4]_51[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/BTN[4]_5[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_53[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_9[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_49[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_39[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_43[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_45[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/BTN[4]_27[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/ap_start_cs_reg_1[0]             |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_22[0]                     |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/BTN[4]_8[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_50[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_21[0]                     |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/BTN[4]_3[0]                      |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/E[0]                             |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/ap_start_cs_reg_0[0]             |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/ap_start_cs_reg[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/ap_start_cs_reg_3[0]             |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/ap_start_cs_reg_0[0]             |                                                        | BTN_IBUF[4]                                            |               13 |             16 |
+|  dp1/reg2/ap_start_cs_reg_1[0]             |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/ap_start_cs_reg_2[0]             |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[17]_10[0]               |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/ap_start_cs_reg_3[0]             |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[17]_11[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[17]_12[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[17]_10[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[17]_13[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[17]_14[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[17]_15[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[17]_3[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[17]_7[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[19]_35[0]               |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/dout_reg[20]_32[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[22]_22[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[22]_26[0]               |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/dout_reg[17]_4[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[19]_34[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[18]_25[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[22]_24[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[19]_36[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[22]_20[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[22]_28[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[17]_6[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[22]_21[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[22]_25[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[22]_30[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[17]_8[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[17]_5[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[19]_34[0]               |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
-|  dp1/reg2/dout_reg[19]_36[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[20]_31[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[20]_32[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[20]_33[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[17]_8[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[22]_19[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[17]_4[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[18]_25[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[22]_26[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[22]_22[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[19]_33[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[22]_20[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[18]_26[0]               |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
-|  dp1/reg2/dout_reg[22]_23[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[19]_37[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[22]_18[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[19]_35[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[17]_9[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[22]_27[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[22]_29[0]               |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/dout_reg[17]_6[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[22]_23[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[18]_26[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[20]_30[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[17]_7[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[18]_24[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[17]_9[0]                |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
 |  dp1/reg2/dout_reg[24]_21[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[27]_0[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[27]_2[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/dout_reg[27]_1[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[39][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[26][15]_i_6_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[75][15]_i_7_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[49][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[51][15]_i_6_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[51][15]_i_6_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[27]_2[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[39][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
 |  dp1/reg2/mem_reg[53][15]_i_6_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/dout_reg[22]_29[0]               |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[70][15]_i_8_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[67][15]_i_4_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[49][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/mem_reg[50][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/mem_reg[51][15]_i_6_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[58][15]_i_8_0[0]         |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
+|  dp1/reg2/mem_reg[51][15]_i_6_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/dout_reg[17]_5[0]                |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[26][15]_i_6_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[87][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[58][15]_i_8_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/mem_reg[70][15]_i_8_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[75][15]_i_7_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[61][15]_i_5_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/mem_reg[71][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[51][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[75][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[77][15]_i_11_0[0]        |                                                        | BTN_IBUF[4]                                            |               15 |             16 |
-|  dp1/reg2/mem_reg[77][15]_i_11_1[0]        |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
 |  dp1/reg2/mem_reg[77][15]_i_12_0[0]        |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[58][15]_i_8_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[74][15]_i_6_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  dp1/reg2/mem_reg[75][15]_i_7_2[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
-|  CLK100MHZ_IBUF_BUFG                       |                                                        |                                                        |                9 |             18 |
+|  dp1/reg2/mem_reg[67][15]_i_4_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[78][15]_i_5_1[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[89][15]_i_7_0[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  dp1/reg2/mem_reg[58][15]_i_8_2[0]         |                                                        | BTN_IBUF[4]                                            |               16 |             16 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        |                                                        |                8 |             18 |
 |  clk_local                                 | dp1/ap_start_cs                                        | BTN_IBUF[4]                                            |               12 |             25 |
 |  CLK100MHZ_IBUF_BUFG                       |                                                        | btn/db/u1/counter0                                     |                7 |             27 |
 |  CLK100MHZ_IBUF_BUFG                       | UART_con/TX/bitIndex                                   | uart_tx_ready_BUFG                                     |                9 |             32 |
 |  wen_key_uart_BUFG                         |                                                        |                                                        |               12 |             32 |
-|  wen_key_ps2_BUFG                          |                                                        |                                                        |               12 |             44 |
-|  n_1_18373_BUFG                            |                                                        |                                                        |               37 |             67 |
-|  n_0_19405_BUFG                            |                                                        |                                                        |               63 |            120 |
-|  clk_local                                 |                                                        | BTN_IBUF[4]                                            |               57 |            125 |
-|  CLK100MHZ_IBUF_BUFG                       |                                                        | BTN_IBUF[4]                                            |              117 |            233 |
-|  CLK100MHZ_IBUF_BUFG                       | cs/fifo/fifo_counter                                   | BTN_IBUF[4]                                            |              148 |            512 |
+|  wen_key_ps2_BUFG                          |                                                        |                                                        |               11 |             44 |
+|  n_1_18373_BUFG                            |                                                        |                                                        |               39 |             67 |
+|  n_0_19405_BUFG                            |                                                        |                                                        |               60 |            120 |
+|  clk_local                                 |                                                        | BTN_IBUF[4]                                            |               52 |            125 |
+|  CLK100MHZ_IBUF_BUFG                       |                                                        | BTN_IBUF[4]                                            |              121 |            233 |
+|  CLK100MHZ_IBUF_BUFG                       | cs/fifo/fifo_counter                                   | BTN_IBUF[4]                                            |              142 |            512 |
 +--------------------------------------------+--------------------------------------------------------+--------------------------------------------------------+------------------+----------------+
 
 

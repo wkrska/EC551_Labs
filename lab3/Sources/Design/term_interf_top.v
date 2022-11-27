@@ -94,12 +94,12 @@ module term_interf_top(
     );
     
     uart_arbiter(
-        .clk_100(CLK100MHZ),
-        .rst(BTN[4]),
-        .uart_dat(uart_rx_dat),
-        .uart_dv(uart_rx_dv),
-        .key_uart(key_uart),
-        .wen_uart(wen_key_uart)
+        .clk_100       (CLK100MHZ   ),
+        .rst           (BTN[4]      ),
+        .uart_dat      (uart_rx_dat ),
+        .uart_dv       (uart_rx_dv  ),
+        .key_uart      (key_uart    ),
+        .wen_uart      (wen_key_uart)
     );
     
     char_stager cs(
@@ -123,17 +123,17 @@ module term_interf_top(
     
 
     ps2_to_ascii p2a(
-        .ps2(key_ps2),
-        .ascii(key_ps2_ascii)
+        .ps2     (key_ps2      ),
+        .ascii   (key_ps2_ascii)
     );
     
     top_keyboard keyboard_interface(
-    .CLK100MHZ(CLK100MHZ),
-    .rst(BTN[4]),
-    .PS2_CLK(PS2_CLK),
-    .PS2_DATA(PS2_DATA),
-    .keystroke(key_ps2),
-    .keyflagtop(wen_key_ps2)
+        .CLK100MHZ   (CLK100MHZ   ),
+        .rst         (BTN[4]      ),
+        .PS2_CLK     (PS2_CLK     ),
+        .PS2_DATA    (PS2_DATA    ),
+        .keystroke   (key_ps2     ),
+        .keyflagtop  (wen_key_ps2 )
     );
 
     reg [31:0] ps2_hold,uart_hold;
@@ -205,6 +205,8 @@ module term_interf_top(
 //    );
         
     wire [`dwidth_dat*6-1:0] register_data;
+    wire [`dwidth_dat*12-1:0] memory_data;
+    wire [`dwidth_dat*6-1:0] VGA_display_data;
     wire resume,halt;
     
     btn_edge btn(
@@ -222,14 +224,17 @@ module term_interf_top(
         .user_inst_addr(inst_addr),
         .ap_start(ap_start),
         .rf_out(register_data),
+        .mem_out(memory_data),
         .halt(halt)
     );
     
  //   assign register_data='b0;
  //   assign halt = 'b0;
+ 
+  assign VGA_display_data =SW[1]? memory_data[191:96]: (SW[0]? memory_data[95:0]: register_data);
         
     top_VGA  VGA1(
-        .reg_values(register_data),
+        .display_values(VGA_display_data),
         .CLK100MHZ(CLK100MHZ),
         .rst(BTN[4]),
         .VGA_R(VGA_R),

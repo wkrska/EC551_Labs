@@ -9,6 +9,7 @@ module datapath (
     input [`awidth_mem-1:0] user_inst_addr,
     input ap_start, resume,
     output [`dwidth_dat*6-1:0] rf_out,
+    output [`dwidth_dat*12-1:0] mem_out,
     output [`dwidth_dat-1:0] disp_inst,
     output wire halt
 );
@@ -158,7 +159,8 @@ module datapath (
         .din((ap_start_cs == 1'b0) ? user_inst_write : RES_WB),
         .wen((ap_start_cs == 1'b0) ? 1'b1 : MEM_WE),
         .iout(INST_read),
-        .dout(MEM_D_ID)
+        .dout(MEM_D_ID),
+        .MEM_OUT(mem_out)
     );
 
     reg_param #(.SIZE(2*`awidth_reg+4+3*`dwidth_dat+2*`awidth_mem)) reg1 (
