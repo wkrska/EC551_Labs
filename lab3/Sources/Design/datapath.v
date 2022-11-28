@@ -3,14 +3,15 @@
 `include "my_header.vh"
 
 module datapath (
-    input clk,
-    input rst,
-    input [`dwidth_dat-1:0] user_inst_write,
-    input [`awidth_mem-1:0] user_inst_addr,
-    input ap_start, resume,
-    output [`dwidth_dat*6-1:0] rf_out,
-    output [`dwidth_dat*12-1:0] mem_out,
-    output [`dwidth_dat-1:0] disp_inst,
+    input wire clk,
+    input wire rst,
+    input wire [`dwidth_dat-1:0] user_inst_write,
+    input wire [`awidth_mem-1:0] user_inst_addr,
+    input wire user_inst_wen,
+    input wire ap_start, resume,
+    output wire [`dwidth_dat*6-1:0] rf_out,
+    output wire [`dwidth_dat*12-1:0] mem_out,
+    output wire [`dwidth_dat-1:0] disp_inst,
     output wire halt
 );
 
@@ -157,7 +158,7 @@ module datapath (
         .raddr_d(RF_D2_ID),
         .waddr((ap_start_cs == 1'b0) ? user_inst_addr : RF_D1_WB),
         .din((ap_start_cs == 1'b0) ? user_inst_write : RES_WB),
-        .wen((ap_start_cs == 1'b0) ? 1'b1 : MEM_WE),
+        .wen((ap_start_cs == 1'b0) ? user_inst_wen : MEM_WE),
         .iout(INST_read),
         .dout(MEM_D_ID),
         .MEM_OUT(mem_out)

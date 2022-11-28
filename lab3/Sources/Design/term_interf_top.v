@@ -58,29 +58,11 @@ module term_interf_top(
     wire [3:0] debug_state_char, count_debug_data;
     wire [11:0] inst_addr;
     wire [15:0] inst_write;
+    wire inst_wen;
     wire [`dwidth_dat_user*2-1:0] alu_out;
     wire [`dwidth_mat*3*3-1:0] bench_out;
     //============= UART and PS/2 =============//
     
-    
-//    UART_top UART_top(
-//    .SW(SW),
-//    .BTN(BTN),
-//    .CLK(CLK100MHZ),
-//    .RST(BTN[4]),
-//    .keyflag(keyflag),
-//    .modeflag(modeflag),
-//    .alu_out(disp_alu),
-//    .bench_out(disp_mat),
-//    .SSEG_CA(SSEG_CA),
-//    .SSEG_AN(SSEG_AN),
-//    .mode_select(mode_select),
-//    .key_select(key_select_ascii),
-//    .UART_TXD(UART_TXD),
-//    .UART_RXD(UART_RXD),
-//    .uart_dat(uart_dat),
-//    .uart_dv(uart_dv)
-//    );
     UART_controller UART_con(
         .CLK           (CLK100MHZ    ),
         .RST           (BTN[4]       ),
@@ -136,6 +118,7 @@ module term_interf_top(
         .keyflagtop  (wen_key_ps2 )
     );
 
+    // Debugging counters and displays
     reg [31:0] ps2_hold,uart_hold;
     reg [16:0] ps2_cnt=0,uart_rx_cnt=0,uart_txs_cnt=0,uart_txr_cnt=0;
     always @(posedge wen_key_ps2)
@@ -186,6 +169,7 @@ module term_interf_top(
         .mode_flag   (modeflag      ),
         .inst_addr   (inst_addr     ),
         .inst_write  (inst_write    ),
+        .inst_wen    (inst_wen      ),
         .alu_out     (alu_out       ),
         .bench_out   (bench_out     ),
         .result_ready(result_ready  ),
@@ -222,6 +206,7 @@ module term_interf_top(
         .resume(resume),
         .user_inst_write(inst_write),
         .user_inst_addr(inst_addr),
+        .user_inst_wen(inst_wen),
         .ap_start(ap_start),
         .rf_out(register_data),
         .mem_out(memory_data),

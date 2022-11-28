@@ -13,6 +13,7 @@ module data_loader(
     output reg mode_flag,
     output reg [11:0] inst_addr,
     output reg [15:0] inst_write,
+    output wire inst_wen,
     output wire [`dwidth_dat_user*2-1:0] alu_out,
     output wire [`dwidth_mat*3*3-1:0] bench_out,
     output reg result_ready,
@@ -95,6 +96,7 @@ reg [7:0] curr_state, next_state;
 assign debug_state = curr_state;
 reg [3:0] count_c,count_n;
 assign count_debug = count_c;
+reg [8:0] prev_key, prev_key_n;
 reg mode_flag_n;
 // Inst write
 reg [`dwidth_dat-1:0] inst_write_n;
@@ -129,6 +131,9 @@ localparam [7:0]    IDLE=8'h40,
 // Extract mode encoding
 assign mode = curr_state[7:4];
 
+// Extract instruction wen
+assign inst_wen = ((curr_state==I_wb || curr_state==L_wb) && count_c == 'd4) ? 1'b1 : 1'b0;
+
 // Clocked portion of FSM
 always @(posedge clk_100) begin
     if (rst) begin
@@ -144,6 +149,7 @@ always @(posedge clk_100) begin
         alu_b <= 0;
         mat_a <= 0;
         mat_b <= 0;
+        prev_key <= 0;
     end else begin
         curr_state <= next_state;
         mode_flag <= mode_flag_n;
@@ -157,6 +163,7 @@ always @(posedge clk_100) begin
         alu_b <= alu_b_n;
         mat_a <= mat_a_n;
         mat_b <= mat_b_n;
+        prev_key <= prev_key_n;
     end
 end
 
@@ -164,18 +171,27 @@ end
 always @(*) begin
     case(curr_state)
         IDLE: begin
-            if (wen_key_ps2) begin
-                case(key_ps2)
-                    8'h43 : next_state = I_ch;
-                    8'h4B : next_state = L_ch;
-                    8'h1C : next_state = A_aa;
-                    8'h32 : next_state = B_ma;
-                    default: next_state = IDLE;
-                endcase
-                mode_flag_n = 'b1;
+            if (wen_key_ps2) begin // if key pressed
+                prev_key_n = key_ps2;
+                if (key_ps2 == 8'h5a) begin // if enter is pressed
+                    case(prev_key) // if prev key was a mode key, go to that mode and assert mode flag, otherwise wait
+                        8'h43 : next_state = I_ch;
+                        8'h4B : next_state = L_ch;
+                        8'h1C : next_state = A_aa;
+                        8'h32 : next_state = B_ma;
+                        default: next_state = IDLE;
+                    endcase
+                    mode_flag_n = 'b1;
+                end else begin // do nothing
+                    next_state = IDLE;
+                    mode_flag_n = 'b0;
+                end
             end else begin
+                prev_key_n = prev_key;
                 next_state = IDLE;
+                mode_flag_n = 'b0;
             end
+
             count_n = 'b0;
             ap_start_n = 'b0;
             ALU_mode_n = 'b0;
@@ -188,7 +204,9 @@ always @(*) begin
             mat_b_n = 'b0;
         end
         I_ch: begin // loads the typed keys into 
-            next_state=(wen_key_ps2 && (~trans_key_ps2[4]) && count_c==3) ? I_wb : ((wen_key_ps2 && trans_key_ps2 == 5'h18) ? I_rn : I_ch);
+            //            key typed   &&  is hex             && 4th char      wb   :   key typed   && is "r"                    run  : next ch
+            next_state=  (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==3) ? I_wb : ((wen_key_ps2 && trans_key_ps2 == 5'h18) ? I_rn : I_ch);
+            //            key typed   &&  is hex             && not 4th char      wb   :   key typed   && is "r"                    run  : next ch
             inst_write_n=(wen_key_ps2 && (~trans_key_ps2[4]) && count_c<4) ? {inst_write[11:0],trans_key_ps2[3:0]} : inst_write;
             count_n=(wen_key_ps2 && (~trans_key_ps2[4]) && count_c<4) ? count_c+1:count_c;
             inst_addr_n = inst_addr;
@@ -200,6 +218,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         I_wb: begin
             next_state=(wen_key_ps2 && trans_key_ps2==5'h11) ? I_ch : I_wb;
@@ -214,6 +233,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         I_rn: begin
             next_state = IDLE;
@@ -228,11 +248,12 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         L_ch: begin // loads the typed keys into 
             next_state=(wen_key_uart && (~trans_key_uart[4]) && count_c==3) ? L_wb : ((wen_key_uart && trans_key_uart == 5'h18) ? L_rn : L_ch);
             inst_write_n=(wen_key_uart && (~trans_key_uart[4]) && count_c<4) ? {inst_write[11:0],trans_key_uart[3:0]} : inst_write;
-            count_n=(wen_key_uart && (~trans_key_ps2[4]) && count_c<4) ? count_c+1:count_c;
+            count_n=(wen_key_uart && (~trans_key_uart[4]) && count_c<4) ? count_c+1:count_c;
             inst_addr_n = inst_addr;
             ap_start_n = 'b0;
             ALU_mode_n = 'b0;
@@ -242,6 +263,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         L_wb: begin
             next_state=(wen_key_uart && trans_key_uart==5'h11) ? L_ch : L_wb;
@@ -256,6 +278,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         L_rn: begin
             next_state = IDLE;
@@ -270,6 +293,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         A_aa: begin
             next_state = (wen_key_ps2 && ~trans_key_ps2[4]) ? A_sh : A_aa;
@@ -286,6 +310,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         A_sh: begin // UNFINISHED
             next_state = (wen_key_ps2 && (trans_key_ps2==5'h12 || trans_key_ps2==5'h13)) ? A_op : A_sh;
@@ -302,6 +327,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         A_op: begin
 //            next_state = (wen_key_ps2 && (trans_key_ps2==5'h14 || trans_key_ps2==5'h15 || trans_key_ps2==5'h16 || trans_key_ps2==5'h17)) ? A_bb : A_op;
@@ -327,6 +353,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         A_bb: begin
             next_state = (wen_key_ps2 && ~trans_key_ps2[4]) ? A_wb : A_bb;
@@ -343,6 +370,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         A_wb: begin
             next_state = IDLE;
@@ -359,6 +387,7 @@ always @(*) begin
             mat_a_n = 'b0;
             mat_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         B_ma: begin
             next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==8) ? B_mb : B_ma;
@@ -375,6 +404,7 @@ always @(*) begin
             alu_a_n = 'b0;
             alu_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         B_mb: begin
             next_state = (wen_key_ps2 && (~trans_key_ps2[4]) && count_c==8) ? B_wb : B_mb;
@@ -391,6 +421,7 @@ always @(*) begin
             alu_a_n = 'b0;
             alu_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
         B_wb: begin
             next_state = IDLE;
@@ -407,6 +438,7 @@ always @(*) begin
             alu_a_n = 'b0;
             alu_b_n = 'b0;
             mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
         end
     endcase
 end
