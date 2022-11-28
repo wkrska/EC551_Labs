@@ -17,7 +17,8 @@ module data_loader(
     output wire [`dwidth_dat_user*2-1:0] alu_out,
     output wire [`dwidth_mat*3*3-1:0] bench_out,
     output reg result_ready,
-    output reg ap_start,
+    output reg ap_start, 
+    output wire ap_stop,
     output wire [7:0] debug_state,
     output wire [3:0] count_debug
 );
@@ -134,6 +135,9 @@ assign mode = curr_state[7:4];
 // Extract instruction wen
 assign inst_wen = ((curr_state==I_wb || curr_state==L_wb) && count_c == 'd4) ? 1'b1 : 1'b0;
 
+// Assign AP_stop
+assign ap_stop = (curr_state==I_ch || curr_state==L_ch) ? 1'b1: 1'b0;
+
 // Clocked portion of FSM
 always @(posedge clk_100) begin
     if (rst) begin
@@ -236,11 +240,11 @@ always @(*) begin
             prev_key_n = key_ps2;
         end
         I_rn: begin
-            next_state = IDLE;
+            next_state = (wen_key_ps2 && trans_key_ps2==5'h11) ? IDLE : I_rn;
             inst_addr_n = 12'd31;
             count_n = 'b0;
             inst_write_n = 'b0;
-            ap_start_n = 1'b1;
+            ap_start_n = (wen_key_ps2 && trans_key_ps2==5'h11) ? 1'b1 : 1'b0;
             ALU_mode_n = 'b0;
             result_ready_n = 'b0;
             alu_a_n = 'b0;
@@ -281,11 +285,11 @@ always @(*) begin
             prev_key_n = key_ps2;
         end
         L_rn: begin
-            next_state = IDLE;
+            next_state = (wen_key_uart && trans_key_uart==5'h11) ? IDLE : L_rn;
             inst_addr_n = 12'd31;
             count_n = 'b0;
             inst_write_n = 'b0;
-            ap_start_n = 1'b1;
+            ap_start_n = (wen_key_uart && trans_key_uart==5'h11) ? 1'b1 : 1'b0;
             ALU_mode_n = 'b0;
             result_ready_n = 'b0;
             alu_a_n = 'b0;

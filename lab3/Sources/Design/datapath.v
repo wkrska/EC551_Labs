@@ -8,10 +8,11 @@ module datapath (
     input wire [`dwidth_dat-1:0] user_inst_write,
     input wire [`awidth_mem-1:0] user_inst_addr,
     input wire user_inst_wen,
-    input wire ap_start, resume,
+    input wire ap_start, resume,ap_stop,
     output wire [`dwidth_dat*6-1:0] rf_out,
     output wire [`dwidth_dat*12-1:0] mem_out,
     output wire [`dwidth_dat-1:0] disp_inst,
+    output wire ap_start_debug,
     output wire halt
 );
 
@@ -36,15 +37,15 @@ module datapath (
     //--------- AP Start FSM ---------//
     // starts datapath 
     reg ap_start_cs, ap_start_ns;
-    always @(ap_start, rst) begin
+    always @(ap_start, ap_stop, rst) begin
         case (ap_start_cs)
             1'b0: ap_start_ns = (ap_start) ? 1'b1 : 1'b0;
-            1'b1: ap_start_ns = (rst) ? 1'b0 : 1'b1;
+            1'b1: ap_start_ns = (rst || ap_stop) ? 1'b0 : 1'b1;
         endcase
     end
     always @(posedge clk)
         ap_start_cs <= (rst) ? 1'b0 : ap_start_ns;
-
+    assign ap_start_debug = ap_start_cs;
     // ---------- Halt FSM -----------//
     // Stalls entire datapath when a halt is encounterd by disconnecting the clock
     wire clk_local, halt_flag;
@@ -145,7 +146,6 @@ module datapath (
         .PC_EN(PC_en),
         .RD1(RF_D1_ID),
         .RD2(RF_D2_ID), // corresponds to RM
-        // .disp_RD(disp_RD),
         .RF_OUT(rf_out),
         .PC_OUT(PC_curr)
     );

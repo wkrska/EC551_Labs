@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Mon Nov 28 16:29:57 2022
+# Process ID: 5436
+# Current directory: X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1
+# Command line: vivado.exe -log term_interf_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source term_interf_top.tcl
+# Log file: X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1/term_interf_top.vds
+# Journal file: X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source term_interf_top.tcl -notrace
+Command: synth_design -top term_interf_top -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 17896 

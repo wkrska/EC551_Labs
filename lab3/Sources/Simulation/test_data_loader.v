@@ -17,7 +17,12 @@ wire inst_wen;
 wire [`dwidth_dat_user*2-1:0] alu_out;
 wire [`dwidth_mat*3*3-1:0] bench_out;
 wire result_ready;
-wire ap_start;
+wire ap_start,ap_stop,ap_start_debug;
+
+wire [`dwidth_dat*6-1:0] rf_out;
+wire [`dwidth_dat*12-1:0] mem_out;
+wire [`dwidth_dat-1:0] disp_inst;
+wire halt;
 
 data_loader dl(
     .clk_100     (clk_100     ),
@@ -34,8 +39,26 @@ data_loader dl(
     .alu_out     (alu_out     ),
     .bench_out   (bench_out   ),
     .result_ready(result_ready),
-    .ap_start    (ap_start    )
+    .ap_start    (ap_start    ),
+    .ap_stop     (ap_stop     )
 );
+
+
+datapath dp1(
+    .clk(clk_100), // Clock gating, turns off datapath when not in right mode;
+    .rst(rst),
+    .resume(1'b0),
+    .user_inst_write(inst_write),
+    .user_inst_addr(inst_addr),
+    .user_inst_wen(inst_wen),
+    .ap_start(ap_start),
+    .ap_stop(ap_stop),
+    .rf_out(rf_out),
+    .mem_out(mem_out),
+    .ap_start_debug(ap_start_debug),
+    .halt(halt)
+);
+
 
 always
     #1 clk_100<=~clk_100;
@@ -44,6 +67,7 @@ initial begin
     clk_100 <= 'b0;
     rst <= 'b0;
     trans_key_ps2 <= 'b0;
+    trans_key_uart <= 'b0;
     wen_key_ps2 <= 'b0;
     key_uart <= 'b0;
     wen_key_uart <= 'b0;
@@ -77,6 +101,7 @@ initial begin
     #10; trans_key_ps2<=5'h0c;#10; wen_key_ps2<=1; #2; wen_key_ps2<=0;
     #10; trans_key_ps2<=5'h11;#10; wen_key_ps2<=1; #2; wen_key_ps2<=0; // enter
     #10; trans_key_ps2<=5'h18;#10; wen_key_ps2<=1; #2; wen_key_ps2<=0; // R
+    #10; trans_key_ps2<=5'h11;#10; wen_key_ps2<=1; #2; wen_key_ps2<=0; // enter
     #10;
 
     #100;
@@ -102,6 +127,7 @@ initial begin
     #10; trans_key_uart<=5'h0c;#10; wen_key_uart<=1; #2; wen_key_uart<=0;
     #10; trans_key_uart<=5'h11;#10; wen_key_uart<=1; #2; wen_key_uart<=0; // enter
     #10; trans_key_uart<=5'h18;#10; wen_key_uart<=1; #2; wen_key_uart<=0; // R
+    #10; trans_key_uart<=5'h11;#10; wen_key_uart<=1; #2; wen_key_uart<=0; // enter
     #10;
 
     #100;

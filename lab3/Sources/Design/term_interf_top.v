@@ -53,7 +53,7 @@ module term_interf_top(
     wire uart_rx_dv, uart_tx_send, uart_tx_ready;
     
     // data lines
-    wire wen_mode, wen_key_ps2, wen_key_uart, result_ready, ap_start;
+    wire wen_mode, wen_key_ps2, wen_key_uart, result_ready, ap_start, ap_stop,ap_start_debug;
     wire [7:0] key_ps2, key_uart, key_ps2_ascii, debug_state_data, count_debug_char;
     wire [3:0] debug_state_char, count_debug_data;
     wire [11:0] inst_addr;
@@ -61,6 +61,10 @@ module term_interf_top(
     wire inst_wen;
     wire [`dwidth_dat_user*2-1:0] alu_out;
     wire [`dwidth_mat*3*3-1:0] bench_out;
+    wire [`dwidth_dat*6-1:0] register_data;
+    wire [`dwidth_dat*12-1:0] memory_data;
+    wire [`dwidth_dat*6-1:0] VGA_display_data;
+    wire resume,halt;
     //============= UART and PS/2 =============//
     
     UART_controller UART_con(
@@ -147,11 +151,17 @@ module term_interf_top(
         'h6: LED_t = {12'b0, count_debug_data};
         default: LED_t = 'b0;
         endcase
-    end        
+    end      
+
+    // 7 seg disp memory  
+    reg [8*4-1:0] sev_seg_mem;
+    always @(*)
+        sev_seg_mem = memory_data[SW[2:0]*(8*4) -: 8*4];
+
     sev_seg_driver sevseg(
         .CLK100MHZ(CLK100MHZ),
         .rst(BTN[4]),
-        .din((SW[15])?ps2_hold:uart_hold),
+        .din((SW[4]) ? {3'b0,ap_start_debug,inst_addr,inst_write} : ((SW[3]) ? sev_seg_mem : ((SW[15]) ? ps2_hold : uart_hold))),
         .SSEG_CA(SSEG_CA),
         .SSEG_AN(SSEG_AN)
     );
@@ -174,6 +184,7 @@ module term_interf_top(
         .bench_out   (bench_out     ),
         .result_ready(result_ready  ),
         .ap_start    (ap_start      ),
+        .ap_stop     (ap_stop       ),
         .debug_state (debug_state_data),
         .count_debug (count_debug_data)
     );
@@ -188,10 +199,7 @@ module term_interf_top(
 //        disp_alu
 //    );
         
-    wire [`dwidth_dat*6-1:0] register_data;
-    wire [`dwidth_dat*12-1:0] memory_data;
-    wire [`dwidth_dat*6-1:0] VGA_display_data;
-    wire resume,halt;
+    
     
     btn_edge btn(
         .reset(BTN[4]),
@@ -201,15 +209,17 @@ module term_interf_top(
         );
     
     datapath dp1(
-        .clk((mode_select==4'h1 || mode_select==4'h2) ? CLK100MHZ : 'b0), // Clock gating, turns off datapath when not in right mode;
+        .clk((mode_select==4'h0 || mode_select==4'h1) ? CLK100MHZ : 'b0), // Clock gating, turns off datapath when not in right mode;
         .rst(BTN[4]),
         .resume(resume),
         .user_inst_write(inst_write),
         .user_inst_addr(inst_addr),
         .user_inst_wen(inst_wen),
         .ap_start(ap_start),
+        .ap_stop(ap_stop),
         .rf_out(register_data),
         .mem_out(memory_data),
+        .ap_start_debug(ap_start_debug),
         .halt(halt)
     );
     
