@@ -454,29 +454,43 @@ always @(*) begin
             else if (vga_vcnt >= 240 && vga_vcnt <= 480) begin   //Second three registers
                     vsection = 1; end
                         
+//            if  (hsection == 0 && vsection ==0) begin
+//                address_init_curr = address_init[31:0]; end    //Reg 0
+//            else if (hsection == 0 && vsection ==1) begin
+//                address_init_curr = address_init[63:32]; end    //Reg 1
+//            else if (hsection == 0 && vsection ==2) begin
+//                address_init_curr = address_init[95:64]; end    //Reg 2
+//            else if  (hsection == 0 && vsection ==0) begin
+//                address_init_curr = address_init[127:96]; end    //Reg 3
+//            else if (hsection == 0 && vsection ==1) begin
+//                address_init_curr = address_init[159:128]; end    //Reg 4
+//            else if (hsection == 0 && vsection ==2) begin
+//                address_init_curr = address_init[191:160]; end    //Reg 5
+                
+                
             if  (hsection == 0 && vsection ==0) begin
                 address_init_curr = address_init[31:0]; end    //Reg 0
-            else if (hsection == 0 && vsection ==1) begin
+            else if (hsection == 1 && vsection ==0) begin
                 address_init_curr = address_init[63:32]; end    //Reg 1
-            else if (hsection == 0 && vsection ==2) begin
+            else if (hsection == 2 && vsection ==0) begin
                 address_init_curr = address_init[95:64]; end    //Reg 2
-            else if  (hsection == 0 && vsection ==0) begin
+            else if  (hsection == 0 && vsection ==1) begin
                 address_init_curr = address_init[127:96]; end    //Reg 3
-            else if (hsection == 0 && vsection ==1) begin
+            else if (hsection == 1 && vsection ==1) begin
                 address_init_curr = address_init[159:128]; end    //Reg 4
-            else if (hsection == 0 && vsection ==2) begin
-                address_init_curr = address_init[191:160]; end    //Reg 5
+            else if (hsection == 2 && vsection ==1) begin
+                address_init_curr = address_init[191:160]; end    //Reg 5    
 
             vga_hcnt_mod = vga_hcnt % 213;
                 
              //Identify which hex value we are displaying based on vga_hcnt
-            if (vga_hcnt >= 0 && vga_hcnt <= 52) begin          //Reg Hex Value0
+            if (vga_hcnt_mod >= 0 && vga_hcnt_mod <= 52) begin          //Reg Hex Value0
                     address_init_part = address_init_curr[31:24]; end
-            else if (vga_hcnt >= 53 && vga_hcnt <= 105) begin   //Reg Hex Value1
+            else if (vga_hcnt_mod >= 53 && vga_hcnt_mod <= 105) begin   //Reg Hex Value1
                     address_init_part = address_init_curr[23:16]; end
-            else if (vga_hcnt >= 106 && vga_hcnt <= 158) begin   //Reg Hex Value2
+            else if (vga_hcnt_mod >= 106 && vga_hcnt_mod <= 158) begin   //Reg Hex Value2
                     address_init_part = address_init_curr[15:8]; end
-            else if (vga_hcnt >= 159 && vga_hcnt <= 212) begin   //Reg Hex Value3
+            else if (vga_hcnt_mod >= 159 && vga_hcnt_mod <= 212) begin   //Reg Hex Value3
                     address_init_part = address_init_curr[7:0]; end
 
             vga_vcnt_mod = vga_vcnt % 240;
@@ -518,7 +532,7 @@ always @(*) begin
             vga_hcnt_mod = vga_hcnt_mod % 53;
 
             //Set VGA R, G, and B values based on output from font ROM
-            if (vga_hcnt == 213 || vga_hcnt == 426)   begin   //Register dividers
+            if (vga_hcnt == 211 || vga_hcnt == 424 )   begin   //Register dividers
                     VGA_R = {4{1'b1}}; VGA_G = {4{1'b1}}; VGA_B = {4{1'b1}}; end
             else if (vga_hcnt_mod >= 3 && vga_hcnt_mod <= 8) begin   //character 0
                     VGA_R = {4{data_char[7]}}; VGA_G = {4{data_char[7]}}; VGA_B = {4{data_char[7]}}; end

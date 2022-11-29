@@ -8,6 +8,7 @@
 module memory(
 	input wen,
 	input rst,
+	input load_Mem,
     input [`dwidth_dat-1:0] din,
     input [`awidth_mem-1:0] raddr_i, // read addr instruction
     input [`awidth_mem-1:0] raddr_d, // read addr data
@@ -27,9 +28,16 @@ module memory(
             for (i = 0; i < 12'hFFF; i=i+1) begin
                 mem[i] <= 0;
             end
-        end else begin
-            // Assign mem on valid input
-            mem[waddr] = (wen) ? din : mem[waddr];
+        end 
+        else if (load_Mem) begin
+            mem[12'h1E] <= 16'h1E; //30
+            mem[12'h1F] <= 16'h1F; //31
+            mem[12'h20] <= 16'h20; //32
+            mem[12'h22] <= 16'h22; //34
+            mem[12'h24] <= 16'h24; //36
+            mem[12'h26] <= 16'h26; //38
+        end else if (wen) begin
+            mem[waddr] <= din;
         end
     end    
 
@@ -37,6 +45,6 @@ module memory(
     assign iout = mem[raddr_i];
     assign dout = (raddr_d == waddr && wen) ? din : mem[raddr_d];
     
-    assign MEM_OUT = {mem[41],mem[40],mem[39],mem[38],mem[37],mem[36],mem[35],mem[34],mem[33],mem[32],mem[31],mem[30]};
+    assign MEM_OUT = {mem[12'h29],mem[12'h28],mem[12'h27],mem[12'h26],mem[12'h25],mem[12'h24],mem[12'h23],mem[12'h22],mem[12'h21],mem[12'h20],mem[12'h1F],mem[12'h1E]};
 
 endmodule

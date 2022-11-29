@@ -19,6 +19,7 @@ wire [`dwidth_mat*3*3-1:0] bench_out;
 wire result_ready;
 wire ap_start,ap_stop,ap_start_debug;
 
+reg load_Mem;
 wire [`dwidth_dat*6-1:0] rf_out;
 wire [`dwidth_dat*12-1:0] mem_out;
 wire [`dwidth_dat-1:0] disp_inst;
@@ -46,22 +47,29 @@ data_loader dl(
 
 datapath dp1(
     .clk(clk_100), // Clock gating, turns off datapath when not in right mode;
-    .rst(rst),
+    .rst(rst || ap_stop),
     .resume(1'b0),
     .user_inst_write(inst_write),
     .user_inst_addr(inst_addr),
     .user_inst_wen(inst_wen),
     .ap_start(ap_start),
-    .ap_stop(ap_stop),
     .rf_out(rf_out),
     .mem_out(mem_out),
     .ap_start_debug(ap_start_debug),
-    .halt(halt)
+    .halt(halt),
+    .load_Mem(load_Mem)
 );
 
+reg [8*4-1:0] sev_seg_mem;
+reg [2:0] SW=0;
+always @(*)
+    sev_seg_mem = mem_out[(SW+1)*(8*4)-1 -: 8*4];
 
 always
     #1 clk_100<=~clk_100;
+
+always
+    #1 SW=SW+1;
 
 initial begin
     clk_100 <= 'b0;
@@ -71,6 +79,7 @@ initial begin
     wen_key_ps2 <= 'b0;
     key_uart <= 'b0;
     wen_key_uart <= 'b0;
+    load_Mem <='b0;
     
 
     // reset
@@ -130,6 +139,9 @@ initial begin
     #10; trans_key_uart<=5'h11;#10; wen_key_uart<=1; #2; wen_key_uart<=0; // enter
     #10;
 
+    #100;
+    
+    load_Mem <= 1; #2; load_Mem <= 0;
     #100;
     
     // // mat write
@@ -242,7 +254,7 @@ always @(trans_key_uart) begin
         5'h0d : key_uart = 8'h44;
         5'h0e : key_uart = 8'h45;
         5'h0f : key_uart = 8'h46;
-        5'h11 : key_uart = 8'h0a; //enter
+        5'h11 : key_uart = 8'h0d; //enter
         5'h18 : key_uart = 8'h52; //r
     endcase
 end

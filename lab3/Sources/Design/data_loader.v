@@ -85,7 +85,7 @@ always @(key_uart) begin
         8'h65 : trans_key_uart = 5'h0e;
         8'h66 : trans_key_uart = 5'h0f;
         8'h20 : trans_key_uart = 5'h10; // [space]
-        8'h0a : trans_key_uart = 5'h11; // [newline]
+        8'h0d : trans_key_uart = 5'h11; // [newline]
         8'h52 : trans_key_uart = 5'h18; // R
         8'h72 : trans_key_uart = 5'h18; // r
         default: trans_key_uart = 5'h1F; // D/C
@@ -117,9 +117,11 @@ localparam [7:0]    IDLE=8'h40,
                     I_ch=8'h00, // first char entered, or run
                     I_wb=8'h01, // write inst on enter
                     I_rn=8'h02, // Start datapath
+                    I_rt=8'h03, // reset datapath
                     L_ch=8'h10, // first char entered, or run
                     L_wb=8'h11, // write inst on enter
                     L_rn=8'h12, // Start datapath
+                    L_rt=8'h13, // reset datapath
                     A_aa=8'h20, // First operand
                     A_sh=8'h21, // shift?
                     A_op=8'h22, // Operator
@@ -136,7 +138,7 @@ assign mode = curr_state[7:4];
 assign inst_wen = ((curr_state==I_wb || curr_state==L_wb) && count_c == 'd4) ? 1'b1 : 1'b0;
 
 // Assign AP_stop
-assign ap_stop = (curr_state==I_ch || curr_state==L_ch) ? 1'b1: 1'b0;
+assign ap_stop = (curr_state==I_rt || curr_state==L_rt) ? 1'b1: 1'b0;
 
 // Clocked portion of FSM
 always @(posedge clk_100) begin
@@ -179,8 +181,8 @@ always @(*) begin
                 prev_key_n = key_ps2;
                 if (key_ps2 == 8'h5a) begin // if enter is pressed
                     case(prev_key) // if prev key was a mode key, go to that mode and assert mode flag, otherwise wait
-                        8'h43 : next_state = I_ch;
-                        8'h4B : next_state = L_ch;
+                        8'h43 : next_state = I_rt;
+                        8'h4B : next_state = L_rt;
                         8'h1C : next_state = A_aa;
                         8'h32 : next_state = B_ma;
                         default: next_state = IDLE;
@@ -254,6 +256,21 @@ always @(*) begin
             mode_flag_n = 'b0;
             prev_key_n = key_ps2;
         end
+        I_rt: begin
+            next_state = I_ch;
+            inst_addr_n = 12'd31;
+            count_n = 'b0;
+            inst_write_n = 'b0;
+            ap_start_n = 1'b0;
+            ALU_mode_n = 'b0;
+            result_ready_n = 'b0;
+            alu_a_n = 'b0;
+            alu_b_n = 'b0;
+            mat_a_n = 'b0;
+            mat_b_n = 'b0;
+            mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
+        end
         L_ch: begin // loads the typed keys into 
             next_state=(wen_key_uart && (~trans_key_uart[4]) && count_c==3) ? L_wb : ((wen_key_uart && trans_key_uart == 5'h18) ? L_rn : L_ch);
             inst_write_n=(wen_key_uart && (~trans_key_uart[4]) && count_c<4) ? {inst_write[11:0],trans_key_uart[3:0]} : inst_write;
@@ -299,6 +316,22 @@ always @(*) begin
             mode_flag_n = 'b0;
             prev_key_n = key_ps2;
         end
+        L_rt: begin
+            next_state = L_ch;
+            inst_addr_n = 12'd31;
+            count_n = 'b0;
+            inst_write_n = 'b0;
+            ap_start_n = 1'b0;
+            ALU_mode_n = 'b0;
+            result_ready_n = 'b0;
+            alu_a_n = 'b0;
+            alu_b_n = 'b0;
+            mat_a_n = 'b0;
+            mat_b_n = 'b0;
+            mode_flag_n = 'b0;
+            prev_key_n = key_ps2;
+        end
+        
         A_aa: begin
             next_state = (wen_key_ps2 && ~trans_key_ps2[4]) ? A_sh : A_aa;
             alu_a_n = (wen_key_ps2 && ~trans_key_ps2[4]) ? trans_key_ps2[3:0] : 'b0;

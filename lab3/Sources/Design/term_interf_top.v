@@ -64,6 +64,7 @@ module term_interf_top(
     wire [`dwidth_dat*6-1:0] register_data;
     wire [`dwidth_dat*12-1:0] memory_data;
     wire [`dwidth_dat*6-1:0] VGA_display_data;
+    wire [`dwidth_dat-1:0] PC_out;
     wire resume,halt;
     //============= UART and PS/2 =============//
     
@@ -142,7 +143,8 @@ module term_interf_top(
     assign LED = LED_t;
     always @(*) begin
         case(SW[14:12])
-        'h0: LED_t = {debug_state_char,3'b0,modeflag,debug_state_data};
+        //               1   1         1           1           4                4+4
+        'h0: LED_t = {1'b0,halt,ap_start_debug,modeflag,debug_state_char,debug_state_data};
         'h1: LED_t = ps2_cnt;
         'h2: LED_t = uart_rx_cnt;
         'h3: LED_t = uart_txs_cnt;
@@ -156,12 +158,12 @@ module term_interf_top(
     // 7 seg disp memory  
     reg [8*4-1:0] sev_seg_mem;
     always @(*)
-        sev_seg_mem = memory_data[SW[2:0]*(8*4) -: 8*4];
+        sev_seg_mem = memory_data[(SW[2:0]+1)*(8*4)-1 -: 8*4];
 
     sev_seg_driver sevseg(
         .CLK100MHZ(CLK100MHZ),
         .rst(BTN[4]),
-        .din((SW[4]) ? {3'b0,ap_start_debug,inst_addr,inst_write} : ((SW[3]) ? sev_seg_mem : ((SW[15]) ? ps2_hold : uart_hold))),
+        .din((SW[4]) ? {PC_out[7:0],inst_addr[7:0],inst_write} : ((SW[3]) ? sev_seg_mem : ((SW[15]) ? ps2_hold : uart_hold))),
         .SSEG_CA(SSEG_CA),
         .SSEG_AN(SSEG_AN)
     );
@@ -188,19 +190,8 @@ module term_interf_top(
         .debug_state (debug_state_data),
         .count_debug (count_debug_data)
     );
-        
-//    mat_to_ascii m2a(
-//        bench_out,
-//        disp_mat
-//    );
-    
-//    alu_to_ascii a2a(
-//        alu_out,
-//        disp_alu
-//    );
-        
-    
-    
+
+
     btn_edge btn(
         .reset(BTN[4]),
         .btnIn(BTN[3]),
@@ -209,22 +200,22 @@ module term_interf_top(
         );
     
     datapath dp1(
-        .clk((mode_select==4'h0 || mode_select==4'h1) ? CLK100MHZ : 'b0), // Clock gating, turns off datapath when not in right mode;
-        .rst(BTN[4]),
+//        .clk((mode_select==4'h0 || mode_select==4'h1) ? CLK100MHZ : 'b0), // Clock gating, turns off datapath when not in right mode;
+        .clk(CLK100MHZ), // Clock gating, turns off datapath when not in right mode;
+        .rst(BTN[4] || ap_stop),
+        .load_Mem(BTN[2]),
         .resume(resume),
         .user_inst_write(inst_write),
         .user_inst_addr(inst_addr),
         .user_inst_wen(inst_wen),
         .ap_start(ap_start),
-        .ap_stop(ap_stop),
         .rf_out(register_data),
         .mem_out(memory_data),
         .ap_start_debug(ap_start_debug),
-        .halt(halt)
+        .halt(halt),
+        .PC_out(PC_out)
     );
     
- //   assign register_data='b0;
- //   assign halt = 'b0;
  
   assign VGA_display_data =SW[1]? memory_data[191:96]: (SW[0]? memory_data[95:0]: register_data);
         

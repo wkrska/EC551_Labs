@@ -5,13 +5,15 @@
 module datapath (
     input wire clk,
     input wire rst,
+    input wire load_Mem,
     input wire [`dwidth_dat-1:0] user_inst_write,
     input wire [`awidth_mem-1:0] user_inst_addr,
     input wire user_inst_wen,
-    input wire ap_start, resume,ap_stop,
+    input wire ap_start, resume,
     output wire [`dwidth_dat*6-1:0] rf_out,
     output wire [`dwidth_dat*12-1:0] mem_out,
     output wire [`dwidth_dat-1:0] disp_inst,
+    output wire [`dwidth_dat-1:0] PC_out,
     output wire ap_start_debug,
     output wire halt
 );
@@ -37,10 +39,10 @@ module datapath (
     //--------- AP Start FSM ---------//
     // starts datapath 
     reg ap_start_cs, ap_start_ns;
-    always @(ap_start, ap_stop, rst) begin
+    always @(ap_start, rst) begin
         case (ap_start_cs)
             1'b0: ap_start_ns = (ap_start) ? 1'b1 : 1'b0;
-            1'b1: ap_start_ns = (rst || ap_stop) ? 1'b0 : 1'b1;
+            1'b1: ap_start_ns = (rst) ? 1'b0 : 1'b1;
         endcase
     end
     always @(posedge clk)
@@ -74,7 +76,7 @@ module datapath (
     end
     always @(posedge clk)
         halt_cs <= (rst) ? 2'b00 : halt_ns;
-
+    assign halt = halt_flag;
     
     //----------- IF stage -----------//
     wire [`dwidth_dat-1:0] INST_next, INST_curr, INST_read;
@@ -149,11 +151,13 @@ module datapath (
         .RF_OUT(rf_out),
         .PC_OUT(PC_curr)
     );
+    assign PC_out = PC_curr;
 
     wire MEM_WE;
     assign MEM_WE = (OP_WB == op_mov2) || (OP_WB == op_mov4);
     memory mem_0(
         .rst(rst),
+        .load_Mem(load_Mem),
         .raddr_i(PC_curr),
         .raddr_d(RF_D2_ID),
         .waddr((ap_start_cs == 1'b0) ? user_inst_addr : RF_D1_WB),
