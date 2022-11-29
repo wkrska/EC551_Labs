@@ -7,6 +7,13 @@ module ps2_to_ascii(
     output reg [7:0] ascii
 );
 
+reg key, key_prev;
+always @(posedge ps2)
+    key_prev <= key;
+always @(*)
+    key <= ps2;
+    
+    
 always @(*) begin
     case(ps2) // 0X is number, 1X is char
         8'h45: ascii = 8'h30; // 0
@@ -21,12 +28,12 @@ always @(*) begin
         8'h6B: ascii = 8'h34; // 4
         8'h2E: ascii = 8'h35; // 5
         8'h73: ascii = 8'h35; // 5
-        8'h36: ascii = 8'h36; // 6
-        8'h74: ascii = 8'h36; // 6
+        8'h36: ascii = (key_prev==8'h12||key_prev==8'h59) ? 8'h5E : 8'h36; // 6 or ^
+        8'h74: ascii = (key_prev==8'h12||key_prev==8'h59) ? 8'h5E : 8'h36; // 6 or ^
         8'h3D: ascii = 8'h37; // 7
         8'h6C: ascii = 8'h37; // 7
-        8'h3E: ascii = 8'h38; // 8
-        8'h75: ascii = 8'h38; // 8
+        8'h3E: ascii = (key_prev==8'h12||key_prev==8'h59) ? 8'h2A : 8'h38; // 8 or *
+        8'h75: ascii = (key_prev==8'h12||key_prev==8'h59) ? 8'h2A : 8'h38; // 8 or *
         8'h46: ascii = 8'h39; // 9
         8'h7D: ascii = 8'h39; // 9
         8'h4E: ascii = 8'h2D; // -
@@ -34,7 +41,7 @@ always @(*) begin
         8'h7C: ascii = 8'h2A; // *
         8'hE0: ascii = 8'h2F; // /
         8'h79: ascii = 8'h2B; // +
-        8'h55: ascii = 8'h3D; // =
+        8'h55: ascii = (key_prev==8'h12||key_prev==8'h59) ? 8'h2B : 8'h3D; // = or +
         8'h5A: ascii = 8'hA; // Enter
         8'h12: ascii = 8'h0; // Shift (Left)
         8'h59: ascii = 8'h0; // Shift (Right)
