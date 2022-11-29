@@ -137,9 +137,6 @@ assign mode = curr_state[7:4];
 // Extract instruction wen
 assign inst_wen = ((curr_state==I_wb || curr_state==L_wb) && count_c == 'd4) ? 1'b1 : 1'b0;
 
-// Assign AP_stop
-assign ap_stop = (curr_state==I_rt || curr_state==L_rt) ? 1'b1: 1'b0;
-
 // Clocked portion of FSM
 always @(posedge clk_100) begin
     if (rst) begin
@@ -494,5 +491,19 @@ mat3mult mm(
     .mat_in_b(mat_b),
     .mat_out(bench_out)
 );
+
+// Assign AP_stop
+reg[2:0] ap_stop_c, ap_stop_n;
+assign ap_stop = |ap_stop_c;
+always @(*) begin
+    case(ap_stop_c)
+        'h0 : ap_stop_n = (curr_state==I_rt || curr_state==L_rt) ? 'b1: 'b0;
+        'h1 : ap_stop_n = ap_stop_c+1;
+        'h2 : ap_stop_n = ap_stop_c+1;
+        'h3 : ap_stop_n = 0;
+    endcase
+end
+always @(posedge clk_100)
+    ap_stop_c <= ap_stop_n;
 
 endmodule

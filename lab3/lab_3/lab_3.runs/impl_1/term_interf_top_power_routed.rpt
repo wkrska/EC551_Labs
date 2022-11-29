@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Tue Nov 29 01:46:07 2022
+| Date             : Tue Nov 29 15:32:30 2022
 | Host             : ECE-PHO115-02 running 64-bit major release  (build 9200)
 | Command          : report_power -file term_interf_top_power_routed.rpt -pb term_interf_top_power_summary_routed.pb -rpx term_interf_top_power_routed.rpx
 | Design           : term_interf_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.152        |
+| Total On-Chip Power (W)  | 0.154        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.054        |
+| Dynamic (W)              | 0.057        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.3         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.008 |        3 |       --- |             --- |
-| Slice Logic    |     0.008 |     9263 |       --- |             --- |
-|   LUT as Logic |     0.007 |     4010 |     63400 |            6.32 |
+| Slice Logic    |     0.007 |     9272 |       --- |             --- |
+|   LUT as Logic |     0.006 |     4024 |     63400 |            6.35 |
 |   CARRY4       |     0.001 |      321 |     15850 |            2.03 |
+|   Register     |    <0.001 |     3638 |    126800 |            2.87 |
 |   F7/F8 Muxes  |    <0.001 |      850 |     63400 |            1.34 |
-|   Register     |    <0.001 |     3636 |    126800 |            2.87 |
 |   BUFG         |    <0.001 |        5 |        32 |           15.63 |
 |   Others       |     0.000 |      106 |       --- |             --- |
-| Signals        |     0.011 |     6286 |       --- |             --- |
+| Signals        |     0.010 |     6288 |       --- |             --- |
 | Block RAM      |    <0.001 |      0.5 |       135 |            0.37 |
-| I/O            |     0.027 |       63 |       210 |           30.00 |
+| I/O            |     0.031 |       63 |       210 |           30.00 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.152 |          |           |                 |
+| Total          |     0.154 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,9 +74,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.043 |       0.028 |      0.015 |
+| Vccint    |       1.000 |     0.041 |       0.026 |      0.015 |
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |
-| Vcco33    |       3.300 |     0.012 |       0.008 |      0.004 |
+| Vcco33    |       3.300 |     0.013 |       0.009 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -143,15 +143,16 @@ Table of Contents
 +--------------------+-----------+
 | Name               | Power (W) |
 +--------------------+-----------+
-| term_interf_top    |     0.054 |
+| term_interf_top    |     0.057 |
 |   VGA1             |     0.003 |
 |     vga_controller |     0.003 |
 |   cs               |     0.007 |
 |     fifo           |     0.006 |
-|   dl               |     0.001 |
-|   dp1              |     0.014 |
-|     mem_0          |     0.006 |
-|     reg2           |     0.004 |
+|   dl               |     0.004 |
+|   dp1              |     0.010 |
+|     mem_0          |     0.002 |
+|     reg1           |     0.001 |
+|     reg2           |     0.003 |
 |     rf_0           |     0.002 |
 +--------------------+-----------+
 

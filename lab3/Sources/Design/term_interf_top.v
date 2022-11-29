@@ -144,7 +144,7 @@ module term_interf_top(
     always @(*) begin
         case(SW[14:12])
         //               1   1         1           1           4                4+4
-        'h0: LED_t = {1'b0,halt,ap_start_debug,modeflag,debug_state_char,debug_state_data};
+        'h0: LED_t = {halt,ap_start_debug,ap_stop,modeflag,debug_state_char,debug_state_data};
         'h1: LED_t = ps2_cnt;
         'h2: LED_t = uart_rx_cnt;
         'h3: LED_t = uart_txs_cnt;

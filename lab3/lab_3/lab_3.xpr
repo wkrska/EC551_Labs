@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="40" Path="X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.xpr">
+<Project Version="7" Minor="40" Path="X:/EC551/Labs/Lab3/EC551_Labs/lab3/lab_3/lab_3.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="c97f5bbd026343bd997ec273e577b42d"/>

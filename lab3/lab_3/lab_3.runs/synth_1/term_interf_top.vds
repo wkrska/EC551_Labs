@@ -2,12 +2,12 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Nov 29 01:38:54 2022
-# Process ID: 30144
-# Current directory: X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1
+# Start of session at: Tue Nov 29 15:25:16 2022
+# Process ID: 31172
+# Current directory: X:/EC551/Labs/Lab3/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1
 # Command line: vivado.exe -log term_interf_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source term_interf_top.tcl
-# Log file: X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1/term_interf_top.vds
-# Journal file: X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1\vivado.jou
+# Log file: X:/EC551/Labs/Lab3/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1/term_interf_top.vds
+# Journal file: X:/EC551/Labs/Lab3/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source term_interf_top.tcl -notrace
 Command: synth_design -top term_interf_top -part xc7a100tcsg324-1
@@ -16,33 +16,33 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 24000 
+INFO: Helper process launched with PID 16964 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 810.266 ; gain = 178.277
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 810.227 ; gain = 178.020
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'term_interf_top' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/term_interf_top.v:25]
-INFO: [Synth 8-6157] synthesizing module 'UART_controller' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_controller.v:5]
-INFO: [Synth 8-638] synthesizing module 'UART_TX_CTRL' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_TX_CTRL.vhd:50]
-INFO: [Synth 8-256] done synthesizing module 'UART_TX_CTRL' (1#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_TX_CTRL.vhd:50]
-INFO: [Synth 8-6157] synthesizing module 'UART_RX_CTRL' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:15]
+INFO: [Synth 8-6157] synthesizing module 'term_interf_top' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/term_interf_top.v:25]
+INFO: [Synth 8-6157] synthesizing module 'UART_controller' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_controller.v:5]
+INFO: [Synth 8-638] synthesizing module 'UART_TX_CTRL' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_TX_CTRL.vhd:50]
+INFO: [Synth 8-256] done synthesizing module 'UART_TX_CTRL' (1#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_TX_CTRL.vhd:50]
+INFO: [Synth 8-6157] synthesizing module 'UART_RX_CTRL' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:15]
 	Parameter CLKS_PER_BIT bound to: 10416 - type: integer 
 	Parameter IDLE bound to: 3'b000 
 	Parameter RX_START_BIT bound to: 3'b001 
 	Parameter RX_DATA_BITS bound to: 3'b010 
 	Parameter RX_STOP_BIT bound to: 3'b011 
 	Parameter CLEANUP bound to: 3'b100 
-WARNING: [Synth 8-5788] Register r_Clock_Count_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:45]
-WARNING: [Synth 8-5788] Register r_Bit_Index_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:46]
-WARNING: [Synth 8-5788] Register o_RX_Byte_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:77]
-INFO: [Synth 8-6155] done synthesizing module 'UART_RX_CTRL' (2#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:15]
-INFO: [Synth 8-6155] done synthesizing module 'UART_controller' (3#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_controller.v:5]
-INFO: [Synth 8-6157] synthesizing module 'uart_arbiter' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:7]
+WARNING: [Synth 8-5788] Register r_Clock_Count_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:45]
+WARNING: [Synth 8-5788] Register r_Bit_Index_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:46]
+WARNING: [Synth 8-5788] Register o_RX_Byte_reg in module UART_RX_CTRL is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:77]
+INFO: [Synth 8-6155] done synthesizing module 'UART_RX_CTRL' (2#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v:15]
+INFO: [Synth 8-6155] done synthesizing module 'UART_controller' (3#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_controller.v:5]
+INFO: [Synth 8-6157] synthesizing module 'uart_arbiter' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:7]
 	Parameter IDLE bound to: 2'b00 
 	Parameter FLAG bound to: 2'b01 
 	Parameter WAIT bound to: 2'b10 
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:42]
-INFO: [Synth 8-6155] done synthesizing module 'uart_arbiter' (4#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:7]
-INFO: [Synth 8-6157] synthesizing module 'char_stager' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:5]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:42]
+INFO: [Synth 8-6155] done synthesizing module 'uart_arbiter' (4#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:7]
+INFO: [Synth 8-6157] synthesizing module 'char_stager' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:5]
 	Parameter WLCM bound to: 4'b0000 
 	Parameter IDLE bound to: 4'b0001 
 	Parameter I_INST bound to: 4'b0010 
@@ -68,40 +68,40 @@ INFO: [Synth 8-6157] synthesizing module 'char_stager' [X:/Documents/EC551/EC551
 	Parameter len_A bound to: 8'b00100000 
 	Parameter len_B bound to: 8'b00011101 
 	Parameter len_X bound to: 8'b00010010 
-INFO: [Synth 8-6157] synthesizing module 'hex_to_ascii' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/hex_to_ascii.v:23]
-INFO: [Synth 8-226] default block is never used [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/hex_to_ascii.v:29]
-INFO: [Synth 8-6155] done synthesizing module 'hex_to_ascii' (5#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/hex_to_ascii.v:23]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:91]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:91]
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:117]
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:291]
-INFO: [Synth 8-6157] synthesizing module 'fifo_8bit' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/fifo_8bit.v:4]
+INFO: [Synth 8-6157] synthesizing module 'hex_to_ascii' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/hex_to_ascii.v:23]
+INFO: [Synth 8-226] default block is never used [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/hex_to_ascii.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'hex_to_ascii' (5#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/hex_to_ascii.v:23]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:91]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:91]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:117]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:291]
+INFO: [Synth 8-6157] synthesizing module 'fifo_8bit' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/fifo_8bit.v:4]
 	Parameter fifo_width bound to: 8 - type: integer 
 	Parameter fifo_size bound to: 512 - type: integer 
 	Parameter dwidth_size bound to: 9 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'fifo_8bit' (6#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/fifo_8bit.v:4]
-WARNING: [Synth 8-7023] instance 'fifo' of module 'fifo_8bit' has 8 connections declared, but only 7 given [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:305]
-INFO: [Synth 8-6155] done synthesizing module 'char_stager' (7#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:5]
-INFO: [Synth 8-6157] synthesizing module 'ps2_to_ascii' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ps2_to_ascii.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'ps2_to_ascii' (8#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ps2_to_ascii.v:5]
-INFO: [Synth 8-6157] synthesizing module 'top_keyboard' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/top_keyboard.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/top_keyboard.v:43]
-INFO: [Synth 8-6157] synthesizing module 'PS2Receiver' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_8bit' (6#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/fifo_8bit.v:4]
+WARNING: [Synth 8-7023] instance 'fifo' of module 'fifo_8bit' has 8 connections declared, but only 7 given [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:305]
+INFO: [Synth 8-6155] done synthesizing module 'char_stager' (7#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:5]
+INFO: [Synth 8-6157] synthesizing module 'ps2_to_ascii' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ps2_to_ascii.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ps2_to_ascii' (8#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ps2_to_ascii.v:5]
+INFO: [Synth 8-6157] synthesizing module 'top_keyboard' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/top_keyboard.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/top_keyboard.v:43]
+INFO: [Synth 8-6157] synthesizing module 'PS2Receiver' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:2]
 	Parameter IDLE bound to: 2'b00 
 	Parameter RELEASE bound to: 2'b01 
 	Parameter KEY bound to: 2'b10 
-INFO: [Synth 8-6157] synthesizing module 'keyboard_debouncer' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/keyboard_debouncer.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'keyboard_debouncer' (9#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/keyboard_debouncer.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:36]
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:63]
-WARNING: [Synth 8-5788] Register flag_reg in module PS2Receiver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:46]
-WARNING: [Synth 8-5788] Register cnt_reg in module PS2Receiver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:36]
-INFO: [Synth 8-6155] done synthesizing module 'PS2Receiver' (10#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'top_keyboard' (11#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/top_keyboard.v:23]
-INFO: [Synth 8-6157] synthesizing module 'sev_seg_driver' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/sev_seg_driver.v:3]
-INFO: [Synth 8-226] default block is never used [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/sev_seg_driver.v:64]
-INFO: [Synth 8-6155] done synthesizing module 'sev_seg_driver' (12#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/sev_seg_driver.v:3]
-INFO: [Synth 8-6157] synthesizing module 'data_loader' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:5]
+INFO: [Synth 8-6157] synthesizing module 'keyboard_debouncer' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/keyboard_debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'keyboard_debouncer' (9#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/keyboard_debouncer.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:36]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:63]
+WARNING: [Synth 8-5788] Register flag_reg in module PS2Receiver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:46]
+WARNING: [Synth 8-5788] Register cnt_reg in module PS2Receiver is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'PS2Receiver' (10#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'top_keyboard' (11#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/top_keyboard.v:23]
+INFO: [Synth 8-6157] synthesizing module 'sev_seg_driver' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/sev_seg_driver.v:3]
+INFO: [Synth 8-226] default block is never used [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/sev_seg_driver.v:64]
+INFO: [Synth 8-6155] done synthesizing module 'sev_seg_driver' (12#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/sev_seg_driver.v:3]
+INFO: [Synth 8-6157] synthesizing module 'data_loader' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:5]
 	Parameter IDLE bound to: 8'b01000000 
 	Parameter I_ch bound to: 8'b00000000 
 	Parameter I_wb bound to: 8'b00000001 
@@ -119,33 +119,34 @@ INFO: [Synth 8-6157] synthesizing module 'data_loader' [X:/Documents/EC551/EC551
 	Parameter B_ma bound to: 8'b00110000 
 	Parameter B_mb bound to: 8'b00110001 
 	Parameter B_wb bound to: 8'b00110010 
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:178]
-INFO: [Synth 8-6157] synthesizing module 'mini_ALU' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mini_ALU.v:5]
-INFO: [Synth 8-226] default block is never used [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mini_ALU.v:12]
-INFO: [Synth 8-6155] done synthesizing module 'mini_ALU' (13#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mini_ALU.v:5]
-INFO: [Synth 8-6157] synthesizing module 'mat3mult' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:5]
-INFO: [Synth 8-6157] synthesizing module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vect3mac.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'vect3mac' (14#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vect3mac.v:5]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
-INFO: [Synth 8-6155] done synthesizing module 'mat3mult' (15#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'data_loader' (16#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:5]
-INFO: [Synth 8-6157] synthesizing module 'btn_edge' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/btn_edge.v:23]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/debounce.v:23]
-INFO: [Synth 8-6157] synthesizing module 'clock_div' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/debounce.v:41]
-INFO: [Synth 8-6155] done synthesizing module 'clock_div' (17#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/debounce.v:41]
-INFO: [Synth 8-6157] synthesizing module 'my_dff' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/debounce.v:51]
-INFO: [Synth 8-6155] done synthesizing module 'my_dff' (18#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/debounce.v:51]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (19#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/debounce.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'btn_edge' (20#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/btn_edge.v:23]
-INFO: [Synth 8-6157] synthesizing module 'datapath' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:5]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:175]
+INFO: [Synth 8-6157] synthesizing module 'mini_ALU' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mini_ALU.v:5]
+INFO: [Synth 8-226] default block is never used [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mini_ALU.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'mini_ALU' (13#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mini_ALU.v:5]
+INFO: [Synth 8-6157] synthesizing module 'mat3mult' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:5]
+INFO: [Synth 8-6157] synthesizing module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vect3mac.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'vect3mac' (14#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vect3mac.v:5]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+WARNING: [Synth 8-689] width (4) of port connection 's_out' does not match port width (8) of module 'vect3mac' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:21]
+INFO: [Synth 8-6155] done synthesizing module 'mat3mult' (15#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v:5]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:499]
+INFO: [Synth 8-6155] done synthesizing module 'data_loader' (16#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:5]
+INFO: [Synth 8-6157] synthesizing module 'btn_edge' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/btn_edge.v:23]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/debounce.v:23]
+INFO: [Synth 8-6157] synthesizing module 'clock_div' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/debounce.v:41]
+INFO: [Synth 8-6155] done synthesizing module 'clock_div' (17#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/debounce.v:41]
+INFO: [Synth 8-6157] synthesizing module 'my_dff' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/debounce.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'my_dff' (18#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/debounce.v:51]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (19#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/debounce.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'btn_edge' (20#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/btn_edge.v:23]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:5]
 	Parameter op_add bound to: 4'b0101 
 	Parameter op_sub bound to: 4'b0110 
 	Parameter op_inc bound to: 4'b0001 
@@ -162,140 +163,140 @@ INFO: [Synth 8-6157] synthesizing module 'datapath' [X:/Documents/EC551/EC551_La
 	Parameter op_je bound to: 4'b0100 
 	Parameter op_nop bound to: 4'b1111 
 	Parameter op_halt bound to: 4'b0000 
-WARNING: [Synth 8-567] referenced signal 'ap_start_cs' should be on the sensitivity list [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:42]
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:58]
-INFO: [Synth 8-6157] synthesizing module 'Fetch_unit' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Fetch_unit.v:8]
-INFO: [Synth 8-155] case statement is not full and has no default [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Fetch_unit.v:20]
-INFO: [Synth 8-6155] done synthesizing module 'Fetch_unit' (21#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Fetch_unit.v:8]
-WARNING: [Synth 8-689] width (16) of port connection 'imm_in' does not match port width (12) of module 'Fetch_unit' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:107]
-INFO: [Synth 8-6157] synthesizing module 'reg_param' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
+WARNING: [Synth 8-567] referenced signal 'ap_start_cs' should be on the sensitivity list [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:42]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:58]
+INFO: [Synth 8-6157] synthesizing module 'Fetch_unit' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Fetch_unit.v:8]
+INFO: [Synth 8-155] case statement is not full and has no default [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Fetch_unit.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'Fetch_unit' (21#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Fetch_unit.v:8]
+WARNING: [Synth 8-689] width (16) of port connection 'imm_in' does not match port width (12) of module 'Fetch_unit' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:107]
+INFO: [Synth 8-6157] synthesizing module 'reg_param' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
 	Parameter SIZE bound to: 16 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_param' (22#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Decoder' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Decoder.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'reg_param' (22#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Decoder' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Decoder.v:8]
 	Parameter op_jmp bound to: 4'b0010 
 	Parameter op_jne bound to: 4'b0011 
 	Parameter op_je bound to: 4'b0100 
-INFO: [Synth 8-6155] done synthesizing module 'Decoder' (23#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Decoder.v:8]
-WARNING: [Synth 8-689] width (4) of port connection 'op' does not match port width (6) of module 'Decoder' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:131]
-INFO: [Synth 8-6157] synthesizing module 'Register_file' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Register_file.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'Decoder' (23#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Decoder.v:8]
+WARNING: [Synth 8-689] width (4) of port connection 'op' does not match port width (6) of module 'Decoder' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:131]
+INFO: [Synth 8-6157] synthesizing module 'Register_file' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Register_file.v:8]
 	Parameter REGSIZE bound to: 7 - type: integer 
-WARNING: [Synth 8-567] referenced signal 'WE' should be on the sensitivity list [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Register_file.v:25]
-WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Register_file.v:25]
-WARNING: [Synth 8-567] referenced signal 'WE' should be on the sensitivity list [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Register_file.v:31]
-WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Register_file.v:31]
-INFO: [Synth 8-6155] done synthesizing module 'Register_file' (24#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Register_file.v:8]
-WARNING: [Synth 8-7023] instance 'rf_0' of module 'Register_file' has 15 connections declared, but only 14 given [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:138]
-INFO: [Synth 8-6157] synthesizing module 'memory' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:8]
-WARNING: [Synth 8-324] index 129 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 130 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 131 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 132 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 133 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 134 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 135 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 136 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 137 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 138 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 139 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 140 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 141 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 142 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 143 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 144 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 145 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 146 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 147 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 148 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 149 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 150 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 151 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 152 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 153 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 154 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 155 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 156 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 157 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 158 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 159 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 160 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 161 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 162 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 163 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 164 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 165 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 166 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 167 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 168 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 169 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 170 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 171 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 172 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 173 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 174 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 175 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 176 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 177 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 178 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 179 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 180 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 181 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 182 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 183 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 184 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 185 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 186 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 187 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 188 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 189 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 190 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 191 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 192 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 193 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 194 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 195 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 196 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 197 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 198 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 199 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 200 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 201 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 202 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 203 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 204 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 205 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 206 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 207 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 208 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 209 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 210 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 211 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 212 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 213 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 214 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 215 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 216 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 217 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 218 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 219 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 220 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 221 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 222 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 223 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 224 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 225 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 226 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 227 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-324] index 228 out of range [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-567] referenced signal 'WE' should be on the sensitivity list [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Register_file.v:25]
+WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Register_file.v:25]
+WARNING: [Synth 8-567] referenced signal 'WE' should be on the sensitivity list [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Register_file.v:31]
+WARNING: [Synth 8-567] referenced signal 'WD' should be on the sensitivity list [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Register_file.v:31]
+INFO: [Synth 8-6155] done synthesizing module 'Register_file' (24#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Register_file.v:8]
+WARNING: [Synth 8-7023] instance 'rf_0' of module 'Register_file' has 15 connections declared, but only 14 given [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:138]
+INFO: [Synth 8-6157] synthesizing module 'memory' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:8]
+WARNING: [Synth 8-324] index 129 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 130 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 131 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 132 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 133 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 134 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 135 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 136 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 137 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 138 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 139 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 140 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 141 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 142 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 143 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 144 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 145 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 146 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 147 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 148 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 149 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 150 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 151 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 152 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 153 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 154 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 155 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 156 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 157 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 158 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 159 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 160 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 161 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 162 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 163 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 164 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 165 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 166 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 167 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 168 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 169 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 170 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 171 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 172 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 173 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 174 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 175 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 176 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 177 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 178 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 179 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 180 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 181 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 182 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 183 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 184 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 185 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 186 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 187 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 188 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 189 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 190 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 191 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 192 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 193 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 194 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 195 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 196 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 197 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 198 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 199 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 200 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 201 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 202 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 203 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 204 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 205 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 206 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 207 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 208 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 209 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 210 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 211 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 212 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 213 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 214 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 215 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 216 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 217 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 218 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 219 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 220 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 221 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 222 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 223 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 224 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 225 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 226 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 227 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-324] index 228 out of range [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
 INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6155] done synthesizing module 'memory' (25#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:8]
-WARNING: [Synth 8-689] width (16) of port connection 'raddr_i' does not match port width (12) of module 'memory' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:161]
-WARNING: [Synth 8-689] width (16) of port connection 'raddr_d' does not match port width (12) of module 'memory' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:162]
-WARNING: [Synth 8-689] width (16) of port connection 'waddr' does not match port width (12) of module 'memory' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:163]
-INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized0' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'memory' (25#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:8]
+WARNING: [Synth 8-689] width (16) of port connection 'raddr_i' does not match port width (12) of module 'memory' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:161]
+WARNING: [Synth 8-689] width (16) of port connection 'raddr_d' does not match port width (12) of module 'memory' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:162]
+WARNING: [Synth 8-689] width (16) of port connection 'waddr' does not match port width (12) of module 'memory' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:163]
+INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized0' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
 	Parameter SIZE bound to: 88 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized0' (25#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
-WARNING: [Synth 8-689] width (76) of port connection 'dout' does not match port width (88) of module 'reg_param__parameterized0' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:175]
-INFO: [Synth 8-6157] synthesizing module 'ALU' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ALU.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized0' (25#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
+WARNING: [Synth 8-689] width (76) of port connection 'dout' does not match port width (88) of module 'reg_param__parameterized0' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:175]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ALU.v:8]
 	Parameter op_add bound to: 4'b0101 
 	Parameter op_sub bound to: 4'b0110 
 	Parameter op_inc bound to: 4'b0001 
@@ -312,16 +313,16 @@ INFO: [Synth 8-6157] synthesizing module 'ALU' [X:/Documents/EC551/EC551_Labs/la
 	Parameter op_je bound to: 4'b0100 
 	Parameter op_nop bound to: 4'b1111 
 	Parameter op_halt bound to: 4'b0000 
-INFO: [Synth 8-226] default block is never used [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ALU.v:42]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ALU.v:63]
-INFO: [Synth 8-6155] done synthesizing module 'ALU' (26#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ALU.v:8]
-INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized1' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
+INFO: [Synth 8-226] default block is never used [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ALU.v:42]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ALU.v:63]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (26#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ALU.v:8]
+INFO: [Synth 8-6157] synthesizing module 'reg_param__parameterized1' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
 	Parameter SIZE bound to: 49 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized1' (26#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
-INFO: [Synth 8-6155] done synthesizing module 'datapath' (27#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v:5]
-WARNING: [Synth 8-7023] instance 'dp1' of module 'datapath' has 14 connections declared, but only 13 given [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/term_interf_top.v:202]
-INFO: [Synth 8-6157] synthesizing module 'top_VGA' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vga.v:357]
-INFO: [Synth 8-6157] synthesizing module 'vga_controller_640_60' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vga.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'reg_param__parameterized1' (26#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/reg_param.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (27#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v:5]
+WARNING: [Synth 8-7023] instance 'dp1' of module 'datapath' has 14 connections declared, but only 13 given [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/term_interf_top.v:202]
+INFO: [Synth 8-6157] synthesizing module 'top_VGA' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vga.v:357]
+INFO: [Synth 8-6157] synthesizing module 'vga_controller_640_60' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vga.v:8]
 	Parameter HMAX bound to: 800 - type: integer 
 	Parameter VMAX bound to: 525 - type: integer 
 	Parameter HLINES bound to: 640 - type: integer 
@@ -331,11 +332,11 @@ INFO: [Synth 8-6157] synthesizing module 'vga_controller_640_60' [X:/Documents/E
 	Parameter VFP bound to: 482 - type: integer 
 	Parameter VSP bound to: 484 - type: integer 
 	Parameter SPP bound to: 0 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'vga_controller_640_60' (28#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vga.v:8]
-INFO: [Synth 8-6157] synthesizing module 'reduced_font_rom' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vga.v:66]
-INFO: [Synth 8-6155] done synthesizing module 'reduced_font_rom' (29#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vga.v:66]
-INFO: [Synth 8-6155] done synthesizing module 'top_VGA' (30#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vga.v:357]
-INFO: [Synth 8-6155] done synthesizing module 'term_interf_top' (31#1) [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/term_interf_top.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'vga_controller_640_60' (28#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vga.v:8]
+INFO: [Synth 8-6157] synthesizing module 'reduced_font_rom' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vga.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'reduced_font_rom' (29#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vga.v:66]
+INFO: [Synth 8-6155] done synthesizing module 'top_VGA' (30#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vga.v:357]
+INFO: [Synth 8-6155] done synthesizing module 'term_interf_top' (31#1) [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/term_interf_top.v:25]
 WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[11]
 WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[10]
 WARNING: [Synth 8-3331] design memory has unconnected port raddr_i[9]
@@ -354,7 +355,7 @@ WARNING: [Synth 8-3331] design term_interf_top has unconnected port SW[5]
 WARNING: [Synth 8-3331] design term_interf_top has unconnected port BTN[1]
 WARNING: [Synth 8-3331] design term_interf_top has unconnected port BTN[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 883.492 ; gain = 251.504
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 882.680 ; gain = 250.473
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -367,50 +368,51 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 883.492 ; gain = 251.504
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 882.680 ; gain = 250.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 883.492 ; gain = 251.504
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 882.680 ; gain = 250.473
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [X:/Documents/EC551/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc]
-Finished Parsing XDC File [X:/Documents/EC551/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [X:/Documents/EC551/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/term_interf_top_propImpl.xdc].
+Parsing XDC File [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc]
+Finished Parsing XDC File [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/term_interf_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/term_interf_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1043.137 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1042.797 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 1043.137 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 1042.797 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1043.137 ; gain = 411.148
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 1042.797 ; gain = 410.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1043.137 ; gain = 411.148
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 1042.797 ; gain = 410.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1043.137 ; gain = 411.148
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 1042.797 ; gain = 410.590
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'txState_reg' in module 'UART_TX_CTRL'
 INFO: [Synth 8-802] inferred FSM for state register 'uart_cs_reg' in module 'uart_arbiter'
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/fifo_8bit.v:40]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/fifo_8bit.v:40]
 INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "ns" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'cs_reg' in module 'PS2Receiver'
 INFO: [Synth 8-802] inferred FSM for state register 'cs_reg' in module 'top_keyboard'
 INFO: [Synth 8-802] inferred FSM for state register 'curr_state_reg' in module 'data_loader'
+INFO: [Synth 8-802] inferred FSM for state register 'ap_stop_c_reg' in module 'data_loader'
 INFO: [Synth 8-5587] ROM size for "trans_key_ps2" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5587] ROM size for "trans_key_uart" is below threshold of ROM address width. It will be mapped to LUTs
 INFO: [Synth 8-5546] ROM "prev_key_n" won't be mapped to RAM because it is too sparse
@@ -427,7 +429,7 @@ INFO: [Synth 8-5546] ROM "prev_key_n" won't be mapped to RAM because it is too s
 INFO: [Synth 8-5546] ROM "prev_key_n" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "prev_key_n" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "next_state" won't be mapped to RAM because it is too sparse
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ALU.v:42]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ALU.v:42]
 INFO: [Synth 8-802] inferred FSM for state register 'halt_cs_reg' in module 'datapath'
 INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -461,8 +463,8 @@ INFO: [Synth 8-5544] ROM "address_init" won't be mapped to Block RAM because add
                 send_bit |                               10 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'txState_reg' using encoding 'sequential' in module 'UART_TX_CTRL'
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_uart_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:44]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_uart_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_uart_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_uart_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:44]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -471,19 +473,19 @@ WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_uart_ns_reg' [X:
                     WAIT |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'uart_cs_reg' using encoding 'one-hot' in module 'uart_arbiter'
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_uart_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:44]
-WARNING: [Synth 8-327] inferring latch for variable 'key_uart_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:45]
-WARNING: [Synth 8-327] inferring latch for variable 'rd_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:292]
-WARNING: [Synth 8-327] inferring latch for variable 'ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:119]
-WARNING: [Synth 8-327] inferring latch for variable 'count_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:125]
-WARNING: [Synth 8-327] inferring latch for variable 'push_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:124]
-WARNING: [Synth 8-327] inferring latch for variable 'fifo_char_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:123]
-WARNING: [Synth 8-327] inferring latch for variable 'mode_hold_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:120]
-WARNING: [Synth 8-327] inferring latch for variable 'bench_hold_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:122]
-WARNING: [Synth 8-327] inferring latch for variable 'alu_hold_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v:121]
-WARNING: [Synth 8-327] inferring latch for variable 'keystroke_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:66]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:65]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:65]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_uart_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'key_uart_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/uart_arbiter.v:45]
+WARNING: [Synth 8-327] inferring latch for variable 'rd_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:292]
+WARNING: [Synth 8-327] inferring latch for variable 'ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:119]
+WARNING: [Synth 8-327] inferring latch for variable 'count_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:125]
+WARNING: [Synth 8-327] inferring latch for variable 'push_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:124]
+WARNING: [Synth 8-327] inferring latch for variable 'fifo_char_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:123]
+WARNING: [Synth 8-327] inferring latch for variable 'mode_hold_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:120]
+WARNING: [Synth 8-327] inferring latch for variable 'bench_hold_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:122]
+WARNING: [Synth 8-327] inferring latch for variable 'alu_hold_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v:121]
+WARNING: [Synth 8-327] inferring latch for variable 'keystroke_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:66]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:65]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:65]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -492,10 +494,10 @@ WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/Docu
                      KEY |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'cs_reg' using encoding 'one-hot' in module 'PS2Receiver'
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:65]
-WARNING: [Synth 8-327] inferring latch for variable 'keyflag_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:67]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/top_keyboard.v:44]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/top_keyboard.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:65]
+WARNING: [Synth 8-327] inferring latch for variable 'keyflag_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v:67]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/top_keyboard.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/top_keyboard.v:44]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -504,9 +506,9 @@ WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/Docu
                  iSTATE1 |                              100 |                               10
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'cs_reg' using encoding 'one-hot' in module 'top_keyboard'
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/top_keyboard.v:44]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:184]
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:184]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/top_keyboard.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:181]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:181]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -529,84 +531,93 @@ WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' 
                     B_wb |                            01110 |                         00110010
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'curr_state_reg' using encoding 'sequential' in module 'data_loader'
-WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:184]
-WARNING: [Synth 8-327] inferring latch for variable 'prev_key_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:181]
-WARNING: [Synth 8-327] inferring latch for variable 'count_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:201]
-WARNING: [Synth 8-327] inferring latch for variable 'ALU_mode_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:203]
-WARNING: [Synth 8-327] inferring latch for variable 'inst_write_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:205]
-WARNING: [Synth 8-327] inferring latch for variable 'inst_addr_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:206]
-WARNING: [Synth 8-327] inferring latch for variable 'alu_a_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:207]
-WARNING: [Synth 8-327] inferring latch for variable 'alu_b_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:208]
-WARNING: [Synth 8-327] inferring latch for variable 'mat_a_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:209]
-WARNING: [Synth 8-327] inferring latch for variable 'mat_b_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:210]
-WARNING: [Synth 8-327] inferring latch for variable 'mode_flag_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:190]
-WARNING: [Synth 8-327] inferring latch for variable 'result_ready_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:204]
-WARNING: [Synth 8-327] inferring latch for variable 'ap_start_n_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v:202]
-WARNING: [Synth 8-327] inferring latch for variable 'stall_ns_reg' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Fetch_unit.v:21]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[128]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[127]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[126]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[125]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[124]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[123]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[122]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[121]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[120]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[119]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[118]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[117]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[116]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[115]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[114]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[113]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[112]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[111]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[110]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[109]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[108]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[107]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[106]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[105]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[104]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[103]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[102]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[101]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[100]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[99]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[98]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[97]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[96]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[95]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[94]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[93]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[92]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[91]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[90]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[89]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[88]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[87]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[86]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[85]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[84]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[83]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[82]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[81]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[80]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[79]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[78]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[77]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[76]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[75]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[74]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[73]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[72]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[71]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[70]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[69]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[68]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[67]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[66]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
-WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[65]' [X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:181]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_ap_stop_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:500]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_ap_stop_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:500]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                              000
+                 iSTATE2 |                               01 |                              001
+                  iSTATE |                               10 |                              010
+                 iSTATE0 |                               11 |                              011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'ap_stop_c_reg' using encoding 'sequential' in module 'data_loader'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_ap_stop_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:500]
+WARNING: [Synth 8-327] inferring latch for variable 'prev_key_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:178]
+WARNING: [Synth 8-327] inferring latch for variable 'count_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:198]
+WARNING: [Synth 8-327] inferring latch for variable 'ALU_mode_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:200]
+WARNING: [Synth 8-327] inferring latch for variable 'inst_write_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:202]
+WARNING: [Synth 8-327] inferring latch for variable 'inst_addr_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:203]
+WARNING: [Synth 8-327] inferring latch for variable 'alu_a_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:204]
+WARNING: [Synth 8-327] inferring latch for variable 'alu_b_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:205]
+WARNING: [Synth 8-327] inferring latch for variable 'mat_a_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:206]
+WARNING: [Synth 8-327] inferring latch for variable 'mat_b_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:207]
+WARNING: [Synth 8-327] inferring latch for variable 'mode_flag_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:187]
+WARNING: [Synth 8-327] inferring latch for variable 'result_ready_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:201]
+WARNING: [Synth 8-327] inferring latch for variable 'ap_start_n_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v:199]
+WARNING: [Synth 8-327] inferring latch for variable 'stall_ns_reg' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Fetch_unit.v:21]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[128]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[127]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[126]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[125]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[124]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[123]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[122]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[121]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[120]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[119]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[118]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[117]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[116]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[115]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[114]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[113]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[112]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[111]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[110]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[109]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[108]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[107]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[106]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[105]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[104]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[103]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[102]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[101]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[100]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[99]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[98]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[97]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[96]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[95]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[94]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[93]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[92]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[91]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[90]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[89]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[88]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[87]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[86]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[85]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[84]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[83]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[82]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[81]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[80]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[79]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[78]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[77]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[76]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[75]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[74]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[73]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[72]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[71]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[70]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[69]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
+WARNING: [Synth 8-327] inferring latch for variable 'mem_reg[68]' [X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v:29]
 INFO: [Common 17-14] Message 'Synth 8-327' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -617,7 +628,7 @@ INFO: [Common 17-14] Message 'Synth 8-327' appears 100 times and further instanc
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'halt_cs_reg' using encoding 'one-hot' in module 'datapath'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:37 . Memory (MB): peak = 1043.137 ; gain = 411.148
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:22 ; elapsed = 00:00:35 . Memory (MB): peak = 1042.797 ; gain = 410.590
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -705,9 +716,10 @@ Detailed RTL Component Info :
 	   4 Input      3 Bit        Muxes := 1     
 	  16 Input      3 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 2     
-	   2 Input      2 Bit        Muxes := 8     
+	   2 Input      2 Bit        Muxes := 9     
 	   5 Input      2 Bit        Muxes := 1     
 	  17 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 43    
 	   3 Input      1 Bit        Muxes := 14    
 	   6 Input      1 Bit        Muxes := 4     
@@ -883,8 +895,9 @@ Detailed RTL Component Info :
 	   5 Input      5 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	  17 Input      4 Bit        Muxes := 3     
-	   2 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 5     
 	  17 Input      2 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 	  17 Input      1 Bit        Muxes := 17    
 Module clock_div 
@@ -1132,13 +1145,15 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ps2_hold
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ps2_hold_reg[23] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ps2_hold_reg[31] )
 WARNING: [Synth 8-3332] Sequential element (fifo_char_n_reg[7]) is unused and will be removed from module char_stager.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_ap_stop_n_reg[1]) is unused and will be removed from module data_loader.
+WARNING: [Synth 8-3332] Sequential element (FSM_sequential_ap_stop_n_reg[0]) is unused and will be removed from module data_loader.
 WARNING: [Synth 8-3332] Sequential element (fetch_0/stall_ns_reg[2]) is unused and will be removed from module datapath.
 WARNING: [Synth 8-3332] Sequential element (address_init_curr_reg[27]) is unused and will be removed from module top_VGA.
 WARNING: [Synth 8-3332] Sequential element (vsection_reg[23]) is unused and will be removed from module top_VGA.
 WARNING: [Synth 8-3332] Sequential element (hsection_reg[23]) is unused and will be removed from module top_VGA.
 WARNING: [Synth 8-3332] Sequential element (address_init_part_reg[3]) is unused and will be removed from module top_VGA.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:01:56 . Memory (MB): peak = 1058.121 ; gain = 426.133
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:31 ; elapsed = 00:01:50 . Memory (MB): peak = 1060.496 ; gain = 428.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1178,13 +1193,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:48 ; elapsed = 00:02:06 . Memory (MB): peak = 1058.121 ; gain = 426.133
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:40 ; elapsed = 00:01:59 . Memory (MB): peak = 1060.496 ; gain = 428.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:51 ; elapsed = 00:02:09 . Memory (MB): peak = 1058.121 ; gain = 426.133
+Finished Timing Optimization : Time (s): cpu = 00:01:42 ; elapsed = 00:02:02 . Memory (MB): peak = 1060.496 ; gain = 428.289
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1211,7 +1226,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3332] Sequential element (dl/prev_key_n_reg[8]) is unused and will be removed from module term_interf_top.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:56 ; elapsed = 00:02:15 . Memory (MB): peak = 1121.207 ; gain = 489.219
+Finished Technology Mapping : Time (s): cpu = 00:01:48 ; elapsed = 00:02:07 . Memory (MB): peak = 1119.176 ; gain = 486.969
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1235,7 +1250,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:00 ; elapsed = 00:02:18 . Memory (MB): peak = 1125.898 ; gain = 493.910
+Finished IO Insertion : Time (s): cpu = 00:01:50 ; elapsed = 00:02:10 . Memory (MB): peak = 1123.840 ; gain = 491.633
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -1248,7 +1263,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:00 ; elapsed = 00:02:18 . Memory (MB): peak = 1125.898 ; gain = 493.910
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:51 ; elapsed = 00:02:10 . Memory (MB): peak = 1123.840 ; gain = 491.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1260,25 +1275,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:01 ; elapsed = 00:02:19 . Memory (MB): peak = 1125.898 ; gain = 493.910
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:52 ; elapsed = 00:02:11 . Memory (MB): peak = 1123.840 ; gain = 491.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:01 ; elapsed = 00:02:19 . Memory (MB): peak = 1125.898 ; gain = 493.910
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:52 ; elapsed = 00:02:11 . Memory (MB): peak = 1123.840 ; gain = 491.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:01 ; elapsed = 00:02:19 . Memory (MB): peak = 1125.898 ; gain = 493.910
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:52 ; elapsed = 00:02:11 . Memory (MB): peak = 1123.852 ; gain = 491.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:01 ; elapsed = 00:02:19 . Memory (MB): peak = 1125.898 ; gain = 493.910
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:52 ; elapsed = 00:02:11 . Memory (MB): peak = 1123.852 ; gain = 491.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1298,15 +1313,15 @@ Report Cell Usage:
 |2     |CARRY4     |   321|
 |3     |LUT1       |    22|
 |4     |LUT2       |   670|
-|5     |LUT3       |   595|
-|6     |LUT4       |   344|
-|7     |LUT5       |   467|
-|8     |LUT6       |  2214|
+|5     |LUT3       |   569|
+|6     |LUT4       |   361|
+|7     |LUT5       |   488|
+|8     |LUT6       |  2209|
 |9     |MUXF7      |   589|
 |10    |MUXF8      |   261|
 |11    |RAMB18E1_1 |     1|
 |12    |FDCE       |    33|
-|13    |FDRE       |  1241|
+|13    |FDRE       |  1243|
 |14    |FDSE       |    35|
 |15    |LD         |   262|
 |16    |LDC        |  2048|
@@ -1319,7 +1334,7 @@ Report Instance Areas:
 +------+----------------------------------+--------------------------+------+
 |      |Instance                          |Module                    |Cells |
 +------+----------------------------------+--------------------------+------+
-|1     |top                               |                          |  9190|
+|1     |top                               |                          |  9199|
 |2     |  UART_con                        |UART_controller           |   156|
 |3     |    RX                            |UART_RX_CTRL              |    77|
 |4     |    TX                            |UART_TX_CTRL              |    79|
@@ -1334,8 +1349,8 @@ Report Instance Areas:
 |13    |      u1                          |clock_div                 |    47|
 |14    |  cs                              |char_stager               |  2029|
 |15    |    fifo                          |fifo_8bit                 |  1646|
-|16    |  dl                              |data_loader               |   862|
-|17    |    ma                            |mini_ALU                  |     3|
+|16    |  dl                              |data_loader               |   863|
+|17    |    ma                            |mini_ALU                  |     4|
 |18    |    mm                            |mat3mult                  |    83|
 |19    |      \genblk1[0].genblk1[0].vm0  |vect3mac                  |    11|
 |20    |      \genblk1[0].genblk1[1].vm0  |vect3mac_0                |     9|
@@ -1346,33 +1361,33 @@ Report Instance Areas:
 |25    |      \genblk1[2].genblk1[0].vm0  |vect3mac_5                |     9|
 |26    |      \genblk1[2].genblk1[1].vm0  |vect3mac_6                |     9|
 |27    |      \genblk1[2].genblk1[2].vm0  |vect3mac_7                |     9|
-|28    |  dp1                             |datapath                  |  5134|
+|28    |  dp1                             |datapath                  |  5144|
 |29    |    alu_0                         |ALU                       |     7|
-|30    |    fetch_0                       |Fetch_unit                |     8|
+|30    |    fetch_0                       |Fetch_unit                |    25|
 |31    |    mem_0                         |memory                    |  4183|
-|32    |    reg0                          |reg_param                 |    28|
-|33    |    reg1                          |reg_param__parameterized0 |   152|
-|34    |    reg2                          |reg_param__parameterized1 |   549|
-|35    |    rf_0                          |Register_file             |   193|
-|36    |  keyboard_interface              |top_keyboard              |   149|
-|37    |    keyboard                      |PS2Receiver               |   140|
+|32    |    reg0                          |reg_param                 |    31|
+|33    |    reg1                          |reg_param__parameterized0 |   160|
+|34    |    reg2                          |reg_param__parameterized1 |   517|
+|35    |    rf_0                          |Register_file             |   207|
+|36    |  keyboard_interface              |top_keyboard              |   148|
+|37    |    keyboard                      |PS2Receiver               |   139|
 |38    |      debouncer1                  |keyboard_debouncer        |    29|
 |39    |  nolabel_line83                  |uart_arbiter              |    56|
-|40    |  p2a                             |ps2_to_ascii              |    22|
+|40    |  p2a                             |ps2_to_ascii              |    23|
 |41    |  sevseg                          |sev_seg_driver            |    36|
 +------+----------------------------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:01 ; elapsed = 00:02:20 . Memory (MB): peak = 1125.898 ; gain = 493.910
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:52 ; elapsed = 00:02:12 . Memory (MB): peak = 1123.852 ; gain = 491.645
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 196 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:47 ; elapsed = 00:02:14 . Memory (MB): peak = 1125.898 ; gain = 334.266
-Synthesis Optimization Complete : Time (s): cpu = 00:02:01 ; elapsed = 00:02:20 . Memory (MB): peak = 1125.898 ; gain = 493.910
+Synthesis finished with 0 errors, 0 critical warnings and 201 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:39 ; elapsed = 00:02:07 . Memory (MB): peak = 1123.852 ; gain = 331.527
+Synthesis Optimization Complete : Time (s): cpu = 00:01:52 ; elapsed = 00:02:12 . Memory (MB): peak = 1123.852 ; gain = 491.645
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 3499 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1135.582 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1136.938 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 2327 instances were transformed.
   LD => LDCE: 262 instances
@@ -1380,12 +1395,12 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   LDCP => LDCP (GND, LUT3, LUT3, LDCE, VCC): 17 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-265 Infos, 269 Warnings, 0 Critical Warnings and 0 Errors encountered.
+268 Infos, 271 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:11 ; elapsed = 00:02:33 . Memory (MB): peak = 1135.582 ; gain = 782.086
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1135.582 ; gain = 0.000
+synth_design: Time (s): cpu = 00:02:01 ; elapsed = 00:02:24 . Memory (MB): peak = 1136.938 ; gain = 782.469
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1136.938 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1/term_interf_top.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'X:/EC551/Labs/Lab3/EC551_Labs/lab3/lab_3/lab_3.runs/synth_1/term_interf_top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file term_interf_top_utilization_synth.rpt -pb term_interf_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 29 01:41:40 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 29 15:27:54 2022...

@@ -19,48 +19,47 @@ proc create_report { reportName command } {
 }
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.cache/wt [current_project]
-set_property parent.project_path X:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.xpr [current_project]
+set_property webtalk.parent_dir X:/EC551/Labs/Lab3/EC551_Labs/lab3/lab_3/lab_3.cache/wt [current_project]
+set_property parent.project_path X:/EC551/Labs/Lab3/EC551_Labs/lab3/lab_3/lab_3.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo x:/Documents/EC551/EC551_Labs/lab3/lab_3/lab_3.cache/ip [current_project]
+set_property ip_output_repo x:/EC551/Labs/Lab3/EC551_Labs/lab3/lab_3/lab_3.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_verilog X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/my_header.vh
+read_verilog X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/my_header.vh
 read_verilog -library xil_defaultlib {
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ALU.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Decoder.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Fetch_unit.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/PS2Receiver.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/Register_file.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_controller.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/btn_edge.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/char_stager.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/data_loader.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/datapath.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/debounce.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/fifo_8bit.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/hex_to_ascii.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/keyboard_debouncer.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mat3mult.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/memory.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/mini_ALU.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/ps2_to_ascii.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/reg_param.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/sev_seg_driver.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/top_keyboard.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/uart_arbiter.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vect3mac.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/vga.v
-  X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/term_interf_top.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ALU.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Decoder.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Fetch_unit.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/PS2Receiver.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/Register_file.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_RX_CTRL.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_controller.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/btn_edge.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/char_stager.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/data_loader.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/datapath.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/debounce.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/fifo_8bit.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/hex_to_ascii.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/keyboard_debouncer.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mat3mult.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/memory.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/mini_ALU.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/ps2_to_ascii.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/reg_param.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/sev_seg_driver.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/top_keyboard.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/uart_arbiter.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vect3mac.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/vga.v
+  X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/term_interf_top.v
 }
-read_vhdl -library xil_defaultlib X:/Documents/EC551/EC551_Labs/lab3/Sources/Design/UART_TX_CTRL.vhd
+read_vhdl -library xil_defaultlib X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Design/UART_TX_CTRL.vhd
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
 # design are intentionally left as such for best results. Dcp files will be
@@ -69,8 +68,8 @@ read_vhdl -library xil_defaultlib X:/Documents/EC551/EC551_Labs/lab3/Sources/Des
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc X:/Documents/EC551/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc
-set_property used_in_implementation false [get_files X:/Documents/EC551/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc]
+read_xdc X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc
+set_property used_in_implementation false [get_files X:/EC551/Labs/Lab3/EC551_Labs/lab3/Sources/Constraints/Nexys-A7-100T-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
